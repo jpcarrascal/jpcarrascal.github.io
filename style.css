@@ -1,0 +1,243 @@
+/*
+@font-face {
+  font-family: "GIll";
+  src: url("fonts/Gill Sans MT.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Montserrat";
+  src: url("fonts/Montserrat-Bold.ttf") format("truetype");
+}
+*/
+
+html
+{
+    height: 100%;
+    width: 100%;
+    font-family: "Lato", Sans;
+    font-size: 1.1em;
+    padding: 0;
+}
+
+body
+{
+    background-color: #DDD; /* #BBB; */
+    padding: 0;
+    width: 100%;
+    margin:0;
+}
+
+@-webkit-keyframes rotate {
+  from {
+    -webkit-transform: rotate(0deg);
+  }
+  to { 
+    -webkit-transform: rotate(360deg);
+  }
+}
+
+@-webkit-keyframes rotate_inv {
+  from {
+    -webkit-transform: rotate(365deg);
+  }
+  to { 
+    -webkit-transform: rotate(5deg);
+  }
+}
+
+#gear01
+{
+    position: fixed;
+    top: -250px;
+    left: -250px;
+    background-size: 100% 100%;
+    background-image: url("images/gear01.png");
+    z-index: -10;
+    width: 800px;
+    height: 800px;
+    -webkit-animation-name:             rotate; 
+    -webkit-animation-duration:         240s; 
+    -webkit-animation-iteration-count:  infinite;
+    -webkit-animation-timing-function: linear;
+}
+
+#gear02
+{
+    position: fixed;
+    bottom: -100px;
+    right: -100px;
+    background-size: 100% 100%;
+    background-image: url("images/gear02.png");
+    z-index: -10;
+    width: 400px;
+    height: 400px;
+    -webkit-animation-name:             rotate; 
+    -webkit-animation-duration:         120s; 
+    -webkit-animation-iteration-count:  infinite;
+    -webkit-animation-timing-function: linear;
+}
+
+#gear03
+{
+    position: fixed;
+    bottom: 205px;
+    right: 205px;
+    background-size: 100% 100%;
+    background-image: url("images/gear03.png");
+    z-index: -10;
+    width: 200px;
+    height: 200px;
+    -webkit-animation-name:             rotate_inv; 
+    -webkit-animation-duration:         60s; 
+    -webkit-animation-iteration-count:  infinite;
+    -webkit-animation-timing-function: linear;
+}
+
+
+h1
+{
+    font-family: 'lato', sans-serif;
+    font-size: 2em;
+    letter-spacing: 0.3em;
+    color: #000;
+}
+
+.follow
+{
+    float: left;
+    margin-right: 10px;
+}
+
+#linkedin
+{
+    margin-top:-2px;
+}
+
+
+a:link {color:#000;}      /* unvisited link */
+a:visited {color:#000;}  /* visited link */
+a:hover {color:#127EFF;}  /* mouse over link */
+a:active {color:#F96A6A;}
+
+#flex-container
+{
+    display:flex;
+    flex-flow: column;
+    justify-content: center;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    z-index: 20;
+}
+
+#wrap
+{
+    margin: 0;
+	width: 100%;
+	background-color: rgba(0,0,0,0.1);
+	box-shadow: 1px 1px 3px 3px rgba(255,255,255,0.1);
+}
+
+#container
+{
+	margin-left: auto;
+	margin-right: auto;
+	height: 80%;
+	border: 1px solid transparent;
+	border-radius: 1.5em;
+	padding: 1.5em;
+}
+
+.nounderline
+{
+    text-decoration: none;
+}
+
+#links
+{
+    display: block;
+    margin-bottom: 10px;
+}
+
+#ext_links
+{
+    display: block;
+    margin-bottom: 10px;
+}
+
+.link
+{
+    float: left;
+    display: inline;
+    border-radius: 7px;
+	background-color: rgba(0,0,0,0.4);
+    color: white;
+    padding: 3px;
+    padding-bottom: 6px;
+    padding-left: 9px;
+    padding-right: 9px;
+    line-height: 1.2em;
+    margin-right: 5px;
+    margin-bottom: 5px;
+    transition: background-color 200ms linear;
+}
+
+.link:hover, .link_hover
+{
+    background-color: rgba(0,0,0,0.8);
+/*    color: #127EFF; */
+}
+
+
+@media screen and (max-device-width : 1204px)
+{
+    #container
+    {
+        font-size: 0.8em;
+        margin-top: 0;
+    	padding-top: 0;
+        width: 100%;
+    }
+    .link
+    {
+        float: none;
+        padding: 10px;
+        display: block;
+    }
+    #links
+    {
+        margin-bottom: 5px;
+    }
+    #linkedin
+    {
+        margin-top: 3px;
+    }
+    #gear01
+    {
+        display: none;
+        background-image: none;
+    }
+}
+
+@media screen and (min-width : 901px)
+{
+    #container
+    {
+        width: 40%;
+    }
+}
+
+@media screen and (max-width : 900px)
+{
+    #container
+    {
+        width: 90%;
+    }
+    #gear01
+    {
+        top: -350px;
+        left: -350px;
+    }
+
+
+}

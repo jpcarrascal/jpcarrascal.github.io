@@ -1,5 +1,92 @@
-<html>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-15242862-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-15242862-1');
+</script>
+
+<meta name="viewport" content="width=device-width,user-scalable =no" />
+<title>JP Carrascal | UX/HCI Researcher | Musician</title>
+<link href="style.css" type="text/css" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css?family=Lato:700|Lato" rel="stylesheet">
+<script src="jquery-1.11.0.min.js"></script>
+<script>
+$(document).ready(function() {
+    $( "a.item" ).hover(
+        function() {
+            item = "#"+$(this).attr("link");
+            $(item).addClass("link_hover");
+        },
+        function() {
+            item = "#"+$(this).attr("link");
+            $(item).removeClass("link_hover");
+        });
+});
+</script>
+</head>
 <body>
-<a href="http://www.jpcarrascal.com">Actual website here</a>
+<div id="gear01"></div>
+<div id="gear02"></div>
+<div id="gear03"></div>
+
+<div id="flex-container">
+    <div id="wrap">
+        <div id='container'>
+            <h1>JP CARRASCAL</h1>
+            I <a link="cv" class="item" href="http://blog.jpcarrascal.com/cv">am</a> a <span id="HCI">Human-Computer Interaction</span> researcher and musician.<br />
+            I am interested in <a link="publications" class="item" href="http://blog.jpcarrascal.com/cv/#publications">understanding</a> patterns of human behavior when interacting with technology.<br />
+            I enjoy the intersection of <a link="portfolio" class="item" href="http://jpcarrascal.com/design-portfolio/" target=_blank>technology and art</a>.<br />
+            I love composing and producing <a link="music" class="item" href="http://blog.jpcarrascal.com/portfolio-music">music</a>.<br />
+            I also play and sing in a <a link="spacebarman" class="item" href="http://www.spacebarman.com/?from=jpcarrascal.com">band</a>.<br />
+            I share my ideas and projects on a <a link="blog" class="item" href="http://blog.jpcarrascal.com/">blog</a>.
+            <br />
+            Want to get in touch? Drop me a line at jp [at] jpcarrascal [dot] com<br /><br />
+
+            <div id="links">
+                <a class="nounderline" href="http://blog.jpcarrascal.com/cv"><div class="link" id="cv">cv</div><a/>
+                <a class="nounderline" href="http://blog.jpcarrascal.com/cv/#publications"><div class="link" id="publications">publications</div></a>
+                <a class="nounderline" href="http://jpcarrascal.com/design-portfolio/" target=_blank><div class="link" id="portfolio">portfolio</div></a>
+                <a class="nounderline" href="http://blog.jpcarrascal.com/portfolio-music"><div class="link" id="music">music</div></a>
+                <a class="nounderline" href="http://www.spacebarman.com/?from=jpcarrascal.com"><div class="link" id="spacebarman">spacebarman</div></a>
+                <a class="nounderline" href="http://blog.jpcarrascal.com/"><div class="link" id="blog">blog</div></a>
+                <div style="clear: both;"></div>
+            </div>
+
+            <div id='ext_links'>
+                <div class='follow'>
+                    <a href="https://twitter.com/jpcarrascal" class="twitter-follow-button" data-show-count="false">Follow @jpcarrascal</a>
+                    <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+                </div>
+                <div class='follow' id="linkedin">
+                    <a href="http://es.linkedin.com/in/jpcarrascal">
+                    <img src="https://static.licdn.com/scds/common/u/img/webpromo/btn_profile_bluetxt_80x15.png" width="80" height="15" border="0" alt="View JP Carrascal's profile on LinkedIn">    
+                    </a>
+                </div>
+            </div>
+            <div style="clear: both;"></div>
+        </div>
+    </div>
+</div>
+<!---
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try{ 
+var pageTracker = _gat._getTracker("UA-15242862-1");
+pageTracker._trackPageview();
+} catch(err) {} 
+</script>
+-->
 </body>
 </html>
