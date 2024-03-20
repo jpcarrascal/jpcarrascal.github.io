@@ -1,2 +1,6 @@
 # jpcarrascal.github.io
-GitHub Website - JP
+Website
+Local test:
+'''
+npx http-server -o -c-1 -p 8080 .
+'''
