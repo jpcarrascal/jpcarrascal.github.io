@@ -18,20 +18,6 @@
 <title>JP Carrascal | UX/HCI Researcher | Musician</title>
 <link href="style.css" type="text/css" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css?family=Lato:700|Lato" rel="stylesheet">
-<script src="jquery-1.11.0.min.js"></script>
-<script>
-$(document).ready(function() {
-    $( "a.item" ).hover(
-        function() {
-            item = "#"+$(this).attr("link");
-            $(item).addClass("link_hover");
-        },
-        function() {
-            item = "#"+$(this).attr("link");
-            $(item).removeClass("link_hover");
-        });
-});
-</script>
 </head>
 <body>
 <div id="gear01"></div>
@@ -78,17 +64,22 @@ $(document).ready(function() {
         </div>
     </div>
 </div>
-<!---
-<script type="text/javascript">
-var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
-document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+<script>
+
+
+    document.querySelectorAll("a.item").forEach(function(item) {
+        item.addEventListener("mouseover", function() {
+            var elem = this.getAttribute("link");
+            console.log(document.getElementById(elem));
+            document.getElementById(elem).classList.add("link_hover");
+        });
+        item.addEventListener("mouseleave", function() {
+            var elem = this.getAttribute("link");
+            document.getElementById(elem).classList.remove("link_hover");
+        });
+    });
+    
+    
 </script>
-<script type="text/javascript">
-try{ 
-var pageTracker = _gat._getTracker("UA-15242862-1");
-pageTracker._trackPageview();
-} catch(err) {} 
-</script>
--->
 </body>
 </html>
