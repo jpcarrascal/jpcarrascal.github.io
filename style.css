@@ -71,7 +71,8 @@ body
     z-index: -10;
     width: 400px;
     height: 400px;
-    -webkit-animation-name:             rotate; 
+    animation-name: rotate;
+    -webkit-animation-name: rotate;
     -webkit-animation-duration:         120s; 
     -webkit-animation-iteration-count:  infinite;
     -webkit-animation-timing-function: linear;
@@ -87,6 +88,7 @@ body
     z-index: -10;
     width: 200px;
     height: 200px;
+    animation-name: rotate_inv;
     -webkit-animation-name:             rotate_inv; 
     -webkit-animation-duration:         60s; 
     -webkit-animation-iteration-count:  infinite;
@@ -102,21 +104,20 @@ h1
     color: #000;
 }
 
+.hl {
+    color: #137FFF;
+}
+
 .follow
 {
     float: left;
     margin-right: 10px;
 }
 
-#linkedin
-{
-    margin-top:-2px;
-}
-
 
 a:link {color:#000;}      /* unvisited link */
 a:visited {color:#000;}  /* visited link */
-a:hover {color:#127EFF;}  /* mouse over link */
+a:hover {color:#137FFF;}  /* mouse over link */
 a:active {color:#F96A6A;}
 
 #flex-container
@@ -155,7 +156,8 @@ a:active {color:#F96A6A;}
 
 #links
 {
-    display: block;
+    display: flex;
+    flex-direction: column;
     margin-bottom: 10px;
 }
 
@@ -167,8 +169,6 @@ a:active {color:#F96A6A;}
 
 .link
 {
-    float: left;
-    display: inline;
     border-radius: 7px;
 	background-color: rgba(0,0,0,0.4);
     color: white;
@@ -179,13 +179,12 @@ a:active {color:#F96A6A;}
     line-height: 1.2em;
     margin-right: 5px;
     margin-bottom: 5px;
-    transition: background-color 200ms linear;
 }
 
 .link:hover, .link_hover
 {
-    background-color: rgba(0,0,0,0.8);
-/*    color: #127EFF; */
+    background-color: #137FFF;
+    /* transition: background-color 500ms ease-out;*/
 }
 
 
@@ -200,17 +199,12 @@ a:active {color:#F96A6A;}
     }
     .link
     {
-        float: none;
         padding: 10px;
         display: block;
     }
     #links
     {
         margin-bottom: 5px;
-    }
-    #linkedin
-    {
-        margin-top: 3px;
     }
     #gear01
     {
