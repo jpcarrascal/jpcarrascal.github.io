@@ -22,6 +22,8 @@ html
 body
 {
     background-color: #DDD; /* #BBB; */
+    background-image: url(images/bg01.jpg);
+    background-size: cover;
     padding: 0;
     width: 100%;
     margin:0;
@@ -43,6 +45,11 @@ body
   to { 
     -webkit-transform: rotate(5deg);
   }
+}
+
+.gear {
+    opacity: 0.1;
+    filter: invert(1);
 }
 
 #gear01
