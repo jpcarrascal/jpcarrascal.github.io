@@ -51,7 +51,7 @@
 </script>
 
 <meta name="viewport" content="width=device-width,user-scalable =no" />
-<title>[Project Title] | JP Carrascal</title>
+<title>InTangible: A Reflection on Digital vs. Physical Co-Ownership | JP Carrascal</title>
 <link href="../../style.css" type="text/css" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css?family=Lato:700|Lato" rel="stylesheet">
 <style>
@@ -217,14 +217,14 @@
         <div class="project-content">
             <div class="language-selector">
                 <select class="language-dropdown" id="languageSelector" onchange="switchLanguage(this.value)">
-                    <option value="es">Español</option>
                     <option value="en">English</option>
+                    <option value="es">Español</option>
                     <option value="ca">Català</option>
                 </select>
             </div>
             
             <div class="project-header">
-                <h1 class="project-title" data-i18n="title">InTangible: una reflexión sobre la co-propiedad digital vs. física.</h1>
+                <h1 class="project-title" data-i18n="title">InTangible: A Reflection on Digital vs. Physical Co-Ownership</h1>
                 <div class="project-authors">JP Carrascal, Ina Ghita</div>
             </div>
             
@@ -247,7 +247,7 @@
             </div>
             
             <div class="project-description">
-                <p data-i18n="description1">Con InTangible, buscamos cuestionar la propiedad clásica del arte, que solo permite a unas pocas personas poseer un número selecto de obras. Ninguna persona es propietaria absoluta de un lienzo digital. En cambio, puede ser co-propiedad de los usuarios que adquieren fragmentos del mismo en un mercado de NFT (Tokens No Fungibles). Creemos que la co-propiedad del arte permitiría a un grupo más diverso poseer y coleccionar arte, lo que, a su vez, cambiaría la dinámica tanto de la creación artística como de la interacción con el arte.</p>
+                <p data-i18n="description1">With InTangible, we seek to question the classical ownership of art, which only allows a few people to own a select number of works. No person is the absolute owner of a digital canvas. Instead, it can be co-owned by users who acquire fragments of it in an NFT (Non-Fungible Token) marketplace. We believe that co-ownership of art would allow a more diverse group to own and collect art, which, in turn, would change the dynamics of both artistic creation and interaction with art.</p>
             </div>
 
             <div class="project-images">
@@ -255,16 +255,16 @@
                     <a href="images/intangible-diagram.png" target="_blank">
                         <img src="images/intangible-diagram.png" alt="Project Diagram" />
                     </a>
-                    <div class="image-caption" data-i18n="diagram_caption">Arquitectura del sistema</div>
+                    <div class="image-caption" data-i18n="diagram_caption">System architecture</div>
                 </div>
             </div>
 
             <div class="project-description">    
-                <p data-i18n="description2">InTangible es una obra de arte de técnica mixta: un objeto conectado que captura imágenes de una tejido artesanal y las envía a través de la red. Montada sobre una vieja impresora 3D reciclada, una cámara digital con LED RGB integrados, se desliza sobre el tramado y permite a los usuarios remotos disfrutar de una nueva dimensión visual, íntima y onírica. La textura, antes estática y monocromática, se transforma en coloridos y abstractos paisajes digitales, a la vez que se convierte en un objeto material diseñado para ser exhibido en un espacio físico.</p>
+                <p data-i18n="description2">InTangible is a mixed media artwork: a connected object that captures images of handcrafted fabric and sends them over the network. Mounted on an old recycled 3D printer, a digital camera with integrated RGB LEDs slides over the weave and allows remote users to enjoy a new visual, intimate and dreamlike dimension. The texture, previously static and monochromatic, transforms into colorful and abstract digital landscapes, while becoming a material object designed to be exhibited in a physical space.</p>
             </div>
             
             <div style="margin-top: 30px; padding: 20px; background-color: rgba(0,0,0,0.05); border-radius: 8px;">
-                <h3 style="margin-top: 0; font-size: 1.1em; color: #333;" data-i18n="publication_label">Publicación:</h3>
+                <h3 style="margin-top: 0; font-size: 1.1em; color: #333;" data-i18n="publication_label">Publication:</h3>
                 <p style="font-size: 0.95em; line-height: 1.5; margin-bottom: 0; text-align: justify;">
                     Juan Pablo Carrascal and Ina Ghita. 2023. InTangible: A Reflection On Digital vs. Physical Co-Ownership. In Proceedings of the Seventeenth International Conference on Tangible, Embedded, and Embodied Interaction (TEI '23). Association for Computing Machinery, New York, NY, USA, Article 61, 1–2. <a href="https://doi.org/10.1145/3569009.3576187" target="_blank" style="color: #137FFF;">https://doi.org/10.1145/3569009.3576187</a>
                 </p>
@@ -335,8 +335,8 @@ function switchLanguage(lang) {
 
 // Initialize language on page load
 document.addEventListener('DOMContentLoaded', function() {
-    // Get saved language preference or default to Spanish
-    const savedLang = localStorage.getItem('preferred-language') || 'es';
+    // Get saved language preference or default to English
+    const savedLang = localStorage.getItem('preferred-language') || 'en';
     
     // Set the dropdown to the saved language
     document.getElementById('languageSelector').value = savedLang;

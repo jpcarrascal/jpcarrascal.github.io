@@ -24,7 +24,7 @@ A multilingual static project page showcasing the InTangible artwork with image 
 ### 1. Language Selector
 - **Position**: Top-right of content area, inside main wrapper
 - **Format**: Dropdown select element
-- **Options**: Español, English, Català
+- **Options**: English, Español, Català (English as default)
 - **Styling**: Consistent with site's button styling
 - **Functionality**: JavaScript-based language switching with localStorage persistence
 
@@ -48,7 +48,7 @@ A multilingual static project page showcasing the InTangible artwork with image 
 ### 5. System Diagram
 - **Image**: `intangible-diagram.png`
 - **Size**: 50% width, centered
-- **Caption**: "Arquitectura del sistema" (translatable)
+- **Caption**: "System architecture" (translatable)
 - **Functionality**: Clickable to view full-size
 
 ### 6. Publication Reference
@@ -57,7 +57,7 @@ A multilingual static project page showcasing the InTangible artwork with image 
 - **Content**: Academic citation with clickable DOI link
 - **Format**: 
   ```
-  Publicación: (translatable label)
+  Publication: (translatable label)
   Juan Pablo Carrascal and Ina Ghita. 2023. InTangible: A Reflection On Digital vs. Physical Co-Ownership. In Proceedings of the Seventeenth International Conference on Tangible, Embedded, and Embodied Interaction (TEI '23). Association for Computing Machinery, New York, NY, USA, Article 61, 1–2. https://doi.org/10.1145/3569009.3576187
   ```
 
@@ -69,7 +69,7 @@ A multilingual static project page showcasing the InTangible artwork with image 
 
 ### Multi-language Implementation
 - **Storage method**: Embedded JavaScript object in HTML
-- **Languages**: Spanish (es), English (en), Catalan (ca)
+- **Languages**: English (en) - default, Spanish (es), Catalan (ca)
 - **Implementation**: Data attributes (`data-i18n`) + JavaScript switcher
 - **Persistence**: localStorage for user preference
 - **Accessibility**: Document language attribute updates
@@ -108,7 +108,7 @@ A multilingual static project page showcasing the InTangible artwork with image 
 - **Language switching**: Dynamic content updates without page reload
 - **Preference storage**: localStorage integration
 - **Initialization**: Auto-detect saved language on page load
-- **Error handling**: Fallback to Spanish if translation missing
+- **Error handling**: Fallback to English if translation missing
 
 ## File Structure
 ```
@@ -143,14 +143,15 @@ projects/intangible/
 
 ## Content Guidelines
 
-### Spanish (Original)
+### English (Default)
 - Academic tone appropriate for art/technology research
-- Technical terms: NFT, co-propiedad, técnica mixta
-
-### English Translation
-- Maintain academic register
 - Technical precision for research context
 - International English conventions
+- Technical terms: NFT, co-ownership, mixed media
+
+### Spanish Translation
+- Maintain academic register
+- Technical terms: NFT, co-propiedad, técnica mixta
 
 ### Catalan Translation  
 - Regional linguistic standards
