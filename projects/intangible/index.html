@@ -1,42 +1,4 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-    "http://www.w3.org/TR/xhtml1/D    .image-row-item img:hover {
-        opacity: 0.8;
-    }
-    
-    .language-selector {
-        text-align: right;
-        margin-bottom: 20px;
-    }
-    
-    .language-dropdown {
-        background-color: rgba(0,0,0,0.4);
-        color: white;
-        border: none;
-        padding: 10px 20px;
-        border-radius: 7px;
-        cursor: pointer;
-        font-family: 'Lato', sans-serif;
-        font-size: 0.9em;
-        transition: background-color 0.3s ease;
-        text-decoration: none;
-    }
-    
-    .language-dropdown:hover {
-        background-color: #137FFF;
-    }
-    
-    .language-dropdown:focus {
-        outline: none;
-        background-color: #137FFF;
-    }
-    
-    .language-dropdown option {
-        background-color: #333;
-        color: white;
-        padding: 8px;
-    }
-    
-    .image-caption {tml1-strict.dtd">
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 
 <head>
@@ -54,155 +16,38 @@
 <title>InTangible: A Reflection on Digital vs. Physical Co-Ownership | JP Carrascal</title>
 <link href="../../style.css" type="text/css" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css?family=Lato:700|Lato" rel="stylesheet">
+<link href="../project-template.css" type="text/css" rel="stylesheet"/>
 <style>
-    /* Override background image from main style.css */
-    body {
-        background-image: none;
-        background-color: #FFF;
-    }
-    
-    /* Override flex container behavior from main CSS */
-    #flex-container {
-        position: static;
-        height: auto;
-        display: block;
-    }
-    
-    #wrap {
-        width: 100%;
-        margin: 0;
-    }
-    
-    /* Additional styles for project page */
-    .project-content {
-        max-width: 800px;
-        margin: 0 auto;
-        padding: 20px;
-        box-sizing: border-box;
-    }
-    
-    .project-header {
-        text-align: center;
-        margin-bottom: 30px;
-    }
-    
-    .project-title {
-        font-family: 'lato', sans-serif;
-        font-size: 2.5em;
-        letter-spacing: 0.05em;
-        color: #000;
-        margin-bottom: 10px;
-    }
-    
-    .project-authors {
-        font-size: 1.2em;
-        color: #666;
-        margin-bottom: 20px;
-        font-style: italic;
-    }
-    
-    .project-description {
-        font-size: 1.1em;
-        line-height: 1.6em;
-        text-align: justify;
-        margin-bottom: 30px;
-    }
-    
-    .project-images {
-        display: flex;
-        flex-direction: column;
-        gap: 20px;
-        margin-bottom: 30px;
-    }
-    
-    .image-container {
-        text-align: center;
-    }
-    
+    /* InTangible specific overrides */
     .image-container img {
-        max-width: 50%;
-        height: auto;
-        cursor: pointer;
-        transition: opacity 0.3s ease;
+        max-width: 50%; /* Smaller images for InTangible */
     }
     
-    .image-container img:hover {
-        opacity: 0.8;
+    .language-selector {
+        text-align: right; /* Right alignment for InTangible */
     }
     
-    .image-caption {
-        font-size: 0.9em;
-        color: #666;
-        margin-top: 8px;
-        font-style: italic;
-    }
-    
-    .image-row {
-        display: flex;
-        justify-content: space-between;
-        gap: 20px;
-        margin-bottom: 30px;
-        width: 100%;
-    }
-    
-    .image-row-item {
-        flex: 1;
-        text-align: center;
-    }
-    
-    .image-row-item img {
-        width: 100%;
-        height: 300px;
-        object-fit: contain;
-        cursor: pointer;
-        transition: opacity 0.3s ease;
-    }
-    
-    .image-row-item img:hover {
-        opacity: 0.8;
-    }
-    
-    .back-link {
-        margin-top: 30px;
-        text-align: center;
-    }
-    
-    .back-link a {
-        background-color: rgba(0,0,0,0.4);
+    .language-dropdown {
+        background-color: rgba(0,0,0,0.4); /* Dark dropdown for InTangible */
         color: white;
+        border: none;
         padding: 10px 20px;
-        text-decoration: none;
         border-radius: 7px;
-        transition: background-color 0.3s ease;
+        font-size: 0.9em;
     }
     
-    .back-link a:hover {
+    .language-dropdown:hover,
+    .language-dropdown:focus {
         background-color: #137FFF;
     }
     
+    .language-dropdown option {
+        background-color: #333;
+        color: white;
+        padding: 8px;
+    }
+    
     @media screen and (max-width: 900px) {
-        .project-content {
-            padding: 15px;
-        }
-        
-        .project-title {
-            font-size: 2em;
-        }
-        
-        .project-images {
-            gap: 15px;
-        }
-        
-        .image-row {
-            flex-direction: column;
-            gap: 15px;
-        }
-        
-        .language-selector {
-            text-align: center;
-            margin-bottom: 15px;
-        }
-        
         .language-dropdown {
             padding: 8px 16px;
             font-size: 0.85em;
@@ -259,14 +104,14 @@
                 </div>
             </div>
 
-            <div class="project-description">    
+            <div class="project-description">
                 <p data-i18n="description2">InTangible is a mixed media artwork: a connected object that captures images of handcrafted fabric and sends them over the network. Mounted on an old recycled 3D printer, a digital camera with integrated RGB LEDs slides over the weave and allows remote users to enjoy a new visual, intimate and dreamlike dimension. The texture, previously static and monochromatic, transforms into colorful and abstract digital landscapes, while becoming a material object designed to be exhibited in a physical space.</p>
             </div>
             
-            <div style="margin-top: 30px; padding: 20px; background-color: rgba(0,0,0,0.05); border-radius: 8px;">
-                <h3 style="margin-top: 0; font-size: 1.1em; color: #333;" data-i18n="publication_label">Publication:</h3>
-                <p style="font-size: 0.95em; line-height: 1.5; margin-bottom: 0; text-align: justify;">
-                    Juan Pablo Carrascal and Ina Ghita. 2023. InTangible: A Reflection On Digital vs. Physical Co-Ownership. In Proceedings of the Seventeenth International Conference on Tangible, Embedded, and Embodied Interaction (TEI '23). Association for Computing Machinery, New York, NY, USA, Article 61, 1–2. <a href="https://doi.org/10.1145/3569009.3576187" target="_blank" style="color: #137FFF;">https://doi.org/10.1145/3569009.3576187</a>
+            <div class="publication-section">
+                <h3 data-i18n="publication_label">Publication:</h3>
+                <p>
+                    Juan Pablo Carrascal and Ina Ghita. 2023. InTangible: A Reflection On Digital vs. Physical Co-Ownership. In Proceedings of the Seventeenth International Conference on Tangible, Embedded, and Embodied Interaction (TEI '23). Association for Computing Machinery, New York, NY, USA, Article 61, 1–2. <a href="https://doi.org/10.1145/3569009.3576187" target="_blank">https://doi.org/10.1145/3569009.3576187</a>
                 </p>
             </div>
             
@@ -274,10 +119,9 @@
                 <a href="javascript:history.back()" data-i18n="back_button">← Back</a>
             </div>
             
-            <div style="text-align: center; margin-top: 20px; font-size: 0.9em; color: #666;" data-i18n="contact">
+            <div class="contact-info" data-i18n="contact">
                 Contact: jp [at] jpcarrascal [dot] com
             </div>
-            
             
         </div>
     </div>
@@ -286,15 +130,6 @@
 <script>
 // Language translations
 const translations = {
-    es: {
-        title: "InTangible: una reflexión sobre la co-propiedad digital vs. física.",
-        description1: "Con InTangible, buscamos cuestionar la propiedad clásica del arte, que solo permite a unas pocas personas poseer un número selecto de obras. Ninguna persona es propietaria absoluta de un lienzo digital. En cambio, puede ser co-propiedad de los usuarios que adquieren fragmentos del mismo en un mercado de NFT (Tokens No Fungibles). Creemos que la co-propiedad del arte permitiría a un grupo más diverso poseer y coleccionar arte, lo que, a su vez, cambiaría la dinámica tanto de la creación artística como de la interacción con el arte.",
-        description2: "InTangible es una obra de arte de técnica mixta: un objeto conectado que captura imágenes de una tejido artesanal y las envía a través de la red. Montada sobre una vieja impresora 3D reciclada, una cámara digital con LED RGB integrados, se desliza sobre el tramado y permite a los usuarios remotos disfrutar de una nueva dimensión visual, íntima y onírica. La textura, antes estática y monocromática, se transforma en coloridos y abstractos paisajes digitales, a la vez que se convierte en un objeto material diseñado para ser exhibido en un espacio físico.",
-        diagram_caption: "Arquitectura del sistema",
-        publication_label: "Publicación:",
-        back_button: "← Atrás",
-        contact: "Contacto: jp [at] jpcarrascal [dot] com"
-    },
     en: {
         title: "InTangible: A Reflection on Digital vs. Physical Co-Ownership",
         description1: "With InTangible, we seek to question the classical ownership of art, which only allows a few people to own a select number of works. No person is the absolute owner of a digital canvas. Instead, it can be co-owned by users who acquire fragments of it in an NFT (Non-Fungible Token) marketplace. We believe that co-ownership of art would allow a more diverse group to own and collect art, which, in turn, would change the dynamics of both artistic creation and interaction with art.",
@@ -303,6 +138,15 @@ const translations = {
         publication_label: "Publication:",
         back_button: "← Back",
         contact: "Contact: jp [at] jpcarrascal [dot] com"
+    },
+    es: {
+        title: "InTangible: una reflexión sobre la co-propiedad digital vs. física.",
+        description1: "Con InTangible, buscamos cuestionar la propiedad clásica del arte, que solo permite a unas pocas personas poseer un número selecto de obras. Ninguna persona es propietaria absoluta de un lienzo digital. En cambio, puede ser co-propiedad de los usuarios que adquieren fragmentos del mismo en un mercado de NFT (Tokens No Fungibles). Creemos que la co-propiedad del arte permitiría a un grupo más diverso poseer y coleccionar arte, lo que, a su vez, cambiaría la dinámica tanto de la creación artística como de la interacción con el arte.",
+        description2: "InTangible es una obra de arte de técnica mixta: un objeto conectado que captura imágenes de una tejido artesanal y las envía a través de la red. Montada sobre una vieja impresora 3D reciclada, una cámara digital con LED RGB integrados, se desliza sobre el tramado y permite a los usuarios remotos disfrutar de una nueva dimensión visual, íntima y onírica. La textura, antes estática y monocromática, se transforma en coloridos y abstractos paisajes digitales, a la vez que se convierte en un objeto material diseñado para ser exhibido en un espacio físico.",
+        diagram_caption: "Arquitectura del sistema",
+        publication_label: "Publicación:",
+        back_button: "← Atrás",
+        contact: "Contacto: jp [at] jpcarrascal [dot] com"
     },
     ca: {
         title: "InTangible: una reflexió sobre la co-propietat digital vs. física",
