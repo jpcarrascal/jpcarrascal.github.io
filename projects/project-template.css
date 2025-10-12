@@ -176,12 +176,11 @@ body {
 }
 
 /* Navigation and contact styling */
-.back-link {
+.project-link {
     margin-top: 30px;
-    text-align: center;
 }
 
-.back-link a {
+.project-link a {
     background-color: rgba(0,0,0,0.4);
     color: white;
     padding: 10px 20px;
@@ -190,7 +189,7 @@ body {
     transition: background-color 0.3s ease;
 }
 
-.back-link a:hover {
+.project-link a:hover {
     background-color: #137FFF;
 }
 

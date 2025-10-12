@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-15242862-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-15242862-1');
+</script>
+
+<meta name="viewport" content="width=device-width,user-scalable=no" />
+<title>Projects | JP Carrascal</title>
+<link href="../style.css" type="text/css" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css?family=Lato:700|Lato" rel="stylesheet">
+<link href="project-template.css" type="text/css" rel="stylesheet"/>
+
+<style>
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.project-card {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.project-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.project-info {
+    padding: 20px;
+}
+
+.project-info h3 {
+    margin: 0 0 10px 0;
+    font-family: 'Lato', sans-serif;
+    font-size: 1.4em;
+    color: #333;
+}
+
+.project-info p {
+    margin: 0 0 15px 0;
+    color: #666;
+    line-height: 1.5;
+}
+
+</style>
+</head>
+<body>
+
+<div id="flex-container">
+    <div id="wrap">
+        <div class="project-content">
+            <div class="project-header">
+                <h1 class="project-title">Projects</h1>
+                <div class="project-authors">Interactive Media & Digital Arts</div>
+            </div>
+            
+            <div class="projects-grid">
+                <div class="project-card">
+                    <img src="intangible/images/intangible-diagram.png" alt="InTangible Project">
+                    <div class="project-info">
+                        <h3>InTangible</h3>
+                        <p>A Reflection on Digital vs. Physical Co-Ownership</p>
+                        <div class="project-link">
+                            <a href="intangible/">View Project</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="project-card">
+                    <img src="multitouchmixer/images/interface.jpg" alt="Multitouch Mixer">
+                    <div class="project-info">
+                        <h3>Multitouch Mixer</h3>
+                        <p>Interface for Audio Mixing with Multitouch Technology</p>
+                        <div class="project-link">
+                            <a href="multitouchmixer/">View Project</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
