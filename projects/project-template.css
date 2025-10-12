@@ -159,8 +159,8 @@ body {
 .media-row-item iframe {
     width: 100%;
     height: 250px;
-    border-radius: 8px;
     border: none;
+    background-color: #000;
 }
 
 .media-row-item img {
@@ -169,7 +169,6 @@ body {
     object-fit: contain;
     cursor: pointer;
     transition: opacity 0.3s ease;
-    border-radius: 8px;
 }
 
 .media-row-item img:hover {
