@@ -1,0 +1,835 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Claire's Goggles Control</title>
+    <style>
+        /* Reset and base styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Lucida Sans', 'Lucida Sans Unicode', 'Lucida Grande', sans-serif;
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+            color: #e0e0e0;
+            min-height: 100vh;
+            overflow-x: hidden;
+            width: 100%;
+        }
+
+        .app-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+        }
+
+        /* Header */
+        .app-header {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            padding: 20px;
+            margin-bottom: 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .app-header h1 {
+            font-size: 2rem;
+            background: linear-gradient(45deg, #b0b0b0, #808080);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            flex-shrink: 0;
+            word-break: break-word;
+        }
+
+        .connection-status {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 10px 20px;
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 25px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            flex-shrink: 0;
+            min-width: 0;
+        }
+
+        .status-indicator {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: #ff4444;
+            transition: background 0.3s ease;
+            animation: pulse 2s infinite;
+        }
+
+        .status-indicator.connected {
+            background: #44ff44;
+            animation: none;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+
+        .status-text {
+            font-weight: 500;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            white-space: nowrap;
+        }
+
+        /* Main control panel */
+        .control-panel {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        .connection-message {
+            text-align: center;
+            padding: 60px 20px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 20px;
+            border: 2px dashed rgba(255, 255, 255, 0.2);
+        }
+
+        .connection-message h2 {
+            margin-bottom: 15px;
+            color: #b0b0b0;
+        }
+
+        .connection-message p {
+            margin-bottom: 30px;
+            opacity: 0.8;
+            line-height: 1.6;
+        }
+
+        .connect-btn {
+            background: linear-gradient(45deg, #ff6b6b, #4ecdc4);
+            color: white;
+            border: none;
+            padding: 15px 40px;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .connect-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(255, 107, 107, 0.3);
+        }
+
+        .connect-btn:active {
+            transform: translateY(0);
+        }
+
+        /* Controls container */
+        .controls-container {
+            display: grid;
+            gap: 30px;
+        }
+
+        /* Sections */
+        section {
+            background: rgba(255, 255, 255, 0.08);
+            border-radius: 20px;
+            padding: 25px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        section h2 {
+            margin-bottom: 20px;
+            color: #b0b0b0;
+            font-size: 1.4rem;
+        }
+
+        /* Program buttons */
+        .program-buttons {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            gap: 15px;
+            width: 100%;
+        }
+
+        .program-btn {
+            background: linear-gradient(145deg, #404040, #303030);
+            color: #e0e0e0;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            padding: 15px 20px;
+            border-radius: 12px;
+            font-size: 1rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            position: relative;
+            overflow: hidden;
+            min-width: 0;
+            word-break: break-word;
+        }
+
+        .program-btn:hover {
+            background: linear-gradient(145deg, #505050, #404040);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(78, 205, 196, 0.2);
+        }
+
+        .program-btn:active {
+            transform: translateY(0);
+            background: linear-gradient(145deg, #303030, #404040);
+        }
+
+        .program-btn.active {
+            background: linear-gradient(145deg, #808080, #606060);
+            color: #ffffff;
+            font-weight: 600;
+        }
+
+        /* CC Controls */
+        .cc-controls {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            width: 100%;
+        }
+
+        .cc-control {
+            background: rgba(0, 0, 0, 0.2);
+            padding: 20px;
+            border-radius: 15px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            min-width: 0;
+            width: 100%;
+        }
+
+        /* RGB Control Specific Styling */
+        .red-control {
+            border: 1px solid rgba(255, 99, 99, 0.2);
+            background: rgba(255, 0, 0, 0.03);
+        }
+
+        .green-control {
+            border: 1px solid rgba(99, 255, 99, 0.2);
+            background: rgba(0, 255, 0, 0.03);
+        }
+
+        .blue-control {
+            border: 1px solid rgba(99, 99, 255, 0.2);
+            background: rgba(0, 0, 255, 0.03);
+        }
+
+        .cc-control label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: 500;
+            font-size: 1.1rem;
+        }
+
+        .red-control label {
+            color: #ff6363;
+        }
+
+        .green-control label {
+            color: #63ff63;
+        }
+
+        .blue-control label {
+            color: #6363ff;
+        }
+
+        .cc-slider {
+            width: 100%;
+            height: 8px;
+            border-radius: 4px;
+            background: rgba(255, 255, 255, 0.2);
+            outline: none;
+            appearance: none;
+            margin-bottom: 10px;
+        }
+
+        /* Red slider styling */
+        .red-slider::-webkit-slider-thumb {
+            appearance: none;
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            background: linear-gradient(45deg, #ff4444, #ff6666);
+            cursor: pointer;
+            border: 3px solid white;
+            box-shadow: 0 2px 10px rgba(255, 68, 68, 0.5);
+            transition: transform 0.2s ease;
+        }
+
+        .red-slider::-webkit-slider-thumb:hover {
+            transform: scale(1.1);
+        }
+
+        .red-slider::-moz-range-thumb {
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            background: linear-gradient(45deg, #ff4444, #ff6666);
+            cursor: pointer;
+            border: 3px solid white;
+            box-shadow: 0 2px 10px rgba(255, 68, 68, 0.5);
+        }
+
+        /* Green slider styling */
+        .green-slider::-webkit-slider-thumb {
+            appearance: none;
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            background: linear-gradient(45deg, #44ff44, #66ff66);
+            cursor: pointer;
+            border: 3px solid white;
+            box-shadow: 0 2px 10px rgba(68, 255, 68, 0.5);
+            transition: transform 0.2s ease;
+        }
+
+        .green-slider::-webkit-slider-thumb:hover {
+            transform: scale(1.1);
+        }
+
+        .green-slider::-moz-range-thumb {
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            background: linear-gradient(45deg, #44ff44, #66ff66);
+            cursor: pointer;
+            border: 3px solid white;
+            box-shadow: 0 2px 10px rgba(68, 255, 68, 0.5);
+        }
+
+        /* Blue slider styling */
+        .blue-slider::-webkit-slider-thumb {
+            appearance: none;
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            background: linear-gradient(45deg, #4444ff, #6666ff);
+            cursor: pointer;
+            border: 3px solid white;
+            box-shadow: 0 2px 10px rgba(68, 68, 255, 0.5);
+            transition: transform 0.2s ease;
+        }
+
+        .blue-slider::-webkit-slider-thumb:hover {
+            transform: scale(1.1);
+        }
+
+        .blue-slider::-moz-range-thumb {
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            background: linear-gradient(45deg, #4444ff, #6666ff);
+            cursor: pointer;
+            border: 3px solid white;
+            box-shadow: 0 2px 10px rgba(68, 68, 255, 0.5);
+        }
+
+        .cc-value {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.1);
+            color: #ffffff;
+            padding: 5px 10px;
+            border-radius: 8px;
+            font-weight: 600;
+            min-width: 40px;
+            text-align: center;
+            font-family: 'Lucida Sans', 'Lucida Sans Unicode', 'Lucida Grande', sans-serif;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        /* Additional controls */
+        .note-control {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .note-btn {
+            background: linear-gradient(145deg, #606060, #404040);
+            color: white;
+            border: none;
+            padding: 25px 60px;
+            border-radius: 20px;
+            font-size: 1.8rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            box-shadow: 0 8px 25px rgba(96, 96, 96, 0.4);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .note-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 35px rgba(96, 96, 96, 0.6);
+            background: linear-gradient(145deg, #505050, #303030);
+        }
+
+        .note-btn:active {
+            transform: translateY(-1px);
+            box-shadow: 0 6px 20px rgba(96, 96, 96, 0.4);
+        }
+
+        .note-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .note-btn:hover::before {
+            left: 100%;
+        }
+
+        .note-btn.triggered {
+            transform: translateY(-1px) scale(0.95);
+            box-shadow: 0 4px 15px rgba(96, 96, 96, 0.6);
+            background: linear-gradient(145deg, #505050, #303030);
+        }
+
+        /* Responsive design */
+        @media (max-width: 768px) {
+            .app-container {
+                padding: 15px;
+            }
+            
+            .app-header {
+                flex-direction: column;
+                gap: 15px;
+                text-align: center;
+                padding: 15px;
+            }
+            
+            .app-header h1 {
+                font-size: 1.5rem;
+            }
+            
+            .program-buttons {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 10px;
+            }
+            
+            .cc-controls {
+                grid-template-columns: 1fr;
+                gap: 15px;
+            }
+            
+            .cc-control {
+                padding: 15px;
+            }
+            
+            section {
+                padding: 15px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .app-container {
+                padding: 10px;
+            }
+            
+            .app-header {
+                padding: 15px 10px;
+            }
+            
+            .app-header h1 {
+                font-size: 1.3rem;
+            }
+            
+            section {
+                padding: 15px 10px;
+            }
+            
+            .program-buttons {
+                grid-template-columns: 1fr;
+                gap: 10px;
+            }
+            
+            .program-btn {
+                padding: 12px 15px;
+                font-size: 0.9rem;
+            }
+            
+            .cc-control {
+                padding: 15px 10px;
+            }
+            
+            .note-btn {
+                padding: 20px 40px;
+                font-size: 1.5rem;
+            }
+        }
+
+        @media (max-width: 360px) {
+            .app-container {
+                padding: 5px;
+            }
+            
+            .app-header h1 {
+                font-size: 1.1rem;
+            }
+            
+            .connection-status {
+                padding: 8px 15px;
+                font-size: 0.8rem;
+            }
+            
+            .note-btn {
+                padding: 15px 30px;
+                font-size: 1.3rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="app-container">
+        <header class="app-header">
+            <h1>Claire's Goggles Control Panel</h1>
+            <div class="connection-status" id="connectionStatus">
+                <span class="status-indicator" id="statusIndicator"></span>
+                <span class="status-text" id="statusText">Disconnected</span>
+            </div>
+        </header>
+
+        <main class="control-panel" id="controlPanel">
+            <div class="connection-message" id="connectionMessage">
+                <h2>Connect Claire's Goggles</h2>
+                <p>Please connect your MIDI device and click the button below to enable MIDI access.</p>
+                <button class="connect-btn" id="connectBtn">Enable MIDI</button>
+            </div>
+
+            <div class="controls-container" id="controlsContainer" style="display: none;">
+                <!-- Program Change Section -->
+                <section class="program-section">
+                    <h2>Animation</h2>
+                    <div class="program-buttons">
+                        <button class="program-btn" data-program="5">Flash</button>
+                        <button class="program-btn" data-program="1">All On</button>
+                        <button class="program-btn" data-program="2">Pulsating</button>
+                        <button class="program-btn" data-program="7">Strobe</button>
+                        <button class="program-btn" data-program="4">Rotate</button>
+                        <button class="program-btn" data-program="10">Bounce</button>
+                    </div>
+                </section>
+
+                <!-- CC Controls Section -->
+                <section class="cc-section">
+                    <h2>RGB Color Controls</h2>
+                    <div class="cc-controls">
+                        <div class="cc-control red-control">
+                            <label for="cc102">Red</label>
+                            <input type="range" id="cc102" class="cc-slider red-slider" 
+                                   data-cc="102" min="0" max="127" value="127">
+                            <span class="cc-value" id="cc102-value">127</span>
+                        </div>
+                        
+                        <div class="cc-control green-control">
+                            <label for="cc103">Green</label>
+                            <input type="range" id="cc103" class="cc-slider green-slider" 
+                                   data-cc="103" min="0" max="127" value="127">
+                            <span class="cc-value" id="cc103-value">127</span>
+                        </div>
+                        
+                        <div class="cc-control blue-control">
+                            <label for="cc104">Blue</label>
+                            <input type="range" id="cc104" class="cc-slider blue-slider" 
+                                   data-cc="104" min="0" max="127" value="127">
+                            <span class="cc-value" id="cc104-value">127</span>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Additional Controls -->
+                <section class="additional-controls">
+                    <h2>Trigger Control</h2>
+                    
+                    <!-- Big Note Button -->
+                    <div class="note-control">
+                        <button class="note-btn" id="noteBtn">TRIGGER</button>
+                    </div>
+                </section>
+            </div>
+        </main>
+    </div>
+
+    <script>
+        class GogglesController {
+            constructor() {
+                this.midiAccess = null;
+                this.gogglesDevice = null;
+                this.deviceName = "Claire's Goggles";
+                this.currentChannel = 0; // MIDI channel 1 (0-indexed)
+                this.activeProgram = null;
+                
+                this.init();
+            }
+
+            async init() {
+                this.setupEventListeners();
+                this.updateConnectionStatus(false);
+            }
+
+            setupEventListeners() {
+                // Connect button
+                document.getElementById('connectBtn').addEventListener('click', () => {
+                    this.requestMIDIAccess();
+                });
+
+                // Program change buttons
+                document.querySelectorAll('.program-btn').forEach(btn => {
+                    btn.addEventListener('click', (e) => {
+                        const program = parseInt(e.target.dataset.program);
+                        this.sendProgramChange(program);
+                        this.setActiveProgram(e.target);
+                    });
+                });
+
+                // CC sliders
+                document.querySelectorAll('.cc-slider').forEach(slider => {
+                    slider.addEventListener('input', (e) => {
+                        const ccNumber = parseInt(e.target.dataset.cc);
+                        const value = parseInt(e.target.value);
+                        this.sendControlChange(ccNumber, value);
+                        this.updateCCValue(e.target.id, value);
+                    });
+                });
+
+                // Big note button
+                document.getElementById('noteBtn').addEventListener('click', () => {
+                    this.triggerNote();
+                });
+
+                // Spacebar trigger
+                document.addEventListener('keydown', (e) => {
+                    // Check if spacebar is pressed and prevent if user is typing in an input
+                    if (e.code === 'Space' && !e.target.matches('input, textarea, select, [contenteditable]')) {
+                        e.preventDefault(); // Prevent page scroll
+                        this.triggerNote();
+                    }
+                });
+            }
+
+            async requestMIDIAccess() {
+                try {
+                    console.log('Requesting MIDI access...');
+                    this.midiAccess = await navigator.requestMIDIAccess();
+                    
+                    console.log('MIDI access granted');
+                    this.setupMIDIListeners();
+                    this.showControls(); // Show controls immediately after MIDI access is granted
+                    this.scanForDevice(); // Then scan for the specific device
+                    
+                } catch (error) {
+                    console.error('Failed to get MIDI access:', error);
+                    alert('Failed to access MIDI. Please ensure your browser supports WebMIDI API and you have granted permission.');
+                }
+            }
+
+            setupMIDIListeners() {
+                if (!this.midiAccess) return;
+
+                // Listen for device connections/disconnections
+                this.midiAccess.onstatechange = (event) => {
+                    console.log('MIDI device state changed:', event.port.name, event.port.state);
+                    this.scanForDevice();
+                };
+            }
+
+            scanForDevice() {
+                if (!this.midiAccess) return;
+
+                console.log('Scanning for MIDI devices...');
+                
+                // Check outputs for Claire's Goggles
+                for (let output of this.midiAccess.outputs.values()) {
+                    console.log(`Found MIDI output: ${output.name}`);
+                    
+                    if (output.name.includes(this.deviceName) || output.name.toLowerCase().includes("claire") || output.name.toLowerCase().includes("goggles")) {
+                        console.log(`Found Claire's Goggles: ${output.name}`);
+                        this.gogglesDevice = output;
+                        this.updateConnectionStatus(true);
+                        return;
+                    }
+                }
+
+                // If not found, check if any device is connected and log available devices
+                const outputs = Array.from(this.midiAccess.outputs.values());
+                if (outputs.length > 0) {
+                    console.log('Available MIDI devices:');
+                    outputs.forEach(output => console.log(`- ${output.name}`));
+                    
+                    // For development: if there's only one device, use it
+                    if (outputs.length === 1) {
+                        console.log(`Using available device: ${outputs[0].name}`);
+                        this.gogglesDevice = outputs[0];
+                        this.updateConnectionStatus(true);
+                        return;
+                    }
+                }
+
+                // Device not found but controls are already shown
+                this.gogglesDevice = null;
+                this.updateConnectionStatus(false);
+                console.log(`${this.deviceName} not found`);
+            }
+
+            updateConnectionStatus(connected) {
+                const statusIndicator = document.getElementById('statusIndicator');
+                const statusText = document.getElementById('statusText');
+                
+                if (connected) {
+                    statusIndicator.classList.add('connected');
+                    statusText.textContent = 'Connected';
+                } else {
+                    statusIndicator.classList.remove('connected');
+                    statusText.textContent = 'Disconnected';
+                }
+            }
+
+            showControls() {
+                document.getElementById('connectionMessage').style.display = 'none';
+                document.getElementById('controlsContainer').style.display = 'block';
+            }
+
+            sendProgramChange(program) {
+                if (!this.gogglesDevice) {
+                    console.warn('No MIDI device connected');
+                    return;
+                }
+
+                try {
+                    // Program Change message: [0xC0 | channel, program]
+                    const message = [0xC0 | this.currentChannel, program];
+                    this.gogglesDevice.send(message);
+                    console.log(`Sent Program Change: Channel ${this.currentChannel + 1}, Program ${program + 1}`);
+                } catch (error) {
+                    console.error('Failed to send Program Change:', error);
+                }
+            }
+
+            sendControlChange(ccNumber, value) {
+                if (!this.gogglesDevice) {
+                    console.warn('No MIDI device connected');
+                    return;
+                }
+
+                try {
+                    // Control Change message: [0xB0 | channel, controller, value]
+                    const message = [0xB0 | this.currentChannel, ccNumber, value];
+                    this.gogglesDevice.send(message);
+                    console.log(`Sent CC: Channel ${this.currentChannel + 1}, CC${ccNumber} = ${value}`);
+                } catch (error) {
+                    console.error('Failed to send Control Change:', error);
+                }
+            }
+
+            triggerNote() {
+                // Animate the button
+                const noteBtn = document.getElementById('noteBtn');
+                noteBtn.classList.add('triggered');
+                
+                // Send the MIDI note
+                this.sendNote(36);
+                
+                // Remove animation class after animation completes
+                setTimeout(() => {
+                    noteBtn.classList.remove('triggered');
+                }, 100);
+            }
+
+            sendNote(note, velocity = 127) {
+                if (!this.gogglesDevice) {
+                    console.warn('No MIDI device connected');
+                    return;
+                }
+
+                try {
+                    // Note On message: [0x90 | channel, note, velocity]
+                    const noteOnMessage = [0x90 | this.currentChannel, note, velocity];
+                    this.gogglesDevice.send(noteOnMessage);
+                    
+                    // Note Off message after a short delay: [0x80 | channel, note, 0]
+                    setTimeout(() => {
+                        const noteOffMessage = [0x80 | this.currentChannel, note, 0];
+                        this.gogglesDevice.send(noteOffMessage);
+                    }, 100); // 100ms note duration
+                    
+                    console.log(`Sent Note: Channel ${this.currentChannel + 1}, Note ${note}, Velocity ${velocity}`);
+                } catch (error) {
+                    console.error('Failed to send Note:', error);
+                }
+            }
+
+            setActiveProgram(button) {
+                // Remove active class from all program buttons
+                document.querySelectorAll('.program-btn').forEach(btn => {
+                    btn.classList.remove('active');
+                });
+                
+                // Add active class to clicked button
+                button.classList.add('active');
+                this.activeProgram = parseInt(button.dataset.program);
+            }
+
+            updateCCValue(sliderId, value) {
+                const valueDisplay = document.getElementById(sliderId + '-value');
+                if (valueDisplay) {
+                    valueDisplay.textContent = value;
+                }
+            }
+        }
+
+        // Initialize the application when the page loads
+        document.addEventListener('DOMContentLoaded', () => {
+            console.log('Initializing Claire\'s Goggles Control Panel...');
+            
+            // Check for WebMIDI support
+            if (!navigator.requestMIDIAccess) {
+                alert('WebMIDI API is not supported in this browser. Please use Chrome, Edge, or Opera.');
+                return;
+            }
+            
+            new GogglesController();
+        });
+
+        // Additional utility functions
+        function midiNoteToFrequency(note) {
+            return 440 * Math.pow(2, (note - 69) / 12);
+        }
+
+        function frequencyToMidiNote(frequency) {
+            return Math.round(69 + 12 * Math.log2(frequency / 440));
+        }
+
+        // Export for potential future use
+        window.GogglesController = GogglesController;
+    </script>
+</body>
+</html>
