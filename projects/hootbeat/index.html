@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-15242862-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-15242862-1');
+</script>
+
+<meta name="viewport" content="width=device-width,user-scalable=no" />
+<title>HootBeat: A Platform for MIDI-Controlled Lighting Wearables | JP Carrascal</title>
+<link href="../../style.css" type="text/css" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css?family=Lato:700|Lato" rel="stylesheet">
+<link href="../project-template.css" type="text/css" rel="stylesheet"/>
+</head>
+<body>
+
+<div id="flex-container">
+    <div id="wrap">
+        <div class="project-content">
+            <div class="language-selector">
+                <select class="language-dropdown" id="languageSelector" onchange="switchLanguage(this.value)">
+                    <option value="en">English</option>
+                    <option value="es">Español</option>
+                    <option value="ca">Català</option>
+                </select>
+            </div>
+            
+            <div class="project-header">
+                <h1 class="project-title" data-i18n="title">HootBeat: A Platform for MIDI-Controlled Lighting Wearables</h1>
+                <div class="project-authors">JP Carrascal</div>
+            </div>
+            
+            <div style="text-align: center; margin-bottom: 30px;" data-i18n="subtitle">
+                A platform for MIDI-controlled lighting wearables.
+            </div>
+            
+            <div style="text-align: center; margin-bottom: 30px;">
+                <img src="images/hootbeat-block-diagram.jpg" alt="HootBeat System Block Diagram" style="max-width: 100%; height: auto;" />
+            </div>
+            
+            <h2 data-i18n="introduction-title">Introduction</h2>
+            <div style="text-align: justify; margin-bottom: 30px;" data-i18n="introduction">
+                HootBeat is a platform for MIDI-controlled lighting wearable and ambient devices. It lies at the intersection of technology, performing arts and fashion. Wearable technologies present a unique opportunity to performing arts in general and live music in particular. There is a whole generation of new wearable music instruments that take advantage of electronic technology for enhanced sound control. Some examples include the Mi.Mu gloves and the Wave and Neova rings. On the visual side, however, musicians do not have many options available. We aim at providing a solution with BLE-MIDI-powered wearables that feature RGB LED technology to augment the music performance. HootBeat wearables are, essentially, "lighting musical instruments". The system does not require a lighting technician to be set up. Instead, it uses interfaces already familiar to performing musicians, including drum triggers and a pedalboard controller.
+                <br><br>
+                Additionally, HootBeat allows device control from the audience. This means that attendees can take control of the light show, adding an unprecedented level of interaction between the performing artist and the audience.
+            </div>
+            
+            <h2 data-i18n="system-title">System Description</h2>
+            <div style="text-align: justify; margin-bottom: 30px;" data-i18n="system-description">
+                The prototype consists of these elements:
+                <br><br>
+                • <strong>The Brain</strong>, running on a computer with Wi-Fi and Bluetooth (for BLE-MIDI capabilities), a MIDI-USB interface, and custom software. It is the main hub of the system, connecting and orchestrating the other components.
+                <br><br>
+                • Several <strong>HootBeat Goggles</strong> equipped with LED rings. The Goggles are built around the ESP32 microcontroller to wirelessly connect to the Brain via BLE-MIDI. They feature multiple RGB LEDs in a ring configuration (one ring per eye), allowing to display vivid animations using a wide variety of colors. Currently developed animations include reacting to drum beats, oscillations between colors, and several rotating patterns.
+                <br><br>
+                • A custom-made <strong>pedalboard controller</strong> with BLE-MIDI capabilities (via CME's WIDI Jack). Built with an Arduino Micro microcontroller, this device allows to select different programs via MIDI Program Change messages. This way, different combinations of animations and colors can be used for different songs.
+                <br><br>
+                • A <strong>trigger-to-MIDI interface</strong> (currently a Roland TM-2) translates trigger signals from an acoustic drum kit to MIDI. The TM-2 plugs into the Brain with the MIDI-USB interface. Alternatively, an electronic drum kit can be also used to trigger light animations.
+                <br><br>
+                • A <strong>Cloud-based application</strong> for orchestration interaction with the audience.
+            </div>
+            
+            <h2 data-i18n="demos-title">Demos</h2>
+            <div style="margin-bottom: 30px;">
+                <h3 data-i18n="live-performance-title">Live Performance Demo</h3>
+                <p data-i18n="live-performance-intro">
+                    • <a href="http://www.spacebarman.com/" target="_blank">Spacebarman</a>, live in Barcelona (Festes de Maig, May 21st, 2022)
+                </p>
+                <div style="text-align: center; margin-bottom: 30px;">
+                    <iframe width="560" height="400" src="https://www.youtube.com/embed/l6MlIkAkm6g" 
+                            title="HootBeat - Live Performance Demo" frameborder="0" 
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                            allowfullscreen style="max-width: 100%; height: auto;">
+                    </iframe>
+                </div>
+                
+                <p data-i18n="demos-intro">
+                    The demos below used an electronic drum kit as opposed to an acoustic one with triggers.
+                </p>
+                
+                <h3 data-i18n="drums-only-title">Drums Only</h3>
+                <div style="text-align: center; margin-bottom: 30px;">
+                    <iframe width="560" height="400" src="https://www.youtube.com/embed/fSSJu2f_Yg4" 
+                            title="HootBeat - Drums Only Demo" frameborder="0" 
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                            allowfullscreen style="max-width: 100%; height: auto;">
+                    </iframe>
+                </div>
+                
+                <h3 data-i18n="fomo-title">Spacebarman - FOMO (Music Video)</h3>
+                <div style="text-align: center; margin-bottom: 30px;">
+                    <iframe width="560" height="400" src="https://www.youtube.com/embed/7elgfIqfh_I" 
+                            title="Spacebarman - FOMO (HootBeat Music Video)" frameborder="0" 
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                            allowfullscreen style="max-width: 100%; height: auto;">
+                    </iframe>
+                </div>
+                
+                <h3 data-i18n="additional-demo-title">Additional Demo</h3>
+                <div style="text-align: center; margin-bottom: 30px;">
+                    <iframe width="560" height="400" src="https://www.youtube.com/embed/2ACxdybIOLA" 
+                            title="HootBeat - Additional Demo" frameborder="0" 
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                            allowfullscreen style="max-width: 100%; height: auto;">
+                    </iframe>
+                </div>
+            </div>
+            
+            <div class="back-link">
+                <a href="javascript:history.back()" data-i18n="back_button">← Back</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+// Multilingual content
+const translations = {
+    en: {
+        title: "HootBeat: A Platform for MIDI-Controlled Lighting Wearables",
+        subtitle: "A platform for MIDI-controlled lighting wearables.",
+        "introduction-title": "Introduction",
+        introduction: "HootBeat is a platform for MIDI-controlled lighting wearable and ambient devices. It lies at the intersection of technology, performing arts and fashion. Wearable technologies present a unique opportunity to performing arts in general and live music in particular. There is a whole generation of new wearable music instruments that take advantage of electronic technology for enhanced sound control. Some examples include the Mi.Mu gloves and the Wave and Neova rings. On the visual side, however, musicians do not have many options available. We aim at providing a solution with BLE-MIDI-powered wearables that feature RGB LED technology to augment the music performance. HootBeat wearables are, essentially, \"lighting musical instruments\". The system does not require a lighting technician to be set up. Instead, it uses interfaces already familiar to performing musicians, including drum triggers and a pedalboard controller.\n\nAdditionally, HootBeat allows device control from the audience. This means that attendees can take control of the light show, adding an unprecedented level of interaction between the performing artist and the audience.",
+        "system-title": "System Description",
+        "system-description": "The prototype consists of these elements:\n\n• The Brain, running on a computer with Wi-Fi and Bluetooth (for BLE-MIDI capabilities), a MIDI-USB interface, and custom software. It is the main hub of the system, connecting and orchestrating the other components.\n\n• Several HootBeat Goggles equipped with LED rings. The Goggles are built around the ESP32 microcontroller to wirelessly connect to the Brain via BLE-MIDI. They feature multiple RGB LEDs in a ring configuration (one ring per eye), allowing to display vivid animations using a wide variety of colors. Currently developed animations include reacting to drum beats, oscillations between colors, and several rotating patterns.\n\n• A custom-made pedalboard controller with BLE-MIDI capabilities (via CME's WIDI Jack). Built with an Arduino Micro microcontroller, this device allows to select different programs via MIDI Program Change messages. This way, different combinations of animations and colors can be used for different songs.\n\n• A trigger-to-MIDI interface (currently a Roland TM-2) translates trigger signals from an acoustic drum kit to MIDI. The TM-2 plugs into the Brain with the MIDI-USB interface. Alternatively, an electronic drum kit can be also used to trigger light animations.\n\n• A Cloud-based application for orchestration interaction with the audience.",
+        "demos-title": "Demos",
+        "live-performance-title": "Live Performance Demo",
+        "live-performance-intro": "• Spacebarman, live in Barcelona (Festes de Maig, May 21st, 2022)",
+        "demos-intro": "The demos below used an electronic drum kit as opposed to an acoustic one with triggers.",
+        "drums-only-title": "Drums Only",
+        "fomo-title": "Spacebarman - FOMO (Music Video)",
+        "additional-demo-title": "Additional Demo",
+        back_button: "← Back"
+    },
+    es: {
+        title: "HootBeat: Una Plataforma para Wearables de Iluminación Controlados por MIDI",
+        subtitle: "Una plataforma para wearables de iluminación controlados por MIDI.",
+        "introduction-title": "Introducción",
+        introduction: "HootBeat es una plataforma para dispositivos wearables de iluminación controlados por MIDI y dispositivos ambientales. Se encuentra en la intersección de la tecnología, las artes escénicas y la moda. Las tecnologías wearables presentan una oportunidad única para las artes escénicas en general y la música en vivo en particular. Existe toda una generación de nuevos instrumentos musicales wearables que aprovechan la tecnología electrónica para un control de sonido mejorado. Algunos ejemplos incluyen los guantes Mi.Mu y los anillos Wave y Neova. En el lado visual, sin embargo, los músicos no tienen muchas opciones disponibles. Nuestro objetivo es proporcionar una solución con wearables alimentados por BLE-MIDI que cuentan con tecnología LED RGB para aumentar la interpretación musical. Los wearables HootBeat son, esencialmente, \"instrumentos musicales de iluminación\". El sistema no requiere que un técnico de iluminación lo configure. En su lugar, utiliza interfaces ya familiares para los músicos intérpretes, incluidos los disparadores de batería y un controlador de pedalera.\n\nAdemás, HootBeat permite el control del dispositivo desde la audiencia. Esto significa que los asistentes pueden tomar el control del espectáculo de luces, agregando un nivel sin precedentes de interacción entre el artista intérprete y la audiencia.",
+        "system-title": "Descripción del Sistema",
+        "system-description": "El prototipo consta de estos elementos:\n\n• El Cerebro, ejecutándose en una computadora con Wi-Fi y Bluetooth (para capacidades BLE-MIDI), una interfaz MIDI-USB y software personalizado. Es el centro principal del sistema, conectando y orquestando los otros componentes.\n\n• Varias Gafas HootBeat equipadas con anillos LED. Las Gafas están construidas alrededor del microcontrolador ESP32 para conectarse de forma inalámbrica al Cerebro a través de BLE-MIDI. Cuentan con múltiples LEDs RGB en una configuración de anillo (un anillo por ojo), lo que permite mostrar animaciones vívidas usando una amplia variedad de colores.\n\n• Un controlador de pedalera hecho a medida con capacidades BLE-MIDI (a través del WIDI Jack de CME). Construido con un microcontrolador Arduino Micro, este dispositivo permite seleccionar diferentes programas a través de mensajes MIDI Program Change.\n\n• Una interfaz de disparador a MIDI (actualmente un Roland TM-2) traduce las señales de disparador de un kit de batería acústica a MIDI.\n\n• Una aplicación basada en la nube para la interacción de orquestación con la audiencia.",
+        "demos-title": "Demos",
+        "live-performance-title": "Demo de Actuación en Vivo",
+        "live-performance-intro": "• Spacebarman, en vivo en Barcelona (Festes de Maig, 21 de mayo de 2022)",
+        "demos-intro": "Las demos a continuación usaron un kit de batería electrónica en lugar de una acústica con disparadores.",
+        "drums-only-title": "Solo Batería",
+        "fomo-title": "Spacebarman - FOMO (Video Musical)",
+        "additional-demo-title": "Demo Adicional",
+        back_button: "← Atrás"
+    },
+    ca: {
+        title: "HootBeat: Una Plataforma per Wearables d'Il·luminació Controlats per MIDI",
+        subtitle: "Una plataforma per wearables d'il·luminació controlats per MIDI.",
+        "introduction-title": "Introducció",
+        introduction: "HootBeat és una plataforma per dispositius wearables d'il·luminació controlats per MIDI i dispositius ambientals. Es troba a la intersecció de la tecnologia, les arts escèniques i la moda. Les tecnologies wearables presenten una oportunitat única per a les arts escèniques en general i la música en viu en particular. Hi ha tota una generació de nous instruments musicals wearables que aprofiten la tecnologia electrònica per a un control de so millorat. Alguns exemples inclouen els guants Mi.Mu i els anells Wave i Neova. Al costat visual, però, els músics no tenen moltes opcions disponibles. El nostre objectiu és proporcionar una solució amb wearables alimentats per BLE-MIDI que compten amb tecnologia LED RGB per augmentar la interpretació musical. Els wearables HootBeat són, essencialment, \"instruments musicals d'il·luminació\".\n\nA més, HootBeat permet el control del dispositiu des de l'audiència. Això significa que els assistents poden prendre el control de l'espectacle de llums, afegint un nivell sense precedents d'interacció entre l'artista intèrpret i l'audiència.",
+        "system-title": "Descripció del Sistema",
+        "system-description": "El prototip consta d'aquests elements:\n\n• El Cervell, executant-se en un ordinador amb Wi-Fi i Bluetooth (per capacitats BLE-MIDI), una interfície MIDI-USB i programari personalitzat.\n\n• Diverses Ulleres HootBeat equipades amb anells LED. Les Ulleres estan construïdes al voltant del microcontrolador ESP32 per connectar-se de forma inalàmbrica al Cervell a través de BLE-MIDI.\n\n• Un controlador de pedalera fet a mida amb capacitats BLE-MIDI (a través del WIDI Jack de CME).\n\n• Una interfície de disparador a MIDI (actualment un Roland TM-2) tradueix els senyals de disparador d'un kit de bateria acústica a MIDI.\n\n• Una aplicació basada en el núvol per a la interacció d'orquestració amb l'audiència.",
+        "demos-title": "Demos",
+        "live-performance-title": "Demo d'Actuació en Viu",
+        "live-performance-intro": "• Spacebarman, en viu a Barcelona (Festes de Maig, 21 de maig de 2022)",
+        "demos-intro": "Les demos a continuació van usar un kit de bateria electrònica en lloc d'una acústica amb disparadors.",
+        "drums-only-title": "Només Bateria",
+        "fomo-title": "Spacebarman - FOMO (Vídeo Musical)",
+        "additional-demo-title": "Demo Addicional",
+        back_button: "← Enrere"
+    }
+};
+
+// Language switching functionality
+function switchLanguage(lang) {
+    localStorage.setItem('preferredLanguage', lang);
+    document.querySelectorAll('[data-i18n]').forEach(element => {
+        const key = element.getAttribute('data-i18n');
+        if (translations[lang] && translations[lang][key]) {
+            if (key.includes('description') || key.includes('introduction') || key === 'demos') {
+                // For multi-paragraph content, preserve HTML structure
+                element.innerHTML = translations[lang][key].replace(/\n\n/g, '<br><br>').replace(/\n/g, '<br>');
+            } else {
+                element.textContent = translations[lang][key];
+            }
+        }
+    });
+}
+
+// Load preferred language on page load
+document.addEventListener('DOMContentLoaded', function() {
+    const savedLang = localStorage.getItem('preferredLanguage') || 'en';
+    document.getElementById('languageSelector').value = savedLang;
+    switchLanguage(savedLang);
+});
+</script>
+
+</body>
+</html>
