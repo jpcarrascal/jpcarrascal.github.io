@@ -22,9 +22,9 @@
         }
 
         .app-container {
-            max-width: 1200px;
+            max-width: 1080px;
             margin: 0 auto;
-            padding: 20px;
+            padding: 15px;
             min-height: 100vh;
             display: flex;
             flex-direction: column;
@@ -35,19 +35,19 @@
         .app-header {
             background: rgba(255, 255, 255, 0.1);
             backdrop-filter: blur(10px);
-            border-radius: 15px;
-            padding: 20px;
-            margin-bottom: 30px;
+            border-radius: 12px;
+            padding: 15px;
+            margin-bottom: 20px;
             display: flex;
             justify-content: space-between;
             align-items: center;
             border: 1px solid rgba(255, 255, 255, 0.2);
             flex-wrap: wrap;
-            gap: 15px;
+            gap: 12px;
         }
 
         .app-header h1 {
-            font-size: 2rem;
+            font-size: 1.4rem;
             background: linear-gradient(45deg, #b0b0b0, #808080);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
@@ -59,18 +59,18 @@
         .connection-status {
             display: flex;
             align-items: center;
-            gap: 10px;
-            padding: 10px 20px;
+            gap: 8px;
+            padding: 8px 15px;
             background: rgba(0, 0, 0, 0.3);
-            border-radius: 25px;
+            border-radius: 20px;
             border: 1px solid rgba(255, 255, 255, 0.1);
             flex-shrink: 0;
             min-width: 0;
         }
 
         .status-indicator {
-            width: 12px;
-            height: 12px;
+            width: 10px;
+            height: 10px;
             border-radius: 50%;
             background: #ff4444;
             transition: background 0.3s ease;
@@ -90,7 +90,7 @@
         .status-text {
             font-weight: 500;
             text-transform: uppercase;
-            font-size: 0.9rem;
+            font-size: 0.75rem;
             white-space: nowrap;
         }
 
@@ -99,35 +99,37 @@
             flex: 1;
             display: flex;
             flex-direction: column;
-            gap: 30px;
+            gap: 20px;
         }
 
         .connection-message {
             text-align: center;
-            padding: 60px 20px;
+            padding: 40px 15px;
             background: rgba(255, 255, 255, 0.05);
-            border-radius: 20px;
+            border-radius: 15px;
             border: 2px dashed rgba(255, 255, 255, 0.2);
         }
 
         .connection-message h2 {
-            margin-bottom: 15px;
+            margin-bottom: 12px;
             color: #b0b0b0;
+            font-size: 1.1rem;
         }
 
         .connection-message p {
-            margin-bottom: 30px;
+            margin-bottom: 20px;
             opacity: 0.8;
-            line-height: 1.6;
+            line-height: 1.5;
+            font-size: 0.9rem;
         }
 
         .connect-btn {
             background: linear-gradient(45deg, #ff6b6b, #4ecdc4);
             color: white;
             border: none;
-            padding: 15px 40px;
-            border-radius: 50px;
-            font-size: 1.1rem;
+            padding: 12px 30px;
+            border-radius: 40px;
+            font-size: 0.95rem;
             font-weight: 600;
             cursor: pointer;
             transition: transform 0.2s ease, box-shadow 0.2s ease;
@@ -145,28 +147,28 @@
         /* Controls container */
         .controls-container {
             display: grid;
-            gap: 30px;
+            gap: 18px;
         }
 
         /* Sections */
         section {
             background: rgba(255, 255, 255, 0.08);
-            border-radius: 20px;
-            padding: 25px;
+            border-radius: 15px;
+            padding: 18px;
             border: 1px solid rgba(255, 255, 255, 0.1);
         }
 
         section h2 {
-            margin-bottom: 20px;
+            margin-bottom: 15px;
             color: #b0b0b0;
-            font-size: 1.4rem;
+            font-size: 1.1rem;
         }
 
         /* Program buttons */
         .program-buttons {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-            gap: 15px;
+            grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+            gap: 10px;
             width: 100%;
         }
 
@@ -174,9 +176,9 @@
             background: linear-gradient(145deg, #404040, #303030);
             color: #e0e0e0;
             border: 1px solid rgba(255, 255, 255, 0.2);
-            padding: 15px 20px;
-            border-radius: 12px;
-            font-size: 1rem;
+            padding: 10px 15px;
+            border-radius: 8px;
+            font-size: 0.85rem;
             font-weight: 500;
             cursor: pointer;
             transition: all 0.2s ease;
@@ -206,15 +208,15 @@
         /* CC Controls */
         .cc-controls {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 20px;
+            grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+            gap: 15px;
             width: 100%;
         }
 
         .cc-control {
             background: rgba(0, 0, 0, 0.2);
-            padding: 20px;
-            border-radius: 15px;
+            padding: 15px;
+            border-radius: 12px;
             border: 1px solid rgba(255, 255, 255, 0.1);
             min-width: 0;
             width: 100%;
@@ -238,9 +240,9 @@
 
         .cc-control label {
             display: block;
-            margin-bottom: 10px;
+            margin-bottom: 8px;
             font-weight: 500;
-            font-size: 1.1rem;
+            font-size: 0.9rem;
         }
 
         .red-control label {
@@ -257,24 +259,24 @@
 
         .cc-slider {
             width: 100%;
-            height: 8px;
-            border-radius: 4px;
+            height: 6px;
+            border-radius: 3px;
             background: rgba(255, 255, 255, 0.2);
             outline: none;
             appearance: none;
-            margin-bottom: 10px;
+            margin-bottom: 8px;
         }
 
         /* Red slider styling */
         .red-slider::-webkit-slider-thumb {
             appearance: none;
-            width: 24px;
-            height: 24px;
+            width: 18px;
+            height: 18px;
             border-radius: 50%;
             background: linear-gradient(45deg, #ff4444, #ff6666);
             cursor: pointer;
-            border: 3px solid white;
-            box-shadow: 0 2px 10px rgba(255, 68, 68, 0.5);
+            border: 2px solid white;
+            box-shadow: 0 2px 8px rgba(255, 68, 68, 0.5);
             transition: transform 0.2s ease;
         }
 
@@ -283,25 +285,25 @@
         }
 
         .red-slider::-moz-range-thumb {
-            width: 24px;
-            height: 24px;
+            width: 18px;
+            height: 18px;
             border-radius: 50%;
             background: linear-gradient(45deg, #ff4444, #ff6666);
             cursor: pointer;
-            border: 3px solid white;
-            box-shadow: 0 2px 10px rgba(255, 68, 68, 0.5);
+            border: 2px solid white;
+            box-shadow: 0 2px 8px rgba(255, 68, 68, 0.5);
         }
 
         /* Green slider styling */
         .green-slider::-webkit-slider-thumb {
             appearance: none;
-            width: 24px;
-            height: 24px;
+            width: 18px;
+            height: 18px;
             border-radius: 50%;
             background: linear-gradient(45deg, #44ff44, #66ff66);
             cursor: pointer;
-            border: 3px solid white;
-            box-shadow: 0 2px 10px rgba(68, 255, 68, 0.5);
+            border: 2px solid white;
+            box-shadow: 0 2px 8px rgba(68, 255, 68, 0.5);
             transition: transform 0.2s ease;
         }
 
@@ -310,25 +312,25 @@
         }
 
         .green-slider::-moz-range-thumb {
-            width: 24px;
-            height: 24px;
+            width: 18px;
+            height: 18px;
             border-radius: 50%;
             background: linear-gradient(45deg, #44ff44, #66ff66);
             cursor: pointer;
-            border: 3px solid white;
-            box-shadow: 0 2px 10px rgba(68, 255, 68, 0.5);
+            border: 2px solid white;
+            box-shadow: 0 2px 8px rgba(68, 255, 68, 0.5);
         }
 
         /* Blue slider styling */
         .blue-slider::-webkit-slider-thumb {
             appearance: none;
-            width: 24px;
-            height: 24px;
+            width: 18px;
+            height: 18px;
             border-radius: 50%;
             background: linear-gradient(45deg, #4444ff, #6666ff);
             cursor: pointer;
-            border: 3px solid white;
-            box-shadow: 0 2px 10px rgba(68, 68, 255, 0.5);
+            border: 2px solid white;
+            box-shadow: 0 2px 8px rgba(68, 68, 255, 0.5);
             transition: transform 0.2s ease;
         }
 
@@ -337,60 +339,61 @@
         }
 
         .blue-slider::-moz-range-thumb {
-            width: 24px;
-            height: 24px;
+            width: 18px;
+            height: 18px;
             border-radius: 50%;
             background: linear-gradient(45deg, #4444ff, #6666ff);
             cursor: pointer;
-            border: 3px solid white;
-            box-shadow: 0 2px 10px rgba(68, 68, 255, 0.5);
+            border: 2px solid white;
+            box-shadow: 0 2px 8px rgba(68, 68, 255, 0.5);
         }
 
         .cc-value {
             display: inline-block;
             background: rgba(255, 255, 255, 0.1);
             color: #ffffff;
-            padding: 5px 10px;
-            border-radius: 8px;
+            padding: 4px 8px;
+            border-radius: 6px;
             font-weight: 600;
-            min-width: 40px;
+            min-width: 35px;
             text-align: center;
             font-family: 'Lucida Sans', 'Lucida Sans Unicode', 'Lucida Grande', sans-serif;
             border: 1px solid rgba(255, 255, 255, 0.2);
+            font-size: 0.8rem;
         }
 
         /* Additional controls */
         .note-control {
             text-align: center;
-            margin-top: 20px;
+            margin-top: 15px;
         }
 
         .note-btn {
             background: linear-gradient(145deg, #606060, #404040);
             color: white;
             border: none;
-            padding: 25px 60px;
-            border-radius: 20px;
-            font-size: 1.8rem;
+            padding: 15px 35px;
+            border-radius: 15px;
+            font-size: 1.2rem;
             font-weight: 700;
             cursor: pointer;
             transition: all 0.3s ease;
             text-transform: uppercase;
-            letter-spacing: 2px;
-            box-shadow: 0 8px 25px rgba(96, 96, 96, 0.4);
+            letter-spacing: 1px;
+            box-shadow: 0 6px 18px rgba(96, 96, 96, 0.4);
             position: relative;
             overflow: hidden;
         }
 
         .note-btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 12px 35px rgba(96, 96, 96, 0.6);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(96, 96, 96, 0.6);
             background: linear-gradient(145deg, #505050, #303030);
         }
 
         .note-btn:active {
             transform: translateY(-1px);
-            box-shadow: 0 6px 20px rgba(96, 96, 96, 0.4);
+            box-shadow: 0 4px 15px rgba(96, 96, 96, 0.4);
         }
 
         .note-btn::before {
@@ -412,6 +415,195 @@
             transform: translateY(-1px) scale(0.95);
             box-shadow: 0 4px 15px rgba(96, 96, 96, 0.6);
             background: linear-gradient(145deg, #505050, #303030);
+        }
+
+        .note-btn:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+            transform: none !important;
+        }
+
+        /* Sequencer Styles */
+        .sequencer-container {
+            margin-top: 20px;
+            padding: 15px;
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .sequencer-container h3 {
+            margin-bottom: 15px;
+            color: #b0b0b0;
+            font-size: 1rem;
+            text-align: center;
+        }
+
+        .sequencer-controls {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            margin-bottom: 18px;
+            flex-wrap: wrap;
+        }
+
+        .seq-btn {
+            background: linear-gradient(145deg, #505050, #404040);
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 6px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            min-width: 65px;
+        }
+
+        .seq-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 10px rgba(96, 96, 96, 0.3);
+        }
+
+        .play-btn {
+            background: linear-gradient(145deg, #4a8a4a, #3a7a3a);
+        }
+
+        .play-btn:hover {
+            background: linear-gradient(145deg, #5a9a5a, #4a8a4a);
+        }
+
+        .stop-btn {
+            background: linear-gradient(145deg, #8a4a4a, #7a3a3a);
+        }
+
+        .stop-btn:hover {
+            background: linear-gradient(145deg, #9a5a5a, #8a4a4a);
+        }
+
+        .tempo-control {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .tempo-control label {
+            color: #b0b0b0;
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+
+        #tempoInput {
+            background: rgba(255, 255, 255, 0.1);
+            color: #ffffff;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            padding: 6px 10px;
+            border-radius: 5px;
+            font-size: 0.8rem;
+            width: 60px;
+            text-align: center;
+        }
+
+        #tempoInput:focus {
+            outline: none;
+            border-color: rgba(255, 255, 255, 0.4);
+        }
+
+        .sequencer-steps {
+            display: grid;
+            grid-template-columns: repeat(16, 1fr);
+            gap: 6px;
+            max-width: 100%;
+            overflow-x: auto;
+        }
+
+        .step-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 4px;
+        }
+
+        .step-checkbox {
+            appearance: none;
+            width: 24px;
+            height: 24px;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            border-radius: 5px;
+            background: rgba(255, 255, 255, 0.1);
+            cursor: pointer;
+            transition: all 0.2s ease;
+            position: relative;
+        }
+
+        .step-checkbox:checked {
+            background: linear-gradient(145deg, #606060, #404040);
+            border-color: rgba(255, 255, 255, 0.6);
+        }
+
+        .step-checkbox:checked::before {
+            content: '✓';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+            font-weight: bold;
+            font-size: 12px;
+        }
+
+        .step-checkbox.current-step {
+            border-color: #ffaa00;
+            box-shadow: 0 0 10px rgba(255, 170, 0, 0.6);
+            animation: stepPulse 0.1s ease-in-out;
+        }
+
+        @keyframes stepPulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+
+        .step-label {
+            font-size: 0.6rem;
+            color: #888;
+            font-weight: 500;
+            cursor: pointer;
+            user-select: none;
+        }
+
+        .step-container:hover .step-label {
+            color: #bbb;
+        }
+
+        /* Credits Section */
+        .credits-section {
+            text-align: center;
+            padding: 15px;
+            margin-top: 20px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .credits-section p {
+            color: #888;
+            font-size: 0.8rem;
+            margin: 0;
+            line-height: 1.4;
+        }
+
+        .credits-section a {
+            color: #b0b0b0;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.2s ease;
+        }
+
+        .credits-section a:hover {
+            color: #e0e0e0;
+            text-decoration: underline;
         }
 
         /* Responsive design */
@@ -485,6 +677,26 @@
                 padding: 20px 40px;
                 font-size: 1.5rem;
             }
+
+            .sequencer-steps {
+                grid-template-columns: repeat(8, 1fr);
+                gap: 6px;
+            }
+
+            .step-checkbox {
+                width: 25px;
+                height: 25px;
+            }
+
+            .sequencer-controls {
+                gap: 10px;
+            }
+
+            .seq-btn {
+                padding: 8px 15px;
+                font-size: 0.8rem;
+                min-width: 70px;
+            }
         }
 
         @media (max-width: 360px) {
@@ -505,13 +717,27 @@
                 padding: 15px 30px;
                 font-size: 1.3rem;
             }
+
+            .sequencer-steps {
+                grid-template-columns: repeat(4, 1fr);
+                gap: 4px;
+            }
+
+            .step-checkbox {
+                width: 20px;
+                height: 20px;
+            }
+
+            .step-label {
+                font-size: 0.6rem;
+            }
         }
     </style>
 </head>
 <body>
     <div class="app-container">
         <header class="app-header">
-            <h1>Claire's Goggles Control Panel</h1>
+            <h1>Spacebarman Goggles Control Panel</h1>
             <div class="connection-status" id="connectionStatus">
                 <span class="status-indicator" id="statusIndicator"></span>
                 <span class="status-text" id="statusText">Disconnected</span>
@@ -520,7 +746,7 @@
 
         <main class="control-panel" id="controlPanel">
             <div class="connection-message" id="connectionMessage">
-                <h2>Connect Claire's Goggles</h2>
+                <h2>Connect Spacebarman Goggles</h2>
                 <p>Please connect your MIDI device and click the button below to enable MIDI access.</p>
                 <button class="connect-btn" id="connectBtn">Enable MIDI</button>
             </div>
@@ -530,7 +756,7 @@
                 <section class="program-section">
                     <h2>Animation</h2>
                     <div class="program-buttons">
-                        <button class="program-btn" data-program="5">Flash</button>
+                        <button class="program-btn" data-program="5">Manual trigger</button>
                         <button class="program-btn" data-program="1">All On</button>
                         <button class="program-btn" data-program="2">Pulsating</button>
                         <button class="program-btn" data-program="7">Strobe</button>
@@ -574,9 +800,95 @@
                     <div class="note-control">
                         <button class="note-btn" id="noteBtn">TRIGGER</button>
                     </div>
+
+                    <!-- 16-Step Sequencer -->
+                    <div class="sequencer-container" id="sequencerContainer" style="display: none;">
+                        <h3>Step Sequencer</h3>
+                        
+                        <div class="sequencer-controls">
+                            <button class="seq-btn play-btn" id="playBtn">▶ PLAY</button>
+                            <button class="seq-btn stop-btn" id="stopBtn">⏹ STOP</button>
+                            <div class="tempo-control">
+                                <label for="tempoInput">BPM:</label>
+                                <input type="number" id="tempoInput" min="20" max="260" value="120">
+                            </div>
+                        </div>
+                        
+                        <div class="sequencer-steps">
+                            <div class="step-container">
+                                <input type="checkbox" id="step1" class="step-checkbox">
+                                <label for="step1" class="step-label">1</label>
+                            </div>
+                            <div class="step-container">
+                                <input type="checkbox" id="step2" class="step-checkbox">
+                                <label for="step2" class="step-label">2</label>
+                            </div>
+                            <div class="step-container">
+                                <input type="checkbox" id="step3" class="step-checkbox">
+                                <label for="step3" class="step-label">3</label>
+                            </div>
+                            <div class="step-container">
+                                <input type="checkbox" id="step4" class="step-checkbox">
+                                <label for="step4" class="step-label">4</label>
+                            </div>
+                            <div class="step-container">
+                                <input type="checkbox" id="step5" class="step-checkbox">
+                                <label for="step5" class="step-label">5</label>
+                            </div>
+                            <div class="step-container">
+                                <input type="checkbox" id="step6" class="step-checkbox">
+                                <label for="step6" class="step-label">6</label>
+                            </div>
+                            <div class="step-container">
+                                <input type="checkbox" id="step7" class="step-checkbox">
+                                <label for="step7" class="step-label">7</label>
+                            </div>
+                            <div class="step-container">
+                                <input type="checkbox" id="step8" class="step-checkbox">
+                                <label for="step8" class="step-label">8</label>
+                            </div>
+                            <div class="step-container">
+                                <input type="checkbox" id="step9" class="step-checkbox">
+                                <label for="step9" class="step-label">9</label>
+                            </div>
+                            <div class="step-container">
+                                <input type="checkbox" id="step10" class="step-checkbox">
+                                <label for="step10" class="step-label">10</label>
+                            </div>
+                            <div class="step-container">
+                                <input type="checkbox" id="step11" class="step-checkbox">
+                                <label for="step11" class="step-label">11</label>
+                            </div>
+                            <div class="step-container">
+                                <input type="checkbox" id="step12" class="step-checkbox">
+                                <label for="step12" class="step-label">12</label>
+                            </div>
+                            <div class="step-container">
+                                <input type="checkbox" id="step13" class="step-checkbox">
+                                <label for="step13" class="step-label">13</label>
+                            </div>
+                            <div class="step-container">
+                                <input type="checkbox" id="step14" class="step-checkbox">
+                                <label for="step14" class="step-label">14</label>
+                            </div>
+                            <div class="step-container">
+                                <input type="checkbox" id="step15" class="step-checkbox">
+                                <label for="step15" class="step-label">15</label>
+                            </div>
+                            <div class="step-container">
+                                <input type="checkbox" id="step16" class="step-checkbox">
+                                <label for="step16" class="step-label">16</label>
+                            </div>
+                        </div>
+                    </div>
                 </section>
             </div>
         </main>
+
+        <!-- Credits Section -->
+        <footer class="credits-section">
+            <p>Made by <a href="https://jpcarrascal.com" target="_blank" rel="noopener noreferrer">JP Carrascal</a> for my music project <a href="https://spacebarman.com" target="_blank" rel="noopener noreferrer">Spacebarman</a>.</p>
+        </footer>
     </div>
 
     <script>
@@ -584,9 +896,15 @@
             constructor() {
                 this.midiAccess = null;
                 this.gogglesDevice = null;
-                this.deviceName = "Claire's Goggles";
+                this.deviceName = "Spacebarman Goggles";
                 this.currentChannel = 0; // MIDI channel 1 (0-indexed)
                 this.activeProgram = null;
+                
+                // Sequencer properties
+                this.isPlaying = false;
+                this.currentStep = 0;
+                this.sequencerInterval = null;
+                this.stepDuration = 125; // milliseconds per step (120 BPM default)
                 
                 this.init();
             }
@@ -631,8 +949,23 @@
                     // Check if spacebar is pressed and prevent if user is typing in an input
                     if (e.code === 'Space' && !e.target.matches('input, textarea, select, [contenteditable]')) {
                         e.preventDefault(); // Prevent page scroll
-                        this.triggerNote();
+                        if (!this.isPlaying) { // Only trigger if sequencer is not playing
+                            this.triggerNote();
+                        }
                     }
+                });
+
+                // Sequencer controls
+                document.getElementById('playBtn').addEventListener('click', () => {
+                    this.startSequencer();
+                });
+
+                document.getElementById('stopBtn').addEventListener('click', () => {
+                    this.stopSequencer();
+                });
+
+                document.getElementById('tempoInput').addEventListener('input', (e) => {
+                    this.updateTempo(parseInt(e.target.value));
                 });
             }
 
@@ -671,8 +1004,8 @@
                 for (let output of this.midiAccess.outputs.values()) {
                     console.log(`Found MIDI output: ${output.name}`);
                     
-                    if (output.name.includes(this.deviceName) || output.name.toLowerCase().includes("claire") || output.name.toLowerCase().includes("goggles")) {
-                        console.log(`Found Claire's Goggles: ${output.name}`);
+                    if (output.name.includes(this.deviceName) || output.name.toLowerCase().includes("spacebarman") || output.name.toLowerCase().includes("goggles")) {
+                        console.log(`Found Spacebarman Goggles: ${output.name}`);
                         this.gogglesDevice = output;
                         this.updateConnectionStatus(true);
                         return;
@@ -764,6 +1097,85 @@
                 }, 100);
             }
 
+            startSequencer() {
+                if (this.isPlaying) return;
+                
+                this.isPlaying = true;
+                this.currentStep = 0;
+                
+                // Disable manual trigger
+                document.getElementById('noteBtn').disabled = true;
+                
+                // Start the sequencer loop
+                this.sequencerInterval = setInterval(() => {
+                    this.processStep();
+                }, this.stepDuration);
+                
+                console.log('Sequencer started');
+            }
+
+            stopSequencer() {
+                if (!this.isPlaying) return;
+                
+                this.isPlaying = false;
+                this.currentStep = 0;
+                
+                // Clear interval
+                if (this.sequencerInterval) {
+                    clearInterval(this.sequencerInterval);
+                    this.sequencerInterval = null;
+                }
+                
+                // Enable manual trigger
+                document.getElementById('noteBtn').disabled = false;
+                
+                // Clear step highlighting
+                this.clearStepHighlight();
+                
+                console.log('Sequencer stopped');
+            }
+
+            processStep() {
+                // Clear previous step highlight
+                this.clearStepHighlight();
+                
+                // Highlight current step
+                const currentStepCheckbox = document.getElementById(`step${this.currentStep + 1}`);
+                currentStepCheckbox.classList.add('current-step');
+                
+                // Check if current step is enabled and trigger note
+                if (currentStepCheckbox.checked) {
+                    this.sendNote(36);
+                }
+                
+                // Move to next step
+                this.currentStep = (this.currentStep + 1) % 16;
+            }
+
+            clearStepHighlight() {
+                document.querySelectorAll('.step-checkbox').forEach(checkbox => {
+                    checkbox.classList.remove('current-step');
+                });
+            }
+
+            updateTempo(bpm) {
+                // Convert BPM to step duration
+                // At 120 BPM: 120 quarter notes per minute
+                // 16th notes = 120 * 4 = 480 per minute
+                // Step duration = 60000ms / (BPM * 4) per 16th note
+                this.stepDuration = 60000 / (bpm * 4);
+                
+                // If currently playing, restart with new tempo
+                if (this.isPlaying) {
+                    clearInterval(this.sequencerInterval);
+                    this.sequencerInterval = setInterval(() => {
+                        this.processStep();
+                    }, this.stepDuration);
+                }
+                
+                console.log(`Tempo updated to ${bpm} BPM (${this.stepDuration}ms per step)`);
+            }
+
             sendNote(note, velocity = 127) {
                 if (!this.gogglesDevice) {
                     console.warn('No MIDI device connected');
@@ -796,6 +1208,15 @@
                 // Add active class to clicked button
                 button.classList.add('active');
                 this.activeProgram = parseInt(button.dataset.program);
+                
+                // Show/hide sequencer based on Flash selection (program 5)
+                const sequencerContainer = document.getElementById('sequencerContainer');
+                if (this.activeProgram === 5) { // Flash
+                    sequencerContainer.style.display = 'block';
+                } else {
+                    sequencerContainer.style.display = 'none';
+                    this.stopSequencer(); // Stop sequencer if switching away from Flash
+                }
             }
 
             updateCCValue(sliderId, value) {
@@ -808,7 +1229,7 @@
 
         // Initialize the application when the page loads
         document.addEventListener('DOMContentLoaded', () => {
-            console.log('Initializing Claire\'s Goggles Control Panel...');
+            console.log('Initializing Spacebarman Goggles Control Panel...');
             
             // Check for WebMIDI support
             if (!navigator.requestMIDIAccess) {
