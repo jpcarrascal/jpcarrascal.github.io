@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-15242862-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-15242862-1');
+</script>
+
+<meta name="viewport" content="width=device-width,user-scalable=no" />
+<title>Shape Changes for Conveying Emotions | JP Carrascal</title>
+<link href="../../style.css" type="text/css" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css?family=Lato:700|Lato" rel="stylesheet">
+<link href="../project-template.css" type="text/css" rel="stylesheet"/>
+</head>
+<body>
+
+<div id="flex-container">
+    <div id="wrap">
+        <div class="project-content">
+            <div class="language-selector">
+                <select class="language-dropdown" id="languageSelector" onchange="switchLanguage(this.value)">
+                    <option value="en">English</option>
+                    <option value="es">Español</option>
+                    <option value="ca">Català</option>
+                </select>
+            </div>
+            
+            <div class="project-header">
+                <h1 class="project-title" data-i18n="title">Shape Changes for Conveying Emotions</h1>
+                <div class="project-authors">Paul Strohmeier, Juan Pablo Carrascal, Bernard Cheng, Margaret Meban, Roel Vertegaal (2016)</div>
+            </div>
+            
+            <div style="text-align: center; margin-bottom: 30px;" data-i18n="subtitle">
+                Is it possible to recognize emotions from dynamic shape changes?
+            </div>
+            
+            <div style="text-align: center; margin-bottom: 30px;">
+                <img src="images/main.jpg" alt="Shape Changes for Conveying Emotions" style="max-width: 100%; height: auto;" />
+            </div>
+            
+            <div style="text-align: justify; margin-bottom: 30px;" data-i18n="description">
+                In this paper, we explore how shape changing interfaces might be used to communicate emotions. We present two studies, one that investigates which shapes users might create with a 2D flexible surface, and one that studies the efficacy of the resulting shapes in conveying a set of basic emotions.
+                <br><br>
+                Results suggest that shape parameters are correlated to the positive or negative character of an emotion, while parameters related to movement are correlated with arousal level. In several cases, symbolic shape expressions based on clear visual metaphors were used.
+                <br><br>
+                Results from our second experiment suggest participants were able to recognize emotions given a shape with a good accuracy within 28% of the dimensions of the Circumplex Model. We conclude that shape and shape changes of a 2D flexible surface indeed appear able to convey emotions in a way that is worthy of future exploration.
+            </div>
+            
+            <h2 data-i18n="links-title">Links</h2>
+            <div style="margin-bottom: 30px;">
+                <p><a href="https://www.youtube.com/watch?v=JQ9eUHHA4bI" target="_blank" data-i18n="video-link">→ Video Documentation</a></p>
+            </div>
+            
+            <div class="publication-section">
+                <h3 data-i18n="publication_label">Publication:</h3>
+                <p>
+                    Paul Strohmeier, Juan Pablo Carrascal, Bernard Cheng, Margaret Meban, Roel Vertegaal. (2016). <em>An evaluation of shape changes for conveying emotions</em>. <a href="https://dl.acm.org/doi/abs/10.1145/2858036.2858537" target="_blank">DOI: 10.1145/2858036.2858537</a>
+                </p>
+            </div>
+            
+            <div class="back-link">
+                <a href="javascript:history.back()" data-i18n="back_button">← Back</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+// Multilingual content
+const translations = {
+    en: {
+        title: "Shape Changes for Conveying Emotions",
+        subtitle: "Is it possible to recognize emotions from dynamic shape changes?",
+        description: "In this paper, we explore how shape changing interfaces might be used to communicate emotions. We present two studies, one that investigates which shapes users might create with a 2D flexible surface, and one that studies the efficacy of the resulting shapes in conveying a set of basic emotions.<br><br>Results suggest that shape parameters are correlated to the positive or negative character of an emotion, while parameters related to movement are correlated with arousal level. In several cases, symbolic shape expressions based on clear visual metaphors were used.<br><br>Results from our second experiment suggest participants were able to recognize emotions given a shape with a good accuracy within 28% of the dimensions of the Circumplex Model. We conclude that shape and shape changes of a 2D flexible surface indeed appear able to convey emotions in a way that is worthy of future exploration.",
+        "links-title": "Links",
+        "video-link": "→ Video Documentation",
+        publication_label: "Publication:",
+        back_button: "← Back"
+    },
+    es: {
+        title: "Cambios de Forma para Transmitir Emociones",
+        subtitle: "¿Es posible reconocer emociones a partir de cambios dinámicos de forma?",
+        description: "En este artículo, exploramos cómo las interfaces que cambian de forma podrían usarse para comunicar emociones. Presentamos dos estudios, uno que investiga qué formas podrían crear los usuarios con una superficie flexible 2D, y uno que estudia la eficacia de las formas resultantes en transmitir un conjunto de emociones básicas.<br><br>Los resultados sugieren que los parámetros de forma están correlacionados con el carácter positivo o negativo de una emoción, mientras que los parámetros relacionados con el movimiento están correlacionados con el nivel de excitación. En varios casos, se usaron expresiones de forma simbólica basadas en metáforas visuales claras.<br><br>Los resultados de nuestro segundo experimento sugieren que los participantes pudieron reconocer emociones dada una forma con una buena precisión dentro del 28% de las dimensiones del Modelo Circumplex. Concluimos que la forma y los cambios de forma de una superficie flexible 2D efectivamente parecen poder transmitir emociones de una manera que merece exploración futura.",
+        "links-title": "Enlaces",
+        "video-link": "→ Documentación en Video",
+        publication_label: "Publicación:",
+        back_button: "← Atrás"
+    },
+    ca: {
+        title: "Canvis de Forma per Transmetre Emocions",
+        subtitle: "És possible reconèixer emocions a partir de canvis dinàmics de forma?",
+        description: "En aquest article, explorem com les interfícies que canvien de forma podrien usar-se per comunicar emocions. Presentem dos estudis, un que investiga quines formes podrien crear els usuaris amb una superfície flexible 2D, i un que estudia l'eficàcia de les formes resultants en transmetre un conjunt d'emocions bàsiques.<br><br>Els resultats suggereixen que els paràmetres de forma estan correlacionats amb el caràcter positiu o negatiu d'una emoció, mentre que els paràmetres relacionats amb el moviment estan correlacionats amb el nivell d'excitació. En diversos casos, es van usar expressions de forma simbòlica basades en metàfores visuals clares.<br><br>Els resultats del nostre segon experiment suggereixen que els participants van poder reconèixer emocions donada una forma amb una bona precisió dins del 28% de les dimensions del Model Circumplex. Concloem que la forma i els canvis de forma d'una superfície flexible 2D efectivament semblen poder transmetre emocions d'una manera que mereix exploració futura.",
+        "links-title": "Enllaços",
+        "video-link": "→ Documentació en Vídeo",
+        publication_label: "Publicació:",
+        back_button: "← Enrere"
+    }
+};
+
+// Language switching functionality
+function switchLanguage(lang) {
+    localStorage.setItem('preferredLanguage', lang);
+    document.querySelectorAll('[data-i18n]').forEach(element => {
+        const key = element.getAttribute('data-i18n');
+        if (translations[lang] && translations[lang][key]) {
+            if (key === 'description') {
+                element.innerHTML = translations[lang][key];
+            } else {
+                element.textContent = translations[lang][key];
+            }
+        }
+    });
+}
+
+// Load preferred language on page load
+document.addEventListener('DOMContentLoaded', function() {
+    const savedLang = localStorage.getItem('preferredLanguage') || 'en';
+    document.getElementById('languageSelector').value = savedLang;
+    switchLanguage(savedLang);
+});
+</script>
+
+</body>
+</html>

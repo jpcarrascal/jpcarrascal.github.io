@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-15242862-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-15242862-1');
+</script>
+
+<meta name="viewport" content="width=device-width,user-scalable=no" />
+<title>Whammyphone - Tangible Audio Manipulation | JP Carrascal</title>
+<link href="../../style.css" type="text/css" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css?family=Lato:700|Lato" rel="stylesheet">
+<link href="../project-template.css" type="text/css" rel="stylesheet"/>
+</head>
+<body>
+
+<div id="flex-container">
+    <div id="wrap">
+        <div class="project-content">
+            <div class="language-selector">
+                <select class="language-dropdown" id="languageSelector" onchange="switchLanguage(this.value)">
+                    <option value="en">English</option>
+                    <option value="es">Español</option>
+                    <option value="ca">Català</option>
+                </select>
+            </div>
+            
+            <div class="project-header">
+                <h1 class="project-title" data-i18n="title">Whammyphone</h1>
+                <div class="project-authors">Antonio Gomes, Lahiru Priyadarshana, Juan Pablo Carrascal, Roel Vertegaal (2016)</div>
+            </div>
+            
+            <div style="text-align: center; margin-bottom: 30px;" data-i18n="subtitle">
+                Exploring tangible audio manipulation using bend input on a flexible smartphone
+            </div>
+            
+            <div style="text-align: center; margin-bottom: 30px;">
+                <img src="images/main.jpg" alt="Whammyphone" style="max-width: 100%; height: auto;" />
+            </div>
+            
+            <div style="text-align: justify; margin-bottom: 30px;" data-i18n="description">
+                We present WhammyPhone, a novel audio interface that supports physical manipulation of digital audio through bend gestures. WhammyPhone combines a high-resolution flexible display, bend sensors, and a set of intuitive interaction techniques that enable novice users to manipulate sound in a tangible fashion.
+                <br><br>
+                With WhammyPhone, bend gestures can control both discrete (e.g. triggering a note) and continuous parameters (e.g. pitch bend). We showcase application scenarios that leverage the unique input modalities of WhammyPhone and discuss its potential for digital audio manipulation.
+            </div>
+            
+            <h2 data-i18n="links-title">Links</h2>
+            <div style="margin-bottom: 30px;">
+                <p><a href="https://www.youtube.com/watch?v=pUIo-Yt2QSc" target="_blank" data-i18n="video-link">→ Video Documentation</a></p>
+            </div>
+            
+            <div class="publication-section">
+                <h3 data-i18n="publication_label">Publication:</h3>
+                <p>
+                    Antonio Gomes, Lahiru Priyadarshana, Juan Pablo Carrascal, Roel Vertegaal. (2016). <em>Whammyphone: Exploring tangible audio manipulation using bend input on a flexible smartphone</em>. <a href="https://dl.acm.org/doi/abs/10.1145/2984751.2985742" target="_blank">DOI: 10.1145/2984751.2985742</a>
+                </p>
+            </div>
+            
+            <div class="back-link">
+                <a href="javascript:history.back()" data-i18n="back_button">← Back</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+// Multilingual content
+const translations = {
+    en: {
+        title: "Whammyphone",
+        subtitle: "Exploring tangible audio manipulation using bend input on a flexible smartphone",
+        description: "We present WhammyPhone, a novel audio interface that supports physical manipulation of digital audio through bend gestures. WhammyPhone combines a high-resolution flexible display, bend sensors, and a set of intuitive interaction techniques that enable novice users to manipulate sound in a tangible fashion.<br><br>With WhammyPhone, bend gestures can control both discrete (e.g. triggering a note) and continuous parameters (e.g. pitch bend). We showcase application scenarios that leverage the unique input modalities of WhammyPhone and discuss its potential for digital audio manipulation.",
+        "links-title": "Links",
+        "video-link": "→ Video Documentation",
+        publication_label: "Publication:",
+        back_button: "← Back"
+    },
+    es: {
+        title: "Whammyphone",
+        subtitle: "Explorando la manipulación de audio tangible usando entrada de doblado en un smartphone flexible",
+        description: "Presentamos WhammyPhone, una interfaz de audio novedosa que soporta manipulación física de audio digital a través de gestos de doblado. WhammyPhone combina una pantalla flexible de alta resolución, sensores de doblado, y un conjunto de técnicas de interacción intuitivas que permiten a usuarios novatos manipular sonido de manera tangible.<br><br>Con WhammyPhone, los gestos de doblado pueden controlar tanto parámetros discretos (ej. disparar una nota) como continuos (ej. curvatura de tono). Mostramos escenarios de aplicación que aprovechan las modalidades de entrada únicas de WhammyPhone y discutimos su potencial para manipulación de audio digital.",
+        "links-title": "Enlaces",
+        "video-link": "→ Documentación en Video",
+        publication_label: "Publicación:",
+        back_button: "← Atrás"
+    },
+    ca: {
+        title: "Whammyphone",
+        subtitle: "Explorant la manipulació d'àudio tangible usant entrada de doblat en un smartphone flexible",
+        description: "Presentem WhammyPhone, una interfície d'àudio innovadora que suporta manipulació física d'àudio digital a través de gestos de doblat. WhammyPhone combina una pantalla flexible d'alta resolució, sensors de doblat, i un conjunt de tècniques d'interacció intuïtives que permeten a usuaris novells manipular so de manera tangible.<br><br>Amb WhammyPhone, els gestos de doblat poden controlar tant paràmetres discrets (ex. disparar una nota) com continus (ex. curvatura de to). Mostrem escenaris d'aplicació que aprofiten les modalitats d'entrada úniques de WhammyPhone i discutim el seu potencial per a manipulació d'àudio digital.",
+        "links-title": "Enllaços",
+        "video-link": "→ Documentació en Vídeo",
+        publication_label: "Publicació:",
+        back_button: "← Enrere"
+    }
+};
+
+// Language switching functionality
+function switchLanguage(lang) {
+    localStorage.setItem('preferredLanguage', lang);
+    document.querySelectorAll('[data-i18n]').forEach(element => {
+        const key = element.getAttribute('data-i18n');
+        if (translations[lang] && translations[lang][key]) {
+            if (key === 'description') {
+                element.innerHTML = translations[lang][key];
+            } else {
+                element.textContent = translations[lang][key];
+            }
+        }
+    });
+}
+
+// Load preferred language on page load
+document.addEventListener('DOMContentLoaded', function() {
+    const savedLang = localStorage.getItem('preferredLanguage') || 'en';
+    document.getElementById('languageSelector').value = savedLang;
+    switchLanguage(savedLang);
+});
+</script>
+
+</body>
+</html>

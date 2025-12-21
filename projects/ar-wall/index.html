@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-15242862-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-15242862-1');
+</script>
+
+<meta name="viewport" content="width=device-width,user-scalable=no" />
+<title>AR Wall - Augmented Reality Customer Wall | JP Carrascal</title>
+<link href="../../style.css" type="text/css" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css?family=Lato:700|Lato" rel="stylesheet">
+<link href="../project-template.css" type="text/css" rel="stylesheet"/>
+</head>
+<body>
+
+<div id="flex-container">
+    <div id="wrap">
+        <div class="project-content">
+            <div class="language-selector">
+                <select class="language-dropdown" id="languageSelector" onchange="switchLanguage(this.value)">
+                    <option value="en">English</option>
+                    <option value="es">Español</option>
+                    <option value="ca">Català</option>
+                </select>
+            </div>
+            
+            <div class="project-header">
+                <h1 class="project-title" data-i18n="title">AR Wall</h1>
+                <div class="project-authors">JP Carrascal (2018)</div>
+            </div>
+            
+            <div style="text-align: center; margin-bottom: 30px;" data-i18n="subtitle">
+                An augmented reality customer wall for UX research results at Microsoft
+            </div>
+            
+            <div style="text-align: center; margin-bottom: 30px;">
+                <img src="images/main.jpg" alt="AR Wall" style="max-width: 100%; height: auto;" />
+            </div>
+            
+            <div style="text-align: justify; margin-bottom: 30px;" data-i18n="description">
+                AR Wall is an innovative augmented reality installation designed to share results from a UX research project conducted at Microsoft. This interactive wall transforms traditional presentation methods by using AR technology to create an immersive and engaging way to communicate research findings and insights.
+                <br><br>
+                The project leverages augmented reality to overlay digital information onto a physical wall space, allowing viewers to interact with research data, visualizations, and findings in a spatial and intuitive manner. This approach makes complex UX research results more accessible and engaging for diverse audiences within the organization.
+                <br><br>
+                AR Wall represents an innovative application of emerging technologies in corporate environments, demonstrating how AR can be used to enhance knowledge sharing and data presentation in professional settings. The project bridges the gap between traditional research communication and modern interactive technologies.
+            </div>
+            
+            <div class="back-link">
+                <a href="javascript:history.back()" data-i18n="back_button">← Back</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+// Multilingual content
+const translations = {
+    en: {
+        title: "AR Wall",
+        subtitle: "An augmented reality customer wall for UX research results at Microsoft",
+        description: "AR Wall is an innovative augmented reality installation designed to share results from a UX research project conducted at Microsoft. This interactive wall transforms traditional presentation methods by using AR technology to create an immersive and engaging way to communicate research findings and insights.<br><br>The project leverages augmented reality to overlay digital information onto a physical wall space, allowing viewers to interact with research data, visualizations, and findings in a spatial and intuitive manner. This approach makes complex UX research results more accessible and engaging for diverse audiences within the organization.<br><br>AR Wall represents an innovative application of emerging technologies in corporate environments, demonstrating how AR can be used to enhance knowledge sharing and data presentation in professional settings. The project bridges the gap between traditional research communication and modern interactive technologies.",
+        back_button: "← Back"
+    },
+    es: {
+        title: "AR Wall",
+        subtitle: "Una pared de realidad aumentada para resultados de investigación UX en Microsoft",
+        description: "AR Wall es una instalación innovadora de realidad aumentada diseñada para compartir resultados de un proyecto de investigación UX realizado en Microsoft. Esta pared interactiva transforma los métodos de presentación tradicionales usando tecnología AR para crear una forma inmersiva y atractiva de comunicar hallazgos e insights de investigación.<br><br>El proyecto aprovecha la realidad aumentada para superponer información digital sobre un espacio de pared físico, permitiendo a los espectadores interactuar con datos de investigación, visualizaciones y hallazgos de manera espacial e intuitiva. Este enfoque hace que los resultados complejos de investigación UX sean más accesibles y atractivos para audiencias diversas dentro de la organización.<br><br>AR Wall representa una aplicación innovadora de tecnologías emergentes en entornos corporativos, demostrando cómo se puede usar AR para mejorar el intercambio de conocimiento y la presentación de datos en configuraciones profesionales. El proyecto cierra la brecha entre la comunicación tradicional de investigación y las tecnologías interactivas modernas.",
+        back_button: "← Atrás"
+    },
+    ca: {
+        title: "AR Wall",
+        subtitle: "Una paret de realitat augmentada per a resultats de recerca UX a Microsoft",
+        description: "AR Wall és una instal·lació innovadora de realitat augmentada dissenyada per compartir resultats d'un projecte de recerca UX realitzat a Microsoft. Aquesta paret interactiva transforma els mètodes de presentació tradicionals usant tecnologia AR per crear una forma immersiva i atractiva de comunicar troballes i insights de recerca.<br><br>El projecte aprofita la realitat augmentada per superposar informació digital sobre un espai de paret físic, permetent als espectadors interactuar amb dades de recerca, visualitzacions i troballes de manera espacial i intuïtiva. Aquest enfocament fa que els resultats complexos de recerca UX siguin més accessibles i atractius per a audiències diverses dins de l'organització.<br><br>AR Wall representa una aplicació innovadora de tecnologies emergents en entorns corporatius, demostrant com es pot usar AR per millorar l'intercanvi de coneixement i la presentació de dades en configuracions professionals. El projecte tanca la bretxa entre la comunicació tradicional de recerca i les tecnologies interactives modernes.",
+        back_button: "← Enrere"
+    }
+};
+
+// Language switching functionality
+function switchLanguage(lang) {
+    localStorage.setItem('preferredLanguage', lang);
+    document.querySelectorAll('[data-i18n]').forEach(element => {
+        const key = element.getAttribute('data-i18n');
+        if (translations[lang] && translations[lang][key]) {
+            if (key === 'description') {
+                element.innerHTML = translations[lang][key];
+            } else {
+                element.textContent = translations[lang][key];
+            }
+        }
+    });
+}
+
+// Load preferred language on page load
+document.addEventListener('DOMContentLoaded', function() {
+    const savedLang = localStorage.getItem('preferredLanguage') || 'en';
+    document.getElementById('languageSelector').value = savedLang;
+    switchLanguage(savedLang);
+});
+</script>
+
+</body>
+</html>

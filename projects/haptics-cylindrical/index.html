@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-15242862-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-15242862-1');
+</script>
+
+<meta name="viewport" content="width=device-width,user-scalable=no" />
+<title>Haptics on Cylindrical Displays | JP Carrascal</title>
+<link href="../../style.css" type="text/css" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css?family=Lato:700|Lato" rel="stylesheet">
+<link href="../project-template.css" type="text/css" rel="stylesheet"/>
+</head>
+<body>
+
+<div id="flex-container">
+    <div id="wrap">
+        <div class="project-content">
+            <div class="language-selector">
+                <select class="language-dropdown" id="languageSelector" onchange="switchLanguage(this.value)">
+                    <option value="en">English</option>
+                    <option value="es">Español</option>
+                    <option value="ca">Català</option>
+                </select>
+            </div>
+            
+            <div class="project-header">
+                <h1 class="project-title" data-i18n="title">Haptics on Cylindrical Displays</h1>
+                <div class="project-authors">Juan Pablo Carrascal, Roel Vertegaal (2017)</div>
+            </div>
+            
+            <div style="text-align: center; margin-bottom: 30px;" data-i18n="subtitle">
+                Effects of Tactile Feedback on the Perception of Virtual Shapes on Non-Planar DisplayObjects
+            </div>
+            
+            <div style="text-align: center; margin-bottom: 30px;">
+                <img src="images/main.jpg" alt="Haptics on Cylindrical Displays" style="max-width: 100%; height: auto;" />
+            </div>
+            
+            <div style="text-align: justify; margin-bottom: 30px;" data-i18n="description">
+                In this paper, we report on a study investigating a novel haptic illusion for altering the perception of 3D shapes using a non-planar screen and vibrotactile friction. In our study, we presented an image of a rectangular prism on a cylindrical and a flat display. Participants were asked to move their index finger horizontally along the surface of the displays towards the edge of the rectangular prism. 
+                <br><br>
+                Participants were asked whether they were experiencing a flat, cylindrical or rectangular shape. In one condition, a vibrotactile stimulus simulated increasing friction towards the visible edge of the rectangular prism, with a sudden drop-off when this edge was crossed by the finger. Results suggest that presenting an image of a rectangular prism, and applying vibrotactile friction, particularly on a cylindrical display, significantly increased participant ratings stating that they were experiencing a physical rectangular shape.
+            </div>
+            
+            <h2 data-i18n="links-title">Links</h2>
+            <div style="margin-bottom: 30px;">
+                <p><a href="https://www.youtube.com/watch?v=otMa-CNI8ts" target="_blank" data-i18n="video-link">→ Video Documentation</a></p>
+            </div>
+            
+            <div class="publication-section">
+                <h3 data-i18n="publication_label">Publication:</h3>
+                <p>
+                    Juan Pablo Carrascal and Roel Vertegaal. 2017. Effects of tactile feedback on the perception of virtual shapes on non-planar DisplayObjects. <a href="https://dl.acm.org/doi/abs/10.1145/3025453.3025488" target="_blank">DOI: 10.1145/3025453.3025488</a>
+                </p>
+            </div>
+            
+            <div class="back-link">
+                <a href="javascript:history.back()" data-i18n="back_button">← Back</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+// Multilingual content
+const translations = {
+    en: {
+        title: "Haptics on Cylindrical Displays",
+        subtitle: "Effects of Tactile Feedback on the Perception of Virtual Shapes on Non-Planar DisplayObjects",
+        description: "In this paper, we report on a study investigating a novel haptic illusion for altering the perception of 3D shapes using a non-planar screen and vibrotactile friction. In our study, we presented an image of a rectangular prism on a cylindrical and a flat display. Participants were asked to move their index finger horizontally along the surface of the displays towards the edge of the rectangular prism.<br><br>Participants were asked whether they were experiencing a flat, cylindrical or rectangular shape. In one condition, a vibrotactile stimulus simulated increasing friction towards the visible edge of the rectangular prism, with a sudden drop-off when this edge was crossed by the finger. Results suggest that presenting an image of a rectangular prism, and applying vibrotactile friction, particularly on a cylindrical display, significantly increased participant ratings stating that they were experiencing a physical rectangular shape.",
+        "links-title": "Links",
+        "video-link": "→ Video Documentation",
+        publication_label: "Publication:",
+        back_button: "← Back"
+    },
+    es: {
+        title: "Háptica en Pantallas Cilíndricas",
+        subtitle: "Efectos de la Retroalimentación Táctil en la Percepción de Formas Virtuales en DisplayObjects No Planos",
+        description: "En este artículo, reportamos un estudio que investiga una ilusión háptica novedosa para alterar la percepción de formas 3D usando una pantalla no plana y fricción vibrotáctil. En nuestro estudio, presentamos una imagen de un prisma rectangular en una pantalla cilíndrica y una plana. Se pidió a los participantes que movieran su dedo índice horizontalmente a lo largo de la superficie de las pantallas hacia el borde del prisma rectangular.<br><br>Se preguntó a los participantes si estaban experimentando una forma plana, cilíndrica o rectangular. En una condición, un estímulo vibrotáctil simuló fricción creciente hacia el borde visible del prisma rectangular, con una caída súbita cuando este borde era cruzado por el dedo. Los resultados sugieren que presentar una imagen de un prisma rectangular, y aplicar fricción vibrotáctil, particularmente en una pantalla cilíndrica, incrementó significativamente las calificaciones de los participantes indicando que estaban experimentando una forma rectangular física.",
+        "links-title": "Enlaces",
+        "video-link": "→ Documentación en Video",
+        publication_label: "Publicación:",
+        back_button: "← Atrás"
+    },
+    ca: {
+        title: "Hàptica en Pantalles Cilíndriques",
+        subtitle: "Efectes de la Retroalimentació Tàctil en la Percepció de Formes Virtuals en DisplayObjects No Plans",
+        description: "En aquest article, reportem un estudi que investiga una il·lusió hàptica innovadora per alterar la percepció de formes 3D usant una pantalla no plana i fricció vibrotàctil. En el nostre estudi, vam presentar una imatge d'un prisma rectangular en una pantalla cilíndrica i una plana. Es va demanar als participants que moguessin el seu dit índex horitzontalment al llarg de la superfície de les pantalles cap al canto del prisma rectangular.<br><br>Es va preguntar als participants si estaven experimentant una forma plana, cilíndrica o rectangular. En una condició, un estímul vibrotàctil va simular fricció creixent cap al canto visible del prisma rectangular, amb una caiguda sobtada quan aquest canto era creuat pel dit. Els resultats suggereixen que presentar una imatge d'un prisma rectangular, i aplicar fricció vibrotàctil, particularment en una pantalla cilíndrica, va incrementar significativament les qualificacions dels participants indicant que estaven experimentant una forma rectangular física.",
+        "links-title": "Enllaços",
+        "video-link": "→ Documentació en Vídeo",
+        publication_label: "Publicació:",
+        back_button: "← Enrere"
+    }
+};
+
+// Language switching functionality
+function switchLanguage(lang) {
+    localStorage.setItem('preferredLanguage', lang);
+    document.querySelectorAll('[data-i18n]').forEach(element => {
+        const key = element.getAttribute('data-i18n');
+        if (translations[lang] && translations[lang][key]) {
+            if (key === 'description') {
+                element.innerHTML = translations[lang][key];
+            } else {
+                element.textContent = translations[lang][key];
+            }
+        }
+    });
+}
+
+// Load preferred language on page load
+document.addEventListener('DOMContentLoaded', function() {
+    const savedLang = localStorage.getItem('preferredLanguage') || 'en';
+    document.getElementById('languageSelector').value = savedLang;
+    switchLanguage(savedLang);
+});
+</script>
+
+</body>
+</html>

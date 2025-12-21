@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-15242862-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-15242862-1');
+</script>
+
+<meta name="viewport" content="width=device-width,user-scalable=no" />
+<title>BlueMO - Bluetooth LE to MIDI/OSC Translator | JP Carrascal</title>
+<link href="../../style.css" type="text/css" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css?family=Lato:700|Lato" rel="stylesheet">
+<link href="../project-template.css" type="text/css" rel="stylesheet"/>
+</head>
+<body>
+
+<div id="flex-container">
+    <div id="wrap">
+        <div class="project-content">
+            <div class="language-selector">
+                <select class="language-dropdown" id="languageSelector" onchange="switchLanguage(this.value)">
+                    <option value="en">English</option>
+                    <option value="es">Español</option>
+                    <option value="ca">Català</option>
+                </select>
+            </div>
+            
+            <div class="project-header">
+                <h1 class="project-title" data-i18n="title">BlueMO</h1>
+                <div class="project-authors">JP Carrascal (2016)</div>
+            </div>
+            
+            <div style="text-align: center; margin-bottom: 30px;" data-i18n="subtitle">
+                Bluetooth LE to MIDI/OSC translator for Mac OS X
+            </div>
+            
+            <div style="text-align: center; margin-bottom: 30px;">
+                <img src="images/main.jpg" alt="BlueMO" style="max-width: 100%; height: auto;" />
+            </div>
+            
+            <div style="text-align: justify; margin-bottom: 30px;" data-i18n="description">
+                BlueMO is a Bluetooth Low Energy to MIDI/OSC translator application designed specifically for Mac OS X. This utility application enables seamless communication between Bluetooth LE devices and music software, allowing wireless controllers and sensors to interface with digital audio workstations and other music applications.
+                <br><br>
+                The application serves as a bridge between the growing ecosystem of Bluetooth LE devices and traditional music production software, translating wireless sensor data into MIDI messages or OSC (Open Sound Control) commands that can be understood by music software. This opens up new possibilities for wireless musical controllers and interactive performance systems.
+                <br><br>
+                BlueMO represents an important tool for musicians, performers, and developers working with wireless music technology, providing a reliable and efficient way to integrate Bluetooth LE devices into existing music production workflows.
+            </div>
+            
+            <h2 data-i18n="links-title">Links</h2>
+            <div style="margin-bottom: 30px;">
+                <p><a href="https://github.com/jpcarrascal/BlueMO/" target="_blank" data-i18n="github-link">→ GitHub Repository</a></p>
+            </div>
+            
+            <div class="back-link">
+                <a href="javascript:history.back()" data-i18n="back_button">← Back</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+// Multilingual content
+const translations = {
+    en: {
+        title: "BlueMO",
+        subtitle: "Bluetooth LE to MIDI/OSC translator for Mac OS X",
+        description: "BlueMO is a Bluetooth Low Energy to MIDI/OSC translator application designed specifically for Mac OS X. This utility application enables seamless communication between Bluetooth LE devices and music software, allowing wireless controllers and sensors to interface with digital audio workstations and other music applications.<br><br>The application serves as a bridge between the growing ecosystem of Bluetooth LE devices and traditional music production software, translating wireless sensor data into MIDI messages or OSC (Open Sound Control) commands that can be understood by music software. This opens up new possibilities for wireless musical controllers and interactive performance systems.<br><br>BlueMO represents an important tool for musicians, performers, and developers working with wireless music technology, providing a reliable and efficient way to integrate Bluetooth LE devices into existing music production workflows.",
+        "links-title": "Links",
+        "github-link": "→ GitHub Repository",
+        back_button: "← Back"
+    },
+    es: {
+        title: "BlueMO",
+        subtitle: "Traductor de Bluetooth LE a MIDI/OSC para Mac OS X",
+        description: "BlueMO es una aplicación traductora de Bluetooth Low Energy a MIDI/OSC diseñada específicamente para Mac OS X. Esta aplicación utilitaria permite comunicación perfecta entre dispositivos Bluetooth LE y software musical, permitiendo que controladores inalámbricos y sensores interactúen con estaciones de trabajo de audio digital y otras aplicaciones musicales.<br><br>La aplicación sirve como un puente entre el creciente ecosistema de dispositivos Bluetooth LE y el software tradicional de producción musical, traduciendo datos de sensores inalámbricos en mensajes MIDI o comandos OSC (Open Sound Control) que pueden ser entendidos por el software musical. Esto abre nuevas posibilidades para controladores musicales inalámbricos y sistemas de actuación interactiva.<br><br>BlueMO representa una herramienta importante para músicos, intérpretes y desarrolladores trabajando con tecnología musical inalámbrica, proporcionando una manera confiable y eficiente de integrar dispositivos Bluetooth LE en flujos de trabajo existentes de producción musical.",
+        "links-title": "Enlaces",
+        "github-link": "→ Repositorio GitHub",
+        back_button: "← Atrás"
+    },
+    ca: {
+        title: "BlueMO",
+        subtitle: "Traductor de Bluetooth LE a MIDI/OSC per a Mac OS X",
+        description: "BlueMO és una aplicació traductora de Bluetooth Low Energy a MIDI/OSC dissenyada específicament per a Mac OS X. Aquesta aplicació utilitària permet comunicació perfecta entre dispositius Bluetooth LE i programari musical, permetent que controladors sense fils i sensors interactuïn amb estacions de treball d'àudio digital i altres aplicacions musicals.<br><br>L'aplicació serveix com un pont entre el creixent ecosistema de dispositius Bluetooth LE i el programari tradicional de producció musical, traduint dades de sensors sense fils en missatges MIDI o comandaments OSC (Open Sound Control) que poden ser entesos pel programari musical. Això obre noves possibilitats per a controladors musicals sense fils i sistemes d'actuació interactiva.<br><br>BlueMO representa una eina important per a músics, intèrprets i desenvolupadors treballant amb tecnologia musical sense fils, proporcionant una manera fiable i eficient d'integrar dispositius Bluetooth LE en fluxos de treball existents de producció musical.",
+        "links-title": "Enllaços",
+        "github-link": "→ Repositori GitHub",
+        back_button: "← Enrere"
+    }
+};
+
+// Language switching functionality
+function switchLanguage(lang) {
+    localStorage.setItem('preferredLanguage', lang);
+    document.querySelectorAll('[data-i18n]').forEach(element => {
+        const key = element.getAttribute('data-i18n');
+        if (translations[lang] && translations[lang][key]) {
+            if (key === 'description') {
+                element.innerHTML = translations[lang][key];
+            } else {
+                element.textContent = translations[lang][key];
+            }
+        }
+    });
+}
+
+// Load preferred language on page load
+document.addEventListener('DOMContentLoaded', function() {
+    const savedLang = localStorage.getItem('preferredLanguage') || 'en';
+    document.getElementById('languageSelector').value = savedLang;
+    switchLanguage(savedLang);
+});
+</script>
+
+</body>
+</html>
