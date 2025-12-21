@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-15242862-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-15242862-1');
+</script>
+
+<meta name="viewport" content="width=device-width,user-scalable=no" />
+<title>Count-Me-In - Collaborative Music Step Sequencer | JP Carrascal</title>
+<link href="../../style.css" type="text/css" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css?family=Lato:700|Lato" rel="stylesheet">
+<link href="../project-template.css" type="text/css" rel="stylesheet"/>
+</head>
+<body>
+
+<div id="flex-container">
+    <div id="wrap">
+        <div class="project-content">
+            <div class="language-selector">
+                <select class="language-dropdown" id="languageSelector" onchange="switchLanguage(this.value)">
+                    <option value="en">English</option>
+                    <option value="es">Español</option>
+                    <option value="ca">Català</option>
+                </select>
+            </div>
+            
+            <div class="project-header">
+                <h1 class="project-title" data-i18n="title">Count-Me-In</h1>
+                <div class="project-authors">JP Carrascal (2022)</div>
+            </div>
+            
+            <div style="text-align: center; margin-bottom: 30px;" data-i18n="subtitle">
+                A collaborative music step sequencer for audience participation
+            </div>
+            
+            <div style="text-align: center; margin-bottom: 30px;">
+                <img src="images/main.jpg" alt="Count-Me-In" style="max-width: 100%; height: auto;" />
+            </div>
+            
+            <div style="text-align: justify; margin-bottom: 30px;" data-i18n="description">
+                Modern musical events create a boundary between performers and the audience, with only the former playing and active role. We introduce Count-Me-In, a collaborative music sequencer that uses a distributed Web architecture to promote audience participation in music performances, installations, and other related contexts. Count-Me-In uses a step-sequencer design to reduce the negative effects of network latency on the participants' experience.
+            </div>
+            
+            <h2 data-i18n="links-title">Links</h2>
+            <div style="margin-bottom: 30px;">
+                <p><a href="https://jpcarrascal.github.io/count-me-in/" target="_blank" data-i18n="demo-link">→ Live Demo</a></p>
+            </div>
+            
+            <div class="publication-section">
+                <h3 data-i18n="publications_label">Publications:</h3>
+                <p>
+                    Carrascal, Juan Pablo. (2022, June 7). Count-Me-In: A Collaborative Step Sequencer for Audience Participation. Proceedings of the 2022 Sound and Music Computing Conference (SMC22). <a href="https://doi.org/10.5281/zenodo.6573453" target="_blank">DOI: 10.5281/zenodo.6573453</a>
+                </p>
+                <p style="margin-top: 15px;">
+                    Carrascal, Juan Pablo. (2022, June 7). Social / Musical Gaming with Count-Me-in (demo). Proceedings of the 2022 Sound and Music Computing Conference (SMC22). <a href="https://doi.org/10.5281/zenodo.6576041" target="_blank">DOI: 10.5281/zenodo.6576041</a>
+                </p>
+            </div>
+            
+            <div class="back-link">
+                <a href="javascript:history.back()" data-i18n="back_button">← Back</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+// Multilingual content
+const translations = {
+    en: {
+        title: "Count-Me-In",
+        subtitle: "A collaborative music step sequencer for audience participation",
+        description: "Modern musical events create a boundary between performers and the audience, with only the former playing and active role. We introduce Count-Me-In, a collaborative music sequencer that uses a distributed Web architecture to promote audience participation in music performances, installations, and other related contexts. Count-Me-In uses a step-sequencer design to reduce the negative effects of network latency on the participants' experience.",
+        "links-title": "Links",
+        "demo-link": "→ Live Demo",
+        publications_label: "Publications:",
+        back_button: "← Back"
+    },
+    es: {
+        title: "Count-Me-In",
+        subtitle: "Un secuenciador musical colaborativo para la participación de la audiencia",
+        description: "Modern musical events create a boundary between performers and the audience, with only the former playing and active role. We introduce Count-Me-In, a collaborative music sequencer that uses a distributed Web architecture to promote audience participation in music performances, installations, and other related contexts. Count-Me-In uses a step-sequencer design to reduce the negative effects of network latency on the participants' experience.",
+        "links-title": "Enlaces",
+        "demo-link": "→ Demo en Vivo",
+        publications_label: "Publicaciones:",
+        back_button: "← Atrás"
+    },
+    ca: {
+        title: "Count-Me-In",
+        subtitle: "Un seqüenciador musical col·laboratiu per a la participació de l'audiència",
+        description: "Modern musical events create a boundary between performers and the audience, with only the former playing and active role. We introduce Count-Me-In, a collaborative music sequencer that uses a distributed Web architecture to promote audience participation in music performances, installations, and other related contexts. Count-Me-In uses a step-sequencer design to reduce the negative effects of network latency on the participants' experience.",
+        "links-title": "Enllaços",
+        "demo-link": "→ Demo en Viu",
+        publications_label: "Publicacions:",
+        back_button: "← Enrere"
+    }
+};
+
+// Language switching functionality
+function switchLanguage(lang) {
+    localStorage.setItem('preferredLanguage', lang);
+    document.querySelectorAll('[data-i18n]').forEach(element => {
+        const key = element.getAttribute('data-i18n');
+        if (translations[lang] && translations[lang][key]) {
+            if (key === 'description') {
+                element.innerHTML = translations[lang][key];
+            } else {
+                element.textContent = translations[lang][key];
+            }
+        }
+    });
+}
+
+// Load preferred language on page load
+document.addEventListener('DOMContentLoaded', function() {
+    const savedLang = localStorage.getItem('preferredLanguage') || 'en';
+    document.getElementById('languageSelector').value = savedLang;
+    switchLanguage(savedLang);
+});
+</script>
+
+</body>
+</html>

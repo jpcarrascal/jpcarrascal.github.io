@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-15242862-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-15242862-1');
+</script>
+
+<meta name="viewport" content="width=device-width,user-scalable=no" />
+<title>A Sense Of Surrounding - Participatory Soundscape for Environmental Awareness | JP Carrascal</title>
+<link href="../../style.css" type="text/css" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css?family=Lato:700|Lato" rel="stylesheet">
+<link href="../project-template.css" type="text/css" rel="stylesheet"/>
+</head>
+<body>
+
+<div id="flex-container">
+    <div id="wrap">
+        <div class="project-content">
+            <div class="language-selector">
+                <select class="language-dropdown" id="languageSelector" onchange="switchLanguage(this.value)">
+                    <option value="en">English</option>
+                    <option value="es">Español</option>
+                    <option value="ca">Català</option>
+                </select>
+            </div>
+            
+            <div class="project-header">
+                <h1 class="project-title" data-i18n="title">A Sense Of Surrounding</h1>
+                <div class="project-authors">Tom DeMajo, JP Carrascal (2024)</div>
+            </div>
+            
+            <div style="text-align: center; margin-bottom: 30px;" data-i18n="subtitle">
+                Participatory soundscape to promote environmental awareness. Presented at Ars Electronica 2024 (Linz, Austria). Supported by ArtEO / www.arteo.earth
+            </div>
+            
+            <div style="text-align: center; margin-bottom: 30px;">
+                <img src="images/main.jpg" alt="A Sense Of Surrounding" style="max-width: 100%; height: auto;" />
+            </div>
+            
+            <div style="text-align: center; margin-bottom: 30px;">
+                <iframe width="560" height="400" src="https://www.youtube.com/embed/A5b8YU7i6RI" 
+                        title="A Sense Of Surrounding - Video Documentation" frameborder="0" 
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                        allowfullscreen style="max-width: 100%; height: auto;">
+                </iframe>
+            </div>
+            
+            <div style="text-align: justify; margin-bottom: 30px;" data-i18n="description">
+                A Sense Of Surrounding is a participatory soundscape installation designed to promote environmental awareness through interactive audio experiences. This project explores how sound can be used as a medium to connect people with their environmental surroundings and foster a deeper understanding of ecological relationships.
+                <br><br>
+                The installation was presented at Ars Electronica 2024 in Linz, Austria, one of the world's most prestigious festivals for art, technology, and society. The project was supported by ArtEO (www.arteo.earth), an organization dedicated to promoting environmental consciousness through artistic expression.
+                <br><br>
+                Through participatory interaction, visitors become part of the soundscape, creating an immersive experience that highlights the interconnectedness between human activity and environmental impact.
+            </div>
+            
+            <div class="publication-section">
+                <h3 data-i18n="publication_label">Publication:</h3>
+                <p>
+                    Juan Pablo Carrascal and Tom DeMajo. Conference Proceedings of CHIME One Day Workshop 2023, The Open University, Milton Keynes, 4 December 2023. <a href="https://static1.squarespace.com/static/6227c31a43daf21135453605/t/656078524d4eeb5e8b93e931/1700821088634/CHIME+Abstract+-+Carrascal+and+DeMajo.pdf" target="_blank">Full paper (PDF)</a>
+                </p>
+            </div>
+            
+            <div class="back-link">
+                <a href="javascript:history.back()" data-i18n="back_button">← Back</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+// Multilingual content
+const translations = {
+    en: {
+        title: "A Sense Of Surrounding",
+        subtitle: "Participatory soundscape to promote environmental awareness. Presented at Ars Electronica 2024 (Linz, Austria). Supported by ArtEO / www.arteo.earth",
+        description: "A Sense Of Surrounding is a participatory soundscape installation designed to promote environmental awareness through interactive audio experiences. This project explores how sound can be used as a medium to connect people with their environmental surroundings and foster a deeper understanding of ecological relationships.<br><br>The installation was presented at Ars Electronica 2024 in Linz, Austria, one of the world's most prestigious festivals for art, technology, and society. The project was supported by ArtEO (www.arteo.earth), an organization dedicated to promoting environmental consciousness through artistic expression.<br><br>Through participatory interaction, visitors become part of the soundscape, creating an immersive experience that highlights the interconnectedness between human activity and environmental impact.",
+        publication_label: "Publication:",
+        back_button: "← Back"
+    },
+    es: {
+        title: "A Sense Of Surrounding",
+        subtitle: "Paisaje sonoro participativo para promover la conciencia ambiental. Presentado en Ars Electronica 2024 (Linz, Austria). Apoyado por ArtEO / www.arteo.earth",
+        description: "A Sense Of Surrounding es una instalación de paisaje sonoro participativo diseñada para promover la conciencia ambiental a través de experiencias de audio interactivas. Este proyecto explora cómo el sonido puede usarse como medio para conectar a las personas con su entorno ambiental y fomentar una comprensión más profunda de las relaciones ecológicas.<br><br>La instalación fue presentada en Ars Electronica 2024 en Linz, Austria, uno de los festivales más prestigiosos del mundo para el arte, la tecnología y la sociedad. El proyecto fue apoyado por ArtEO (www.arteo.earth), una organización dedicada a promover la conciencia ambiental a través de la expresión artística.<br><br>A través de la interacción participativa, los visitantes se convierten en parte del paisaje sonoro, creando una experiencia inmersiva que destaca la interconexión entre la actividad humana y el impacto ambiental.",
+        publication_label: "Publicación:",
+        back_button: "← Atrás"
+    },
+    ca: {
+        title: "A Sense Of Surrounding",
+        subtitle: "Paisatge sonor participatiu per promoure la consciència ambiental. Presentat a Ars Electronica 2024 (Linz, Àustria). Recolzat per ArtEO / www.arteo.earth",
+        description: "A Sense Of Surrounding és una instal·lació de paisatge sonor participatiu dissenyada per promoure la consciència ambiental a través d'experiències d'àudio interactives. Aquest projecte explora com el so es pot utilitzar com a mitjà per connectar les persones amb el seu entorn ambiental i fomentar una comprensió més profunda de les relacions ecològiques.<br><br>La instal·lació va ser presentada a Ars Electronica 2024 a Linz, Àustria, un dels festivals més prestigiosos del món per a l'art, la tecnologia i la societat. El projecte va ser recolzat per ArtEO (www.arteo.earth), una organització dedicada a promoure la consciència ambiental a través de l'expressió artística.<br><br>A través de la interacció participativa, els visitants es converteixen en part del paisatge sonor, creant una experiència immersiva que destaca la interconnexió entre l'activitat humana i l'impacte ambiental.",
+        publication_label: "Publicació:",
+        back_button: "← Enrere"
+    }
+};
+
+// Language switching functionality
+function switchLanguage(lang) {
+    localStorage.setItem('preferredLanguage', lang);
+    document.querySelectorAll('[data-i18n]').forEach(element => {
+        const key = element.getAttribute('data-i18n');
+        if (translations[lang] && translations[lang][key]) {
+            if (key === 'description') {
+                element.innerHTML = translations[lang][key];
+            } else {
+                element.textContent = translations[lang][key];
+            }
+        }
+    });
+}
+
+// Load preferred language on page load
+document.addEventListener('DOMContentLoaded', function() {
+    const savedLang = localStorage.getItem('preferredLanguage') || 'en';
+    document.getElementById('languageSelector').value = savedLang;
+    switchLanguage(savedLang);
+});
+</script>
+
+</body>
+</html>

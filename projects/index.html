@@ -21,9 +21,21 @@
 <style>
 .projects-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
     margin-top: 40px;
+}
+
+@media (max-width: 900px) {
+    .projects-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
 }
 
 .project-card {
@@ -31,6 +43,8 @@
     border-radius: 8px;
     overflow: hidden;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
+    display: flex;
+    flex-direction: column;
 }
 
 .project-card:hover {
@@ -46,6 +60,9 @@
 
 .project-info {
     padding: 20px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
 }
 
 .project-info h3 {
@@ -59,6 +76,11 @@
     margin: 0 0 15px 0;
     color: #666;
     line-height: 1.5;
+    flex-grow: 1;
+}
+
+.project-link {
+    margin-top: auto;
 }
 
 </style>
@@ -75,9 +97,20 @@
             
             <div class="projects-grid">
                 <div class="project-card">
-                    <img src="intangible/images/intangible03.jpg" alt="InTangible Project">
+                    <img src="a-sense-of-surrounding/images/main.jpg" alt="A Sense Of Surrounding">
                     <div class="project-info">
-                        <h3>InTangible</h3>
+                        <h3>A Sense Of Surrounding (2024)</h3>
+                        <p>Participatory soundscape for environmental awareness. Presented at Ars Electronica 2024.</p>
+                        <div class="project-link">
+                            <a href="a-sense-of-surrounding/">View Project</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="project-card">
+                    <img src="intangible/images/intangible01.jpg" alt="InTangible Project">
+                    <div class="project-info">
+                        <h3>InTangible (2023)</h3>
                         <p>A Reflection on Digital vs. Physical Co-Ownership</p>
                         <div class="project-link">
                             <a href="intangible/">View Project</a>
@@ -86,9 +119,75 @@
                 </div>
                 
                 <div class="project-card">
+                    <img src="hootbeat/images/hootbeat-block-diagram.jpg" alt="HootBeat Project">
+                    <div class="project-info">
+                        <h3>HootBeat (2022)</h3>
+                        <p>A Platform for MIDI-Controlled Lighting Wearables</p>
+                        <div class="project-link">
+                            <a href="hootbeat/">View Project</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="project-card">
+                    <img src="count-me-in/images/main.jpg" alt="Count-Me-In">
+                    <div class="project-info">
+                        <h3>Count-Me-In (2022)</h3>
+                        <p>A collaborative music step sequencer for audience participation</p>
+                        <div class="project-link">
+                            <a href="count-me-in/">View Project</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="project-card">
+                    <img src="ble-midi-glove/images/main.jpg" alt="BLE-MIDI Glove Controller">
+                    <div class="project-info">
+                        <h3>BLE-MIDI Glove Controller (2021)</h3>
+                        <p>A Bluetooth LE-MIDI-based glove controller for musical performance</p>
+                        <div class="project-link">
+                            <a href="ble-midi-glove/">View Project</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="project-card">
+                    <img src="momc-controller/images/main.jpg" alt="MoMc Controller">
+                    <div class="project-info">
+                        <h3>MoMc Controller (2021)</h3>
+                        <p>Arduino-based modular MIDI pedal controller</p>
+                        <div class="project-link">
+                            <a href="momc-controller/">View Project</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="project-card">
+                    <img src="lockdown/images/main.jpg" alt="Lockdown VR">
+                    <div class="project-info">
+                        <h3>Lockdown (2020)</h3>
+                        <p>An interactive VR videoclip for Spacebarman's song. Built with WebVR/WebXR.</p>
+                        <div class="project-link">
+                            <a href="lockdown/">View Project</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="project-card">
+                    <img src="blesync/images/main.jpg" alt="BLESync">
+                    <div class="project-info">
+                        <h3>BLESync (2019)</h3>
+                        <p>A Bluetooth device for synchronizing tap-tempo guitar pedals to computer DAWs</p>
+                        <div class="project-link">
+                            <a href="blesync/">View Project</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="project-card">
                     <img src="multitouchmixer/images/multitouch-frame.jpg" alt="Multitouch Mixer">
                     <div class="project-info">
-                        <h3>Multitouch Mixer</h3>
+                        <h3>Multitouch Mixer (2010)</h3>
                         <p>Interface for Audio Mixing with Multitouch Technology</p>
                         <div class="project-link">
                             <a href="multitouchmixer/">View Project</a>
@@ -97,12 +196,12 @@
                 </div>
                 
                 <div class="project-card">
-                    <img src="hootbeat/images/hootbeat-block-diagram.jpg" alt="HootBeat Project">
+                    <img src="augmented-guitar/images/main.jpg" alt="Augmented Guitar">
                     <div class="project-info">
-                        <h3>HootBeat</h3>
-                        <p>A Platform for MIDI-Controlled Lighting Wearables</p>
+                        <h3>Augmented Guitar (2010)</h3>
+                        <p>Electronic enhancement for electric guitars using motion sensors</p>
                         <div class="project-link">
-                            <a href="hootbeat/">View Project</a>
+                            <a href="augmented-guitar/">View Project</a>
                         </div>
                     </div>
                 </div>

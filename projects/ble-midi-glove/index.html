@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-15242862-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-15242862-1');
+</script>
+
+<meta name="viewport" content="width=device-width,user-scalable=no" />
+<title>BLE-MIDI Glove Controller | JP Carrascal</title>
+<link href="../../style.css" type="text/css" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css?family=Lato:700|Lato" rel="stylesheet">
+<link href="../project-template.css" type="text/css" rel="stylesheet"/>
+</head>
+<body>
+
+<div id="flex-container">
+    <div id="wrap">
+        <div class="project-content">
+            <div class="language-selector">
+                <select class="language-dropdown" id="languageSelector" onchange="switchLanguage(this.value)">
+                    <option value="en">English</option>
+                    <option value="es">Español</option>
+                    <option value="ca">Català</option>
+                </select>
+            </div>
+            
+            <div class="project-header">
+                <h1 class="project-title" data-i18n="title">BLE-MIDI Glove Controller</h1>
+                <div class="project-authors">JP Carrascal (2021)</div>
+            </div>
+            
+            <div style="text-align: center; margin-bottom: 30px;" data-i18n="subtitle">
+                A Bluetooth LE-MIDI-based glove controller for musical performance
+            </div>
+            
+            <div style="text-align: center; margin-bottom: 30px;">
+                <img src="images/main.jpg" alt="BLE-MIDI Glove Controller" style="max-width: 100%; height: auto;" />
+            </div>
+            
+            <div style="text-align: justify; margin-bottom: 30px;" data-i18n="description">
+                The BLE-MIDI Glove Controller is an innovative wearable musical interface that combines Bluetooth Low Energy (BLE) technology with MIDI communication protocols. This project represents a sophisticated approach to gestural music control, allowing performers to manipulate sound through natural hand movements and finger gestures.
+                <br><br>
+                Built using modern wireless technology, the glove controller offers freedom of movement while maintaining reliable, low-latency communication with digital audio workstations and synthesizers. The device incorporates multiple sensors to capture various aspects of hand motion and finger positioning, translating these into expressive musical parameters.
+                <br><br>
+                This project contributes to the growing field of embodied musical interfaces, offering musicians new ways to express themselves through technology while maintaining the intuitive connection between physical gesture and musical expression.
+            </div>
+            
+            <h2 data-i18n="links-title">Links</h2>
+            <div style="margin-bottom: 30px;">
+                <p><a href="https://github.com/jpcarrascal/BTMIDIGloveController" target="_blank" data-i18n="github-link">→ GitHub Repository</a></p>
+            </div>
+            
+            <div class="back-link">
+                <a href="javascript:history.back()" data-i18n="back_button">← Back</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+// Multilingual content
+const translations = {
+    en: {
+        title: "BLE-MIDI Glove Controller",
+        subtitle: "A Bluetooth LE-MIDI-based glove controller for musical performance",
+        description: "The BLE-MIDI Glove Controller is an innovative wearable musical interface that combines Bluetooth Low Energy (BLE) technology with MIDI communication protocols. This project represents a sophisticated approach to gestural music control, allowing performers to manipulate sound through natural hand movements and finger gestures.<br><br>Built using modern wireless technology, the glove controller offers freedom of movement while maintaining reliable, low-latency communication with digital audio workstations and synthesizers. The device incorporates multiple sensors to capture various aspects of hand motion and finger positioning, translating these into expressive musical parameters.<br><br>This project contributes to the growing field of embodied musical interfaces, offering musicians new ways to express themselves through technology while maintaining the intuitive connection between physical gesture and musical expression.",
+        "links-title": "Links",
+        "github-link": "→ GitHub Repository",
+        back_button: "← Back"
+    },
+    es: {
+        title: "Controlador de Guante BLE-MIDI",
+        subtitle: "Un controlador de guante basado en Bluetooth LE-MIDI para interpretación musical",
+        description: "El Controlador de Guante BLE-MIDI es una interfaz musical wearable innovadora que combina la tecnología Bluetooth Low Energy (BLE) con protocolos de comunicación MIDI. Este proyecto representa un enfoque sofisticado para el control musical gestual, permitiendo a los intérpretes manipular el sonido a través de movimientos naturales de las manos y gestos con los dedos.<br><br>Construido usando tecnología inalámbrica moderna, el controlador de guante ofrece libertad de movimiento mientras mantiene una comunicación confiable y de baja latencia con estaciones de trabajo de audio digital y sintetizadores. El dispositivo incorpora múltiples sensores para capturar varios aspectos del movimiento de la mano y el posicionamiento de los dedos, traduciendo estos en parámetros musicales expresivos.<br><br>Este proyecto contribuye al campo creciente de las interfaces musicales encarnadas, ofreciendo a los músicos nuevas formas de expresarse a través de la tecnología mientras mantiene la conexión intuitiva entre el gesto físico y la expresión musical.",
+        "links-title": "Enlaces",
+        "github-link": "→ Repositorio GitHub",
+        back_button: "← Atrás"
+    },
+    ca: {
+        title: "Controlador de Guant BLE-MIDI",
+        subtitle: "Un controlador de guant basat en Bluetooth LE-MIDI per a interpretació musical",
+        description: "El Controlador de Guant BLE-MIDI és una interfície musical wearable innovadora que combina la tecnologia Bluetooth Low Energy (BLE) amb protocols de comunicació MIDI. Aquest projecte representa un enfocament sofisticat per al control musical gestual, permetent als intèrprets manipular el so a través de moviments naturals de les mans i gestos amb els dits.<br><br>Construït usant tecnologia sense fils moderna, el controlador de guant ofereix llibertat de moviment mentre manté una comunicació fiable i de baixa latència amb estacions de treball d'àudio digital i sintetitzadors. El dispositiu incorpora múltiples sensors per capturar diversos aspectes del moviment de la mà i el posicionament dels dits, traduint aquests en paràmetres musicals expressius.<br><br>Aquest projecte contribueix al camp creixent de les interfícies musicals encarnades, oferint als músics noves formes d'expressar-se a través de la tecnologia mentre manté la connexió intuïtiva entre el gest físic i l'expressió musical.",
+        "links-title": "Enllaços",
+        "github-link": "→ Repositori GitHub",
+        back_button: "← Enrere"
+    }
+};
+
+// Language switching functionality
+function switchLanguage(lang) {
+    localStorage.setItem('preferredLanguage', lang);
+    document.querySelectorAll('[data-i18n]').forEach(element => {
+        const key = element.getAttribute('data-i18n');
+        if (translations[lang] && translations[lang][key]) {
+            if (key === 'description') {
+                element.innerHTML = translations[lang][key];
+            } else {
+                element.textContent = translations[lang][key];
+            }
+        }
+    });
+}
+
+// Load preferred language on page load
+document.addEventListener('DOMContentLoaded', function() {
+    const savedLang = localStorage.getItem('preferredLanguage') || 'en';
+    document.getElementById('languageSelector').value = savedLang;
+    switchLanguage(savedLang);
+});
+</script>
+
+</body>
+</html>

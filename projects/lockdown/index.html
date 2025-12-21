@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-15242862-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-15242862-1');
+</script>
+
+<meta name="viewport" content="width=device-width,user-scalable=no" />
+<title>Lockdown - Interactive VR Videoclip | JP Carrascal</title>
+<link href="../../style.css" type="text/css" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css?family=Lato:700|Lato" rel="stylesheet">
+<link href="../project-template.css" type="text/css" rel="stylesheet"/>
+</head>
+<body>
+
+<div id="flex-container">
+    <div id="wrap">
+        <div class="project-content">
+            <div class="language-selector">
+                <select class="language-dropdown" id="languageSelector" onchange="switchLanguage(this.value)">
+                    <option value="en">English</option>
+                    <option value="es">Español</option>
+                    <option value="ca">Català</option>
+                </select>
+            </div>
+            
+            <div class="project-header">
+                <h1 class="project-title" data-i18n="title">Lockdown</h1>
+                <div class="project-authors">JP Carrascal (2020)</div>
+            </div>
+            
+            <div style="text-align: center; margin-bottom: 30px;" data-i18n="subtitle">
+                An interactive videoclip for Spacebarman's song 'Lockdown'. Built with WebVR/WebXR, best experienced with an Oculus Quest.
+            </div>
+            
+            <div style="text-align: center; margin-bottom: 30px;">
+                <img src="images/main.jpg" alt="Lockdown VR Experience" style="max-width: 100%; height: auto;" />
+            </div>
+            
+            <div style="text-align: justify; margin-bottom: 30px;" data-i18n="description">
+                Lockdown is an innovative interactive videoclip created for Spacebarman's song 'Lockdown', developed during the global pandemic of 2020. This project represents a pioneering approach to music visualization, combining virtual reality technology with artistic expression to create an immersive audiovisual experience.
+                <br><br>
+                Built using WebVR/WebXR technologies, the project is accessible through web browsers while delivering a fully immersive experience, particularly when viewed with VR headsets like the Oculus Quest. The browser-based approach ensures accessibility while pushing the boundaries of what's possible with web-based virtual reality.
+                <br><br>
+                The interactive videoclip reflects the zeitgeist of 2020, exploring themes of isolation and connection through virtual spaces. This work demonstrates the potential of VR as a medium for artistic expression and musical storytelling, offering viewers an active role in the narrative experience.
+            </div>
+            
+            <h2 data-i18n="links-title">Links</h2>
+            <div style="margin-bottom: 30px;">
+                <p><a href="https://jpcarrascal.com/lockdown-vr/" target="_blank" data-i18n="experience-link">→ Experience Lockdown VR</a></p>
+            </div>
+            
+            <div class="back-link">
+                <a href="javascript:history.back()" data-i18n="back_button">← Back</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+// Multilingual content
+const translations = {
+    en: {
+        title: "Lockdown",
+        subtitle: "An interactive videoclip for Spacebarman's song 'Lockdown'. Built with WebVR/WebXR, best experienced with an Oculus Quest.",
+        description: "Lockdown is an innovative interactive videoclip created for Spacebarman's song 'Lockdown', developed during the global pandemic of 2020. This project represents a pioneering approach to music visualization, combining virtual reality technology with artistic expression to create an immersive audiovisual experience.<br><br>Built using WebVR/WebXR technologies, the project is accessible through web browsers while delivering a fully immersive experience, particularly when viewed with VR headsets like the Oculus Quest. The browser-based approach ensures accessibility while pushing the boundaries of what's possible with web-based virtual reality.<br><br>The interactive videoclip reflects the zeitgeist of 2020, exploring themes of isolation and connection through virtual spaces. This work demonstrates the potential of VR as a medium for artistic expression and musical storytelling, offering viewers an active role in the narrative experience.",
+        "links-title": "Links",
+        "experience-link": "→ Experience Lockdown VR",
+        back_button: "← Back"
+    },
+    es: {
+        title: "Lockdown",
+        subtitle: "Un videoclip interactivo para la canción 'Lockdown' de Spacebarman. Construido con WebVR/WebXR, mejor experimentado con un Oculus Quest.",
+        description: "Lockdown es un videoclip interactivo innovador creado para la canción 'Lockdown' de Spacebarman, desarrollado durante la pandemia global de 2020. Este proyecto representa un enfoque pionero para la visualización musical, combinando la tecnología de realidad virtual con la expresión artística para crear una experiencia audiovisual inmersiva.<br><br>Construido usando tecnologías WebVR/WebXR, el proyecto es accesible a través de navegadores web mientras entrega una experiencia completamente inmersiva, particularmente cuando se ve con cascos de VR como el Oculus Quest. El enfoque basado en navegador asegura accesibilidad mientras empuja los límites de lo que es posible con realidad virtual basada en web.<br><br>El videoclip interactivo refleja el zeitgeist de 2020, explorando temas de aislamiento y conexión a través de espacios virtuales. Este trabajo demuestra el potencial de VR como medio para la expresión artística y la narración musical, ofreciendo a los espectadores un papel activo en la experiencia narrativa.",
+        "links-title": "Enlaces",
+        "experience-link": "→ Experimentar Lockdown VR",
+        back_button: "← Atrás"
+    },
+    ca: {
+        title: "Lockdown",
+        subtitle: "Un videoclip interactiu per a la cançó 'Lockdown' de Spacebarman. Construït amb WebVR/WebXR, millor experimentat amb un Oculus Quest.",
+        description: "Lockdown és un videoclip interactiu innovador creat per a la cançó 'Lockdown' de Spacebarman, desenvolupat durant la pandèmia global de 2020. Aquest projecte representa un enfocament pioner per a la visualització musical, combinant la tecnologia de realitat virtual amb l'expressió artística per crear una experiència audiovisual immersiva.<br><br>Construït usant tecnologies WebVR/WebXR, el projecte és accessible a través de navegadors web mentre entrega una experiència completament immersiva, particularment quan es veu amb cascos de VR com l'Oculus Quest. L'enfocament basat en navegador assegura accessibilitat mentre empeny els límits del que és possible amb realitat virtual basada en web.<br><br>El videoclip interactiu reflecteix el zeitgeist de 2020, explorant temes d'aïllament i connexió a través d'espais virtuals. Aquest treball demostra el potencial de VR com a mitjà per a l'expressió artística i la narració musical, oferint als espectadors un paper actiu en l'experiència narrativa.",
+        "links-title": "Enllaços",
+        "experience-link": "→ Experimentar Lockdown VR",
+        back_button: "← Enrere"
+    }
+};
+
+// Language switching functionality
+function switchLanguage(lang) {
+    localStorage.setItem('preferredLanguage', lang);
+    document.querySelectorAll('[data-i18n]').forEach(element => {
+        const key = element.getAttribute('data-i18n');
+        if (translations[lang] && translations[lang][key]) {
+            if (key === 'description') {
+                element.innerHTML = translations[lang][key];
+            } else {
+                element.textContent = translations[lang][key];
+            }
+        }
+    });
+}
+
+// Load preferred language on page load
+document.addEventListener('DOMContentLoaded', function() {
+    const savedLang = localStorage.getItem('preferredLanguage') || 'en';
+    document.getElementById('languageSelector').value = savedLang;
+    switchLanguage(savedLang);
+});
+</script>
+
+</body>
+</html>

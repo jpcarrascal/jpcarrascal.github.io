@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-15242862-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-15242862-1');
+</script>
+
+<meta name="viewport" content="width=device-width,user-scalable=no" />
+<title>BLESync - Bluetooth Sync Device for Guitar Pedals | JP Carrascal</title>
+<link href="../../style.css" type="text/css" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css?family=Lato:700|Lato" rel="stylesheet">
+<link href="../project-template.css" type="text/css" rel="stylesheet"/>
+</head>
+<body>
+
+<div id="flex-container">
+    <div id="wrap">
+        <div class="project-content">
+            <div class="language-selector">
+                <select class="language-dropdown" id="languageSelector" onchange="switchLanguage(this.value)">
+                    <option value="en">English</option>
+                    <option value="es">Español</option>
+                    <option value="ca">Català</option>
+                </select>
+            </div>
+            
+            <div class="project-header">
+                <h1 class="project-title" data-i18n="title">BLESync</h1>
+                <div class="project-authors">JP Carrascal (2019)</div>
+            </div>
+            
+            <div style="text-align: center; margin-bottom: 30px;" data-i18n="subtitle">
+                A Bluetooth device for synchronizing tap-tempo guitar pedals to computer DAWs
+            </div>
+            
+            <div style="text-align: center; margin-bottom: 30px;">
+                <img src="images/main.jpg" alt="BLESync Device" style="max-width: 100%; height: auto;" />
+            </div>
+            
+            <div style="text-align: justify; margin-bottom: 30px;" data-i18n="description">
+                Electric guitar players often rely on a disparate combination of pedals, whose effects are an essential aspect of the performance language. Many of these effects feature time-based parameters such as delay time or modulation frequency. In a performance incorporating computers and guitars, these parameters should ideally be synchronized with the song tempo as determined by software. While some modern effect pedals incorporate MIDI inputs that can be used for synchronization, a large amount of them require tempo to be "tapped" by stepping on an additional footswitch.
+                <br><br>
+                BLESync is a simple MIDI Bluetooth LE device that facilitates the synchronization between a computer and multiple tap tempo-based devices. A wireless connection allows better physical onstage independence between the computer and the guitar performer.
+            </div>
+            
+            <h2 data-i18n="links-title">Links</h2>
+            <div style="margin-bottom: 30px;">
+                <p><a href="https://github.com/jpcarrascal/blesync" target="_blank" data-i18n="github-link">→ GitHub Repository</a></p>
+            </div>
+            
+            <div class="publication-section">
+                <h3 data-i18n="publication_label">Publication:</h3>
+                <p>
+                    JP Carrascal. (2019, November 18). BLESync: Wireless Synchronization Between Computers and Tap Tempo Effect Pedals. Combined proceedings of the Nordic Sound and Music Computing Conference 2019 and the Interactive Sonification Workshop 2019. <a href="https://zenodo.org/records/3755756" target="_blank">Full paper (Zenodo)</a>
+                </p>
+            </div>
+            
+            <div class="back-link">
+                <a href="javascript:history.back()" data-i18n="back_button">← Back</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+// Multilingual content
+const translations = {
+    en: {
+        title: "BLESync",
+        subtitle: "A Bluetooth device for synchronizing tap-tempo guitar pedals to computer DAWs",
+        description: "Electric guitar players often rely on a disparate combination of pedals, whose effects are an essential aspect of the performance language. Many of these effects feature time-based parameters such as delay time or modulation frequency. In a performance incorporating computers and guitars, these parameters should ideally be synchronized with the song tempo as determined by software. While some modern effect pedals incorporate MIDI inputs that can be used for synchronization, a large amount of them require tempo to be \"tapped\" by stepping on an additional footswitch.<br><br>BLESync is a simple MIDI Bluetooth LE device that facilitates the synchronization between a computer and multiple tap tempo-based devices. A wireless connection allows better physical onstage independence between the computer and the guitar performer.",
+        "links-title": "Links",
+        "github-link": "→ GitHub Repository",
+        publication_label: "Publication:",
+        back_button: "← Back"
+    },
+    es: {
+        title: "BLESync",
+        subtitle: "Un dispositivo Bluetooth para sincronizar pedales de guitarra tap-tempo con DAWs de computadora",
+        description: "Electric guitar players often rely on a disparate combination of pedals, whose effects are an essential aspect of the performance language. Many of these effects feature time-based parameters such as delay time or modulation frequency. In a performance incorporating computers and guitars, these parameters should ideally be synchronized with the song tempo as determined by software. While some modern effect pedals incorporate MIDI inputs that can be used for synchronization, a large amount of them require tempo to be \"tapped\" by stepping on an additional footswitch.<br><br>BLESync is a simple MIDI Bluetooth LE device that facilitates the synchronization between a computer and multiple tap tempo-based devices. A wireless connection allows better physical onstage independence between the computer and the guitar performer.",
+        "links-title": "Enlaces",
+        "github-link": "→ Repositorio GitHub",
+        publication_label: "Publicación:",
+        back_button: "← Atrás"
+    },
+    ca: {
+        title: "BLESync",
+        subtitle: "Un dispositiu Bluetooth per sincronitzar pedals de guitarra tap-tempo amb DAWs d'ordinador",
+        description: "Electric guitar players often rely on a disparate combination of pedals, whose effects are an essential aspect of the performance language. Many of these effects feature time-based parameters such as delay time or modulation frequency. In a performance incorporating computers and guitars, these parameters should ideally be synchronized with the song tempo as determined by software. While some modern effect pedals incorporate MIDI inputs that can be used for synchronization, a large amount of them require tempo to be \"tapped\" by stepping on an additional footswitch.<br><br>BLESync is a simple MIDI Bluetooth LE device that facilitates the synchronization between a computer and multiple tap tempo-based devices. A wireless connection allows better physical onstage independence between the computer and the guitar performer.",
+        "links-title": "Enllaços",
+        "github-link": "→ Repositori GitHub",
+        publication_label: "Publicació:",
+        back_button: "← Enrere"
+    }
+};
+
+// Language switching functionality
+function switchLanguage(lang) {
+    localStorage.setItem('preferredLanguage', lang);
+    document.querySelectorAll('[data-i18n]').forEach(element => {
+        const key = element.getAttribute('data-i18n');
+        if (translations[lang] && translations[lang][key]) {
+            if (key === 'description') {
+                element.innerHTML = translations[lang][key];
+            } else {
+                element.textContent = translations[lang][key];
+            }
+        }
+    });
+}
+
+// Load preferred language on page load
+document.addEventListener('DOMContentLoaded', function() {
+    const savedLang = localStorage.getItem('preferredLanguage') || 'en';
+    document.getElementById('languageSelector').value = savedLang;
+    switchLanguage(savedLang);
+});
+</script>
+
+</body>
+</html>

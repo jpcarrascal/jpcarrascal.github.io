@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-15242862-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-15242862-1');
+</script>
+
+<meta name="viewport" content="width=device-width,user-scalable=no" />
+<title>Augmented Guitar - Electronic Enhancement for Electric Guitars | JP Carrascal</title>
+<link href="../../style.css" type="text/css" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css?family=Lato:700|Lato" rel="stylesheet">
+<link href="../project-template.css" type="text/css" rel="stylesheet"/>
+</head>
+<body>
+
+<div id="flex-container">
+    <div id="wrap">
+        <div class="project-content">
+            <div class="language-selector">
+                <select class="language-dropdown" id="languageSelector" onchange="switchLanguage(this.value)">
+                    <option value="en">English</option>
+                    <option value="es">Español</option>
+                    <option value="ca">Català</option>
+                </select>
+            </div>
+            
+            <div class="project-header">
+                <h1 class="project-title" data-i18n="title">Augmented Guitar</h1>
+                <div class="project-authors">JP Carrascal (2010)</div>
+            </div>
+            
+            <div style="text-align: center; margin-bottom: 30px;" data-i18n="subtitle">
+                My take on the old theme of augmenting electric guitars with electronics
+            </div>
+            
+            <div style="text-align: center; margin-bottom: 30px;">
+                <img src="images/main.jpg" alt="Augmented Guitar" style="max-width: 100%; height: auto;" />
+            </div>
+            
+            <div style="text-align: justify; margin-bottom: 30px;" data-i18n="description">
+                The Augmented Guitar project represents my exploration of the classic theme of enhancing electric guitars with electronic components and sensors. This work, developed in 2010, investigates how traditional guitar playing can be extended through the integration of motion sensors, accelerometers, and other electronic interfaces.
+                <br><br>
+                The project focuses on creating new expressive possibilities for guitarists by capturing physical gestures and movements that normally wouldn't affect the sound. By augmenting the instrument with electronic sensors, the guitar becomes capable of responding to tilt, rotation, and other spatial movements, opening up new dimensions of musical expression.
+                <br><br>
+                This early exploration in the field of augmented musical instruments demonstrates a DIY approach to instrument modification, showcasing how creative applications of readily available electronics can transform traditional instruments. The work contributes to the ongoing dialogue about the relationship between acoustic and electronic musical expression.
+            </div>
+            
+            <h2 data-i18n="links-title">Links</h2>
+            <div style="margin-bottom: 30px;">
+                <p><a href="http://blog.jpcarrascal.com/2010/03/look-ma-no-wiimote/" target="_blank" data-i18n="blog-link">→ Blog Post</a></p>
+            </div>
+            
+            <div class="back-link">
+                <a href="javascript:history.back()" data-i18n="back_button">← Back</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+// Multilingual content
+const translations = {
+    en: {
+        title: "Augmented Guitar",
+        subtitle: "My take on the old theme of augmenting electric guitars with electronics",
+        description: "The Augmented Guitar project represents my exploration of the classic theme of enhancing electric guitars with electronic components and sensors. This work, developed in 2010, investigates how traditional guitar playing can be extended through the integration of motion sensors, accelerometers, and other electronic interfaces.<br><br>The project focuses on creating new expressive possibilities for guitarists by capturing physical gestures and movements that normally wouldn't affect the sound. By augmenting the instrument with electronic sensors, the guitar becomes capable of responding to tilt, rotation, and other spatial movements, opening up new dimensions of musical expression.<br><br>This early exploration in the field of augmented musical instruments demonstrates a DIY approach to instrument modification, showcasing how creative applications of readily available electronics can transform traditional instruments. The work contributes to the ongoing dialogue about the relationship between acoustic and electronic musical expression.",
+        "links-title": "Links",
+        "blog-link": "→ Blog Post",
+        back_button: "← Back"
+    },
+    es: {
+        title: "Guitarra Aumentada",
+        subtitle: "Mi interpretación del viejo tema de aumentar guitarras eléctricas con electrónica",
+        description: "El proyecto Guitarra Aumentada representa mi exploración del tema clásico de mejorar guitarras eléctricas con componentes electrónicos y sensores. Este trabajo, desarrollado en 2010, investiga cómo la interpretación tradicional de guitarra puede extenderse a través de la integración de sensores de movimiento, acelerómetros y otras interfaces electrónicas.<br><br>El proyecto se enfoca en crear nuevas posibilidades expresivas para guitarristas capturando gestos físicos y movimientos que normalmente no afectarían el sonido. Al aumentar el instrumento with sensores electrónicos, la guitarra se vuelve capaz de responder a inclinación, rotación y otros movimientos espaciales, abriendo nuevas dimensiones de expresión musical.<br><br>Esta exploración temprana en el campo de instrumentos musicales aumentados demuestra un enfoque DIY para la modificación de instrumentos, mostrando cómo aplicaciones creativas de electrónica fácilmente disponible pueden transformar instrumentos tradicionales. El trabajo contribuye al diálogo continuo sobre la relación entre la expresión musical acústica y electrónica.",
+        "links-title": "Enlaces",
+        "blog-link": "→ Post del Blog",
+        back_button: "← Atrás"
+    },
+    ca: {
+        title: "Guitarra Augmentada",
+        subtitle: "La meva interpretació del vell tema d'augmentar guitarres elèctriques amb electrònica",
+        description: "El projecte Guitarra Augmentada representa la meva exploració del tema clàssic de millorar guitarres elèctriques amb components electrònics i sensors. Aquest treball, desenvolupat el 2010, investiga com la interpretació tradicional de guitarra pot estendre's a través de la integració de sensors de moviment, aceleròmetres i altres interfícies electròniques.<br><br>El projecte s'enfoca en crear noves possibilitats expressives per a guitarristes capturant gestos físics i moviments que normalment no afectarien el so. Augmentant l'instrument amb sensors electrònics, la guitarra es torna capaç de respondre a inclinació, rotació i altres moviments espacials, obrint noves dimensions d'expressió musical.<br><br>Aquesta exploració primerenca en el camp d'instruments musicals augmentats demostra un enfocament DIY per a la modificació d'instruments, mostrant com aplicacions creatives d'electrònica fàcilment disponible poden transformar instruments tradicionals. El treball contribueix al diàleg continu sobre la relació entre l'expressió musical acústica i electrònica.",
+        "links-title": "Enllaços",
+        "blog-link": "→ Post del Blog",
+        back_button: "← Enrere"
+    }
+};
+
+// Language switching functionality
+function switchLanguage(lang) {
+    localStorage.setItem('preferredLanguage', lang);
+    document.querySelectorAll('[data-i18n]').forEach(element => {
+        const key = element.getAttribute('data-i18n');
+        if (translations[lang] && translations[lang][key]) {
+            if (key === 'description') {
+                element.innerHTML = translations[lang][key];
+            } else {
+                element.textContent = translations[lang][key];
+            }
+        }
+    });
+}
+
+// Load preferred language on page load
+document.addEventListener('DOMContentLoaded', function() {
+    const savedLang = localStorage.getItem('preferredLanguage') || 'en';
+    document.getElementById('languageSelector').value = savedLang;
+    switchLanguage(savedLang);
+});
+</script>
+
+</body>
+</html>
