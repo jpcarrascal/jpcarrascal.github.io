@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-15242862-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-15242862-1');
+</script>
+
+<meta name="viewport" content="width=device-width,user-scalable=no" />
+<title>UX Research Approach Statement | JP Carrascal</title>
+<link href="../../style.css" type="text/css" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css?family=Lato:700|Lato" rel="stylesheet">
+<link href="../project-template.css" type="text/css" rel="stylesheet"/>
+</head>
+<body>
+
+<div id="flex-container">
+    <div id="wrap">
+        <div class="project-content">
+            <div class="language-selector">
+                <select class="language-dropdown" id="languageSelector" onchange="switchLanguage(this.value)">
+                    <option value="en">English</option>
+                    <option value="es">Español</option>
+                    <option value="ca">Català</option>
+                </select>
+            </div>
+            
+            <div class="project-header">
+                <h1 class="project-title" data-i18n="title">UX Research Approach Statement</h1>
+                <div class="project-authors">JP Carrascal</div>
+            </div>
+            
+            <div style="text-align: justify; margin-bottom: 30px;" data-i18n="description">
+                Much of my recent work at Microsoft was confidential, so I'm not able to share detailed case studies publicly. That being said, I'm happy to describe how I typically approach UX research problems.
+                <br><br>
+                I encourage developing shared ownership throughout the research process. I prefer to start by working in close collaboration with stakeholders (PMs, designers, engineers) to develop hypotheses and research questions, in order to have a deep shared understanding of the problem. That initial agreement allows deciding on the best research method to tackle the problem (with guidance from UXR expertise), and crafting the required study materials (study guides, prototypes, etc).
+                <br><br>
+                From there, collaborative execution is key. I believe the best learning experience comes from hearing and observing customer problems first hand. I've noticed that product teams that are hands-on running research, are more likely to feel inspired to take action and improve the product.
+                <br><br>
+                Regarding synthesis, model development and reporting, a collaborative approach is great to build confidence, objectivity and ownership. This guarantees that results are grounded in product and business needs, and that they lead to real product improvements.
+            </div>
+            
+            <div class="back-link">
+                <a href="javascript:history.back()" data-i18n="back_button">← Back</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+// Multilingual content
+const translations = {
+    en: {
+        title: "UX Research Approach Statement",
+        description: "Much of my recent work at Microsoft was confidential, so I'm not able to share detailed case studies publicly. That being said, I'm happy to describe how I typically approach UX research problems.<br><br>I encourage developing shared ownership throughout the research process. I prefer to start by working in close collaboration with stakeholders (PMs, designers, engineers) to develop hypotheses and research questions, in order to have a deep shared understanding of the problem. That initial agreement allows deciding on the best research method to tackle the problem (with guidance from UXR expertise), and crafting the required study materials (study guides, prototypes, etc).<br><br>From there, collaborative execution is key. I believe the best learning experience comes from hearing and observing customer problems first hand. I've noticed that product teams that are hands-on running research, are more likely to feel inspired to take action and improve the product.<br><br>Regarding synthesis, model development and reporting, a collaborative approach is great to build confidence, objectivity and ownership. This guarantees that results are grounded in product and business needs, and that they lead to real product improvements.",
+        back_button: "← Back"
+    },
+    es: {
+        title: "Declaración del Enfoque de Investigación UX",
+        description: "Gran parte de mi trabajo reciente en Microsoft fue confidencial, por lo que no puedo compartir estudios de caso detallados públicamente. Dicho esto, estoy feliz de describir cómo típicamente abordo problemas de investigación UX.<br><br>Promuevo desarrollar propiedad compartida a lo largo del proceso de investigación. Prefiero comenzar trabajando en estrecha colaboración con los interesados ​​(PMs, diseñadores, ingenieros) para desarrollar hipótesis y preguntas de investigación, para tener una comprensión profunda y compartida del problema. Este acuerdo inicial permite decidir sobre el mejor método de investigación para abordar el problema (con orientación de expertise UXR), y elaborar los materiales de estudio necesarios (guías de estudio, prototipos, etc).<br><br>A partir de ahí, la ejecución colaborativa es clave. Creo que la mejor experiencia de aprendizaje proviene de escuchar y observar directamente los problemas de los clientes. He notado que los equipos de producto que participan activamente en la investigación tienen más probabilidades de sentirse inspirados para tomar medidas y mejorar el producto.<br><br>Con respecto a la síntesis, desarrollo de modelos y reportes de resultados, un enfoque colaborativo es excelente para generar confianza, objetividad y propiedad. Esto garantiza que los resultados estén fundamentados en las necesidades del producto y del negocio, y que generen mejoras reales en el producto.",
+        back_button: "← Atrás"
+    },
+    ca: {
+        title: "Declaració de l'Enfocament de Recerca UX",
+        description: "Gran part del meu treball recent a Microsoft va ser confidencial, de manera que no puc compartir casos d'estudi detallats públicament. Dit això, estic contente de descriure com típicament abordo problemes de recerca UX.<br><br>Promociono desenvolupar propietat compartida al llarg del procés de recerca. Prefereixo començar treballant en estreta col·laboració amb les parts interessades (PMs, dissenyadors, enginyers) per desenvolupar hipòtesis i preguntes de recerca, per tenir una comprensió profunda i compartida del problema. Aquest acord inicial permet decidir sobre el millor mètode de recerca per abordar el problema (amb orientació d'expertise UXR), i elaborar els materials d'estudi necessaris (guies d'estudi, prototips, etc).<br><br>A partir d'aquí, l'execució col·laborativa és clau. Crec que la millor experiència d'aprenentatge prové d'escoltar i observar directament els problemes dels clients. He notat que els equips de producte que participen activament en la recerca tenen més probabilitats de sentir-se inspirats per prendre mesures i millorar el producte.<br><br>Respecte a la síntesi, desenvolupament de models i informes, un enfocament col·laboratiu és excel·lent per generar confiança, objectivitat i propietat. Això garanteix que els resultats estiguin fonamentats en les necessitats del producte i del negoci, i que generin millores reals en el producte.",
+        back_button: "← Enrere"
+    }
+};
+
+// Language switching functionality
+function switchLanguage(lang) {
+    localStorage.setItem('preferredLanguage', lang);
+    document.querySelectorAll('[data-i18n]').forEach(element => {
+        const key = element.getAttribute('data-i18n');
+        if (translations[lang] && translations[lang][key]) {
+            if (key === 'description') {
+                element.innerHTML = translations[lang][key];
+            } else {
+                element.textContent = translations[lang][key];
+            }
+        }
+    });
+}
+
+// Load preferred language on page load
+document.addEventListener('DOMContentLoaded', function() {
+    const savedLang = localStorage.getItem('preferredLanguage') || 'en';
+    document.getElementById('languageSelector').value = savedLang;
+    switchLanguage(savedLang);
+});
+</script>
+
+</body>
+</html>

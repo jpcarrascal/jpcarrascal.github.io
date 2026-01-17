@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head>
+<meta charset="UTF-8">
+<title>Juan Pablo Carrascal - Projects Portfolio</title>
+<link href="https://fonts.googleapis.com/css?family=Lato:700|Lato" rel="stylesheet">
+
+<style>
+/* Reset and base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Lato', sans-serif;
+    font-size: 10pt;
+    line-height: 1.2;
+    color: #333;
+    background: white;
+}
+
+@page {
+    size: A4;
+    margin: 0.5in;
+}
+
+.page {
+    height: 100vh;
+    page-break-after: always;
+    display: flex;
+    flex-direction: column;
+}
+
+.page:last-child {
+    page-break-after: auto;
+}
+
+.project-top, .project-bottom {
+    height: 5.5in;
+    max-height: 5.5in;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+    gap: 20px;
+    padding: 20px 0;
+    align-items: start;
+    overflow: visible;
+}
+
+.project-top {
+    border-bottom: 1px solid #ddd;
+}
+
+/* Top project: description left, image right */
+.project-top .project-content {
+    grid-column: 1;
+    grid-row: 1;
+}
+
+.project-top .project-image {
+    grid-column: 2;
+    grid-row: 1;
+}
+
+/* Bottom project: image left, description right */
+.project-bottom .project-image {
+    grid-column: 1;
+    grid-row: 1;
+}
+
+.project-bottom .project-content {
+    grid-column: 2;
+    grid-row: 1;
+}
+
+img {
+    max-width: 100%;
+    max-height: 4in;
+    object-fit: contain;
+    border: 1px solid #ddd;
+}
+
+/* Typography */
+h1 {
+    font-size: 2.5em;
+    text-align: center;
+    margin-bottom: 0.5em;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+h2 {
+    font-size: 1.8em;
+    margin: 1em 0 0.5em 0;
+    font-weight: 700;
+    border-bottom: 2px solid #333;
+    padding-bottom: 0.2em;
+}
+
+h3 {
+    font-size: 1.2em;
+    margin: 0 0 0.3em 0;
+    font-weight: 700;
+}
+
+.subtitle {
+    text-align: center;
+    font-size: 1.2em;
+    color: #666;
+    margin-bottom: 2em;
+}
+
+.contact-info {
+    text-align: center;
+    margin-bottom: 2em;
+    font-size: 1em;
+    color: #666;
+}
+
+/* Project styles */
+.project-content {
+    padding: 10px;
+    height: 100%;
+    max-height: 4.2in;
+    overflow-y: auto;
+}
+
+.project-title {
+    font-size: 0.95em;
+    font-weight: 700;
+    margin-bottom: 0.2em;
+}
+
+.project-meta {
+    font-size: 0.8em;
+    color: #666;
+    margin-bottom: 0.3em;
+}
+
+.project-subtitle {
+    font-weight: bold;
+    margin-bottom: 0.4em;
+    font-size: 0.85em;
+}
+
+.project-description {
+    margin-bottom: 0.6em;
+    text-align: justify;
+    font-size: 0.8em;
+    line-height: 1.2;
+}
+
+.project-details {
+    font-size: 0.7em;
+    color: #666;
+    margin-top: 0.4em;
+}
+
+.project-image {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 10px;
+    height: 100%;
+    max-height: 4.2in;
+    overflow: hidden;
+}
+
+/* Publication styling */
+.publication {
+    background: #f8f8f8;
+    padding: 0.3em;
+    margin: 0.3em 0;
+    border-left: 3px solid #333;
+    font-size: 0.7em;
+}
+
+
+
+/* Cover page */
+.cover-page {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    text-align: center;
+    page-break-after: always;
+}
+</style>
+
+</head>
+<body>
+
+    <!-- Cover Page -->
+    <div class="cover-page">
+        <h1 id="portfolio-title">Juan Pablo Carrascal</h1>
+        <div class="subtitle" id="portfolio-subtitle">Interactive Media & Digital Arts Portfolio</div>
+        <div class="contact-info" id="portfolio-contact">
+            jp@jpcarrascal.com<br>
+            jpcarrascal.github.io<br>
+            2010-2024
+        </div>
+    </div>
+
+    <!-- Projects Pages -->
+    <div id="projects-container">
+        <div class="loading">Loading projects...</div>
+    </div>
+
+</body>
+
+<script>
+// Load configuration and generate portfolio
+async function loadPortfolio() {
+    try {
+        const response = await fetch('projects-config.json');
+        const config = await response.json();
+        
+        // Update portfolio info
+        document.getElementById('portfolio-title').textContent = config.portfolioInfo.title.split(' - ')[0];
+        document.getElementById('portfolio-subtitle').textContent = config.portfolioInfo.subtitle;
+        document.getElementById('portfolio-contact').innerHTML = 
+            `${config.portfolioInfo.contact.email}<br>
+             ${config.portfolioInfo.contact.website}<br>
+             ${config.portfolioInfo.contact.period}`;
+        
+        // Filter selected projects and sort by year (newest first, active projects first)
+        const selectedProjects = config.projects
+            .filter(project => project.selected)
+            .sort((a, b) => {
+                const aIsActive = String(a.year).includes('Present');
+                const bIsActive = String(b.year).includes('Present');
+                
+                // If one is active and the other isn't, active comes first
+                if (aIsActive && !bIsActive) return -1;
+                if (!aIsActive && bIsActive) return 1;
+                
+                // Otherwise sort by year (newest first)
+                const yearA = typeof a.year === 'string' ? parseInt(a.year) : a.year;
+                const yearB = typeof b.year === 'string' ? parseInt(b.year) : b.year;
+                return yearB - yearA;
+            });
+        
+        // Generate Projects
+        generateProjects(selectedProjects);
+        
+    } catch (error) {
+        console.error('Error loading portfolio config:', error);
+        document.getElementById('projects-container').innerHTML = 
+            '<div class="loading">Error loading projects configuration.</div>';
+    }
+}
+
+function generateProjects(projects) {
+    const projectsContainer = document.getElementById('projects-container');
+    let pagesHTML = '';
+    
+    // Group projects into pages of 2
+    for (let i = 0; i < projects.length; i += 2) {
+        const topProject = projects[i];
+        const bottomProject = projects[i + 1];
+        
+        pagesHTML += `<div class="page">`;
+        
+        // Top project (description left, image right)
+        if (topProject) {
+            pagesHTML += createProjectHTML(topProject, 'project-top');
+        }
+        
+        // Bottom project (image left, description right)
+        if (bottomProject) {
+            pagesHTML += createProjectHTML(bottomProject, 'project-bottom');
+        }
+        
+        pagesHTML += `</div>`;
+    }
+    
+    projectsContainer.innerHTML = pagesHTML;
+}
+
+function createProjectHTML(project, position) {
+    // Build technology details
+    let techDetails = '';
+    if (project.medium) techDetails += `<strong>Medium:</strong> ${project.medium}`;
+    if (project.tags && project.tags.length > 0) {
+        if (techDetails) techDetails += '<br>';
+        techDetails += `<strong>Tags:</strong> ${project.tags.join(', ')}`;
+    }
+    if (project.client) {
+        if (techDetails) techDetails += '<br>';
+        techDetails += `<strong>Client:</strong> ${project.client}`;
+    }
+    if (project.artist) {
+        if (techDetails) techDetails += '<br>';
+        techDetails += `<strong>Artist:</strong> ${project.artist}`;
+    }
+    if (project.themes) {
+        if (techDetails) techDetails += '<br>';
+        techDetails += `<strong>Themes:</strong> ${project.themes}`;
+    }
+    
+    // Build exhibition section
+    let exhibitionHTML = '';
+    if (project.exhibition && project.exhibition.length > 0) {
+        exhibitionHTML = `
+            <div class="publication">
+                <strong>Exhibitions / Presentations:</strong><br>
+                ${project.exhibition.map(item => `• ${item}`).join('<br>')}
+            </div>
+        `;
+    }
+    
+    // Build publication section
+    let publicationHTML = '';
+    if (project.publication && project.publication.length > 0) {
+        publicationHTML = `
+            <div class="publication">
+                <strong>Publication:</strong><br>
+                ${project.publication.map(item => `• ${item}`).join('<br>')}
+            </div>
+        `;
+    }
+    
+    // Split description into paragraphs
+    const paragraphs = project.description.split('\n\n');
+    let descriptionHTML = '';
+    paragraphs.forEach(paragraph => {
+        if (paragraph.trim()) {
+            descriptionHTML += `<div class="project-description">${paragraph.trim()}</div>`;
+        }
+    });
+    
+    const contentHTML = `
+        <div class="project-content">
+            <h3 class="project-title">${project.title}</h3>
+            <div class="project-meta">${project.authors} (${project.year})</div>
+            <div class="project-subtitle">${project.subtitle}</div>
+            ${descriptionHTML}
+            <div class="project-details">
+                ${techDetails}
+            </div>
+            ${exhibitionHTML}
+            ${publicationHTML}
+        </div>
+    `;
+    
+    const imageHTML = `
+        <div class="project-image">
+            <img src="${project.image}" alt="${project.title}">
+        </div>
+    `;
+    
+    return `
+        <div class="${position}">
+            ${contentHTML}
+            ${imageHTML}
+        </div>
+    `;
+}
+
+// Load portfolio when page loads
+document.addEventListener('DOMContentLoaded', loadPortfolio);
+
+// Add page numbers for print
+window.addEventListener('load', function() {
+    if (window.location.search.includes('print')) {
+        window.print();
+    }
+});
+</script>
+
+</body>
+</html>
