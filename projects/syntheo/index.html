@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-15242862-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-15242862-1');
+</script>
+
+<meta name="viewport" content="width=device-width,user-scalable=no" />
+<title>SynthEO - Synesthetic Synthesizer Based on Satellite Image Sonification | JP Carrascal</title>
+<link href="../../style.css" type="text/css" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css?family=Lato:700|Lato" rel="stylesheet">
+<link href="../project-template.css" type="text/css" rel="stylesheet"/>
+</head>
+<body>
+
+<div id="flex-container">
+    <div id="wrap">
+        <div class="project-content">
+            <div class="language-selector">
+                <select class="language-dropdown" id="languageSelector" onchange="switchLanguage(this.value)">
+                    <option value="en">English</option>
+                    <option value="es">Español</option>
+                    <option value="ca">Català</option>
+                </select>
+            </div>
+            
+            <div class="project-header">
+                <h1 class="project-title" data-i18n="title">SynthEO</h1>
+                <div class="project-authors">JP Carrascal (2024)</div>
+            </div>
+            
+            <div style="text-align: center; margin-bottom: 30px;" data-i18n="subtitle">
+                Synesthetic synthesizer based on satellite image sonification. Supported by ArtEO.
+            </div>
+            
+            <div style="text-align: center; margin-bottom: 30px;">
+                <img src="images/syntheo.jpg" alt="SynthEO" style="max-width: 100%; height: auto;" />
+            </div>
+            
+            <div style="text-align: justify; margin-bottom: 30px;" data-i18n="description">
+                SynthEO is a sonification system that analyzes and extracts the color palette from satellite images and converts them into interactive soundscapes. In its current version, it uses a library of satellite images provided by ArtEO for the ArtEO Pioneers program. It runs on desktop or mobile browsers.
+                <br><br>
+                The system maps specific colors to sound synthesis parameters, allowing users to explore and manipulate visual data through sonic interaction. SynthEO offers a unique synesthetic experience, where users can 'hear' the visual characteristics of satellite images, creating an aesthetic experience and an additional layer of interpretation of the environmental data represented in the images.
+            </div>
+            
+            <div class="publication-section">
+                <h3 data-i18n="exhibition_label">Exhibition:</h3>
+                <p data-i18n="exhibition_text">Web application available at <a href="https://www.arteo.earth/stories/syntheo" target="_blank">https://www.arteo.earth/stories/syntheo</a></p>
+            </div>
+            
+            <div class="back-link">
+                <a href="javascript:history.back()" data-i18n="back_button">← Back</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+// Multilingual content
+const translations = {
+    en: {
+        title: "SynthEO",
+        subtitle: "Synesthetic synthesizer based on satellite image sonification. Supported by ArtEO.",
+        description: "SynthEO is a sonification system that analyzes and extracts the color palette from satellite images and converts them into interactive soundscapes. In its current version, it uses a library of satellite images provided by ArtEO for the ArtEO Pioneers program. It runs on desktop or mobile browsers.<br><br>The system maps specific colors to sound synthesis parameters, allowing users to explore and manipulate visual data through sonic interaction. SynthEO offers a unique synesthetic experience, where users can 'hear' the visual characteristics of satellite images, creating an aesthetic experience and an additional layer of interpretation of the environmental data represented in the images.",
+        exhibition_label: "Exhibition:",
+        exhibition_text: "Web application available at <a href=\"https://www.arteo.earth/stories/syntheo\" target=\"_blank\">https://www.arteo.earth/stories/syntheo</a>",
+        back_button: "← Back"
+    },
+    es: {
+        title: "SynthEO",
+        subtitle: "Sintetizador sinestésico basado en sonificación de imágenes satelitales. Apoyado por ArtEO.",
+        description: "SynthEO es un sistema de sonificación que analiza y extrae la paleta de colores de imágenes satelitales y las convierte en paisajes sonoros interactivos. En su versión actual, utiliza una biblioteca de imágenes satelitales facilitadas por ArtEO para el programa de Pioneros de ArtEO. Funciona sobre un browser de escritorio o móvil.<br><br>El sistema mapea colores específicos a parámetros de síntesis de sonido, permitiendo a los usuarios explorar y manipular los datos visuales a través de la interacción sonora. SynthEO ofrece una experiencia sinestésica única, donde los usuarios pueden 'escuchar' las características visuales de las imágenes satelitales, creado una experiencia estética y una capa adicional de interpretación de los datos ambientales representados en las imágenes.",
+        exhibition_label: "Exposición:",
+        exhibition_text: "Aplicación web disponible en <a href=\"https://www.arteo.earth/stories/syntheo\" target=\"_blank\">https://www.arteo.earth/stories/syntheo</a>",
+        back_button: "← Atrás"
+    },
+    ca: {
+        title: "SynthEO",
+        subtitle: "Sintetitzador sinestèsic basat en sonificació d'imatges de satèl·lit. Recolzat per ArtEO.",
+        description: "SynthEO és un sistema de sonificació que analitza i extreu la paleta de colors d'imatges de satèl·lit i les converteix en paisatges sonors interactius. En la seva versió actual, utilitza una biblioteca d'imatges de satèl·lit facilitades per ArtEO per al programa de Pioners d'ArtEO. Funciona sobre un navegador d'escriptori o mòbil.<br><br>El sistema mapeja colors específics a paràmetres de síntesi de so, permetent als usuaris explorar i manipular les dades visuals a través de la interacció sonora. SynthEO ofereix una experiència sinestèsica única, on els usuaris poden 'escoltar' les característiques visuals de les imatges de satèl·lit, creant una experiència estètica i una capa addicional d'interpretació de les dades ambientals representades a les imatges.",
+        exhibition_label: "Exposició:",
+        exhibition_text: "Aplicació web disponible a <a href=\"https://www.arteo.earth/stories/syntheo\" target=\"_blank\">https://www.arteo.earth/stories/syntheo</a>",
+        back_button: "← Enrere"
+    }
+};
+
+// Language switching functionality
+function switchLanguage(lang) {
+    localStorage.setItem('preferredLanguage', lang);
+    document.querySelectorAll('[data-i18n]').forEach(element => {
+        const key = element.getAttribute('data-i18n');
+        if (translations[lang] && translations[lang][key]) {
+            if (key === 'description' || key === 'exhibition_text') {
+                element.innerHTML = translations[lang][key];
+            } else {
+                element.textContent = translations[lang][key];
+            }
+        }
+    });
+}
+
+// Load preferred language on page load
+document.addEventListener('DOMContentLoaded', function() {
+    const savedLang = localStorage.getItem('preferredLanguage') || 'en';
+    document.getElementById('languageSelector').value = savedLang;
+    switchLanguage(savedLang);
+});
+</script>
+
+</body>
+</html>

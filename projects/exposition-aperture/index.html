@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-15242862-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-15242862-1');
+</script>
+
+<meta name="viewport" content="width=device-width,user-scalable=no" />
+<title>Exposition Aperture - Large Format Digital Video | JP Carrascal & Tom DeMajo</title>
+<link href="../../style.css" type="text/css" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css?family=Lato:700|Lato" rel="stylesheet">
+<link href="../project-template.css" type="text/css" rel="stylesheet"/>
+</head>
+<body>
+
+<div id="flex-container">
+    <div id="wrap">
+        <div class="project-content">
+            <div class="language-selector">
+                <select class="language-dropdown" id="languageSelector" onchange="switchLanguage(this.value)">
+                    <option value="en">English</option>
+                    <option value="es">Español</option>
+                    <option value="ca">Català</option>
+                </select>
+            </div>
+            
+            <div class="project-header">
+                <h1 class="project-title" data-i18n="title">Exposition Aperture</h1>
+                <div class="project-authors">Tom DeMajo, JP Carrascal (2024)</div>
+            </div>
+            
+            <div style="text-align: center; margin-bottom: 30px;" data-i18n="subtitle">
+                Large format digital video presented at Ars Electronica 2024 (Linz, Austria). Supported by ArtEO.
+            </div>
+            
+            <div style="text-align: center; margin-bottom: 30px;">
+                <img src="images/exposition-aperture.jpg" alt="Exposition Aperture" style="max-width: 100%; height: auto;" />
+            </div>
+            
+            <div style="text-align: justify; margin-bottom: 30px;" data-i18n="description">
+                Exposition Aperture begins with a single pixel-wide line, which gradually opens like a curtain to reveal complete satellite images, accompanied by an unsettling and shifting soundscape. This is a collaboration with Tom DeMajo, who developed the video based on a soundtrack generated with SynthEO (included in this portfolio).
+            </div>
+            
+            <div class="publication-section">
+                <h3 data-i18n="exhibition_label">Exhibition:</h3>
+                <p>Ars Electronica 2024, Linz, Austria</p>
+            </div>
+            
+            <div class="back-link">
+                <a href="javascript:history.back()" data-i18n="back_button">← Back</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+// Multilingual content
+const translations = {
+    en: {
+        title: "Exposition Aperture",
+        subtitle: "Large format digital video presented at Ars Electronica 2024 (Linz, Austria). Supported by ArtEO.",
+        description: "Exposition Aperture begins with a single pixel-wide line, which gradually opens like a curtain to reveal complete satellite images, accompanied by an unsettling and shifting soundscape. This is a collaboration with Tom DeMajo, who developed the video based on a soundtrack generated with SynthEO (included in this portfolio).",
+        exhibition_label: "Exhibition:",
+        back_button: "← Back"
+    },
+    es: {
+        title: "Exposition Aperture",
+        subtitle: "Video digital en gran formato presentado en Ars Electronica 2024 (Linz, Austria). Apoyado por ArtEO.",
+        description: "Exposition Aperture comienza con una línea de un solo píxel de ancho, que se abre gradualmente como un telón para revelar imágenes completas de satélite, acompañada por un paisaje sonoro inquietante y cambiante. Se trata de una colaboración con Tom DeMajo, quien desarrolló el video con base en una banda sonora generada con SynthEO (incluido en este portafolio).",
+        exhibition_label: "Exposición:",
+        back_button: "← Atrás"
+    },
+    ca: {
+        title: "Exposition Aperture",
+        subtitle: "Vídeo digital en gran format presentat a Ars Electronica 2024 (Linz, Àustria). Recolzat per ArtEO.",
+        description: "Exposition Aperture comença amb una línia d'un sol píxel d'amplada, que s'obre gradualment com una cortina per revelar imatges completes de satèl·lit, acompanyada per un paisatge sonor inquietant i canviant. Es tracta d'una col·laboració amb Tom DeMajo, qui va desenvolupar el vídeo amb base en una banda sonora generada amb SynthEO (inclòs en aquest portafoli).",
+        exhibition_label: "Exposició:",
+        back_button: "← Enrere"
+    }
+};
+
+// Language switching functionality
+function switchLanguage(lang) {
+    localStorage.setItem('preferredLanguage', lang);
+    document.querySelectorAll('[data-i18n]').forEach(element => {
+        const key = element.getAttribute('data-i18n');
+        if (translations[lang] && translations[lang][key]) {
+            if (key === 'description') {
+                element.innerHTML = translations[lang][key];
+            } else {
+                element.textContent = translations[lang][key];
+            }
+        }
+    });
+}
+
+// Load preferred language on page load
+document.addEventListener('DOMContentLoaded', function() {
+    const savedLang = localStorage.getItem('preferredLanguage') || 'en';
+    document.getElementById('languageSelector').value = savedLang;
+    switchLanguage(savedLang);
+});
+</script>
+
+</body>
+</html>

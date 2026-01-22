@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-15242862-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-15242862-1');
+</script>
+
+<meta name="viewport" content="width=device-width,user-scalable=no" />
+<title>Spacebarman - Electronic/Experimental Music Project | JP Carrascal</title>
+<link href="../../style.css" type="text/css" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css?family=Lato:700|Lato" rel="stylesheet">
+<link href="../project-template.css" type="text/css" rel="stylesheet"/>
+</head>
+<body>
+
+<div id="flex-container">
+    <div id="wrap">
+        <div class="project-content">
+            <div class="language-selector">
+                <select class="language-dropdown" id="languageSelector" onchange="switchLanguage(this.value)">
+                    <option value="en">English</option>
+                    <option value="es">Español</option>
+                    <option value="ca">Català</option>
+                </select>
+            </div>
+            
+            <div class="project-header">
+                <h1 class="project-title" data-i18n="title">Spacebarman</h1>
+                <div class="project-authors">JP Carrascal (2010 - Present)</div>
+            </div>
+            
+            <div style="text-align: center; margin-bottom: 30px;" data-i18n="subtitle">
+                Electronic / Experimental music project
+            </div>
+            
+            <div style="text-align: center; margin-bottom: 30px;">
+                <img src="images/spacebarman-madameclaude.jpg" alt="Spacebarman" style="max-width: 100%; height: auto;" />
+            </div>
+            
+            <div style="text-align: justify; margin-bottom: 30px;" data-i18n="description">
+                Spacebarman is an electronic/experimental music project, the musical alter-ego of JP Carrascal, a Colombian-Spanish artist and researcher. Its music is the result of an unholy mixture of dark electro pop, industrial, drum &amp; bass and shoegaze, equally dance floor and moshpit-friendly. Its concerts are a digital art laboratory, where interactive devices and reactive visuals developed with the help of AI create an immersive experience for the audience.
+            </div>
+            
+            <div class="publication-section">
+                <h3 data-i18n="exhibition_label">Performances:</h3>
+                <ul>
+                    <li>Almagro Film Festival, Spain, 2025</li>
+                    <li>Festival Acoustic Vell, Girona, Spain, 2025</li>
+                    <li>ManasiaHub, Bucharest, Romania, 2025</li>
+                    <li>Sofia Live Club, Sofia, Bulgaria, 2025</li>
+                    <li>Madame Claude, Berlin, 2024</li>
+                    <li>Others (2010-2024)</li>
+                </ul>
+            </div>
+            
+            <div class="publication-section">
+                <h3 data-i18n="publication_label">Releases:</h3>
+                <ul data-i18n="publication_list">
+                    <li>2025: Sometimes We Go To Dark Places, Wanderlust, Los Monstruos de Esta Ciudad, Premonición</li>
+                    <li>2024: La Sed, The Place You'll Never See, El Ansia, No Place for Us</li>
+                    <li>2020: FOMO</li>
+                    <li>2018: Persona</li>
+                    <li>2012: Si Algún Día Todo Falla</li>
+                    <li>2011: A Veces Me Pierdo, Bad Boy</li>
+                </ul>
+            </div>
+            
+            <div class="publication-section">
+                <h3 data-i18n="links_label">Links:</h3>
+                <p>
+                    <a href="https://www.spacebarman.com" target="_blank" data-i18n="official_website_link">Official website</a>
+                </p>
+            </div>
+            
+            <div class="back-link">
+                <a href="javascript:history.back()" data-i18n="back_button">← Back</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+// Multilingual content
+const translations = {
+    en: links_label: "Links:",
+        official_website_link: "Official website",
+        {
+        title: "Spacebarman",
+        subtitle: "Electronic / Experimental music project",
+        description: "Spacebarman is an electronic/experimental music project, the musical alter-ego of JP Carrascal, a Colombian-Spanish artist and researcher. Its music is the result of an unholy mixture of dark electro pop, industrial, drum &amp; bass and shoegaze, equally dance floor and moshpit-friendly. Its concerts are a digital art laboratory, where interactive devices and reactive visuals developed with the help of AI create an immersive experience for the audience.",
+        exhibition_label: "Performances:",
+        publication_label: "Releases:",
+        publication_list: "<li>2025: Sometimes We Go To Dark Places, Wanderlust, Los Monstruos de Esta Ciudad, Premonición</li><li>2024: La Sed, The Place You'll Never See, El Ansia, No Place for Us</li><li>2020: FOMO</li><li>2018: Persona</li><li>2012: Si Algún Día Todo Falla</li><li>2011: A Veces Me Pierdo, Bad Boy</li>",
+        back_button: "← Back"
+    },
+    es: {
+        title: "Spacebarman",
+        subtitle: "Proyecto de música electrónica / experimental",
+        description: "Spacebarman es mi principal proyecto de música electrónica/experimental, mi alter-ego musical. La música de Spacebarman explora la disolución del ego y de las ideas dentro del océano digital de las redes de computadores. Sus conciertos son un laboratorio de arte digital donde dispositivos interactivos y visuales reactivos desarrollados con ayuda de IA crean una experiencia inmersiva para la audiencia.",
+        exhibition_label: "Actuaciones:",
+        links_label: "Enlaces:",
+        official_website_link: "Sitio web oficial",
+        publication_label: "Lanzamientos:",
+        publication_list: "<li>2025: Sometimes We Go To Dark Places, Wanderlust, Los Monstruos de Esta Ciudad, Premonición</li><li>2024: La Sed, The Place You'll Never See, El Ansia, No Place for Us</li><li>2020: FOMO</li><li>2018: Persona</li><li>2012: Si Algún Día Todo Falla</li><li>2011: A Veces Me Pierdo, Bad Boy</li>",
+        back_button: "← Atrás"
+    },
+    ca: {
+        title: "Spacebarman",
+        subtitle: "Projecte de música electrònica / experimental",
+        links_label: "Enllaços:",
+        official_website_link: "Web oficial",
+        description: "Spacebarman és el meu principal projecte de música electrònica/experimental, el meu alter-ego musical. La música de Spacebarman explora la dissolució de l'ego i de les idees dins l'oceà digital de les xarxes d'ordinadors. Els seus concerts són un laboratori d'art digital on dispositius interactius i visuals reactius desenvolupats amb ajuda d'IA creen una experiència immersiva per a l'audiència.",
+        exhibition_label: "Actuacions:",
+        publication_label: "Llançaments:",
+        publication_list: "<li>2025: Sometimes We Go To Dark Places, Wanderlust, Los Monstruos de Esta Ciudad, Premonición</li><li>2024: La Sed, The Place You'll Never See, El Ansia, No Place for Us</li><li>2020: FOMO</li><li>2018: Persona</li><li>2012: Si Algún Día Todo Falla</li><li>2011: A Veces Me Pierdo, Bad Boy</li>",
+        back_button: "← Enrere"
+    }
+};
+
+// Language switching functionality
+function switchLanguage(lang) {
+    localStorage.setItem('preferredLanguage', lang);
+    document.querySelectorAll('[data-i18n]').forEach(element => {
+        const key = element.getAttribute('data-i18n');
+        if (translations[lang] && translations[lang][key]) {
+            if (key === 'description' || key === 'publication_list') {
+                element.innerHTML = translations[lang][key];
+            } else {
+                element.textContent = translations[lang][key];
+            }
+        }
+    });
+}
+
+// Load preferred language on page load
+document.addEventListener('DOMContentLoaded', function() {
+    const savedLang = localStorage.getItem('preferredLanguage') || 'en';
+    document.getElementById('languageSelector').value = savedLang;
+    switchLanguage(savedLang);
+});
+</script>
+
+</body>
+</html>

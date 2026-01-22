@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-15242862-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-15242862-1');
+</script>
+
+<meta name="viewport" content="width=device-width,user-scalable=no" />
+<title>Yo Soy Otro - Original Soundtrack | JP Carrascal</title>
+<link href="../../style.css" type="text/css" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css?family=Lato:700|Lato" rel="stylesheet">
+<link href="../project-template.css" type="text/css" rel="stylesheet"/>
+</head>
+<body>
+
+<div id="flex-container">
+    <div id="wrap">
+        <div class="project-content">
+            <div class="language-selector">
+                <select class="language-dropdown" id="languageSelector" onchange="switchLanguage(this.value)">
+                    <option value="en">English</option>
+                    <option value="es">Español</option>
+                    <option value="ca">Català</option>
+                </select>
+            </div>
+            
+            <div class="project-header">
+                <h1 class="project-title" data-i18n="title">Yo Soy Otro (Original Soundtrack)</h1>
+                <div class="project-authors">JP Carrascal, Alejandro Ramírez (2008)</div>
+            </div>
+            
+            <div style="text-align: center; margin-bottom: 30px;" data-i18n="subtitle">
+                Original soundtrack for the feature film 'Yo Soy Otro' by Oscar Campo
+            </div>
+            
+            <div style="text-align: center; margin-bottom: 30px;">
+                <img src="images/yo-soy-otro.jpg" alt="Yo Soy Otro" style="max-width: 100%; height: auto;" />
+            </div>
+            
+            <div style="text-align: justify; margin-bottom: 30px;" data-i18n="description">
+                This soundtrack draws from trip hop, electronic, and industrial music, complementing the dark and oppressive atmosphere characteristic of the film.
+                <br><br>
+                <h3>Synopsis</h3>
+                <i>Cali, Colombia, year 2002. José González, a middle-aged systems engineer, discovers on his skin the signs of lithomiasis, a strange and deadly disease that, according to media reports, has arrived in the city from the Amazon rainforest. People attacked by the virus die within days of contracting the disease, as their bodies fall prey to a second skin of voracious bacteria. Horrified by what the disease has begun to do to his body, José attempts to take his own life. At the moment of pointing a revolver in his mouth, he is shaken by a violent explosion: a bomb has been placed in the neighborhood. That night and during the following days, José discovers many doubles of himself, as if in the city his exploded and sick ego had multiplied to infinity. All the doubles are infected with the same virus and are killing each other in endless fratricidal struggles. And all are equal in cruelty, beyond the reasons that justify their struggles.</i>
+            </div>
+            
+            <div class="publication-section">
+                <h3 data-i18n="links_label">Links:</h3>
+                <p>
+                    <a href="https://lafabrica.bandcamp.com/album/yo-soy-otro-ost" target="_blank" data-i18n="listen_link">Listen to the soundtrack</a>
+                </p>
+            </div>
+            
+            <div class="back-link">
+                <a href="javascript:history.back()" data-i18n="back_button">← Back</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+// Multilingual content
+const translations = {
+    en: {
+        title: "Yo Soy Otro (Original Soundtrack)",
+        subtitle: "Original soundtrack for the feature film 'Yo Soy Otro' by Oscar Campo",
+        description: "This soundtrack draws from trip hop, electronic, and industrial music, complementing the dark and oppressive atmosphere characteristic of the film.<br><br><h3>Synopsis</h3><i>Cali, Colombia, year 2002. José González, a middle-aged systems engineer, discovers on his skin the signs of lithomiasis, a strange and deadly disease that, according to media reports, has arrived in the city from the Amazon rainforest. People attacked by the virus die within days of contracting the disease, as their bodies fall prey to a second skin of voracious bacteria. Horrified by what the disease has begun to do to his body, José attempts to take his own life. At the moment of pointing a revolver in his mouth, he is shaken by a violent explosion: a bomb has been placed in the neighborhood. That night and during the following days, José discovers many doubles of himself, as if in the city his exploded and sick ego had multiplied to infinity. All the doubles are infected with the same virus and are killing each other in endless fratricidal struggles. And all are equal in cruelty, beyond the reasons that justify their struggles.</i>",
+        links_label: "Links:",
+        listen_link: "Listen to the soundtrack",
+        back_button: "← Back"
+    },
+    es: {
+        title: "Yo Soy Otro (banda sonora)",
+        links_label: "Enlaces:",
+        listen_link: "Escuchar la banda sonora",
+        subtitle: "Banda sonora original para el largometraje 'Yo Soy Otro' de Oscar Campo",
+        description: "Esta banda sonora bebe de la música trip hop, electrónica e industrial, complementando la atmósfera oscura y opresiva característica del filme.<br><br><h3>Sinopsis</h3><i>Cali, Colombia, año de 2002. José González, un ingeniero de sistemas de edad mediana, descubre en su piel las señales de la litomiasis, un extraño y mortal mal que, según informes de los medios, ha llegado a la ciudad desde la selva amazónica. Las personas que son atacadas por el virus mueren a los pocos días de haber contraído la enfermedad, al quedar sus cuerpos a merced de una segunda epidermis de bacterias voraces. Horrorizado por lo que la enfermedad ha comenzado a hacer en su cuerpo, José intenta quitarse la vida. En el momento de apuntar con un revólver en su boca, es sacudido por una violenta explosión: una bomba ha sido colocada en la vecindad. Esa noche y durante los días siguientes José descubre muchos dobles suyos, como si en la ciudad se hubiera multiplicado hasta el infinito su ego estallado y enfermo. Todos los dobles están infectados con el mismo virus y se están matando entre si en interminables luchas fratricidas. Y todos se igualan en crueldad, más allá de las razones que hagan justicia a sus luchas.</i>",
+        back_button: "← Atrás"
+    },
+    ca: {
+        title: "Yo Soy Otro (banda sonora)",
+        links_label: "Enllaços:",
+        listen_link: "Escoltar la banda sonora",
+        subtitle: "Banda sonora original per al llargmetratge 'Yo Soy Otro' d'Oscar Campo",
+        description: "Aquesta banda sonora beu de la música trip hop, electrònica i industrial, complementant l'atmosfera fosca i opressiva característica del film.<br><br><h3>Sinopsi</h3><i>Cali, Colòmbia, any 2002. José González, un enginyer de sistemes d'edat mitjana, descobreix a la seva pell els senyals de la litomiasi, un estrany i mortal mal que, segons informes dels mitjans, ha arribat a la ciutat des de la selva amazònica. Les persones que són atacades pel virus moren als pocs dies d'haver contret la malaltia, en quedar els seus cossos a mercè d'una segona epidermis de bacteris voraços. Horroritzat per allò que la malaltia ha començat a fer al seu cos, José intenta treure's la vida. En el moment d'apuntar amb un revòlver a la seva boca, és sacsejat per una violenta explosió: una bomba ha estat col·locada al veïnat. Aquella nit i durant els dies següents José descobreix molts dobles seus, com si a la ciutat s'hagués multiplicat fins a l'infinit el seu ego esclatat i malalt. Tots els dobles estan infectats amb el mateix virus i s'estan matant entre si en interminables lluites fraticides. I tots s'igualen en crueltat, més enllà de les raons que facin justícia a les seves lluites.</i>",
+        back_button: "← Enrere"
+    }
+};
+
+// Language switching functionality
+function switchLanguage(lang) {
+    localStorage.setItem('preferredLanguage', lang);
+    document.querySelectorAll('[data-i18n]').forEach(element => {
+        const key = element.getAttribute('data-i18n');
+        if (translations[lang] && translations[lang][key]) {
+            if (key === 'description') {
+                element.innerHTML = translations[lang][key];
+            } else {
+                element.textContent = translations[lang][key];
+            }
+        }
+    });
+}
+
+// Load preferred language on page load
+document.addEventListener('DOMContentLoaded', function() {
+    const savedLang = localStorage.getItem('preferredLanguage') || 'en';
+    document.getElementById('languageSelector').value = savedLang;
+    switchLanguage(savedLang);
+});
+</script>
+
+</body>
+</html>
