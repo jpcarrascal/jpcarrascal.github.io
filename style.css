@@ -10,6 +10,18 @@
 }
 */
 
+:root {
+    --color-fg: lab(98.647% -5.2601 21.875);
+    --color-bg: lab(25.285% -98.947 -44.961);
+}
+
+/*
+:root {
+  --color-bg: color(display-p3 0.322 0.111 0.822);
+  --color-fg: hsl(170 0% 100%);
+}
+*/
+
 html
 {
     height: 100%;
@@ -21,98 +33,22 @@ html
 
 body
 {
-    background-color: #DDD; /* #BBB; */
-    background-image: url(images/bg01.jpg);
+    background-color: var(--color-bg); /* #BBB; */
     background-size: cover;
     padding: 0;
     width: 100%;
     margin:0;
+    color: var(--color-fg);
+    /* background-image: url(images/bg01.jpg);
+    background-blend-mode: multiply;
+    */
 }
-
-@-webkit-keyframes rotate {
-  from {
-    -webkit-transform: rotate(0deg);
-  }
-  to { 
-    -webkit-transform: rotate(360deg);
-  }
-}
-
-@-webkit-keyframes rotate_inv {
-  from {
-    -webkit-transform: rotate(365deg);
-  }
-  to { 
-    -webkit-transform: rotate(5deg);
-  }
-}
-
-.gear {
-    opacity: 0.1;
-    filter: invert(1);
-}
-
-#gear01
-{
-    position: fixed;
-    top: -250px;
-    left: -250px;
-    background-size: 100% 100%;
-    background-image: url("images/gear01.png");
-    z-index: -10;
-    width: 800px;
-    height: 800px;
-    -webkit-animation-name:             rotate; 
-    -webkit-animation-duration:         240s; 
-    -webkit-animation-iteration-count:  infinite;
-    -webkit-animation-timing-function: linear;
-}
-
-#gear02
-{
-    position: fixed;
-    bottom: -100px;
-    right: -100px;
-    background-size: 100% 100%;
-    background-image: url("images/gear02.png");
-    z-index: -10;
-    width: 400px;
-    height: 400px;
-    animation-name: rotate;
-    -webkit-animation-name: rotate;
-    -webkit-animation-duration:         120s; 
-    -webkit-animation-iteration-count:  infinite;
-    -webkit-animation-timing-function: linear;
-}
-
-#gear03
-{
-    position: fixed;
-    bottom: 205px;
-    right: 205px;
-    background-size: 100% 100%;
-    background-image: url("images/gear03.png");
-    z-index: -10;
-    width: 200px;
-    height: 200px;
-    animation-name: rotate_inv;
-    -webkit-animation-name:             rotate_inv; 
-    -webkit-animation-duration:         60s; 
-    -webkit-animation-iteration-count:  infinite;
-    -webkit-animation-timing-function: linear;
-}
-
 
 h1
 {
     font-family: 'lato', sans-serif;
     font-size: 2em;
-    letter-spacing: 0.3em;
-    color: #000;
-}
-
-.hl {
-    color: #137FFF;
+    letter-spacing: 0.2em;
 }
 
 .follow
@@ -122,10 +58,10 @@ h1
 }
 
 
-a:link {color:#000;}      /* unvisited link */
-a:visited {color:#000;}  /* visited link */
-a:hover {color:#137FFF;}  /* mouse over link */
-a:active {color:#F96A6A;}
+a:link {color:var(--color-fg);}      /* unvisited link */
+a:visited {color:var(--color-fg);}  /* visited link */
+a:hover {color:var(--color-bg);}  /* mouse over link */
+a:active {color:var(--color-bg);}
 
 #flex-container
 {
@@ -148,11 +84,26 @@ a:active {color:#F96A6A;}
 {
 	margin-left: auto;
 	margin-right: auto;
-	height: 80%;
-	border: 1px solid transparent;
-	border-radius: 1.5em;
-	padding: 1.5em;
+	padding: 0;
+    display: flex;
+    flex-direction: column;
 }
+
+#header, #footer
+{
+    margin-bottom: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+    background-color: var(--color-fg);
+    color: var(--color-bg);
+}
+
+#footer
+{
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
 
 .nounderline
 {
@@ -174,21 +125,23 @@ a:active {color:#F96A6A;}
 
 .link
 {
-    border-radius: 7px;
-	background-color: rgba(0,0,0,0.4);
-    color: white;
-    padding: 3px;
+    border-radius: 0px;
+	background-color: var(--color-gg);
+    color: var(--color-fg);
+    padding: 5px;
     padding-bottom: 6px;
     padding-left: 9px;
     padding-right: 9px;
     line-height: 1.2em;
-    margin-right: 5px;
     margin-bottom: 5px;
+    border: 2px solid var(--color-fg);
 }
 
 .link:hover, .link_hover
 {
-    background-color: #137FFF;
+    background-color: var(--color-fg);
+    color: var(--color-bg);
+    border: 2px solid var(--color-fg);
     /* transition: background-color 500ms ease-out;*/
 }
 
@@ -211,11 +164,6 @@ a:active {color:#F96A6A;}
     {
         margin-bottom: 5px;
     }
-    #gear01
-    {
-        display: none;
-        background-image: none;
-    }
 }
 
 @media screen and (min-width : 901px)
@@ -232,11 +180,4 @@ a:active {color:#F96A6A;}
     {
         width: 90%;
     }
-    #gear01
-    {
-        top: -350px;
-        left: -350px;
-    }
-
-
 }
