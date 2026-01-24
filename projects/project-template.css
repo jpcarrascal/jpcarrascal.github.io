@@ -8,6 +8,18 @@ body {
     color: var(--color-fg);
 }
 
+/* Link styling for project pages */
+a {
+    color: var(--color-fg);
+    text-decoration: none;
+    font-weight: 700;
+}
+
+a:hover {
+    color: var(--color-fg);
+    text-decoration: underline;
+}
+
 /* Override flex container behavior from main CSS */
 #flex-container {
     position: static;
@@ -57,6 +69,16 @@ body {
     background-color: var(--color-fg);
     color: var(--color-bg);
     text-decoration: none;
+}
+
+/* Keep card headings bold while body/link text stays normal */
+.project-card h3 {
+    font-weight: 700;
+}
+
+.project-card p,
+.project-card .project-link a {
+    font-weight: 400;
 }
 
 .project-card:hover {
@@ -375,6 +397,11 @@ body {
 }
 
 .publication-section a {
+    color: var(--color-bg);
+    text-decoration: none;
+}
+
+.publication-section a:hover {
     color: var(--color-bg);
     text-decoration: underline;
 }
