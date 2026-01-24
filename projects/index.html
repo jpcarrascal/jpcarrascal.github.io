@@ -17,73 +17,6 @@
 <link href="../style.css" type="text/css" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css?family=Lato:700|Lato" rel="stylesheet">
 <link href="project-template.css" type="text/css" rel="stylesheet"/>
-
-<style>
-.projects-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
-    margin-top: 40px;
-}
-
-@media (max-width: 900px) {
-    .projects-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-
-@media (max-width: 600px) {
-    .projects-grid {
-        grid-template-columns: 1fr;
-    }
-}
-
-.project-card {
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    overflow: hidden;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-    display: flex;
-    flex-direction: column;
-}
-
-.project-card:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-}
-
-.project-card img {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-}
-
-.project-info {
-    padding: 20px;
-    flex-grow: 1;
-    display: flex;
-    flex-direction: column;
-}
-
-.project-info h3 {
-    margin: 0 0 10px 0;
-    font-family: 'Lato', sans-serif;
-    font-size: 1.4em;
-    color: #333;
-}
-
-.project-info p {
-    margin: 0 0 15px 0;
-    color: #666;
-    line-height: 1.5;
-    flex-grow: 1;
-}
-
-.project-link {
-    margin-top: auto;
-}
-
-</style>
 </head>
 <body>
 
@@ -96,280 +29,205 @@
             </div>
             
             <div class="projects-grid">
-                <div class="project-card">
+                <a class="project-card" href="spacebarman/">
                     <img src="spacebarman/images/spacebarman-madameclaude.jpg" alt="Spacebarman">
                     <div class="project-info">
                         <h3>Spacebarman (2010 - Present)</h3>
                         <p>Electronic / Experimental music project</p>
-                        <div class="project-link">
-                            <a href="spacebarman/">View Project</a>
-                        </div>
                     </div>
-                </div>
+                </a>
                 
-                <div class="project-card">
+                <a class="project-card" href="a-sense-of-surrounding/">
                     <img src="a-sense-of-surrounding/images/main.jpg" alt="A Sense Of Surrounding">
                     <div class="project-info">
                         <h3>A Sense Of Surrounding (2024)</h3>
                         <p>Participatory soundscape for environmental awareness. Presented at Ars Electronica 2024.</p>
-                        <div class="project-link">
-                            <a href="a-sense-of-surrounding/">View Project</a>
-                        </div>
                     </div>
-                </div>
+                </a>
                 
-                <div class="project-card">
+                <a class="project-card" href="syntheo/">
                     <img src="syntheo/images/syntheo.jpg" alt="SynthEO">
                     <div class="project-info">
                         <h3>SynthEO (2024)</h3>
                         <p>Synesthetic synthesizer based on satellite image sonification. Supported by ArtEO.</p>
-                        <div class="project-link">
-                            <a href="syntheo/">View Project</a>
-                        </div>
                     </div>
-                </div>
+                </a>
                 
-                <div class="project-card">
+                <a class="project-card" href="exposition-aperture/">
                     <img src="exposition-aperture/images/exposition-aperture.jpg" alt="Exposition Aperture">
                     <div class="project-info">
                         <h3>Exposition Aperture (2024)</h3>
                         <p>Large format digital video presented at Ars Electronica 2024. Supported by ArtEO.</p>
-                        <div class="project-link">
-                            <a href="exposition-aperture/">View Project</a>
-                        </div>
                     </div>
-                </div>
+                </a>
                 
-                <div class="project-card">
+                <a class="project-card" href="augmented-guitar/">
                     <img src="augmented-guitar/images/mariposa.jpg" alt="Augmented Guitar">
                     <div class="project-info">
                         <h3>Augmented Guitar (2024)</h3>
                         <p>Electronic enhancement for electric guitars using motion sensors</p>
-                        <div class="project-link">
-                            <a href="augmented-guitar/">View Project</a>
-                        </div>
                     </div>
-                </div>
+                </a>
                 
-                <div class="project-card">
+                <a class="project-card" href="intangible/">
                     <img src="intangible/images/intangible01.jpg" alt="InTangible Project">
                     <div class="project-info">
                         <h3>InTangible (2023)</h3>
                         <p>A Reflection on Digital vs. Physical Co-Ownership</p>
-                        <div class="project-link">
-                            <a href="intangible/">View Project</a>
-                        </div>
                     </div>
-                </div>
+                </a>
                 
-                <div class="project-card">
+                <a class="project-card" href="hootbeat/">
                     <img src="hootbeat/images/hootbeat-block-diagram.jpg" alt="HootBeat Project">
                     <div class="project-info">
                         <h3>HootBeat (2022)</h3>
                         <p>A Platform for MIDI-Controlled Lighting Wearables</p>
-                        <div class="project-link">
-                            <a href="hootbeat/">View Project</a>
-                        </div>
                     </div>
-                </div>
+                </a>
                 
-                <div class="project-card">
+                <a class="project-card" href="count-me-in/">
                     <img src="count-me-in/images/main.jpg" alt="Count-Me-In">
                     <div class="project-info">
                         <h3>Count-Me-In (2022)</h3>
                         <p>A collaborative music step sequencer for audience participation</p>
-                        <div class="project-link">
-                            <a href="count-me-in/">View Project</a>
-                        </div>
                     </div>
-                </div>
+                </a>
                 
-                <div class="project-card">
+                <a class="project-card" href="opportunity-mapper/">
                     <img src="opportunity-mapper/images/main.jpg" alt="Opportunity Mapper">
                     <div class="project-info">
                         <h3>Opportunity Mapper (2021)</h3>
                         <p>Web app to calculate Opportunity Scores and Map</p>
-                        <div class="project-link">
-                            <a href="opportunity-mapper/">View Project</a>
-                        </div>
                     </div>
-                </div>
+                </a>
                 
-                <div class="project-card">
+                <a class="project-card" href="ble-midi-glove/">
                     <img src="ble-midi-glove/images/main.jpg" alt="BLE-MIDI Glove Controller">
                     <div class="project-info">
                         <h3>BLE-MIDI Glove Controller (2021)</h3>
                         <p>A Bluetooth LE-MIDI-based glove controller for musical performance</p>
-                        <div class="project-link">
-                            <a href="ble-midi-glove/">View Project</a>
-                        </div>
                     </div>
-                </div>
+                </a>
                 
-                <div class="project-card">
+                <a class="project-card" href="momc-controller/">
                     <img src="momc-controller/images/main.jpg" alt="MoMc Controller">
                     <div class="project-info">
                         <h3>MoMc Controller (2021)</h3>
                         <p>Arduino-based modular MIDI pedal controller</p>
-                        <div class="project-link">
-                            <a href="momc-controller/">View Project</a>
-                        </div>
                     </div>
-                </div>
+                </a>
                 
-                <div class="project-card">
+                <a class="project-card" href="lockdown/">
                     <img src="lockdown/images/main.jpg" alt="Lockdown VR">
                     <div class="project-info">
                         <h3>Lockdown (2020)</h3>
                         <p>An interactive VR videoclip for Spacebarman's song. Built with WebVR/WebXR.</p>
-                        <div class="project-link">
-                            <a href="lockdown/">View Project</a>
-                        </div>
                     </div>
-                </div>
+                </a>
                 
-                <div class="project-card">
+                <a class="project-card" href="blesync/">
                     <img src="blesync/images/main.jpg" alt="BLESync">
                     <div class="project-info">
                         <h3>BLESync (2019)</h3>
                         <p>A Bluetooth device for synchronizing tap-tempo guitar pedals to computer DAWs</p>
-                        <div class="project-link">
-                            <a href="blesync/">View Project</a>
-                        </div>
                     </div>
-                </div>
+                </a>
                 
-                <div class="project-card">
+                <a class="project-card" href="magicscroll/">
                     <img src="magicscroll/images/main.jpg" alt="MagicScroll">
                     <div class="project-info">
                         <h3>MagicScroll (2018)</h3>
                         <p>A rollable display device with flexible screen area and gestural input</p>
-                        <div class="project-link">
-                            <a href="magicscroll/">View Project</a>
-                        </div>
                     </div>
-                </div>
+                </a>
                 
-                <div class="project-card">
+                <a class="project-card" href="ar-wall/">
                     <img src="ar-wall/images/main.jpg" alt="AR Wall">
                     <div class="project-info">
                         <h3>AR Wall (2018)</h3>
                         <p>An augmented reality customer wall for UX research results at Microsoft</p>
-                        <div class="project-link">
-                            <a href="ar-wall/">View Project</a>
-                        </div>
                     </div>
-                </div>
+                </a>
                 
-                <div class="project-card">
+                <a class="project-card" href="haptics-cylindrical/">
                     <img src="haptics-cylindrical/images/main.jpg" alt="Haptics on Cylindrical Displays">
                     <div class="project-info">
                         <h3>Haptics on Cylindrical Displays (2017)</h3>
                         <p>Effects of Tactile Feedback on the Perception of Virtual Shapes on Non-Planar DisplayObjects</p>
-                        <div class="project-link">
-                            <a href="haptics-cylindrical/">View Project</a>
-                        </div>
                     </div>
-                </div>
+                </a>
                 
-                <div class="project-card">
+                <a class="project-card" href="reflex/">
                     <img src="reflex/images/main.jpg" alt="ReFlex">
                     <div class="project-info">
                         <h3>ReFlex (2016)</h3>
                         <p>World's first self-contained flexible smartphone</p>
-                        <div class="project-link">
-                            <a href="reflex/">View Project</a>
-                        </div>
                     </div>
-                </div>
+                </a>
                 
-                <div class="project-card">
+                <a class="project-card" href="whammyphone/">
                     <img src="whammyphone/images/main.jpg" alt="Whammyphone">
                     <div class="project-info">
                         <h3>Whammyphone (2016)</h3>
                         <p>Exploring tangible audio manipulation using bend input on a flexible smartphone</p>
-                        <div class="project-link">
-                            <a href="whammyphone/">View Project</a>
-                        </div>
                     </div>
-                </div>
+                </a>
                 
-                <div class="project-card">
+                <a class="project-card" href="shape-emotions/">
                     <img src="shape-emotions/images/main.jpg" alt="An Evaluation of Shape Changes for Conveying Emotions">
                     <div class="project-info">
                         <h3>Shape Changes for Conveying Emotions (2016)</h3>
                         <p>Is it possible to recognize emotions from dynamic shape changes?</p>
-                        <div class="project-link">
-                            <a href="shape-emotions/">View Project</a>
-                        </div>
                     </div>
-                </div>
+                </a>
                 
-                <div class="project-card">
+                <a class="project-card" href="bluemo/">
                     <img src="bluemo/images/main.jpg" alt="BlueMO">
                     <div class="project-info">
                         <h3>BlueMO (2016)</h3>
                         <p>Bluetooth LE to MIDI/OSC translator for Mac OS X</p>
-                        <div class="project-link">
-                            <a href="bluemo/">View Project</a>
-                        </div>
                     </div>
-                </div>
+                </a>
                 
-                <div class="project-card">
+                <a class="project-card" href="bicing-spider/">
                     <img src="bicing-spider/images/main.jpg" alt="Bicing Spider">
                     <div class="project-info">
                         <h3>Bicing Spider (2011)</h3>
                         <p>An experiment on Web data scraping and interactive visualization using Quartz Composer</p>
-                        <div class="project-link">
-                            <a href="bicing-spider/">View Project</a>
-                        </div>
                     </div>
-                </div>
+                </a>
                 
-                <div class="project-card">
+                <a class="project-card" href="trackpad-controller/">
                     <img src="trackpad-controller/images/main.jpg" alt="Macbook trackpad as controller for Ableton Live">
                     <div class="project-info">
                         <h3>Macbook Trackpad Controller (2010)</h3>
                         <p>Max for Live device for using a Macbook trackpad as an Ableton Live controller</p>
-                        <div class="project-link">
-                            <a href="trackpad-controller/">View Project</a>
-                        </div>
                     </div>
-                </div>
+                </a>
                 
-                <div class="project-card">
+                <a class="project-card" href="random-controller/">
                     <img src="random-controller/images/main.jpg" alt="Random controller">
                     <div class="project-info">
                         <h3>Random Controller (2010)</h3>
                         <p>A simple experiment on using dice-rolling as a control source</p>
-                        <div class="project-link">
-                            <a href="random-controller/">View Project</a>
-                        </div>
                     </div>
-                </div>
+                </a>
                 
-                <div class="project-card">
+                <a class="project-card" href="multitouchmixer/">
                     <img src="multitouchmixer/images/multitouch-frame.jpg" alt="Multitouch Mixer">
                     <div class="project-info">
                         <h3>Multitouch Mixer (2010)</h3>
                         <p>Interface for Audio Mixing with Multitouch Technology</p>
-                        <div class="project-link">
-                            <a href="multitouchmixer/">View Project</a>
-                        </div>
                     </div>
-                </div>
+                </a>
                 
-                <div class="project-card">
+                <a class="project-card" href="yo-soy-otro/">
                     <img src="yo-soy-otro/images/yo-soy-otro.jpg" alt="Yo Soy Otro">
                     <div class="project-info">
                         <h3>Yo Soy Otro Soundtrack (2008)</h3>
                         <p>Original soundtrack for the feature film 'Yo Soy Otro' by Oscar Campo</p>
-                        <div class="project-link">
-                            <a href="yo-soy-otro/">View Project</a>
-                        </div>
                     </div>
-                </div>
+                </a>
             </div>
         </div>
     </div>
