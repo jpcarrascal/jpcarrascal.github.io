@@ -172,6 +172,13 @@ a:hover {
     font-style: italic;
 }
 
+.project-authors-noitalic {
+    font-size: 1.2em;
+    color: var(--color-fg);
+    margin-bottom: 20px;
+    font-style: normal;
+}
+
 .project-description {
     font-size: 1.1em;
     line-height: 1.6em;
