@@ -13,21 +13,21 @@
 
 
 :root {
-  --color-bg: color(display-p3 0.158 0.294 0.509);
-  --color-fg: color(display-p3 0.999 0.992 0.949);
+  --color-dark: color(display-p3 0.158 0.294 0.509);
+  --color-light: color(display-p3 0.999 0.992 0.949);
 }
 
 /*
 :root {
-    --color-fg: lab(98.647% -5.2601 21.875);
-    --color-bg: lab(25.285% -98.947 -44.961);
+    --color-light: lab(98.647% -5.2601 21.875);
+    --color-dark: lab(25.285% -98.947 -44.961);
 }
 */
 
 /*
 :root {
-  --color-bg: color(display-p3 0.322 0.111 0.822);
-  --color-fg: hsl(170 0% 100%);
+  --color-dark: color(display-p3 0.322 0.111 0.822);
+  --color-light: hsl(170 0% 100%);
 }
 */
 
@@ -43,12 +43,12 @@ html
 
 body
 {
-    background-color: var(--color-bg); /* #BBB; */
+    background-color: var(--color-dark); /* #BBB; */
     background-size: cover;
     padding: 0;
     width: 100%;
     margin:0;
-    color: var(--color-fg);
+    color: var(--color-light);
     /* background-image: url(images/bg01.jpg);
     background-blend-mode: multiply;
     */
@@ -68,10 +68,10 @@ h1
 }
 
 
-a:link {color:var(--color-fg);}      /* unvisited link */
-a:visited {color:var(--color-fg);}  /* visited link */
-a:hover {color:var(--color-bg);}  /* mouse over link */
-a:active {color:var(--color-bg);}
+a:link {color:var(--color-light);}      /* unvisited link */
+a:visited {color:var(--color-light);}  /* visited link */
+a:hover {color:var(--color-dark);}  /* mouse over link */
+a:active {color:var(--color-dark);}
 
 #flex-container
 {
@@ -104,8 +104,8 @@ a:active {color:var(--color-bg);}
     margin-bottom: 5px;
     padding-left: 20px;
     padding-right: 20px;
-    background-color: var(--color-fg);
-    color: var(--color-bg);
+    background-color: var(--color-light);
+    color: var(--color-dark);
 }
 
 #footer
@@ -135,22 +135,22 @@ a:active {color:var(--color-bg);}
 .link
 {
     border-radius: 0px;
-	background-color: var(--color-gg);
-    color: var(--color-fg);
+	background-color: var(--color-dark);
+    color: var(--color-light);
     padding: 5px;
     padding-bottom: 6px;
     padding-left: 9px;
     padding-right: 9px;
     line-height: 1.2em;
     margin-bottom: 5px;
-    border: 2px solid var(--color-fg);
+    border: 2px solid var(--color-light);
 }
 
 .link:hover, .link_hover
 {
-    background-color: var(--color-fg);
-    color: var(--color-bg);
-    border: 2px solid var(--color-fg);
+    background-color: var(--color-light);
+    color: var(--color-dark);
+    border: 2px solid var(--color-light);
     /* transition: background-color 500ms ease-out;*/
 }
 
