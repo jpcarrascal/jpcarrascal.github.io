@@ -208,6 +208,46 @@ a:hover {
     opacity: 0.8;
 }
 
+/* Figure table styling (used for image + caption) */
+.figure-table {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: auto;
+}
+
+.figure-table td {
+    padding: 0;
+}
+
+.figure-table img {
+    display: block;
+    width: auto;
+    max-width: 100%;
+    height: auto;
+    margin: 0 auto;
+}
+
+.figure-caption {
+    font-size: 0.9em;
+    text-align: center;
+}
+
+@media (max-width: 600px) {
+    .figure-table td {
+        display: block;
+        width: 100%;
+    }
+
+    .figure-caption {
+        display: block;
+        margin-top: 8px;
+    }
+
+    .figure-table img {
+        width: 100%;
+    }
+}
+
 .image-caption {
     font-size: 0.9em;
     color: var(--color-fg);
