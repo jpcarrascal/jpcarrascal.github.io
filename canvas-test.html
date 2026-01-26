@@ -45,8 +45,8 @@ document.addEventListener('mousemove', (event) => {
     const ctx = canvas.getContext('2d');
 
     // Animation parameters
-    const LINE_COUNT_MIN = 10;
-    const LINE_COUNT_MAX = 20;
+    const LINE_COUNT = 20;
+    const BASE_X_SPREAD = 600; // pixels from center (±spread)
     const AMPLITUDE_MIN = 50;  // pixels
     const AMPLITUDE_MAX = 100; // pixels
     const FREQUENCY_MIN = 0.05; // Hz
@@ -67,7 +67,7 @@ document.addEventListener('mousemove', (event) => {
         lines = [];
         for (let i = 0; i < count; i++) {
             lines.push({
-                baseX: Math.random() * canvas.height,
+                baseX: (canvas.width / 2) + (Math.random() - 0.5) * 2 * BASE_X_SPREAD,
                 amplitude: Math.random() * (AMPLITUDE_MAX - AMPLITUDE_MIN) + AMPLITUDE_MIN,
                 frequency: Math.random() * (FREQUENCY_MAX - FREQUENCY_MIN) + FREQUENCY_MIN,
                 dir: 1
@@ -80,8 +80,7 @@ document.addEventListener('mousemove', (event) => {
         canvas.width = window.innerWidth;
         canvas.height = window.innerHeight;
         startTime = Date.now();
-        const lineCount = Math.floor(Math.random() * (LINE_COUNT_MAX - LINE_COUNT_MIN + 1)) + LINE_COUNT_MIN;
-        generateLines(lineCount);
+        generateLines(LINE_COUNT);
     }
 
     // Animation loop
@@ -101,7 +100,7 @@ document.addEventListener('mousemove', (event) => {
         for (let line of lines) {
             // Sinusoidal motion: baseX + amplitude * sin(2π * frequency * time)
             const x = line.baseX + line.dir * line.amplitude * Math.sin(2 * Math.PI * line.frequency * elapsed);
-            if(Math.abs(x - mouseX) < 20) {
+            if(Math.abs(x - mouseX) < 10) {
                 line.dir *= -1;
             }
             ctx.beginPath();
