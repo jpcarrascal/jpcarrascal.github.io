@@ -143,14 +143,14 @@ a:active {color:var(--color-dark);}
     padding-right: 9px;
     line-height: 1.2em;
     margin-bottom: 5px;
-    border: 2px solid var(--color-light);
+    border: 1px solid var(--color-light);
 }
 
 .link:hover, .link_hover
 {
     background-color: var(--color-light);
     color: var(--color-dark);
-    border: 2px solid var(--color-light);
+    border: 1px solid var(--color-light);
     /* transition: background-color 500ms ease-out;*/
 }
 
