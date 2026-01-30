@@ -33,6 +33,7 @@
 /* CANVAS ANIMATION START */
 
 let mouseX = 0;
+let prevMouseX = 0;
 let mouseY = 0;
 
 document.addEventListener('mousemove', (event) => {
@@ -44,84 +45,139 @@ document.addEventListener('mousemove', (event) => {
     const canvas = document.getElementById('canvas');
     const ctx = canvas.getContext('2d');
 
-    // Animation parameters
-    const LINE_COUNT = 20;
-    const BASE_X_SPREAD = 600; // pixels from center (±spread)
-    const AMPLITUDE_MIN = 50;  // pixels
-    const AMPLITUDE_MAX = 100; // pixels
-    const FREQUENCY_MIN = 0.05; // Hz
-    const FREQUENCY_MAX = 0.1;  // Hz
-    const LINE_WIDTH = 1;
-    const LINE_OPACITY = 0.05; // 0-1 (0 = fully transparent, 1 = fully opaque)
+    const CONFIG = {
+        lineCount: 10,
+        baseXSpread: 600,
+        amplitudeMin: 100,
+        amplitudeMax: 300,
+        frequencyMin: 0.05,
+        frequencyMax: 0.1,
+        lineWidth: 5,
+        opacityMin: 0.05,
+        opacityMax: 0.1,
+        mouseFlipThreshold: 10
+    };
 
-    // Get colors from CSS variables
     const computedStyle = getComputedStyle(document.documentElement);
     const colorDark = computedStyle.getPropertyValue('--color-dark').trim();
     const colorLight = computedStyle.getPropertyValue('--color-light').trim();
 
-    // Generate line parameters (amplitude, frequency, base y-position)
-    let lines = [];
-    let startTime = Date.now();
-
-    function generateLines(count) {
-        lines = [];
-        for (let i = 0; i < count; i++) {
-            lines.push({
-                baseX: (canvas.width / 2) + (Math.random() - 0.5) * 2 * BASE_X_SPREAD,
-                amplitude: Math.random() * (AMPLITUDE_MAX - AMPLITUDE_MIN) + AMPLITUDE_MIN,
-                frequency: Math.random() * (FREQUENCY_MAX - FREQUENCY_MIN) + FREQUENCY_MIN,
-                dir: 1
-            });
+    class Line {
+        constructor(canvas, config) {
+            this.canvas = canvas;
+            this.config = config;
+            this.reset();
         }
-    }
 
-    // Set canvas resolution
-    function resizeCanvas() {
-        canvas.width = window.innerWidth;
-        canvas.height = window.innerHeight;
-        startTime = Date.now();
-        generateLines(LINE_COUNT);
-    }
+        reset() {
+            this.baseX = (this.canvas.width / 2) + (Math.random() - 0.5) * 2 * this.config.baseXSpread;
+            this.amplitude = Math.random() * (this.config.amplitudeMax - this.config.amplitudeMin) + this.config.amplitudeMin;
+            this.frequency = Math.random() * (this.config.frequencyMax - this.config.frequencyMin) + this.config.frequencyMin;
+            this.opacity = Math.random() * (this.config.opacityMax - this.config.opacityMin) + this.config.opacityMin;
+            this.dir = 1;
+        }
 
-    // Animation loop
-    function draw(timestamp) {
-        // Clear canvas with dark background
-        ctx.fillStyle = colorDark;
-        ctx.fillRect(0, 0, canvas.width, canvas.height);
+        getX(elapsed) {
+            return this.baseX + this.dir * this.amplitude * Math.sin(2 * Math.PI * this.frequency * elapsed);
+        }
 
-        // Calculate elapsed time in seconds
-        const elapsed = (timestamp - startTime) / 1000;
-
-        // Draw animated horizontal lines
-        ctx.strokeStyle = colorLight;
-        ctx.lineWidth = LINE_WIDTH;
-        ctx.globalAlpha = LINE_OPACITY;
-
-        for (let line of lines) {
-            // Sinusoidal motion: baseX + amplitude * sin(2π * frequency * time)
-            const x = line.baseX + line.dir * line.amplitude * Math.sin(2 * Math.PI * line.frequency * elapsed);
-            if(Math.abs(x - mouseX) < 10) {
-                line.dir *= -1;
+        maybeFlipDirection(x, mouseX) {
+            if (Math.abs(x - mouseX) < this.config.mouseFlipThreshold) {
+                this.dir *= -1;
             }
-            ctx.beginPath();
-            ctx.moveTo(x, 0);
-            ctx.lineTo(x, canvas.height);
-            ctx.stroke();
+        }
+
+        draw(ctx, elapsed) {
+            const x = this.getX(elapsed);
+            this.maybeFlipDirection(x, mouseX);
+            ctx.globalAlpha = this.opacity;
+            ctx.fillRect(x - this.config.lineWidth / 2, 0, this.config.lineWidth, this.canvas.height);
         }
     }
 
-    // Initial setup
-    resizeCanvas();
+    class AnimationManager {
+        constructor(canvas, ctx, config) {
+            this.canvas = canvas;
+            this.ctx = ctx;
+            this.config = config;
+            this.lines = [];
+            this.startTime = Date.now();
+        }
 
-    // Handle window resize
-    window.addEventListener('resize', resizeCanvas);
+        init() {
+            this.resize();
+            window.addEventListener('resize', () => this.resize());
+            this.animate();
+        }
 
-    // Start animation loop
-    function animate(timestamp) {
-        draw(timestamp);
-        requestAnimationFrame(animate);
+        resize() {
+            this.canvas.width = window.innerWidth;
+            this.canvas.height = window.innerHeight;
+            this.startTime = Date.now();
+            this.lines = Array.from({ length: this.config.lineCount }, () => new Line(this.canvas, this.config));
+        }
+
+        getElapsedSeconds(timestamp) {
+            return (timestamp - this.startTime) / 1000;
+        }
+
+        clear() {
+            this.ctx.fillStyle = colorDark;
+            this.ctx.fillRect(0, 0, this.canvas.width, this.canvas.height);
+        }
+
+        detectCollisions(elapsed) {
+            const positions = this.lines.map((line, index) => ({
+                index,
+                x: line.getX(elapsed)
+            }));
+
+            const toRemove = new Set();
+            for (let i = 0; i < positions.length; i++) {
+                for (let j = i + 1; j < positions.length; j++) {
+                    if (Math.abs(positions[i].x - positions[j].x) < this.config.lineWidth) {
+                        toRemove.add(positions[i].index);
+                        toRemove.add(positions[j].index);
+                    }
+                }
+            }
+
+            if (toRemove.size === 0) {
+                return;
+            }
+
+            this.lines = this.lines.filter((_, index) => !toRemove.has(index));
+            for (let i = 0; i < toRemove.size; i++) {
+                this.lines.push(new Line(this.canvas, this.config));
+            }
+        }
+
+        drawLines(elapsed) {
+            this.ctx.fillStyle = colorLight;
+            for (const line of this.lines) {
+                line.draw(this.ctx, elapsed);
+            }
+        }
+
+        draw(timestamp) {
+            prevMouseX = mouseX;
+            this.clear();
+            const elapsed = this.getElapsedSeconds(timestamp);
+            this.detectCollisions(elapsed);
+            this.drawLines(elapsed);
+        }
+
+        animate() {
+            const tick = (timestamp) => {
+                this.draw(timestamp);
+                requestAnimationFrame(tick);
+            };
+            requestAnimationFrame(tick);
+        }
     }
-    animate();
+
+    const manager = new AnimationManager(canvas, ctx, CONFIG);
+    manager.init();
 })();
 /* CANVAS ANIMATION END */
 
