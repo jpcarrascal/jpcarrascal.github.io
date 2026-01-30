@@ -212,8 +212,14 @@ a:hover {
 .figure-table {
     width: auto;
     border-collapse: collapse;
-    table-layout: auto;
+    table-layout: fixed;
     margin: 30px auto;
+    display: inline-block;
+    max-width: 100%;
+}
+
+.figure-table tr {
+    display: block;
 }
 
 .figure-table td {
@@ -221,6 +227,7 @@ a:hover {
     text-align: center;
     max-width: 720px;
     border: none;
+    display: block;
 }
 
 .figure-table img {
@@ -232,6 +239,7 @@ a:hover {
 }
 
 .figure-caption {
+    display: block;
     text-align: center;
     font-weight: 400;
     font-size: 0.9em;
@@ -240,6 +248,10 @@ a:hover {
     padding: 8px;
     margin-top: 6px;
     line-height: 1.3;
+    width: 100%;
+    box-sizing: border-box;
+    word-wrap: break-word;
+    overflow-wrap: anywhere;
 }
 
 @media (max-width: 600px) {

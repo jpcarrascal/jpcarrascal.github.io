@@ -48,7 +48,7 @@
                 <iframe width="560" height="400" src="https://www.youtube.com/embed/A5b8YU7i6RI" 
                         title="A Sense Of Surrounding - Video Documentation" frameborder="0" 
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                        allowfullscreen style="max-width: 100%; height: auto;">
+                        allowfullscreen style="width: 100%; max-width: 100%; aspect-ratio: 560 / 400;">
                 </iframe>
             </div>
             
@@ -141,9 +141,24 @@ function switchLanguage(lang) {
 
 // Load preferred language on page load
 document.addEventListener('DOMContentLoaded', function() {
-    const savedLang = localStorage.getItem('preferredLanguage') || 'en';
-    document.getElementById('languageSelector').value = savedLang;
-    switchLanguage(savedLang);
+    // Get language from URL parameter, localStorage, or default to English
+    const urlParams = new URLSearchParams(window.location.search);
+    const urlLang = urlParams.get('lang');
+    const validLanguages = ['en', 'es', 'ca'];
+    
+    let lang = 'en'; // default
+    
+    if (urlLang && validLanguages.includes(urlLang)) {
+        lang = urlLang;
+    } else if (urlLang) {
+        // Invalid URL parameter, fall back to localStorage or English
+        lang = localStorage.getItem('preferredLanguage') || 'en';
+    } else {
+        lang = localStorage.getItem('preferredLanguage') || 'en';
+    }
+    
+    document.getElementById('languageSelector').value = lang;
+    switchLanguage(lang);
 });
 </script>
 

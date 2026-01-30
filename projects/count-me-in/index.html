@@ -41,7 +41,11 @@
             </div>
             
             <div style="text-align: center; margin-bottom: 30px;">
-                <img src="images/main.jpg" alt="Count-Me-In" style="max-width: 100%; height: auto;" />
+                <iframe width="560" height="400" src="https://www.youtube.com/embed/cvnhG1vZ9tA" 
+                        title="Count-Me-In Video" frameborder="0" 
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                        allowfullscreen style="width: 100%; max-width: 100%; aspect-ratio: 560 / 400;">
+                </iframe>
             </div>
             
             <div style="text-align: justify; margin-bottom: 30px;" data-i18n="description">
@@ -52,53 +56,29 @@
                 <br><br>
                 The project explores how web and mobile technology can support shared authorship, participation, and emotional engagement in musical contexts.
                 <br><br>
-                <h3>Role</h3>
-                System design, interaction design, and technical implementation
-                <br><br>
-                <h3>Interaction &amp; Experience</h3>
-                Participants join a session using their own devices and collaboratively shape rhythmic and musical patterns through simple, touch-based interactions. Each participant contributes to a shared musical loop, creating a collective performance without requiring prior musical training.
-                <br><br>
-                The interaction model is designed to remain intuitive, inclusive, and musically coherent even with large groups and uneven participation.
-                <br><br>
-                <div style="text-align: center; margin: 30px 0;">
-                    <table class="figure-table">
-                        <tr>
-                            <td>
-                                <img src="images/architecture.jpg" alt="Architecture Diagram" style="max-width: 620px; height: auto;" />
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="figure-caption">System architecture</td>
-                        </tr>
-                    </table>
-                </div>
-                <br>
-                <h3>Technical Approach (High Level)</h3>
-                <ul>
-                <li>Distributed, mobile browser-based architecture for accessibility and scale</li>
-                <li>Near real-time synchronization across participant devices</li>
-                <li>Interaction models designed to tolerate network latency</li>
-                <li>Optional synchronization with external music systems (DAWs, hardware)</li>
-                </ul>
-                <br>
-                See full technical details in the <a href="http://127.0.0.1:8080/projects/count-me-in/#:~:text=DOI%3A%2010.5281/zenodo.6573453" target="_blank">accompanying publication</a>.
-                <br><br>
-                <h3>Context &amp; Outcomes</h3>
-                <ul>
-                <li>Deployed in live concerts and public installations</li>
-                <li>Presented at the <strong>Sound and Music Computing Conference (SMC 2022)</strong></li>
-                <li>Used as both a performance instrument and an interaction design research platform</li>
-                </ul>
-                <br>
-                <h3>Why This Project Matters</h3>
-                Count-Me-In demonstrates how technology can be used not just for coordination or utility, but as a medium for <strong>collective expression and shared emotional experience</strong>. It treats technical constraints—such as latency and scale—as design material, shaping interaction systems that enable participation rather than limiting it.
             </div>
             
-            <h2 data-i18n="links-title">Links</h2>
-            <div style="margin-bottom: 30px;">
-                    <div>
-                        <p><a href="https://jpcarrascal.github.io/count-me-in/" target="_blank" data-i18n="demo-link">Live Demo</a></p>
-                    </div>
+            <div style="text-align: center; margin: 30px 0;">
+                <table class="figure-table">
+                    <tr>
+                        <td>
+                            <img src="images/2sessions.jpg" alt="Count-Me-In" style="max-width: 620px; height: auto;" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="figure-caption">Count-Me-In sessions. Top: Music Tech Fest 2022 (Aveiro, Portugal). <br />Bottom: playful session at home.</td>
+                    </tr>
+                </table>
+            </div>
+            
+            <div style="text-align: center; margin: 30px 0;">
+            </div>
+            
+            <div class="publication-section">
+                <h3 data-i18n="links-title">Links</h3>
+                <ul>
+                    <li><a href="https://count-me-in.azurewebsites.net/" target="_blank" data-i18n="demo-link">Live Demo</a></li>
+                </ul>
             </div>
             
             <div class="publication-section">
@@ -124,7 +104,7 @@ const translations = {
     en: {
         title: "Count-Me-In",
         subtitle: "A collaborative platform for audience participation in live music",
-        description: "Modern musical events impose a boundary between performers and the audience, with only the former playing and active role. We introduce Count-Me-In, a collaborative music sequencer that uses a distributed Web architecture to promote audience participation in music performances, installations, and other related contexts. Count-Me-In uses a step-sequencer design to reduce the negative effects of network latency on the participants' experience.<br><br><h3>Overview</h3>Count-Me-In is a collaborative music system that enables audiences to actively participate in live performances and installations. Built as a distributed web platform, it transforms audience members from passive listeners into active contributors, allowing collective musical structures to emerge in real time.<br><br>The project explores how web and mobile technology can support shared authorship, participation, and emotional engagement in musical contexts.<br><br><h3>Role</h3>System design, interaction design, and technical implementation<br><br><h3>Interaction &amp; Experience</h3>Participants join a session using their own devices and collaboratively shape rhythmic and musical patterns through simple, touch-based interactions. Each participant contributes to a shared musical loop, creating a collective performance without requiring prior musical training.<br><br>The interaction model is designed to remain intuitive, inclusive, and musically coherent even with large groups and uneven participation.<br><br><div style=\"text-align: center; margin: 30px 0;\"><table class=\"figure-table\"><tr><td><img src=\"images/architecture.jpg\" alt=\"Architecture Diagram\" style=\"max-width: 620px; height: auto;\" /></td></tr><tr><td class=\"figure-caption\">System architecture</td></tr></table></div><br><h3>Technical Approach (High Level)</h3><ul><li>Distributed, mobile browser-based architecture for accessibility and scale</li><li>Near real-time synchronization across participant devices</li><li>Interaction models designed to tolerate network latency</li><li>Optional synchronization with external music systems (DAWs, hardware)</li></ul><br>See full technical details in the accompanying publication.<br><br><h3>Context &amp; Outcomes</h3><ul><li>Deployed in live concerts and public installations</li><li>Presented at the <strong>Sound and Music Computing Conference (SMC 2022)</strong></li><li>Used as both a performance instrument and an interaction design research platform</li></ul><br><h3>Why This Project Matters</h3>Count-Me-In demonstrates how technology can be used not just for coordination or utility, but as a medium for <strong>collective expression and shared emotional experience</strong>. It treats technical constraints—such as latency and scale—as design material, shaping interaction systems that enable participation rather than limiting it.",
+        description: "Modern musical events impose a boundary between performers and the audience, with only the former playing and active role. We introduce Count-Me-In, a collaborative music sequencer that uses a distributed Web architecture to promote audience participation in music performances, installations, and other related contexts. Count-Me-In uses a step-sequencer design to reduce the negative effects of network latency on the participants' experience.<br><br><h3>Overview</h3>Count-Me-In is a collaborative music system that enables audiences to actively participate in live performances and installations. Built as a distributed web platform, it transforms audience members from passive listeners into active contributors, allowing collective musical structures to emerge in real time.<br><br>The project explores how web and mobile technology can support shared authorship, participation, and emotional engagement in musical contexts.<br><br><h3>Role</h3>System design, interaction design, and technical implementation<br><br><h3>Interaction &amp; Experience</h3>Participants join a session using their own devices and collaboratively shape rhythmic and musical patterns through simple, touch-based interactions. Each participant contributes to a shared musical loop, creating a collective performance without requiring prior musical training.<br><br>The interaction model is designed to remain intuitive, inclusive, and musically coherent even with large groups and uneven participation.<br><br><div style=\"text-align: center; margin: 30px 0;\"><table class=\"figure-table\"><tr><td><img src=\"images/architecture.jpg\" alt=\"Architecture Diagram\" style=\"max-width: 620px; height: auto;\" /></td></tr><tr><td class=\"figure-caption\">System architecture</td></tr></table></div><br><h3>Technical Approach</h3><ul><li>Distributed, mobile browser-based architecture for accessibility and scale</li><li>Near real-time synchronization across participant devices</li><li>Interaction models designed to tolerate network latency</li><li>Optional synchronization with external music systems (DAWs, hardware)</li></ul><br>See full technical details in the accompanying publication.<br><br><h3>Context &amp; Outcomes</h3><ul><li>Deployed in live concerts and public installations</li><li>Presented at the <strong>Sound and Music Computing Conference (SMC 2022)</strong></li><li>Used as both a performance instrument and an interaction design research platform</li></ul><br><h3>Why This Project Matters</h3>Count-Me-In demonstrates how technology can be used not just for coordination or utility, but as a medium for <strong>collective expression and shared emotional experience</strong>. It treats technical constraints—such as latency and scale—as design material, shaping interaction systems that enable participation rather than limiting it.",
         "links-title": "Links",
         "demo-link": "Live Demo",
         publications_label: "Publications:",
@@ -167,9 +147,24 @@ function switchLanguage(lang) {
 
 // Load preferred language on page load
 document.addEventListener('DOMContentLoaded', function() {
-    const savedLang = localStorage.getItem('preferredLanguage') || 'en';
-    document.getElementById('languageSelector').value = savedLang;
-    switchLanguage(savedLang);
+    // Get language from URL parameter, localStorage, or default to English
+    const urlParams = new URLSearchParams(window.location.search);
+    const urlLang = urlParams.get('lang');
+    const validLanguages = ['en', 'es', 'ca'];
+    
+    let lang = 'en'; // default
+    
+    if (urlLang && validLanguages.includes(urlLang)) {
+        lang = urlLang;
+    } else if (urlLang) {
+        // Invalid URL parameter, fall back to localStorage or English
+        lang = localStorage.getItem('preferredLanguage') || 'en';
+    } else {
+        lang = localStorage.getItem('preferredLanguage') || 'en';
+    }
+    
+    document.getElementById('languageSelector').value = lang;
+    switchLanguage(lang);
 });
 </script>
 

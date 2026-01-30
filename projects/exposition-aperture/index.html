@@ -103,9 +103,24 @@ function switchLanguage(lang) {
 
 // Load preferred language on page load
 document.addEventListener('DOMContentLoaded', function() {
-    const savedLang = localStorage.getItem('preferredLanguage') || 'en';
-    document.getElementById('languageSelector').value = savedLang;
-    switchLanguage(savedLang);
+    // Get language from URL parameter, localStorage, or default to English
+    const urlParams = new URLSearchParams(window.location.search);
+    const urlLang = urlParams.get('lang');
+    const validLanguages = ['en', 'es', 'ca'];
+    
+    let lang = 'en'; // default
+    
+    if (urlLang && validLanguages.includes(urlLang)) {
+        lang = urlLang;
+    } else if (urlLang) {
+        // Invalid URL parameter, fall back to localStorage or English
+        lang = localStorage.getItem('preferredLanguage') || 'en';
+    } else {
+        lang = localStorage.getItem('preferredLanguage') || 'en';
+    }
+    
+    document.getElementById('languageSelector').value = lang;
+    switchLanguage(lang);
 });
 </script>
 

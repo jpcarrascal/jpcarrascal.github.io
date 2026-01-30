@@ -153,14 +153,27 @@ function switchLanguage(lang) {
 
 // Initialize language on page load
 document.addEventListener('DOMContentLoaded', function() {
-    // Get saved language preference or default to English
-    const savedLang = localStorage.getItem('preferred-language') || 'en';
+    // Get language from URL parameter, localStorage, or default to English
+    const urlParams = new URLSearchParams(window.location.search);
+    const urlLang = urlParams.get('lang');
+    const validLanguages = ['en', 'es', 'ca'];
     
-    // Set the dropdown to the saved language
-    document.getElementById('languageSelector').value = savedLang;
+    let lang = 'en'; // default
+    
+    if (urlLang && validLanguages.includes(urlLang)) {
+        lang = urlLang;
+    } else if (urlLang) {
+        // Invalid URL parameter, fall back to localStorage or English
+        lang = localStorage.getItem('preferred-language') || 'en';
+    } else {
+        lang = localStorage.getItem('preferred-language') || 'en';
+    }
+    
+    // Set the dropdown to the language
+    document.getElementById('languageSelector').value = lang;
     
     // Apply the language
-    switchLanguage(savedLang);
+    switchLanguage(lang);
 });
 </script>
 
