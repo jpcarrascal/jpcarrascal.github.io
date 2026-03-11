@@ -480,6 +480,23 @@ a:hover {
     text-decoration: underline;
 }
 
+.boxed {
+    display: inline-block;
+    padding: 4px 8px;
+    border: 1px solid var(--color-dark);
+    border-radius: 4px;
+    background-color: var(--color-light);
+    color: var(--color-dark);
+    font-weight: bold;
+}
+
+.bigger-text {
+    font-size: 2em;
+    font-weight: bold;
+    color: var(--color-light);
+    margin-bottom: 20px;
+}
+
 /* Responsive design */
 @media screen and (max-width: 900px) {
     .project-content {

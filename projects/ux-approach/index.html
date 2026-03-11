@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-15242862-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-15242862-1');
+</script>
+
+<meta name="viewport" content="width=device-width,user-scalable=no" />
+<title>UX Approach | JP Carrascal</title>
+<link href="../../style.css" type="text/css" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css?family=Lato:700|Lato" rel="stylesheet">
+<link href="../project-template.css" type="text/css" rel="stylesheet"/>
+</head>
+<body>
+
+<div id="flex-container">
+    <div id="wrap">
+        <div class="project-content">
+            <div class="language-selector">
+                <select class="language-dropdown" id="languageSelector" onchange="switchLanguage(this.value)">
+                    <option value="en">English</option>
+                    <option value="es">Español</option>
+                    <option value="ca">Català</option>
+                </select>
+            </div>
+
+            <div class="project-header">
+                <h1 class="project-title" data-i18n="title">UX Approach</h1>
+                <div class="project-authors">JP Carrascal</div>
+            </div>
+
+            <div style="text-align: justify; margin-bottom: 30px;" data-i18n="description">
+                    <p>
+                    <span class="boxed">Understand problems</span> <span class="bigger-text">→</span> <span class="boxed">Turn insight into product direction</span> <span class="bigger-text">→</span> <span class="boxed">Design & prototype</span> <span class="bigger-text">→</span> <span class="boxed">Validate and iterate</span>
+                    </p>
+                <p>I focus on shaping product design through research-driven insights and close collaboration with design, product, and engineering teams. My hands-on industry expertise is primarily in UX research, complemented by design experience from academic and personal projects. Much of my work has focused on complex technical domains such as cloud and AI developer platforms, where understanding workflows, mental models, and organizational constraints is essential to improving the user experience.</p>
+                <p>Much of my work involves confidential information, so I cannot publicly share detailed case studies. Instead, this page outlines how I typically approach research, design, and product decision-making.</p>
+                <!--HERE-->
+                <div style="text-align: center; margin: 30px 0;">
+                    <img src="images/JP-Redmond.jpg" alt="UX Approach" style="max-width: 100%; height: auto;" />
+                </div>
+                <h2>Understanding customers and their problems</h2>
+                <p>My work is deeply rooted in cross-functional collaboration. When design, product, engineering, and research work together to frame a problem, teams are more likely to align on what should be built and why.</p>
+                <p>To understand the problem space, I use a mix of methods depending on the stage of the product: telemetry analysis, interviews, surveys, workflow walkthroughs, and jobs-to-be-done analysis. Design workshops are often useful to align stakeholders and explore solution spaces collaboratively.</p>
+                <h2>Turning insight into product direction</h2>
+                <p>Research and discovery are only valuable if they lead to better product decisions. After synthesizing insights, I work with design, product, and engineering partners to identify opportunity areas and define what should change in the product or what new capabilities we want to introduce. This often involves mapping insights to product capabilities, prioritizing improvements, and developing models to create alignment on the experience direction before detailed design begins.</p>
+                <h2>Early design and prototyping</h2>
+                <p>As potential solutions emerge, early designs and prototypes are validated with users to build confidence in the direction. Methods such as design reviews, usability testing, and heuristic evaluations help identify friction early and ensure solutions address real customer problems while aligning with product and business goals.</p>
+                <h2>Product development and iteration</h2>
+                <p>Once designs are implemented, the feedback loop continues. Usability studies, in-product surveys, telemetry analysis, and preview programs help evaluate whether the product is solving the intended problems.</p>
+                <p>I encourage product and design teams to observe research sessions whenever possible. Direct exposure to users builds empathy and often accelerates decision-making as teams see firsthand where workflows break down or where new opportunities emerge.</p>
+            </div>
+
+            <div class="back-link">
+                <a href="javascript:history.back()" data-i18n="back_button">\u2190 Back</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+const enDescription = `
+                    <p>
+                    <span class="boxed">Understand problems</span> <span class="bigger-text">→</span> <span class="boxed">Turn insight into product direction</span> <span class="bigger-text">→</span> <span class="boxed">Design & prototype</span> <span class="bigger-text">→</span> <span class="boxed">Validate and iterate</span>
+                    </p>
+<p>I focus on shaping product design through research-driven insights and close collaboration with design, product, and engineering teams. My hands-on industry expertise is primarily in UX research, complemented by design experience from academic and personal projects. Much of my work has focused on complex technical domains such as cloud and AI developer platforms, where understanding workflows, mental models, and organizational constraints is essential to improving the user experience.</p>                <p>Much of my work involves confidential information, so I cannot publicly share detailed case studies. Instead, this page outlines how I typically approach research, design, and product decision-making.</p>
+
+<div style="text-align: center; margin: 30px 0;">
+    <img src="images/JP-Redmond.jpg" alt="UX Approach" style="max-width: 100%; height: auto;" />
+</div>
+<h2>Understanding customers and their problems</h2>
+<p>My approach is deeply rooted in cross-functional collaboration. When design, product, engineering, and research work together to frame a problem, teams are more likely to align on what should be built and why.</p>
+<p>To understand the problem space, I use a mix of methods depending on the stage of the product: telemetry analysis, interviews, surveys, workflow walkthroughs, and jobs-to-be-done analysis. Design workshops are often useful to align stakeholders and explore solution spaces collaboratively.</p>
+<h2>Turning insight into product direction</h2>
+<p>Research and discovery are only valuable if they lead to better product decisions. After synthesizing insights, I work with design, product, and engineering partners to identify opportunity areas and define what should change in the product or what new capabilities we want to introduce. This often involves mapping insights to product capabilities, prioritizing improvements, and developing models to create alignment on the experience direction before detailed design begins.</p>
+<h2>Early design and prototyping</h2>
+<p>As potential solutions emerge, early designs and prototypes are validated with users to build confidence in the direction. Methods such as design reviews, usability testing, and heuristic evaluations help identify friction early and ensure solutions address real customer problems while aligning with product and business goals.</p>
+<h2>Product development and iteration</h2>
+<p>Once designs are implemented, the feedback loop continues. Usability studies, in-product surveys, telemetry analysis, and preview programs help evaluate whether the product is solving the intended problems.</p>
+<p>I encourage product and design teams to observe research sessions whenever possible. Direct exposure to users builds empathy and often accelerates decision-making as teams see firsthand where workflows break down or where new opportunities emerge.</p>`;
+
+const esDescription = `
+                    <p>
+                    <span class="boxed">Entender problemas</span> <span class="bigger-text">→</span> <span class="boxed">Convertir insights en dirección de producto</span> <span class="bigger-text">→</span> <span class="boxed">Diseñar y prototipar</span> <span class="bigger-text">→</span> <span class="boxed">Validar e iterar</span>
+                    </p>
+<p>Me enfoco en dar forma al diseño de producto a partir de insights de investigación y de una colaboración estrecha con equipos de diseño, producto e ingeniería. Mi experiencia práctica en la industria se centra principalmente en investigación UX, complementada por experiencia en diseño procedente de proyectos académicos y personales. Buena parte de mi trabajo se ha enfocado en dominios técnicos complejos como plataformas cloud y de IA para desarrolladores, donde comprender flujos de trabajo, modelos mentales y restricciones organizativas es esencial para mejorar la experiencia de usuario.</p>
+<p>Gran parte de mi trabajo implica información confidencial, por lo que no puedo compartir públicamente estudios de caso detallados. En su lugar, esta página resume cómo suelo abordar la investigación, el diseño y la toma de decisiones de producto.</p>
+<div style="text-align: center; margin: 30px 0;">
+    <img src="images/JP-Redmond.jpg" alt="UX Approach" style="max-width: 100%; height: auto;" />
+</div>
+<h2>Comprender a los clientes y sus problemas</h2>
+<p>Mi enfoque está profundamente arraigado en la colaboración transversal. Cuando diseño, producto, ingeniería e investigación trabajan juntos para enmarcar un problema, es más probable que los equipos se alineen sobre qué construir y por qué.</p>
+<p>Para comprender el espacio del problema, utilizo una combinación de métodos según la fase del producto: análisis de telemetría, entrevistas, encuestas, walkthroughs de flujos de trabajo y análisis jobs-to-be-done. Los talleres de diseño suelen ser útiles para alinear a los stakeholders y explorar espacios de solución de forma colaborativa.</p>
+<h2>Convertir insights en dirección de producto</h2>
+<p>La investigación y el descubrimiento solo son valiosos si conducen a mejores decisiones de producto. Tras sintetizar los insights, trabajo con socios de diseño, producto e ingeniería para identificar áreas de oportunidad y definir qué debería cambiar en el producto o qué nuevas capacidades queremos introducir. Esto suele implicar mapear insights a capacidades de producto, priorizar mejoras y desarrollar modelos para alinear la dirección de la experiencia antes de comenzar el diseño detallado.</p>
+<h2>Diseño temprano y prototipado</h2>
+<p>A medida que surgen posibles soluciones, los primeros diseños y prototipos se validan con usuarios para ganar confianza en la dirección. Métodos como revisiones de diseño, pruebas de usabilidad y evaluaciones heurísticas ayudan a identificar fricciones de forma temprana y a asegurar que las soluciones responden a problemas reales de los clientes mientras se alinean con objetivos de producto y de negocio.</p>
+<h2>Desarrollo de producto e iteración</h2>
+<p>Una vez implementados los diseños, el ciclo de feedback continúa. Estudios de usabilidad, encuestas dentro del producto, análisis de telemetría y programas de preview ayudan a evaluar si el producto está resolviendo los problemas previstos.</p>
+<p>Animo a los equipos de producto y diseño a observar sesiones de investigación siempre que sea posible. La exposición directa a los usuarios genera empatía y, a menudo, acelera la toma de decisiones, porque los equipos ven de primera mano dónde se rompen los flujos de trabajo o dónde aparecen nuevas oportunidades.</p>`;
+
+const caDescription = `
+                    <p>
+                    <span class="boxed">Entendre problemes</span> <span class="bigger-text">→</span> <span class="boxed">Convertir insights en direcció de producte</span> <span class="bigger-text">→</span> <span class="boxed">Dissenyar i prototipar</span> <span class="bigger-text">→</span> <span class="boxed">Validar i iterar</span>
+                    </p>
+<p>Em centro a donar forma al disseny de producte a partir d'insights de recerca i d'una col·laboració estreta amb equips de disseny, producte i enginyeria. La meva experiència pràctica a la indústria se centra principalment en recerca UX, complementada amb experiència en disseny procedent de projectes acadèmics i personals. Bona part de la meva feina s'ha centrat en dominis tècnics complexos com plataformes cloud i d'IA per a desenvolupadors, on entendre fluxos de treball, models mentals i restriccions organitzatives és essencial per millorar l'experiència d'usuari.</p>
+<p>Gran part de la meva feina implica informació confidencial, així que no puc compartir públicament casos d'estudi detallats. En lloc d'això, aquesta pàgina descriu com acostumo a abordar la recerca, el disseny i la presa de decisions de producte.</p>
+<div style="text-align: center; margin: 30px 0;">
+    <img src="images/JP-Redmond.jpg" alt="UX Approach" style="max-width: 100%; height: auto;" />
+</div>
+<h2>Entendre els clients i els seus problemes</h2>
+<p>El meu enfocament està profundament arrelat en la col·laboració transversal. Quan disseny, producte, enginyeria i recerca treballen junts per emmarcar un problema, és més probable que els equips s'alineïn sobre què s'ha de construir i per què.</p>
+<p>Per entendre l'espai del problema, utilitzo una combinació de mètodes segons la fase del producte: anàlisi de telemetria, entrevistes, enquestes, walkthroughs de fluxos de treball i anàlisi jobs-to-be-done. Els tallers de disseny sovint són útils per alinear stakeholders i explorar espais de solució de manera col·laborativa.</p>
+<h2>Convertir insights en direcció de producte</h2>
+<p>La recerca i el descobriment només són valuosos si condueixen a millors decisions de producte. Després de sintetitzar els insights, treballo amb partners de disseny, producte i enginyeria per identificar àrees d'oportunitat i definir què hauria de canviar al producte o quines noves capacitats volem introduir. Això sovint implica mapar insights a capacitats de producte, prioritzar millores i desenvolupar models per crear alineament sobre la direcció de l'experiència abans de començar el disseny detallat.</p>
+<h2>Disseny inicial i prototipatge</h2>
+<p>A mesura que apareixen possibles solucions, els primers dissenys i prototips es validen amb usuaris per guanyar confiança en la direcció. Mètodes com revisions de disseny, proves d'usabilitat i avaluacions heurístiques ajuden a identificar friccions aviat i a garantir que les solucions resolen problemes reals dels clients, alhora que s'alineen amb objectius de producte i de negoci.</p>
+<h2>Desenvolupament de producte i iteració</h2>
+<p>Un cop els dissenys s'implementen, el bucle de feedback continua. Estudis d'usabilitat, enquestes dins del producte, anàlisi de telemetria i programes de preview ajuden a avaluar si el producte està resolent els problemes previstos.</p>
+<p>Animo els equips de producte i disseny a observar sessions de recerca sempre que sigui possible. L'exposició directa als usuaris crea empatia i sovint accelera la presa de decisions, perquè els equips veuen de primera mà on es trenquen els fluxos de treball o on apareixen noves oportunitats.</p>`;
+
+const translations = {
+    en: {
+        title: "UX Approach",
+        description: enDescription,
+        back_button: "\u2190 Back"
+    },
+    es: {
+        title: "Enfoque de UX",
+        description: esDescription,
+        back_button: "\u2190 Atr\u00e1s"
+    },
+    ca: {
+        title: "Enfocament d'UX",
+        description: caDescription,
+        back_button: "\u2190 Enrere"
+    }
+};
+
+function switchLanguage(lang) {
+    localStorage.setItem('preferredLanguage', lang);
+    document.querySelectorAll('[data-i18n]').forEach(element => {
+        const key = element.getAttribute('data-i18n');
+        if (translations[lang] && translations[lang][key]) {
+            if (key === 'description') {
+                element.innerHTML = translations[lang][key];
+            } else {
+                element.textContent = translations[lang][key];
+            }
+        }
+    });
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+    const urlParams = new URLSearchParams(window.location.search);
+    const urlLang = urlParams.get('lang');
+    const validLanguages = ['en', 'es', 'ca'];
+
+    let lang = 'en';
+
+    if (urlLang && validLanguages.includes(urlLang)) {
+        lang = urlLang;
+    } else if (urlLang) {
+        lang = localStorage.getItem('preferredLanguage') || 'en';
+    } else {
+        lang = localStorage.getItem('preferredLanguage') || 'en';
+    }
+
+    document.getElementById('languageSelector').value = lang;
+    switchLanguage(lang);
+});
+</script>
+
+</body>
+</html>
