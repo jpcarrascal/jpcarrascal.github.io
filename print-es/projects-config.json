@@ -45,9 +45,9 @@
       "authors": "JP Carrascal",
       "tags": ["sonification","web"],
       "subtitle": "Sintetizador sinestésico basado en sonificación de imágenes satelitales. Apoyado por ArtEO.",
-      "description": "SynthEO es un sistema de sonificación que analiza y extrae la paleta de colores de imágenes satelitales y las convierte en paisajes sonoros interactivos. En su versión actual, utiliza una biblioteca de imágenes satelitales facilitadas por ArtEO para el programa de Pioneros de ArtEO. Funciona sobre un browser de escritorio o móvil.\n\nEl sistema mapea colores específicos a parámetros de síntesis de sonido, permitiendo a los usuarios explorar y manipular los datos visuales a través de la interacción sonora. SynthEO ofrece una experiencia sinestésica única, donde los usuarios pueden 'escuchar' las características visuales de las imágenes satelitales, creado una experiencia estética y una capa adicional de interpretación de los datos ambientales representados en las imágenes.",
+      "description": "SynthEO es un sistema de sonificación que analiza y extrae la paleta de colores de imágenes satelitales y las convierte en paisajes sonoros interactivos. En su versión actual, utiliza una biblioteca de imágenes satelitales facilitadas por ArtEO para el programa de Pioneros de ArtEO. Funciona sobre un navegador de escritorio o móvil.\n\nEl sistema mapea colores específicos a parámetros de síntesis de sonido, permitiendo a los usuarios explorar y manipular los datos visuales a través de la interacción sonora. SynthEO ofrece una experiencia sinestésica única, donde los usuarios pueden 'escuchar' las características visuales de las imágenes satelitales, creando una experiencia estética y una capa adicional de interpretación de los datos ambientales representados en las imágenes.",
       "medium": "Digital: aplicación web",
-      "exhibition": ["Aplicación web disponible en https://www.arteo.earth/stories/syntheo"],
+      "exhibition": ["Publicación en el blog de ArtEO: https://www.arteo.earth/stories/syntheo", "Aplicación web disponible en https://jpcarrascal.com/ArtEO-sonification01/"],
       "image": "../projects/syntheo/images/syntheo.jpg",
       "selected": true
     },

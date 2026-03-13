@@ -51,10 +51,10 @@
             </div>
             
             <div class="publication-section">
-                <h3 data-i18n="exhibition_label">Exhibition:</h3>
+                <h2 data-i18n="links-title">Links</h2>
                 <ul>
-                    <li><a href="https://www.arteo.earth/stories/syntheo" target="_blank">ArtEO blog post</a></li>
-                    <li>Web application available at <a href="https://jpcarrascal.com/ArtEO-sonification01/" target="_blank">https://jpcarrascal.com/ArtEO-sonification01/</a></li>
+                    <li><a href="https://www.arteo.earth/stories/syntheo" target="_blank" data-i18n="arteo_blog_link">ArtEO blog post</a></li>
+                    <li><span data-i18n="web_app_prefix">Web application available at</span> <a href="https://jpcarrascal.com/ArtEO-sonification01/" target="_blank">https://jpcarrascal.com/ArtEO-sonification01/</a></li>
                 </ul>
             </div>
             
@@ -72,24 +72,27 @@ const translations = {
         title: "SynthEO",
         subtitle: "Synesthetic synthesizer based on satellite image sonification. Supported by ArtEO.",
         description: "SynthEO is a sonification system that analyzes and extracts the color palette from satellite images and converts them into interactive soundscapes. In its current version, it uses a library of satellite images provided by ArtEO for the ArtEO Pioneers program. It runs on desktop or mobile browsers.<br><br>The system maps specific colors to sound synthesis parameters, allowing users to explore and manipulate visual data through sonic interaction. SynthEO offers a unique synesthetic experience, where users can 'hear' the visual characteristics of satellite images, creating an aesthetic experience and an additional layer of interpretation of the environmental data represented in the images.",
-        exhibition_label: "Exhibition:",
-        exhibition_text: "Web application available at <a href=\"https://www.arteo.earth/stories/syntheo\" target=\"_blank\">https://www.arteo.earth/stories/syntheo</a>",
+        "links-title": "Links",
+        arteo_blog_link: "ArtEO blog post",
+        web_app_prefix: "Web application available at",
         back_button: "← Back"
     },
     es: {
         title: "SynthEO",
         subtitle: "Sintetizador sinestésico basado en sonificación de imágenes satelitales. Apoyado por ArtEO.",
-        description: "SynthEO es un sistema de sonificación que analiza y extrae la paleta de colores de imágenes satelitales y las convierte en paisajes sonoros interactivos. En su versión actual, utiliza una biblioteca de imágenes satelitales facilitadas por ArtEO para el programa de Pioneros de ArtEO. Funciona sobre un browser de escritorio o móvil.<br><br>El sistema mapea colores específicos a parámetros de síntesis de sonido, permitiendo a los usuarios explorar y manipular los datos visuales a través de la interacción sonora. SynthEO ofrece una experiencia sinestésica única, donde los usuarios pueden 'escuchar' las características visuales de las imágenes satelitales, creado una experiencia estética y una capa adicional de interpretación de los datos ambientales representados en las imágenes.",
-        exhibition_label: "Exposición:",
-        exhibition_text: "Aplicación web disponible en <a href=\"https://www.arteo.earth/stories/syntheo\" target=\"_blank\">https://www.arteo.earth/stories/syntheo</a>",
+        description: "SynthEO es un sistema de sonificación que analiza y extrae la paleta de colores de imágenes satelitales y las convierte en paisajes sonoros interactivos. En su versión actual, utiliza una biblioteca de imágenes satelitales facilitadas por ArtEO para el programa de Pioneros de ArtEO. Funciona sobre un navegador de escritorio o móvil.<br><br>El sistema mapea colores específicos a parámetros de síntesis de sonido, permitiendo a los usuarios explorar y manipular los datos visuales a través de la interacción sonora. SynthEO ofrece una experiencia sinestésica única, donde los usuarios pueden 'escuchar' las características visuales de las imágenes satelitales, creando una experiencia estética y una capa adicional de interpretación de los datos ambientales representados en las imágenes.",
+        "links-title": "Enlaces",
+        arteo_blog_link: "Publicación en el blog de ArtEO",
+        web_app_prefix: "Aplicación web disponible en",
         back_button: "← Atrás"
     },
     ca: {
         title: "SynthEO",
         subtitle: "Sintetitzador sinestèsic basat en sonificació d'imatges de satèl·lit. Recolzat per ArtEO.",
         description: "SynthEO és un sistema de sonificació que analitza i extreu la paleta de colors d'imatges de satèl·lit i les converteix en paisatges sonors interactius. En la seva versió actual, utilitza una biblioteca d'imatges de satèl·lit facilitades per ArtEO per al programa de Pioners d'ArtEO. Funciona sobre un navegador d'escriptori o mòbil.<br><br>El sistema mapeja colors específics a paràmetres de síntesi de so, permetent als usuaris explorar i manipular les dades visuals a través de la interacció sonora. SynthEO ofereix una experiència sinestèsica única, on els usuaris poden 'escoltar' les característiques visuals de les imatges de satèl·lit, creant una experiència estètica i una capa addicional d'interpretació de les dades ambientals representades a les imatges.",
-        exhibition_label: "Exposició:",
-        exhibition_text: "Aplicació web disponible a <a href=\"https://www.arteo.earth/stories/syntheo\" target=\"_blank\">https://www.arteo.earth/stories/syntheo</a>",
+        "links-title": "Enllaços",
+        arteo_blog_link: "Entrada al blog d'ArtEO",
+        web_app_prefix: "Aplicació web disponible a",
         back_button: "← Enrere"
     }
 };
@@ -100,7 +103,7 @@ function switchLanguage(lang) {
     document.querySelectorAll('[data-i18n]').forEach(element => {
         const key = element.getAttribute('data-i18n');
         if (translations[lang] && translations[lang][key]) {
-            if (key === 'description' || key === 'exhibition_text') {
+            if (key === 'description') {
                 element.innerHTML = translations[lang][key];
             } else {
                 element.textContent = translations[lang][key];
