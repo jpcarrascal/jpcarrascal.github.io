@@ -76,8 +76,8 @@ h1
 }
 
 
-a:link {color:var(--color-light);}      /* unvisited link */
-a:visited {color:var(--color-light);}  /* visited link */
+a:link {color:var(--color-dark);}      /* unvisited link */
+a:visited {color:var(--color-dark);}  /* visited link */
 a:hover {color:var(--color-dark);}  /* mouse over link */
 a:active {color:var(--color-dark);}
 
