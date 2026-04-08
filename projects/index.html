@@ -28,6 +28,8 @@
                 <h1 class="project-title">JP Carrascal · Projects</h1>
                 <div class="project-authors-noitalic">Interactive Media & Digital Arts</div>
             </div>
+
+            <div class="tag-filter-bar" id="tagFilterBar" aria-label="Project tags filter"></div>
             
             <div class="projects-grid">
 
@@ -250,6 +252,103 @@
         </div>
     </div>
 </div>
+
+<script>
+// English tags sourced from the canonical print/projects-config.json
+const projectTagsById = {
+    "accidental": ["music", "web"],
+    "spacebarman": ["music"],
+    "a-sense-of-surrounding": ["installation", "audience participation", "sonification"],
+    "syntheo": ["web", "sonification"],
+    "exposition-aperture": ["video"],
+    "sonar-ai-playground": ["audience participation", "installation", "ai"],
+    "opportunity-mapper": ["web", "ux/hci research"],
+    "intangible": ["installation", "hardware"],
+    "hootbeat": ["wearables", "audience participation", "music"],
+    "count-me-in": ["web", "mobile", "audience participation", "music"],
+    "ble-midi-glove": ["wearables", "music"],
+    "momc-controller": ["music", "hardware"],
+    "lockdown": ["web", "ar/vr"],
+    "blesync": ["music", "hardware"],
+    "magicscroll": ["organic user interfaces", "hardware"],
+    "ar-wall": ["ux/hci research", "mobile", "ar/vr"],
+    "haptics-cylindrical": ["haptics", "hardware", "ux/hci research"],
+    "reflex": ["mobile", "organic user interfaces", "hardware", "haptics", "ux/hci research"],
+    "whammyphone": ["music", "organic user interfaces", "hardware", "ux/hci research"],
+    "shape-emotions": ["organic user interfaces", "ux/hci research"],
+    "bluemo": ["music", "hardware"],
+    "bicing-spider": ["data visualization"],
+    "trackpad-controller": ["music"],
+    "random-controller": ["music", "hardware", "ux/hci research"],
+    "multitouchmixer": ["music", "ux/hci research"],
+    "augmented-guitar": ["music", "hardware"],
+    "yo-soy-otro": ["music"],
+};
+
+function getProjectIdFromHref(href) {
+    if (!href) {
+        return "";
+    }
+    const pathname = new URL(href, window.location.href).pathname;
+    const parts = pathname.split("/").filter(Boolean);
+    return parts.length ? parts[parts.length - 1] : "";
+}
+
+function setActiveButton(button) {
+    document.querySelectorAll(".tag-filter-button").forEach(btn => {
+        btn.classList.remove("active");
+    });
+    button.classList.add("active");
+}
+
+function applyFilter(tag) {
+    document.querySelectorAll(".project-card").forEach(card => {
+        const tags = (card.dataset.tags || "").split("|").filter(Boolean);
+        const show = tag === "all" || tags.includes(tag);
+        card.classList.toggle("is-hidden", !show);
+    });
+}
+
+document.addEventListener("DOMContentLoaded", function() {
+    const cards = Array.from(document.querySelectorAll(".project-card"));
+    const filterBar = document.getElementById("tagFilterBar");
+
+    cards.forEach(card => {
+        const projectId = getProjectIdFromHref(card.getAttribute("href"));
+        const tags = projectTagsById[projectId] || [];
+        card.dataset.projectId = projectId;
+        card.dataset.tags = tags.join("|");
+    });
+
+    const uniqueTags = Array.from(new Set(
+        Object.values(projectTagsById).flat().filter(Boolean)
+    )).sort();
+
+    const allButton = document.createElement("button");
+    allButton.type = "button";
+    allButton.className = "tag-filter-button active";
+    allButton.textContent = "All";
+    allButton.addEventListener("click", function() {
+        setActiveButton(allButton);
+        applyFilter("all");
+    });
+    filterBar.appendChild(allButton);
+
+    uniqueTags.forEach(tag => {
+        const button = document.createElement("button");
+        button.type = "button";
+        button.className = "tag-filter-button";
+        button.textContent = tag;
+        button.addEventListener("click", function() {
+            setActiveButton(button);
+            applyFilter(tag);
+        });
+        filterBar.appendChild(button);
+    });
+
+    applyFilter("all");
+});
+</script>
 
 </body>
 </html>
