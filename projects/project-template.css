@@ -4,19 +4,19 @@
 /* Override background image from main style.css */
 body {
     background-image: none;
-    background-color: var(--color-dark);
-    color: var(--color-light);
+    background-color: var(--color-light);
+    color: var(--color-dark);
 }
 
 /* Link styling for project pages */
 a {
-    color: var(--color-light);
+    color: var(--color-dark);
     text-decoration: none;
     font-weight: 700;
 }
 
 a:hover {
-    color: var(--color-light);
+    color: var(--color-dark);
     text-decoration: underline;
 }
 
@@ -61,12 +61,12 @@ a:hover {
 }
 
 .project-card {
-    border: 1px solid var(--color-light);
+    border: 1px solid var(--color-dark);
     border-radius: 0px;
     overflow: hidden;
     display: flex;
     flex-direction: column;
-    background-color: var(--color-light);
+    background-color: var(--color-lighter);
     color: var(--color-dark);
     text-decoration: none;
 }
@@ -160,21 +160,21 @@ a:hover {
 
 .project-title {
     font-family: 'lato', sans-serif;
-    color: var(--color-light);
+    color: var(--color-dark);
     margin-bottom: 10px;
     text-transform: uppercase;
 }
 
 .project-authors {
     font-size: 1.2em;
-    color: var(--color-light);
+    color: var(--color-dark);
     margin-bottom: 20px;
     font-style: italic;
 }
 
 .project-authors-noitalic {
     font-size: 1.2em;
-    color: var(--color-light);
+    color: var(--color-dark);
     margin-bottom: 20px;
     font-style: normal;
 }
@@ -422,12 +422,12 @@ a:hover {
     display: block;
     width: max-content;
     margin: 20px auto 20px auto;
-    background-color: transparent;
-    color: var(--color-light);
+    background-color: var(--color-dark);
+    color: var(--color-dark);
     padding: 8px 16px;
     text-decoration: none;
     border-radius: 0px;
-    border: 1px solid var(--color-light);
+    border: 1px solid var(--color-dark);
 }
 
 .back-link:hover,
@@ -436,20 +436,25 @@ a:hover {
     color: var(--color-dark);
 }
 
+.back-link a:hover {
+    color: var(--color-dark);
+    text-decoration: none;
+}
+
 .contact-info {
     text-align: center;
     margin-top: 20px;
     font-size: 0.9em;
-    color: var(--color-light);
+    color: var(--color-dark);
 }
 
 /* Publication section styling */
 .publication-section {
     margin-top: 30px;
     padding: 20px;
-    background-color: var(--color-light);
+    background-color: var(--color-lighter);
     border-radius: 0px;
-    border: 1px solid var(--color-light);
+    border: 1px solid var(--color-dark);
     color: var(--color-dark);
 }
 
