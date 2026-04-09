@@ -60,4 +60,17 @@
 </div>
 
 </body>
+ <script>
+    window.CanvasBgConfig = { opacityMax: .4, backgroundColor: "#282828", startHidden: true };
+ </script>
+ <script src="canvas-bg.js"></script>
+ <script>
+    CanvasBg.hide();
+    document.querySelector("#container").addEventListener("mouseenter", function() {
+        CanvasBg.show();
+    });
+    document.querySelector("#container").addEventListener("mouseleave", function() {
+        CanvasBg.hide();
+    });
+ </script>
 </html>
