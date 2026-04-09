@@ -14,7 +14,7 @@
 
 <meta name="viewport" content="width=device-width,user-scalable=no" />
 <meta charset="utf-8">
-<title>Projects | JP Carrascal</title>
+<title>JP Carrascal · Portfolio</title>
 <link href="../style.css" type="text/css" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css?family=Lato:700|Lato" rel="stylesheet">
 <link href="project-template.css" type="text/css" rel="stylesheet"/>
@@ -25,8 +25,8 @@
     <div id="wrap">
         <div class="project-content">
             <div class="project-header">
-                <h1 class="project-title">JP Carrascal · Projects</h1>
-                <div class="project-authors-noitalic">Interactive Media & Digital Arts</div>
+                <h1 class="project-title">JP Carrascal · Portfolio</h1>
+                <div class="project-authors-noitalic"></div>
             </div>
 
             <div class="tag-filter-bar" id="tagFilterBar" aria-label="Project tags filter"></div>
@@ -101,7 +101,7 @@
                     <img src="hootbeat/images/hootbeat-block-diagram.jpg" alt="HootBeat Project">
                     <div class="project-info">
                         <h3>HootBeat (2022)</h3>
-                        <p>A Platform for MIDI-Controlled Lighting Wearables</p>
+                        <p>A platform for MIDI-controlled lighting wearables</p>
                     </div>
                 </a>
                 
@@ -141,7 +141,7 @@
                     <img src="lockdown/images/main.jpg" alt="Lockdown VR">
                     <div class="project-info">
                         <h3>Lockdown (2020)</h3>
-                        <p>An interactive VR videoclip for Spacebarman's song. Built with WebVR/WebXR.</p>
+                        <p>Interactive VR music video for Spacebarman's song. Built with WebVR/WebXR.</p>
                     </div>
                 </a>
                 
@@ -268,7 +268,7 @@ const projectTagsById = {
     "count-me-in": ["web", "mobile", "audience participation", "music"],
     "ble-midi-glove": ["wearables", "music"],
     "momc-controller": ["music", "hardware"],
-    "lockdown": ["web", "ar/vr"],
+    "lockdown": ["web", "ar/vr", "video"],
     "blesync": ["music", "hardware"],
     "magicscroll": ["organic user interfaces", "hardware"],
     "ar-wall": ["ux/hci research", "mobile", "ar/vr"],
@@ -309,6 +309,16 @@ function applyFilter(tag) {
     });
 }
 
+// Sorts tags by the number of projects they are associated with, in descending order
+
+function sortTagsByProjectCount(tags) {
+    return tags.sort((a, b) => {
+        const countA = Object.values(projectTagsById).filter(tags => tags.includes(a)).length;
+        const countB = Object.values(projectTagsById).filter(tags => tags.includes(b)).length;
+        return countB - countA; // Descending order
+    });
+}
+
 document.addEventListener("DOMContentLoaded", function() {
     const cards = Array.from(document.querySelectorAll(".project-card"));
     const filterBar = document.getElementById("tagFilterBar");
@@ -322,12 +332,13 @@ document.addEventListener("DOMContentLoaded", function() {
 
     const uniqueTags = Array.from(new Set(
         Object.values(projectTagsById).flat().filter(Boolean)
-    )).sort();
+    ));
+    const sortedTags = sortTagsByProjectCount(uniqueTags);
 
     const allButton = document.createElement("button");
     allButton.type = "button";
     allButton.className = "tag-filter-button active";
-    allButton.textContent = "All";
+    allButton.textContent = "everything";
     allButton.addEventListener("click", function() {
         setActiveButton(allButton);
         applyFilter("all");

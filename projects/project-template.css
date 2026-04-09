@@ -69,6 +69,7 @@ a:hover {
     background-color: var(--color-lighter);
     color: var(--color-dark);
     text-decoration: none;
+    filter: saturate(0.0);
 }
 
 /* Keep card headings bold while body/link text stays normal */
@@ -84,6 +85,9 @@ a:hover {
 .project-card:hover {
     background-color: var(--color-dark);
     color: var(--color-light);
+    filter: saturate(1);
+    filter: brightness(1.5);
+    filter: contrast(1.2);
 }
 
 .project-card:link,
