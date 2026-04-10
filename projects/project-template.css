@@ -2,6 +2,11 @@
 /* Shared styles for all project pages */
 
 /* Override background image from main style.css */
+
+html {
+    font-size: 1.3em;
+}
+
 body {
     background-image: none;
     background-color: var(--color-light);
