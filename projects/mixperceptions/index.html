@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-15242862-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-15242862-1');
+</script>
+
+<meta name="viewport" content="width=device-width,user-scalable=no" />
+<meta charset="utf-8">
+<title>MixPerceptions | JP Carrascal</title>
+<link href="../../style.css" type="text/css" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css?family=Lato:700|Lato" rel="stylesheet">
+<link href="../project-template.css" type="text/css" rel="stylesheet"/>
+</head>
+<body>
+
+<div id="flex-container">
+    <div id="wrap">
+        <div class="project-content">
+            <div class="language-selector">
+                <select class="language-dropdown" id="languageSelector" onchange="switchLanguage(this.value)">
+                    <option value="en">English</option>
+                    <option value="es">Español</option>
+                    <option value="ca">Català</option>
+                </select>
+            </div>
+
+            <div class="project-header">
+                <h1 class="project-title" data-i18n="title">MixPerceptions</h1>
+                <div class="project-authors">JP Carrascal (2014)</div>
+            </div>
+
+            <div style="text-align: center; margin-bottom: 30px;" data-i18n="subtitle">
+                Augmented-reality installation soundtrack, sound design and interactive audio programming
+            </div>
+
+            <div style="text-align: center; margin-bottom: 30px;">
+                <img src="images/mixperceptions-cover.jpg" alt="MixPerceptions" style="max-width: 100%; height: auto;" />
+            </div>
+
+            <div style="text-align: justify; margin-bottom: 30px;" data-i18n="description">
+                An augmented-reality art installation in which users interact with artworks using smartphones or tablets and headphones. I created the soundtrack and sound design, and programmed the audio interaction using Pure Data. Finalist in the SIGGRAPH 2014 AR contest.
+            </div>
+
+            <div class="publication-section">
+                <h3 data-i18n="links_label">Links:</h3>
+                <ul>
+                    <li><a href="https://vimeo.com/65799488" target="_blank" data-i18n="vimeo_link">Watch on Vimeo</a></li>
+                </ul>
+            </div>
+
+            <div class="back-link">
+                <a href="javascript:history.back()" data-i18n="back_button">← Back</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+const translations = {
+    en: {
+        title: "MixPerceptions",
+        subtitle: "Augmented-reality installation soundtrack, sound design and interactive audio programming",
+        description: "An augmented-reality art installation in which users interact with artworks using smartphones or tablets and headphones. I created the soundtrack and sound design, and programmed the audio interaction using Pure Data. Finalist in the SIGGRAPH 2014 AR contest.",
+        links_label: "Links:",
+        vimeo_link: "Watch on Vimeo",
+        back_button: "← Back"
+    },
+    es: {
+        title: "MixPerceptions",
+        subtitle: "Banda sonora, diseño de sonido y programación de audio interactivo para instalación de realidad aumentada",
+        description: "Una instalación artística de realidad aumentada en la que los usuarios interactúan con obras usando smartphones o tablets y auriculares. Creé la banda sonora y el diseño de sonido, y programé la interacción de audio con Pure Data. Finalista en el concurso AR de SIGGRAPH 2014.",
+        links_label: "Enlaces:",
+        vimeo_link: "Ver en Vimeo",
+        back_button: "← Atrás"
+    },
+    ca: {
+        title: "MixPerceptions",
+        subtitle: "Banda sonora, disseny de so i programació d'àudio interactiu per a instal·lació de realitat augmentada",
+        description: "Una instal·lació artística de realitat augmentada en què els usuaris interactuen amb obres fent servir smartphones o tauletes i auriculars. Vaig crear la banda sonora i el disseny de so, i vaig programar la interacció d'àudio amb Pure Data. Finalista al concurs AR de SIGGRAPH 2014.",
+        links_label: "Enllaços:",
+        vimeo_link: "Veure a Vimeo",
+        back_button: "← Enrere"
+    }
+};
+
+function switchLanguage(lang) {
+    localStorage.setItem('preferredLanguage', lang);
+    document.querySelectorAll('[data-i18n]').forEach(element => {
+        const key = element.getAttribute('data-i18n');
+        if (translations[lang] && translations[lang][key]) {
+            if (key === 'description') {
+                element.innerHTML = translations[lang][key];
+            } else {
+                element.textContent = translations[lang][key];
+            }
+        }
+    });
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+    const urlParams = new URLSearchParams(window.location.search);
+    const urlLang = urlParams.get('lang');
+    const validLanguages = ['en', 'es', 'ca'];
+
+    let lang = 'en';
+    if (urlLang && validLanguages.includes(urlLang)) {
+        lang = urlLang;
+    } else if (urlLang) {
+        lang = localStorage.getItem('preferredLanguage') || 'en';
+    } else {
+        lang = localStorage.getItem('preferredLanguage') || 'en';
+    }
+
+    document.getElementById('languageSelector').value = lang;
+    switchLanguage(lang);
+});
+</script>
+
+</body>
+</html>

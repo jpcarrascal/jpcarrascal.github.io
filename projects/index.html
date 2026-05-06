@@ -30,22 +30,26 @@
             </div>
 
             <div class="tag-filter-bar" id="tagFilterBar" aria-label="Project tags filter"></div>
+            <div class="tag-filter-dropdown-wrap" id="tagFilterDropdownWrap">
+                <label class="tag-filter-label" for="tagFilterSelect">Filter by:</label>
+                <select class="tag-filter-select" id="tagFilterSelect" aria-label="Filter by tag"></select>
+            </div>
             
             <div class="projects-grid">
-
-                <a class="project-card" href="accidental/">
-                    <img src="accidental/images/accidental-cover.jpg" alt="Accidental">
-                    <div class="project-info">
-                        <h3>Accidental (2026)</h3>
-                        <p>Digital media: web media player + ambient/shoegaze music album + photo study</p>
-                    </div>
-                </a>
 
                 <a class="project-card" href="spacebarman/">
                     <img src="spacebarman/images/spacebarman-continental-square.jpg" alt="Spacebarman">
                     <div class="project-info">
                         <h3>Spacebarman (2010 - Present)</h3>
                         <p>Electronic / Experimental music project</p>
+                    </div>
+                </a>
+
+                <a class="project-card" href="accidental/">
+                    <img src="accidental/images/accidental-cover.jpg" alt="Accidental">
+                    <div class="project-info">
+                        <h3>Accidental (2026)</h3>
+                        <p>Digital media: web media player + ambient/shoegaze music album + photo study</p>
                     </div>
                 </a>
                 
@@ -176,6 +180,14 @@
                         <p>Effects of Tactile Feedback on the Perception of Virtual Shapes on Non-Planar DisplayObjects</p>
                     </div>
                 </a>
+
+                <a class="project-card" href="el-fin-de-una-dictadura/">
+                    <img src="el-fin-de-una-dictadura/images/el-fin-cover.jpg" alt="El Fin de una Dictadura">
+                    <div class="project-info">
+                        <h3>El Fin de una Dictadura - Soundtrack (2017)</h3>
+                        <p>Original soundtrack for the zombie short film by Alex Quezada</p>
+                    </div>
+                </a>
                 
                 <a class="project-card" href="reflex/">
                     <img src="reflex/images/main.jpg" alt="ReFlex">
@@ -206,6 +218,22 @@
                     <div class="project-info">
                         <h3>BlueMO (2016)</h3>
                         <p>Bluetooth LE to MIDI/OSC translator for Mac OS X</p>
+                    </div>
+                </a>
+
+                <a class="project-card" href="mixperceptions/">
+                    <img src="mixperceptions/images/mixperceptions-cover.jpg" alt="MixPerceptions">
+                    <div class="project-info">
+                        <h3>MixPerceptions (2014)</h3>
+                        <p>Augmented-reality installation with soundtrack, sound design and interactive audio programming</p>
+                    </div>
+                </a>
+
+                <a class="project-card" href="mi-amigo-picu/">
+                    <img src="mi-amigo-picu/images/picu-cover.jpg" alt="Mi Amigo Picú">
+                    <div class="project-info">
+                        <h3>Mi Amigo Picú - Soundtrack (2013)</h3>
+                        <p>Sound design and co-composed music for this children's short film</p>
                     </div>
                 </a>
                 
@@ -240,36 +268,36 @@
                         <p>Interface for Audio Mixing with Multitouch Technology</p>
                     </div>
                 </a>
-                
-                <a class="project-card" href="yo-soy-otro/">
-                    <img src="yo-soy-otro/images/yo-soy-otro.jpg" alt="Yo Soy Otro">
-                    <div class="project-info">
-                        <h3>Yo Soy Otro - Soundtrack (2008)</h3>
-                        <p>Original soundtrack for the feature film 'Yo Soy Otro' by Oscar Campo</p>
-                    </div>
-                </a>
-
-                <a class="project-card" href="el-fin-de-una-dictadura/">
-                    <img src="el-fin-de-una-dictadura/images/el-fin-cover.jpg" alt="El Fin de una Dictadura">
-                    <div class="project-info">
-                        <h3>El Fin de una Dictadura - Soundtrack (2017)</h3>
-                        <p>Original soundtrack for the zombie short film by Alex Quezada</p>
-                    </div>
-                </a>
-
-                <a class="project-card" href="mi-amigo-picu/">
-                    <img src="mi-amigo-picu/images/picu-cover.jpg" alt="Mi Amigo Picú">
-                    <div class="project-info">
-                        <h3>Mi Amigo Picú - Soundtrack (2013)</h3>
-                        <p>Sound design and co-composed music for this children's short film</p>
-                    </div>
-                </a>
 
                 <a class="project-card" href="dunas/">
                     <img src="dunas/images/dunas-cover.jpg" alt="Dunas">
                     <div class="project-info">
                         <h3>Dunas - Soundtrack (2010)</h3>
                         <p>Soundtrack and sound design for the surreal short film by Alex Quezada</p>
+                    </div>
+                </a>
+
+                <a class="project-card" href="la-fabrica/">
+                    <img src="la-fabrica/images/la-fabrica-cover.jpg" alt="La Fábrica">
+                    <div class="project-info">
+                        <h3>La Fábrica (2000 - 2010)</h3>
+                        <p>Pioneer electronic rock band project from Cali, Colombia</p>
+                    </div>
+                </a>
+
+                <a class="project-card" href="unfulfilled/">
+                    <img src="unfulfilled/images/unfulfilled-cover.jpg" alt="Unfulfilled">
+                    <div class="project-info">
+                        <h3>Unfulfilled (2010)</h3>
+                        <p>Collection of short songs, b-sides and rejected soundtrack pieces</p>
+                    </div>
+                </a>
+
+                <a class="project-card" href="yo-soy-otro/">
+                    <img src="yo-soy-otro/images/yo-soy-otro.jpg" alt="Yo Soy Otro">
+                    <div class="project-info">
+                        <h3>Yo Soy Otro - Soundtrack (2008)</h3>
+                        <p>Original soundtrack for the feature film 'Yo Soy Otro' by Oscar Campo</p>
                     </div>
                 </a>
 
@@ -318,6 +346,9 @@ const projectTagsById = {
     "el-fin-de-una-dictadura": ["music", "soundtrack"],
     "mi-amigo-picu": ["music", "soundtrack", "sound design"],
     "dunas": ["music", "soundtrack"],
+    "mixperceptions": ["ar/vr", "sound design"],
+    "la-fabrica": ["music"],
+    "unfulfilled": ["music"],
     "los-ciclos": ["soundtrack", "sound design"]
 };
 
@@ -358,6 +389,7 @@ function sortTagsByProjectCount(tags) {
 document.addEventListener("DOMContentLoaded", function() {
     const cards = Array.from(document.querySelectorAll(".project-card"));
     const filterBar = document.getElementById("tagFilterBar");
+    const filterSelect = document.getElementById("tagFilterSelect");
 
     cards.forEach(card => {
         const projectId = getProjectIdFromHref(card.getAttribute("href"));
@@ -377,21 +409,49 @@ document.addEventListener("DOMContentLoaded", function() {
     allButton.textContent = "everything";
     allButton.addEventListener("click", function() {
         setActiveButton(allButton);
+        filterSelect.value = "all";
         applyFilter("all");
     });
     filterBar.appendChild(allButton);
 
-    uniqueTags.forEach(tag => {
+    const allOption = document.createElement("option");
+    allOption.value = "all";
+    allOption.textContent = "everything";
+    filterSelect.appendChild(allOption);
+
+    sortedTags.forEach(tag => {
         const button = document.createElement("button");
         button.type = "button";
         button.className = "tag-filter-button";
         button.textContent = tag;
         button.addEventListener("click", function() {
             setActiveButton(button);
+            filterSelect.value = tag;
             applyFilter(tag);
         });
         filterBar.appendChild(button);
+
+        const option = document.createElement("option");
+        option.value = tag;
+        option.textContent = tag;
+        filterSelect.appendChild(option);
     });
+
+    filterSelect.addEventListener("change", function() {
+        const selectedTag = filterSelect.value;
+        if (selectedTag === "all") {
+            setActiveButton(allButton);
+        } else {
+            const matchingButton = Array.from(document.querySelectorAll(".tag-filter-button"))
+                .find(button => button.textContent === selectedTag);
+            if (matchingButton) {
+                setActiveButton(matchingButton);
+            }
+        }
+        applyFilter(selectedTag);
+    });
+
+    filterSelect.value = "all";
 
     applyFilter("all");
 });

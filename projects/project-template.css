@@ -171,6 +171,31 @@ a:hover {
     gap: 12px;
 }
 
+.tag-filter-dropdown-wrap {
+    display: none;
+    margin: 0;
+    align-items: center;
+    gap: 10px;
+}
+
+.tag-filter-label {
+    font-size: 14px;
+    color: #222;
+    font-family: 'Lato', sans-serif;
+    font-weight: 700;
+}
+
+.tag-filter-select {
+    border: 1px solid #c9c9c9;
+    background: #fff;
+    color: #222;
+    border-radius: 0;
+    padding: 6px 10px;
+    font-size: 14px;
+    font-family: 'Lato', sans-serif;
+    line-height: 1.25;
+}
+
 .tag-filter-button {
     border: 1px solid #c9c9c9;
     background: #fff;
@@ -197,6 +222,32 @@ a:hover {
 
 .project-card.is-hidden {
     display: none;
+}
+
+@media (max-width: 768px) {
+    .tag-filter-bar {
+        display: none;
+    }
+
+    .tag-filter-dropdown-wrap {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        width: 100%;
+        gap: 10px;
+    }
+
+    .tag-filter-label {
+        white-space: nowrap;
+        margin: 0;
+    }
+
+    .tag-filter-select {
+        flex: 1;
+        width: auto;
+        min-width: 0;
+        box-sizing: border-box;
+    }
 }
 
 .project-header {

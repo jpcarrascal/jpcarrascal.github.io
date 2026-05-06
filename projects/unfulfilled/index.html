@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-15242862-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-15242862-1');
+</script>
+
+<meta name="viewport" content="width=device-width,user-scalable=no" />
+<meta charset="utf-8">
+<title>Unfulfilled | JP Carrascal</title>
+<link href="../../style.css" type="text/css" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css?family=Lato:700|Lato" rel="stylesheet">
+<link href="../project-template.css" type="text/css" rel="stylesheet"/>
+</head>
+<body>
+
+<div id="flex-container">
+    <div id="wrap">
+        <div class="project-content">
+            <div class="language-selector">
+                <select class="language-dropdown" id="languageSelector" onchange="switchLanguage(this.value)">
+                    <option value="en">English</option>
+                    <option value="es">Español</option>
+                    <option value="ca">Català</option>
+                </select>
+            </div>
+
+            <div class="project-header">
+                <h1 class="project-title" data-i18n="title">Unfulfilled</h1>
+                <div class="project-authors">JP Carrascal (2010)</div>
+            </div>
+
+            <div style="text-align: center; margin-bottom: 30px;" data-i18n="subtitle">
+                Collection of short songs, b-sides and rejected soundtrack pieces
+            </div>
+
+            <div style="text-align: center; margin-bottom: 30px;">
+                <img src="images/unfulfilled-cover.jpg" alt="Unfulfilled" style="max-width: 100%; height: auto;" />
+            </div>
+
+            <div style="text-align: justify; margin-bottom: 30px;" data-i18n="description">
+                A collection of short songs, b-sides and rejected soundtrack pieces.
+            </div>
+
+            <div class="publication-section">
+                <h3 data-i18n="links_label">Links:</h3>
+                <ul>
+                    <li><a href="https://jpcarrascal.bandcamp.com/album/unfulfilled" target="_blank" data-i18n="bandcamp_link">Listen on Bandcamp</a></li>
+                </ul>
+            </div>
+
+            <div class="back-link">
+                <a href="javascript:history.back()" data-i18n="back_button">← Back</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+const translations = {
+    en: {
+        title: "Unfulfilled",
+        subtitle: "Collection of short songs, b-sides and rejected soundtrack pieces",
+        description: "A collection of short songs, b-sides and rejected soundtrack pieces.",
+        links_label: "Links:",
+        bandcamp_link: "Listen on Bandcamp",
+        back_button: "← Back"
+    },
+    es: {
+        title: "Unfulfilled",
+        subtitle: "Colección de canciones cortas, caras B y piezas de banda sonora descartadas",
+        description: "Una colección de canciones cortas, caras B y piezas de banda sonora descartadas.",
+        links_label: "Enlaces:",
+        bandcamp_link: "Escuchar en Bandcamp",
+        back_button: "← Atrás"
+    },
+    ca: {
+        title: "Unfulfilled",
+        subtitle: "Col·lecció de cançons curtes, cares B i peces de banda sonora descartades",
+        description: "Una col·lecció de cançons curtes, cares B i peces de banda sonora descartades.",
+        links_label: "Enllaços:",
+        bandcamp_link: "Escoltar a Bandcamp",
+        back_button: "← Enrere"
+    }
+};
+
+function switchLanguage(lang) {
+    localStorage.setItem('preferredLanguage', lang);
+    document.querySelectorAll('[data-i18n]').forEach(element => {
+        const key = element.getAttribute('data-i18n');
+        if (translations[lang] && translations[lang][key]) {
+            if (key === 'description') {
+                element.innerHTML = translations[lang][key];
+            } else {
+                element.textContent = translations[lang][key];
+            }
+        }
+    });
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+    const urlParams = new URLSearchParams(window.location.search);
+    const urlLang = urlParams.get('lang');
+    const validLanguages = ['en', 'es', 'ca'];
+
+    let lang = 'en';
+    if (urlLang && validLanguages.includes(urlLang)) {
+        lang = urlLang;
+    } else if (urlLang) {
+        lang = localStorage.getItem('preferredLanguage') || 'en';
+    } else {
+        lang = localStorage.getItem('preferredLanguage') || 'en';
+    }
+
+    document.getElementById('languageSelector').value = lang;
+    switchLanguage(lang);
+});
+</script>
+
+</body>
+</html>
