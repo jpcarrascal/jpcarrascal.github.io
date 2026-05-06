@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-15242862-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-15242862-1');
+</script>
+
+<meta name="viewport" content="width=device-width,user-scalable=no" />
+<meta charset="utf-8">
+<title>Los Ciclos - Sound Design | JP Carrascal</title>
+<link href="../../style.css" type="text/css" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css?family=Lato:700|Lato" rel="stylesheet">
+<link href="../project-template.css" type="text/css" rel="stylesheet"/>
+</head>
+<body>
+
+<div id="flex-container">
+    <div id="wrap">
+        <div class="project-content">
+            <div class="language-selector">
+                <select class="language-dropdown" id="languageSelector" onchange="switchLanguage(this.value)">
+                    <option value="en">English</option>
+                    <option value="es">Español</option>
+                    <option value="ca">Català</option>
+                </select>
+            </div>
+
+            <div class="project-header">
+                <h1 class="project-title" data-i18n="title">Los Ciclos (Cycles)</h1>
+                <div class="project-authors">JP Carrascal (2007)</div>
+            </div>
+
+            <div style="text-align: center; margin-bottom: 30px;" data-i18n="subtitle">
+                Sound design for the short film 'Los Ciclos' by Juan Manuel Acuña
+            </div>
+
+            <div style="text-align: center; margin-bottom: 30px;">
+                <img src="images/los-ciclos-cover.jpg" alt="Los Ciclos" style="max-width: 100%; height: auto;" />
+            </div>
+
+            <div style="text-align: justify; margin-bottom: 30px;" data-i18n="description">
+                A short film directed by Juan Manuel Acuña. I designed the sound effects for the film. Original score composed by Alejandro Ramírez Rojas.
+            </div>
+
+            <div class="publication-section">
+                <h3 data-i18n="links_label">Links:</h3>
+                <ul>
+                    <li><a href="https://www.youtube.com/watch?v=OWUaPBhG6_A" target="_blank" data-i18n="youtube_link">Watch on YouTube</a></li>
+                </ul>
+            </div>
+
+            <div class="back-link">
+                <a href="javascript:history.back()" data-i18n="back_button">← Back</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+const translations = {
+    en: {
+        title: "Los Ciclos (Cycles)",
+        subtitle: "Sound design for the short film 'Los Ciclos' by Juan Manuel Acuña",
+        description: "A short film directed by Juan Manuel Acuña. I designed the sound effects for the film. Original score composed by Alejandro Ramírez Rojas.",
+        links_label: "Links:",
+        youtube_link: "Watch on YouTube",
+        back_button: "← Back"
+    },
+    es: {
+        title: "Los Ciclos",
+        subtitle: "Diseño de sonido para el cortometraje 'Los Ciclos' de Juan Manuel Acuña",
+        description: "Un cortometraje dirigido por Juan Manuel Acuña. Diseñé los efectos de sonido del film. Música original compuesta por Alejandro Ramírez Rojas.",
+        links_label: "Enlaces:",
+        youtube_link: "Ver en YouTube",
+        back_button: "← Atrás"
+    },
+    ca: {
+        title: "Los Ciclos",
+        subtitle: "Disseny de so per al curtmetratge 'Los Ciclos' de Juan Manuel Acuña",
+        description: "Un curtmetratge dirigit per Juan Manuel Acuña. Vaig dissenyar els efectes de so del film. Música original composta per Alejandro Ramírez Rojas.",
+        links_label: "Enllaços:",
+        youtube_link: "Veure a YouTube",
+        back_button: "← Enrere"
+    }
+};
+
+function switchLanguage(lang) {
+    localStorage.setItem('preferredLanguage', lang);
+    document.querySelectorAll('[data-i18n]').forEach(element => {
+        const key = element.getAttribute('data-i18n');
+        if (translations[lang] && translations[lang][key]) {
+            if (key === 'description') {
+                element.innerHTML = translations[lang][key];
+            } else {
+                element.textContent = translations[lang][key];
+            }
+        }
+    });
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+    const urlParams = new URLSearchParams(window.location.search);
+    const urlLang = urlParams.get('lang');
+    const validLanguages = ['en', 'es', 'ca'];
+
+    let lang = 'en';
+    if (urlLang && validLanguages.includes(urlLang)) {
+        lang = urlLang;
+    } else if (urlLang) {
+        lang = localStorage.getItem('preferredLanguage') || 'en';
+    } else {
+        lang = localStorage.getItem('preferredLanguage') || 'en';
+    }
+
+    document.getElementById('languageSelector').value = lang;
+    switchLanguage(lang);
+});
+</script>
+
+</body>
+</html>

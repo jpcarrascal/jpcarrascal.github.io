@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-15242862-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-15242862-1');
+</script>
+
+<meta name="viewport" content="width=device-width,user-scalable=no" />
+<meta charset="utf-8">
+<title>Mi Amigo Picú - Soundtrack | JP Carrascal</title>
+<link href="../../style.css" type="text/css" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css?family=Lato:700|Lato" rel="stylesheet">
+<link href="../project-template.css" type="text/css" rel="stylesheet"/>
+</head>
+<body>
+
+<div id="flex-container">
+    <div id="wrap">
+        <div class="project-content">
+            <div class="language-selector">
+                <select class="language-dropdown" id="languageSelector" onchange="switchLanguage(this.value)">
+                    <option value="en">English</option>
+                    <option value="es">Español</option>
+                    <option value="ca">Català</option>
+                </select>
+            </div>
+
+            <div class="project-header">
+                <h1 class="project-title" data-i18n="title">Mi Amigo Picú (My Friend Picú) - Soundtrack</h1>
+                <div class="project-authors">JP Carrascal, Daniela Torres (2013)</div>
+            </div>
+
+            <div style="text-align: center; margin-bottom: 30px;" data-i18n="subtitle">
+                Sound design and co-composed music for the children's short film 'Mi Amigo Picú'
+            </div>
+
+            <div style="text-align: center; margin-bottom: 30px;">
+                <img src="images/picu-cover.jpg" alt="Mi Amigo Picú" style="max-width: 100%; height: auto;" />
+            </div>
+
+            <div style="text-align: justify; margin-bottom: 30px;" data-i18n="description">
+                I designed the sound and co-composed the music (along with Daniela Torres) for this short film for children.
+            </div>
+
+            <div class="publication-section">
+                <h3 data-i18n="links_label">Links:</h3>
+                <ul>
+                    <li><a href="https://vimeo.com/64119265" target="_blank" data-i18n="vimeo_link">Watch on Vimeo</a></li>
+                </ul>
+            </div>
+
+            <div class="back-link">
+                <a href="javascript:history.back()" data-i18n="back_button">← Back</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+const translations = {
+    en: {
+        title: "Mi Amigo Picú (My Friend Picú) - Soundtrack",
+        subtitle: "Sound design and co-composed music for the children's short film 'Mi Amigo Picú'",
+        description: "I designed the sound and co-composed the music (along with Daniela Torres) for this short film for children.",
+        links_label: "Links:",
+        vimeo_link: "Watch on Vimeo",
+        back_button: "← Back"
+    },
+    es: {
+        title: "Mi Amigo Picú - Soundtrack",
+        subtitle: "Diseño de sonido y co-composición de la música para el cortometraje infantil 'Mi Amigo Picú'",
+        description: "Diseñé el sonido y co-compuse la música (junto a Daniela Torres) para este cortometraje infantil.",
+        links_label: "Enlaces:",
+        vimeo_link: "Ver en Vimeo",
+        back_button: "← Atrás"
+    },
+    ca: {
+        title: "Mi Amigo Picú - Soundtrack",
+        subtitle: "Disseny de so i co-composició de la música per al curtmetratge infantil 'Mi Amigo Picú'",
+        description: "Vaig dissenyar el so i vaig co-compondre la música (juntament amb Daniela Torres) per a aquest curtmetratge infantil.",
+        links_label: "Enllaços:",
+        vimeo_link: "Veure a Vimeo",
+        back_button: "← Enrere"
+    }
+};
+
+function switchLanguage(lang) {
+    localStorage.setItem('preferredLanguage', lang);
+    document.querySelectorAll('[data-i18n]').forEach(element => {
+        const key = element.getAttribute('data-i18n');
+        if (translations[lang] && translations[lang][key]) {
+            if (key === 'description') {
+                element.innerHTML = translations[lang][key];
+            } else {
+                element.textContent = translations[lang][key];
+            }
+        }
+    });
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+    const urlParams = new URLSearchParams(window.location.search);
+    const urlLang = urlParams.get('lang');
+    const validLanguages = ['en', 'es', 'ca'];
+
+    let lang = 'en';
+    if (urlLang && validLanguages.includes(urlLang)) {
+        lang = urlLang;
+    } else if (urlLang) {
+        lang = localStorage.getItem('preferredLanguage') || 'en';
+    } else {
+        lang = localStorage.getItem('preferredLanguage') || 'en';
+    }
+
+    document.getElementById('languageSelector').value = lang;
+    switchLanguage(lang);
+});
+</script>
+
+</body>
+</html>

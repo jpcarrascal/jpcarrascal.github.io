@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-15242862-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-15242862-1');
+</script>
+
+<meta name="viewport" content="width=device-width,user-scalable=no" />
+<meta charset="utf-8">
+<title>El Fin de una Dictadura - Soundtrack | JP Carrascal</title>
+<link href="../../style.css" type="text/css" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css?family=Lato:700|Lato" rel="stylesheet">
+<link href="../project-template.css" type="text/css" rel="stylesheet"/>
+</head>
+<body>
+
+<div id="flex-container">
+    <div id="wrap">
+        <div class="project-content">
+            <div class="language-selector">
+                <select class="language-dropdown" id="languageSelector" onchange="switchLanguage(this.value)">
+                    <option value="en">English</option>
+                    <option value="es">Español</option>
+                    <option value="ca">Català</option>
+                </select>
+            </div>
+
+            <div class="project-header">
+                <h1 class="project-title" data-i18n="title">El Fin de una Dictadura (Dead Dictatorship) - Soundtrack</h1>
+                <div class="project-authors">JP Carrascal (2017)</div>
+            </div>
+
+            <div style="text-align: center; margin-bottom: 30px;" data-i18n="subtitle">
+                Original soundtrack for the short film 'El Fin de una Dictadura' by Alex Quezada
+            </div>
+
+            <div style="text-align: center; margin-bottom: 30px;">
+                <img src="images/el-fin-cover.jpg" alt="El Fin de una Dictadura" style="max-width: 100%; height: auto;" />
+            </div>
+
+            <div style="text-align: justify; margin-bottom: 30px;" data-i18n="description">
+                A short zombie film directed by Alex Quezada. In the director's words, 'a reflection about unpunished events of recent Colombian history'. I composed the original soundtrack.
+            </div>
+
+            <div class="publication-section">
+                <h3 data-i18n="links_label">Links:</h3>
+                <ul>
+                    <li><a href="https://www.youtube.com/watch?v=BiDh2ydiLGs" target="_blank" data-i18n="youtube_link">Watch on YouTube</a></li>
+                </ul>
+            </div>
+
+            <div class="back-link">
+                <a href="javascript:history.back()" data-i18n="back_button">← Back</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+const translations = {
+    en: {
+        title: "El Fin de una Dictadura (Dead Dictatorship) - Soundtrack",
+        subtitle: "Original soundtrack for the short film 'El Fin de una Dictadura' by Alex Quezada",
+        description: "A short zombie film directed by Alex Quezada. In the director's words, 'a reflection about unpunished events of recent Colombian history'. I composed the original soundtrack.",
+        links_label: "Links:",
+        youtube_link: "Watch on YouTube",
+        back_button: "← Back"
+    },
+    es: {
+        title: "El Fin de una Dictadura - Soundtrack",
+        subtitle: "Banda sonora original para el cortometraje 'El Fin de una Dictadura' de Alex Quezada",
+        description: "Un cortometraje de zombis dirigido por Alex Quezada. En palabras del director, 'una reflexión sobre los hechos impunes de la reciente historia colombiana'. Compuse la banda sonora original.",
+        links_label: "Enlaces:",
+        youtube_link: "Ver en YouTube",
+        back_button: "← Atrás"
+    },
+    ca: {
+        title: "El Fin de una Dictadura - Soundtrack",
+        subtitle: "Banda sonora original per al curtmetratge 'El Fin de una Dictadura' d'Alex Quezada",
+        description: "Un curtmetratge de zombis dirigit per Alex Quezada. En paraules del director, 'una reflexió sobre els fets impunes de la recent història colombiana'. Vaig compondre la banda sonora original.",
+        links_label: "Enllaços:",
+        youtube_link: "Veure a YouTube",
+        back_button: "← Enrere"
+    }
+};
+
+function switchLanguage(lang) {
+    localStorage.setItem('preferredLanguage', lang);
+    document.querySelectorAll('[data-i18n]').forEach(element => {
+        const key = element.getAttribute('data-i18n');
+        if (translations[lang] && translations[lang][key]) {
+            if (key === 'description') {
+                element.innerHTML = translations[lang][key];
+            } else {
+                element.textContent = translations[lang][key];
+            }
+        }
+    });
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+    const urlParams = new URLSearchParams(window.location.search);
+    const urlLang = urlParams.get('lang');
+    const validLanguages = ['en', 'es', 'ca'];
+
+    let lang = 'en';
+    if (urlLang && validLanguages.includes(urlLang)) {
+        lang = urlLang;
+    } else if (urlLang) {
+        lang = localStorage.getItem('preferredLanguage') || 'en';
+    } else {
+        lang = localStorage.getItem('preferredLanguage') || 'en';
+    }
+
+    document.getElementById('languageSelector').value = lang;
+    switchLanguage(lang);
+});
+</script>
+
+</body>
+</html>
