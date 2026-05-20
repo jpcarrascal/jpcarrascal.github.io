@@ -38,15 +38,46 @@
             </div>
 
             <div style="text-align: justify; margin-bottom: 30px;" data-i18n="description">
-                    <p>
-                    <span class="boxed">Understand problems</span> <span class="bigger-text">→</span> <span class="boxed">Turn insight into product direction</span> <span class="bigger-text">→</span> <span class="boxed">Design & prototype</span> <span class="bigger-text">→</span> <span class="boxed">Validate and iterate</span>
-                    </p>
                 <p>I focus on shaping product design through research-driven insights and close collaboration with design, product, and engineering teams. My hands-on industry expertise is primarily in UX research, complemented by design experience from academic and personal projects. Much of my work has focused on complex technical domains such as cloud and AI developer platforms, where understanding workflows, mental models, and organizational constraints is essential to improving the user experience.</p>
-                <p>Much of my work involves confidential information, so I cannot publicly share detailed case studies. Instead, this page outlines how I typically approach research, design, and product decision-making.</p>
-                <!--HERE-->
+                <p>Most of my work involves confidential information, so I can't share detailed case studies for the majority of projects. Below is <a href="#case-study">one example</a>, followed by <a href="#process">an overview of how I typically work</a>.</p>
+
+                <h2 id="case-study">Case study: Redesigning the .NET Framework Website</h2>
+
+                <h3>The problem</h3>
+                <p>The brief was simple enough: the dotnet.microsoft.com website looked outdated and wasn't connecting with younger developers. But the underlying situation was messier. The .NET framework had received public criticism (even reaching the CEO's desk) for how hard it was for newcomers to get started and the website reflected those problems directly: fragmented getting-started guides, inconsistent terminology, and a navigation structure that left developers unsure whether they were looking at current documentation or an abandoned corner of a corporate site.</p>
+                <p>The visual refresh was the easy part. The harder question was what the site was actually trying to say, and to whom.</p>
+
+                <h3>Getting a room of strong opinions moving in the same direction</h3>
+                <p>About 15 people were involved across PM and engineering, most of them senior, and most of them with firm views on what was wrong and what to do about it. A member of the marketing team was also part of the core project team from the start, working alongside the PM, designer, and myself throughout the process. Before any research could begin, I needed to do something with all of that.</p>
+                <p>I organised and facilitated a hybrid stakeholder workshop with roughly a dozen people in the room and three or four joining remotely. The goal was limited and specific: not to find definite solutions, but to get everyone's assumptions on the table. I asked attendees to say what they thought was broken and what changes they believed would help. Disagreements were fine, I captured conflicting views on the whiteboard without trying to resolve them in the room.</p>
+                <p>Afterward, the PM and I ran an affinity analysis on everything that had come up and distilled it into about ten to twelve testable hypotheses. We shared those back with the group and adjusted based on feedback until we had a version everyone could work from. This gave the team a shared starting point and meant they had already invested in the process before the research began.</p>
+
                 <div style="text-align: center; margin: 30px 0;">
-                    <img src="images/JP-Redmond.jpg" alt="UX Approach" style="max-width: 100%; height: auto;" />
+                    <img src="images/JP-Redmond.jpg" alt="JP facilitating an onsite workshop in Redmond" style="max-width: 100%; height: auto;" />
                 </div>
+
+                <h3>The research</h3>
+                <p>With the hypotheses as a guide, we ran several rounds of research over about two and a half months: perception interviews to understand how developers thought about .NET relative to alternatives, usability tests to find friction in the current site, surveys to check findings at scale, and card sorting to inform a cleaner information architecture.</p>
+                <p>Throughout, I made a point of explaining each step to the wider team: what we were trying to learn, why we were doing it that way, and what we would do with the results. Many of the engineers and PMs hadn't worked closely with UX research before. Keeping them informed as we went meant there was much less to justify after the fact.</p>
+
+                <h3>The outcome</h3>
+                <p>The research addressed several aspects of the site.</p>
+                <p>The visual design was well received: younger developers rated it significantly more favourably than the original in usability tests.</p>
+                <p>On the structural side, usability findings confirmed that navigation was a core problem: visitors couldn't find what they needed. This led me to propose a card sorting study, whose results drove the restructuring of the site's information architecture. The downloads section presented a different problem: it required too many decisions from users, who frequently ended up downloading the wrong packages. We reorganised that section as well. Both structural changes were validated in further usability testing before moving to implementation.</p>
+                <p>On the messaging side, we wanted the tagline to appeal to younger developers while accurately representing the framework. The marketing team member contributed heavily to brainstorming sessions alongside the PM and the rest of the team; from the resulting candidates, we used a survey to select the final one.</p>
+                <p>The redesigned site shipped within a few weeks of the research wrapping up, implemented by an external team. Telemetry indicated that it performed better on time-on-page and conversion metrics.</p>
+
+                <h3>What could have been done differently</h3>
+                <p>I should have involved more stakeholders directly in the research sessions, having them observe interviews and usability tests rather than just receiving the synthesised findings. The research made clear that beginners found .NET genuinely hard to get started with, not just hard to read about on the website. I think seeing that first-hand would have pushed the team to address the underlying product problems sooner. The site improved, but the onboarding experience took longer to follow.</p>
+
+                <hr style="border: none; border-top: 1px solid #ddd; margin: 40px 0;" />
+                <h2 id="process">How I work</h2>
+                <p>The case study above is one example of this process in practice. Below is an outline of how I typically work:</p>
+
+                <div id="workflow-graphic" style="display: flex; justify-content: center; align-items: center; margin: 30px 0; gap: 10px;">
+                    <span class="boxed">Understand<br/>problems</span> <span class="bigger-text">→</span> <span class="boxed">Turn insight into <br/>product direction</span> <span class="bigger-text">→</span> <span class="boxed">Design &<br/>prototype</span> <span class="bigger-text">→</span> <span class="boxed">Validate &<br/>iterate</span>
+                </div>
+
                 <h2>Understanding customers and their problems</h2>
                 <p>My work is deeply rooted in cross-functional collaboration. When design, product, engineering, and research work together to frame a problem, teams are more likely to align on what should be built and why.</p>
                 <p>To understand the problem space, I use a mix of methods depending on the stage of the product: telemetry analysis, interviews, surveys, workflow walkthroughs, and jobs-to-be-done analysis. Design workshops are often useful to align stakeholders and explore solution spaces collaboratively.</p>
@@ -60,7 +91,7 @@
             </div>
 
             <div class="back-link">
-                <a href="javascript:history.back()" data-i18n="back_button">\u2190 Back</a>
+                <a href="javascript:history.back()" data-i18n="back_button">← Back</a>
             </div>
         </div>
     </div>
@@ -68,14 +99,46 @@
 
 <script>
 const enDescription = `
-                    <p>
-                    <span class="boxed">Understand problems</span> <span class="bigger-text">→</span> <span class="boxed">Turn insight into product direction</span> <span class="bigger-text">→</span> <span class="boxed">Design & prototype</span> <span class="bigger-text">→</span> <span class="boxed">Validate and iterate</span>
-                    </p>
-<p>I focus on shaping product design through research-driven insights and close collaboration with design, product, and engineering teams. My hands-on industry expertise is primarily in UX research, complemented by design experience from academic and personal projects. Much of my work has focused on complex technical domains such as cloud and AI developer platforms, where understanding workflows, mental models, and organizational constraints is essential to improving the user experience.</p>                <p>Much of my work involves confidential information, so I cannot publicly share detailed case studies. Instead, this page outlines how I typically approach research, design, and product decision-making.</p>
+<p>I focus on shaping product design through research-driven insights and close collaboration with design, product, and engineering teams. My hands-on industry expertise is primarily in UX research, complemented by design experience from academic and personal projects. Much of my work has focused on complex technical domains such as cloud and AI developer platforms, where understanding workflows, mental models, and organizational constraints is essential to improving the user experience.</p>
+<p>Most of my work involves confidential information, so I can't share detailed case studies for the majority of projects. Below is <a href="#case-study">one example</a>, followed by <a href="#process">an overview of how I typically work</a>.</p>
+
+<h2 id="case-study">Case study: Redesigning the .NET Framework Website</h2>
+
+<h3>The problem</h3>
+<p>The brief was simple enough: the dotnet.microsoft.com website looked outdated and wasn't connecting with younger developers. But the underlying situation was messier. The .NET framework had received public criticism (even reaching the CEO's desk) for how hard it was for newcomers to get started and the website reflected those problems directly: fragmented getting-started guides, inconsistent terminology, and a navigation structure that left developers unsure whether they were looking at current documentation or an abandoned corner of a corporate site.</p>
+<p>The visual refresh was the easy part. The harder question was what the site was actually trying to say, and to whom.</p>
+
+<h3>Getting a room of strong opinions moving in the same direction</h3>
+<p>About 15 people were involved across PM and engineering, most of them senior, and most of them with firm views on what was wrong and what to do about it. A member of the marketing team was also part of the core project team from the start, working alongside the PM, designer, and myself throughout the process. Before any research could begin, I needed to do something with all of that.</p>
+<p>I organised and facilitated a hybrid stakeholder workshop with roughly a dozen people in the room and three or four joining remotely. The goal was limited and specific: not to find definite solutions, but to get everyone's assumptions on the table. I asked attendees to say what they thought was broken and what changes they believed would help. Disagreements were fine, I captured conflicting views on the whiteboard without trying to resolve them in the room.</p>
+<p>Afterward, the PM and I ran an affinity analysis on everything that had come up and distilled it into about ten to twelve testable hypotheses. We shared those back with the group and adjusted based on feedback until we had a version everyone could work from. This gave the team a shared starting point and meant they had already invested in the process before the research began.</p>
 
 <div style="text-align: center; margin: 30px 0;">
-    <img src="images/JP-Redmond.jpg" alt="UX Approach" style="max-width: 100%; height: auto;" />
+    <img src="images/JP-Redmond.jpg" alt="JP facilitating an onsite workshop in Redmond" style="max-width: 100%; height: auto;" />
 </div>
+
+<h3>The research</h3>
+<p>With the hypotheses as a guide, we ran several rounds of research over about two and a half months: perception interviews to understand how developers thought about .NET relative to alternatives, usability tests to find friction in the current site, surveys to check findings at scale, and card sorting to inform a cleaner information architecture.</p>
+<p>Throughout, I made a point of explaining each step to the wider team: what we were trying to learn, why we were doing it that way, and what we would do with the results. Many of the engineers and PMs hadn't worked closely with UX research before. Keeping them informed as we went meant there was much less to justify after the fact.</p>
+
+<h3>The outcome</h3>
+<p>The research addressed several aspects of the site.</p>
+<p>The visual design was well received: younger developers rated it significantly more favourably than the original in usability tests.</p>
+<p>On the structural side, usability findings confirmed that navigation was a core problem: visitors couldn't find what they needed. This led me to propose a card sorting study, whose results drove the restructuring of the site's information architecture. The downloads section presented a different problem: it required too many decisions from users, who frequently ended up downloading the wrong packages. We reorganised that section as well. Both structural changes were validated in further usability testing before moving to implementation.</p>
+<p>On the messaging side, we wanted the tagline to appeal to younger developers while accurately representing the framework. The marketing team member contributed heavily to brainstorming sessions alongside the PM and the rest of the team; from the resulting candidates, we used a survey to select the final one.</p>
+<p>The redesigned site shipped within a few weeks of the research wrapping up, implemented by an external team. Telemetry indicated that it performed better on time-on-page and conversion metrics.</p>
+
+<h3>What could have been done differently</h3>
+<p>I should have involved more stakeholders directly in the research sessions, having them observe interviews and usability tests rather than just receiving the synthesised findings. The research made clear that beginners found .NET genuinely hard to get started with, not just hard to read about on the website. I think seeing that first-hand would have pushed the team to address the underlying product problems sooner. The site improved, but the onboarding experience took longer to follow.</p>
+
+<hr style="border: none; border-top: 1px solid #ddd; margin: 40px 0;" />
+<h2 id="process">How I work</h2>
+<p>The case study above is one example of this process in practice. Below is an outline of how I typically work:</p>
+
+<div id="workflow-graphic" style="display: flex; justify-content: center; align-items: center; margin: 30px 0; gap: 10px;">
+    <span class="boxed">Understand<br/>problems</span> <span class="bigger-text">→</span> <span class="boxed">Turn insight into <br/>product direction</span> <span class="bigger-text">→</span> <span class="boxed">Design &<br/>prototype</span> <span class="bigger-text">→</span> <span class="boxed">Validate &<br/>iterate</span>
+</div>
+
 <h2>Understanding customers and their problems</h2>
 <p>My approach is deeply rooted in cross-functional collaboration. When design, product, engineering, and research work together to frame a problem, teams are more likely to align on what should be built and why.</p>
 <p>To understand the problem space, I use a mix of methods depending on the stage of the product: telemetry analysis, interviews, surveys, workflow walkthroughs, and jobs-to-be-done analysis. Design workshops are often useful to align stakeholders and explore solution spaces collaboratively.</p>
@@ -88,44 +151,108 @@ const enDescription = `
 <p>I encourage product and design teams to observe research sessions whenever possible. Direct exposure to users builds empathy and often accelerates decision-making as teams see firsthand where workflows break down or where new opportunities emerge.</p>`;
 
 const esDescription = `
-                    <p>
-                    <span class="boxed">Entender problemas</span> <span class="bigger-text">→</span> <span class="boxed">Convertir insights en dirección de producto</span> <span class="bigger-text">→</span> <span class="boxed">Diseñar y prototipar</span> <span class="bigger-text">→</span> <span class="boxed">Validar e iterar</span>
-                    </p>
-<p>Me enfoco en dar forma al diseño de producto a partir de insights de investigación y de una colaboración estrecha con equipos de diseño, producto e ingeniería. Mi experiencia práctica en la industria se centra principalmente en investigación UX, complementada por experiencia en diseño procedente de proyectos académicos y personales. Buena parte de mi trabajo se ha enfocado en dominios técnicos complejos como plataformas cloud y de IA para desarrolladores, donde comprender flujos de trabajo, modelos mentales y restricciones organizativas es esencial para mejorar la experiencia de usuario.</p>
-<p>Gran parte de mi trabajo implica información confidencial, por lo que no puedo compartir públicamente estudios de caso detallados. En su lugar, esta página resume cómo suelo abordar la investigación, el diseño y la toma de decisiones de producto.</p>
+<p>Mi trabajo se centra en dar forma al diseño de producto a través de investigación y de una colaboración estrecha con equipos de diseño, producto e ingeniería. Mi experiencia práctica en la industria se centra principalmente en investigación UX, complementada con experiencia en diseño procedente de proyectos académicos y personales. Buena parte de mi trabajo se ha desarrollado en dominios técnicos complejos, como plataformas cloud y de IA para desarrolladores, donde comprender flujos de trabajo, modelos mentales y restricciones organizativas es clave para mejorar la experiencia de usuario.</p>
+<p>Gran parte de mi trabajo implica información confidencial, por lo que no puedo compartir estudios de caso detallados para la mayoría de proyectos. A continuación hay <a href="#case-study">un ejemplo</a>, seguido de <a href="#process">un resumen de cómo suelo trabajar</a>.</p>
+
+<h2 id="case-study">Caso de estudio: Rediseño del sitio web del framework .NET</h2>
+
+<h3>El problema</h3>
+<p>El encargo era sencillo en apariencia: el sitio dotnet.microsoft.com parecía anticuado y no conectaba con desarrolladores más jóvenes. Pero la situación de fondo era más complicada. El framework .NET había recibido críticas públicas (que llegaron incluso a la mesa del CEO) por lo difícil que resultaba para los recién llegados empezar a usarlo, y el sitio web reflejaba esos problemas de forma directa: guías de inicio fragmentadas, terminología inconsistente, y una estructura de navegación que dejaba a los desarrolladores sin saber si estaban mirando documentación actual o un rincón abandonado de un sitio corporativo.</p>
+<p>La renovación visual era la parte fácil. La pregunta más difícil era qué intentaba comunicar el sitio y a quién.</p>
+
+<h3>Poner de acuerdo a un grupo con opiniones muy distintas</h3>
+<p>Unas 15 personas estaban involucradas entre PMs e ingenieros, la mayoría senior, y la mayoría con ideas firmes sobre qué estaba mal y qué había que hacer. Una persona del equipo de marketing también formó parte del equipo central del proyecto desde el principio, trabajando junto al PM, la diseñadora y yo a lo largo de todo el proceso. Antes de poder empezar cualquier investigación, necesitaba hacer algo con todo eso.</p>
+<p>Organicé y facilité un taller de stakeholders en formato híbrido, con una docena de personas en la sala y tres o cuatro conectadas de forma remota. El objetivo era limitado y concreto: no encontrar soluciones definitivas, sino poner sobre la mesa las suposiciones de todos. Pedí a los asistentes que dijeran qué creían que estaba mal y qué cambios pensaban que ayudarían. Los desacuerdos eran bienvenidos; fui anotando las opiniones, incluidas las contradictorias, sin intentar resolverlas en ese momento.</p>
+<p>Después, el PM y yo hicimos un análisis de afinidad con todo lo que había surgido y lo destilamos en unas diez o doce hipótesis comprobables. Las compartimos de vuelta con el grupo y las ajustamos según el feedback hasta tener una versión con la que todos pudieran trabajar. Esto dio al equipo un punto de partida común y significó que ya habían invertido en el proceso antes de que comenzara la investigación propiamente dicha.</p>
+
 <div style="text-align: center; margin: 30px 0;">
-    <img src="images/JP-Redmond.jpg" alt="UX Approach" style="max-width: 100%; height: auto;" />
+    <img src="images/JP-Redmond.jpg" alt="JP facilitando un workshop en Redmond" style="max-width: 100%; height: auto;" />
 </div>
-<h2>Comprender a los clientes y sus problemas</h2>
-<p>Mi enfoque está profundamente arraigado en la colaboración transversal. Cuando diseño, producto, ingeniería e investigación trabajan juntos para enmarcar un problema, es más probable que los equipos se alineen sobre qué construir y por qué.</p>
-<p>Para comprender el espacio del problema, utilizo una combinación de métodos según la fase del producto: análisis de telemetría, entrevistas, encuestas, walkthroughs de flujos de trabajo y análisis jobs-to-be-done. Los talleres de diseño suelen ser útiles para alinear a los stakeholders y explorar espacios de solución de forma colaborativa.</p>
-<h2>Convertir insights en dirección de producto</h2>
-<p>La investigación y el descubrimiento solo son valiosos si conducen a mejores decisiones de producto. Tras sintetizar los insights, trabajo con socios de diseño, producto e ingeniería para identificar áreas de oportunidad y definir qué debería cambiar en el producto o qué nuevas capacidades queremos introducir. Esto suele implicar mapear insights a capacidades de producto, priorizar mejoras y desarrollar modelos para alinear la dirección de la experiencia antes de comenzar el diseño detallado.</p>
+
+<h3>La investigación</h3>
+<p>Con las hipótesis como guía, llevamos a cabo varias rondas de investigación a lo largo de unos dos meses y medio: entrevistas de percepción para entender cómo los desarrolladores veían .NET frente a las alternativas, pruebas de usabilidad para identificar fricciones en el sitio actual, encuestas para contrastar los hallazgos a mayor escala, y card sorting para definir una arquitectura de información más clara.</p>
+<p>A lo largo de todo el proceso, me esforcé en explicar cada paso al equipo más amplio: qué queríamos aprender, por qué lo hacíamos de esa manera y qué haríamos con los resultados. Muchos de los ingenieros y PMs no habían trabajado antes de cerca con investigación UX. Mantenerlos informados sobre la marcha significó que hubo mucho menos que justificar después.</p>
+
+<h3>El resultado</h3>
+<p>La investigación abordó varios aspectos del sitio.</p>
+<p>El diseño visual tuvo buena acogida: los desarrolladores más jóvenes lo valoraron de forma significativamente más positiva que el original en las pruebas de usabilidad.</p>
+<p>En cuanto a la estructura, las pruebas de usabilidad confirmaron que la navegación era un problema central: los visitantes no encontraban lo que necesitaban. Esto me llevó a proponer un estudio de card sorting, cuyos resultados guiaron la reestructuración de la arquitectura de información del sitio. La sección de descargas presentaba un problema distinto: exigía demasiadas decisiones a los usuarios, que con frecuencia acababan descargando los paquetes equivocados. También reorganizamos esa sección. Ambos cambios estructurales se validaron en sesiones adicionales de pruebas de usabilidad antes de pasar a la implementación.</p>
+<p>En cuanto al mensaje, queríamos que el tagline resultara atractivo para los desarrolladores más jóvenes y representara con precisión el framework. La persona del equipo de marketing contribuyó de forma importante a las sesiones de brainstorming junto al PM y el resto del equipo; de entre los candidatos resultantes, usamos una encuesta para seleccionar el definitivo.</p>
+<p>El sitio rediseñado se publicó pocas semanas después de terminar la investigación, implementado por un equipo externo. La telemetría indicó que mejoró las métricas de tiempo en página y conversión.</p>
+
+<h3>Qué se podría haber hecho de otra manera</h3>
+<p>Debería haber involucrado a más stakeholders directamente en las sesiones de investigación, permitiéndoles observar las entrevistas y pruebas de usabilidad en lugar de recibir únicamente los hallazgos sintetizados. La investigación dejó claro que los principiantes encontraban .NET genuinamente difícil de usar, no solo difícil de entender en el sitio web. Creo que verlo de primera mano habría empujado al equipo a abordar los problemas del producto subyacente con más rapidez. El sitio mejoró, pero la experiencia de incorporación tardó más en seguir el mismo camino.</p>
+
+<hr style="border: none; border-top: 1px solid #ddd; margin: 40px 0;" />
+<h2 id="process">Cómo trabajo</h2>
+<p>El caso de estudio anterior es un ejemplo de este proceso en la práctica. A continuación, un resumen de cómo suelo trabajar:</p>
+
+<div id="workflow-graphic" style="display: flex; justify-content: center; align-items: center; margin: 30px 0; gap: 10px;">
+    <span class="boxed">Entender<br/>problemas</span> <span class="bigger-text">→</span> <span class="boxed">Convertir insights en<br/>dirección de producto</span> <span class="bigger-text">→</span> <span class="boxed">Diseño y<br/>prototipado</span> <span class="bigger-text">→</span> <span class="boxed">Validación<br/>e iteración</span>
+</div>
+
+<h2>Entender a los usuarios y sus problemas</h2>
+<p>Mi trabajo está profundamente arraigado en la colaboración transversal. Cuando diseño, producto, ingeniería e investigación trabajan juntos para definir un problema, es más probable que los equipos se alineen sobre qué construir y por qué.</p>
+<p>Para entender el espacio del problema, uso una combinación de métodos según la fase del producto: análisis de telemetría, entrevistas, encuestas, walkthroughs de flujos de trabajo y análisis jobs-to-be-done. Los talleres de diseño suelen ser útiles para alinear a los stakeholders y explorar espacios de solución de forma colaborativa.</p>
+<h2>Convertir los hallazgos en dirección de producto</h2>
+<p>La investigación y el descubrimiento solo tienen valor si conducen a mejores decisiones de producto. Tras sintetizar los hallazgos, trabajo con los equipos de diseño, producto e ingeniería para identificar áreas de oportunidad y definir qué debería cambiar en el producto o qué nuevas capacidades conviene introducir. Esto suele implicar relacionar los hallazgos con las capacidades del producto, priorizar mejoras y desarrollar modelos que generen alineamiento sobre la dirección de la experiencia antes de comenzar el diseño detallado.</p>
 <h2>Diseño temprano y prototipado</h2>
-<p>A medida que surgen posibles soluciones, los primeros diseños y prototipos se validan con usuarios para ganar confianza en la dirección. Métodos como revisiones de diseño, pruebas de usabilidad y evaluaciones heurísticas ayudan a identificar fricciones de forma temprana y a asegurar que las soluciones responden a problemas reales de los clientes mientras se alinean con objetivos de producto y de negocio.</p>
+<p>A medida que emergen posibles soluciones, los primeros diseños y prototipos se validan con usuarios para ganar confianza en la dirección elegida. Métodos como revisiones de diseño, pruebas de usabilidad y evaluaciones heurísticas ayudan a identificar fricciones de forma temprana y a asegurar que las soluciones responden a problemas reales de los usuarios, manteniéndose alineadas con los objetivos de producto y negocio.</p>
 <h2>Desarrollo de producto e iteración</h2>
-<p>Una vez implementados los diseños, el ciclo de feedback continúa. Estudios de usabilidad, encuestas dentro del producto, análisis de telemetría y programas de preview ayudan a evaluar si el producto está resolviendo los problemas previstos.</p>
-<p>Animo a los equipos de producto y diseño a observar sesiones de investigación siempre que sea posible. La exposición directa a los usuarios genera empatía y, a menudo, acelera la toma de decisiones, porque los equipos ven de primera mano dónde se rompen los flujos de trabajo o dónde aparecen nuevas oportunidades.</p>`;
+<p>Una vez implementados los diseños, el ciclo de feedback continúa. Estudios de usabilidad, encuestas en el producto, análisis de telemetría y programas de acceso anticipado ayudan a evaluar si el producto está resolviendo los problemas previstos.</p>
+<p>Siempre que es posible, animo a los equipos de producto y diseño a observar las sesiones de investigación. La exposición directa a los usuarios genera empatía y suele acelerar la toma de decisiones, porque los equipos ven en primera persona dónde se rompen los flujos de trabajo o dónde aparecen nuevas oportunidades.</p>`;
 
 const caDescription = `
-                    <p>
-                    <span class="boxed">Entendre problemes</span> <span class="bigger-text">→</span> <span class="boxed">Convertir insights en direcció de producte</span> <span class="bigger-text">→</span> <span class="boxed">Dissenyar i prototipar</span> <span class="bigger-text">→</span> <span class="boxed">Validar i iterar</span>
-                    </p>
-<p>Em centro a donar forma al disseny de producte a partir d'insights de recerca i d'una col·laboració estreta amb equips de disseny, producte i enginyeria. La meva experiència pràctica a la indústria se centra principalment en recerca UX, complementada amb experiència en disseny procedent de projectes acadèmics i personals. Bona part de la meva feina s'ha centrat en dominis tècnics complexos com plataformes cloud i d'IA per a desenvolupadors, on entendre fluxos de treball, models mentals i restriccions organitzatives és essencial per millorar l'experiència d'usuari.</p>
-<p>Gran part de la meva feina implica informació confidencial, així que no puc compartir públicament casos d'estudi detallats. En lloc d'això, aquesta pàgina descriu com acostumo a abordar la recerca, el disseny i la presa de decisions de producte.</p>
+<p>La meva feina se centra a donar forma al disseny de producte a través de la recerca i d'una col·laboració estreta amb equips de disseny, producte i enginyeria. La meva experiència pràctica a la indústria se centra principalment en recerca UX, complementada amb experiència en disseny procedent de projectes acadèmics i personals. Bona part de la meva feina s'ha desenvolupat en dominis tècnics complexos, com ara plataformes cloud i d'IA per a desenvolupadors, on entendre fluxos de treball, models mentals i restriccions organitzatives és clau per millorar l'experiència d'usuari.</p>
+<p>Gran part de la meva feina implica informació confidencial, de manera que no puc compartir casos d'estudi detallats per a la majoria de projectes. A continuació hi ha <a href="#case-study">un exemple</a>, seguit d'<a href="#process">un resum de com acostumo a treballar</a>.</p>
+
+<h2 id="case-study">Cas d'estudi: Redisseny del lloc web del framework .NET</h2>
+
+<h3>El problema</h3>
+<p>L'encàrrec semblava senzill: el lloc dotnet.microsoft.com semblava antiquat i no connectava amb els desenvolupadors més joves. Però la situació de fons era més complicada. El framework .NET havia rebut crítiques públiques (que van arribar fins a la taula del CEO) per la dificultat que tenien els nouvinguts per començar a usar-lo, i el lloc web reflectia aquests problemes de forma directa: guies d'inici fragmentades, terminologia inconsistent, i una estructura de navegació que deixava els desenvolupadors sense saber si estaven mirant documentació actual o un racó abandonat d'un lloc corporatiu.</p>
+<p>La renovació visual era la part fàcil. La pregunta més difícil era què intentava comunicar el lloc i a qui.</p>
+
+<h3>Fer avançar un grup amb opinions molt diferents</h3>
+<p>Unes 15 persones estaven involucrades entre PMs i enginyers, la majoria senior, i la majoria amb idees fermes sobre què estava malament i què calia fer. Una persona de l'equip de màrqueting també va formar part de l'equip central del projecte des del principi, treballant al costat del PM, la dissenyadora i jo al llarg de tot el procés. Abans de poder començar cap recerca, necessitava fer alguna cosa amb tot això.</p>
+<p>Vaig organitzar i facilitar un taller d'stakeholders en format híbrid, amb una dotzena de persones a la sala i tres o quatre connectades de forma remota. L'objectiu era limitat i concret: no trobar solucions definitives, sinó posar sobre la taula les suposicions de tothom. Vaig demanar als assistents que diguessin què creien que estava malament i quins canvis pensaven que ajudarien. Els desacords eren benvinguts; vaig anar anotant les opinions, incloses les contradictòries, sense intentar resoldre-les en aquell moment.</p>
+<p>Després, el PM i jo vam fer una anàlisi d'afinitat amb tot el que havia sorgit i ho vam destilar en unes deu o dotze hipòtesis comprovables. Les vam compartir de nou amb el grup i les vam ajustar segons el feedback fins a tenir una versió amb la qual tothom pogués treballar. Això va donar a l'equip un punt de partida comú i va significar que ja havien invertit en el procés abans que comencés la recerca pròpiament dita.</p>
+
 <div style="text-align: center; margin: 30px 0;">
-    <img src="images/JP-Redmond.jpg" alt="UX Approach" style="max-width: 100%; height: auto;" />
+    <img src="images/JP-Redmond.jpg" alt="JP facilitant un taller en Redmond" style="max-width: 100%; height: auto;" />
 </div>
-<h2>Entendre els clients i els seus problemes</h2>
-<p>El meu enfocament està profundament arrelat en la col·laboració transversal. Quan disseny, producte, enginyeria i recerca treballen junts per emmarcar un problema, és més probable que els equips s'alineïn sobre què s'ha de construir i per què.</p>
-<p>Per entendre l'espai del problema, utilitzo una combinació de mètodes segons la fase del producte: anàlisi de telemetria, entrevistes, enquestes, walkthroughs de fluxos de treball i anàlisi jobs-to-be-done. Els tallers de disseny sovint són útils per alinear stakeholders i explorar espais de solució de manera col·laborativa.</p>
-<h2>Convertir insights en direcció de producte</h2>
-<p>La recerca i el descobriment només són valuosos si condueixen a millors decisions de producte. Després de sintetitzar els insights, treballo amb partners de disseny, producte i enginyeria per identificar àrees d'oportunitat i definir què hauria de canviar al producte o quines noves capacitats volem introduir. Això sovint implica mapar insights a capacitats de producte, prioritzar millores i desenvolupar models per crear alineament sobre la direcció de l'experiència abans de començar el disseny detallat.</p>
+
+<h3>La recerca</h3>
+<p>Amb les hipòtesis com a guia, vam dur a terme diverses rondes de recerca al llarg d'uns dos mesos i mig: entrevistes de percepció per entendre com els desenvolupadors veien .NET respecte a les alternatives, proves d'usabilitat per identificar friccions al lloc actual, enquestes per contrastar els resultats a major escala, i card sorting per definir una arquitectura d'informació més clara.</p>
+<p>Al llarg de tot el procés, em vaig esforçar a explicar cada pas a l'equip més ampli: què volíem aprendre, per què ho fèiem d'aquella manera i què faríem amb els resultats. Molts dels enginyers i PMs no havien treballat abans de prop amb recerca UX. Mantenir-los informats sobre la marxa va significar que hi va haver molt menys a justificar després.</p>
+
+<h3>El resultat</h3>
+<p>La recerca va abordar diversos aspectes del lloc.</p>
+<p>El disseny visual va tenir bona acollida: els desenvolupadors més joves el van valorar de forma significativament més positiva que l'original a les proves d'usabilitat.</p>
+<p>Pel que fa a l'estructura, les proves d'usabilitat van confirmar que la navegació era un problema central: els visitants no trobaven el que necessitaven. Això em va portar a proposar un estudi de card sorting, els resultats del qual van guiar la reestructuració de l'arquitectura d'informació del lloc. La secció de descàrregues presentava un problema diferent: exigia massa decisions als usuaris, que sovint acabaven descarregant els paquets equivocats. També vam reorganitzar aquesta secció. Tots dos canvis estructurals es van validar en sessions addicionals de proves d'usabilitat abans de passar a la implementació.</p>
+<p>Pel que fa al missatge, volíem que el tagline resultés atractiu per als desenvolupadors més joves i representés amb precisió el framework. La persona de l'equip de màrqueting va contribuir de forma important a les sessions de brainstorming al costat del PM i la resta de l'equip; d'entre els candidats resultants, vam usar una enquesta per seleccionar el definitiu.</p>
+<p>El lloc redissenyat es va publicar poques setmanes després de finalitzar la recerca, implementat per un equip extern. La telemetria va indicar que va millorar les mètriques de temps a la pàgina i conversió.</p>
+
+<h3>Què es podria haver fet d'una altra manera</h3>
+<p>Hauria d'haver involucrat més stakeholders directament a les sessions de recerca, permetent-los observar les entrevistes i proves d'usabilitat en lloc de rebre únicament els resultats sintetitzats. La recerca va deixar clar que els principiants trobaven .NET genuïnament difícil d'usar, no només difícil d'entendre al lloc web. Crec que veure-ho de primera mà hauria empès l'equip a abordar els problemes del producte subjacent amb més rapidesa. El lloc va millorar, però l'experiència d'incorporació va trigar més a seguir el mateix camí.</p>
+
+<hr style="border: none; border-top: 1px solid #ddd; margin: 40px 0;" />
+<h2 id="process">Com treballo</h2>
+<p>El cas d'estudi anterior és un exemple d'aquest procés a la pràctica. A continuació, un resum de com acostumo a treballar:</p>
+
+<div id="workflow-graphic" style="display: flex; justify-content: center; align-items: center; margin: 30px 0; gap: 10px;">
+    <span class="boxed">Entendre<br/>problemes</span> <span class="bigger-text">→</span> <span class="boxed">Convertir insights en<br/>direcció de producte</span> <span class="bigger-text">→</span> <span class="boxed">Disseny i<br/>prototipat</span> <span class="bigger-text">→</span> <span class="boxed">Validació<br/>i iteració</span>
+</div>
+
+<h2>Entendre els usuaris i els seus problemes</h2>
+<p>La meva feina està profundament arrelada en la col·laboració transversal. Quan disseny, producte, enginyeria i recerca treballen junts per definir un problema, és més probable que els equips s'alineïn sobre què cal construir i per què.</p>
+<p>Per entendre l'espai del problema, faig servir una combinació de mètodes segons la fase del producte: anàlisi de telemetria, entrevistes, enquestes, walkthroughs de fluxos de treball i anàlisi jobs-to-be-done. Els tallers de disseny sovint són útils per alinear els stakeholders i explorar espais de solució de manera col·laborativa.</p>
+<h2>Convertir els resultats en direcció de producte</h2>
+<p>La recerca i el descobriment només tenen valor si condueixen a millors decisions de producte. Després de sintetitzar els resultats, treballo amb els equips de disseny, producte i enginyeria per identificar àrees d'oportunitat i definir què hauria de canviar al producte o quines noves capacitats convé introduir. Això sovint implica relacionar els resultats amb les capacitats del producte, prioritzar millores i desenvolupar models que generin alineament sobre la direcció de l'experiència abans de començar el disseny detallat.</p>
 <h2>Disseny inicial i prototipatge</h2>
-<p>A mesura que apareixen possibles solucions, els primers dissenys i prototips es validen amb usuaris per guanyar confiança en la direcció. Mètodes com revisions de disseny, proves d'usabilitat i avaluacions heurístiques ajuden a identificar friccions aviat i a garantir que les solucions resolen problemes reals dels clients, alhora que s'alineen amb objectius de producte i de negoci.</p>
+<p>A mesura que emergeixen possibles solucions, els primers dissenys i prototips es validen amb usuaris per guanyar confiança en la direcció triada. Mètodes com revisions de disseny, proves d'usabilitat i avaluacions heurístiques ajuden a identificar friccions aviat i a assegurar que les solucions responen a problemes reals dels usuaris, mantenint-se alineades amb els objectius de producte i negoci.</p>
 <h2>Desenvolupament de producte i iteració</h2>
-<p>Un cop els dissenys s'implementen, el bucle de feedback continua. Estudis d'usabilitat, enquestes dins del producte, anàlisi de telemetria i programes de preview ajuden a avaluar si el producte està resolent els problemes previstos.</p>
-<p>Animo els equips de producte i disseny a observar sessions de recerca sempre que sigui possible. L'exposició directa als usuaris crea empatia i sovint accelera la presa de decisions, perquè els equips veuen de primera mà on es trenquen els fluxos de treball o on apareixen noves oportunitats.</p>`;
+<p>Un cop implementats els dissenys, el cicle de feedback continua. Estudis d'usabilitat, enquestes al producte, anàlisi de telemetria i programes d'accés anticipat ajuden a avaluar si el producte està resolent els problemes previstos.</p>
+<p>Sempre que és possible, animo els equips de producte i disseny a observar les sessions de recerca. L'exposició directa als usuaris genera empatia i sol accelerar la presa de decisions, perquè els equips veuen en primera persona on es trenquen els fluxos de treball o on apareixen noves oportunitats.</p>`;
 
 const translations = {
     en: {

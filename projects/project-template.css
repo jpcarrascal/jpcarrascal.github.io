@@ -520,11 +520,16 @@ a:hover {
     width: max-content;
     margin: 20px auto 20px auto;
     background-color: var(--color-dark);
-    color: var(--color-dark);
+    color: var(--color-light);
     padding: 8px 16px;
     text-decoration: none;
     border-radius: 0px;
     border: 1px solid var(--color-dark);
+}
+
+.back-link a {
+    color: var(--color-light);
+    text-decoration: none;
 }
 
 .back-link:hover,
@@ -595,7 +600,6 @@ a:hover {
 .bigger-text {
     font-size: 2em;
     font-weight: bold;
-    color: var(--color-light);
     margin-bottom: 20px;
 }
 
