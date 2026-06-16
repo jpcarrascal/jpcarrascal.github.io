@@ -63,7 +63,7 @@ A multilingual static project page showcasing the InTangible artwork with image 
 
 ### 7. Navigation & Contact
 - **Back button**: JavaScript `history.back()` functionality
-- **Contact**: "Contact: jp [at] jpcarrascal [dot] com" (translatable)
+- **Contact**: "Contact: juanpcarrascal [at] gmail [dot] com" (translatable)
 
 ## Technical Specifications
 
