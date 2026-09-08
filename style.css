@@ -44,7 +44,7 @@ html
     height: 100%;
     width: 100%;
     font-family: 'Rubik', sans-serif;
-    font-size: 1.4em;
+    font-size: 1em;
     padding: 0;
 }
 
@@ -64,7 +64,7 @@ body
 h1
 {
     font-family: 'lato', sans-serif;
-    font-size: 2em;
+    font-size: 2.4em;
     letter-spacing: 0.2em;
 }
 
