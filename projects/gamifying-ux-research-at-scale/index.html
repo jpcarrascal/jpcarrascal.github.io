@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-15242862-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-15242862-1');
+</script>
+
+<meta name="viewport" content="width=device-width,user-scalable=no" />
+<meta charset="utf-8">
+<title>Gamifying UX Research at Scale | JP Carrascal</title>
+<link href="../../style.css" type="text/css" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css?family=Lato:700|Lato" rel="stylesheet">
+<link href="../project-template.css" type="text/css" rel="stylesheet"/>
+</head>
+<body>
+
+<div id="flex-container">
+    <div id="wrap">
+        <div class="project-content">
+            <div class="language-selector">
+                <select class="language-dropdown" id="languageSelector" onchange="switchLanguage(this.value)">
+                    <option value="en">English</option>
+                    <option value="es">Español</option>
+                    <option value="ca">Català</option>
+                </select>
+            </div>
+
+            <div class="project-header">
+                <h1 class="project-title" data-i18n="title">Gamifying UX Research at Scale</h1>
+                <div class="project-authors">JP Carrascal, Jacob Freiberg, Kelly Krout, Irina Smoke (2019)</div>
+            </div>
+
+            <div style="text-align: center; margin-bottom: 30px;" data-i18n="subtitle">
+                A gamified research experience at the Microsoft Build Conference
+            </div>
+
+            <div style="text-align: center; margin-bottom: 30px;">
+                <img src="images/gamifying-booth.jpg" alt="UX research booth at Microsoft Build 2019" style="max-width: 100%; height: auto;" />
+            </div>
+
+            <div style="text-align: justify; margin-bottom: 30px;" data-i18n="description">
+                <p>At Microsoft Build 2019, we designed a multi-step research experience to engage developers and gather feedback amid the many competing activities at the conference. Visitors could take unmoderated studies, complete a scavenger-hunt-style Booth Quest, earn tokens, opt into a leaderboard, and exchange tokens for prizes.</p>
+                <div style="text-align: center; margin: 30px 0;">
+                    <table class="figure-table">
+                        <tr><td><img src="images/gamifying-workflow.jpg" alt="Participant journey through the gamified research activities" style="max-width: 100%; height: auto;" /></td></tr>
+                        <tr><td class="figure-caption">Participant journey across study and compensation activities.</td></tr>
+                    </table>
+                </div>
+                <p>I also built the software platform behind the experience: web apps for the study menu, leaderboard, and administration, supported by an API, database, and virtual machine. Since UserTesting.com did not provide an API for study data, I built a browser-extension scraper that collected session data and sent it to our system.</p>
+                <div style="text-align: center; margin: 30px 0;">
+                    <table class="figure-table">
+                        <tr><td><img src="images/gamifying-architecture.jpg" alt="System architecture for the research booth applications and data services" style="max-width: 100%; height: auto;" /></td></tr>
+                        <tr><td class="figure-caption">System architecture connecting the study menu, leaderboard, API, database, and data scraper.</td></tr>
+                    </table>
+                </div>
+                <p>The activities generated nearly 600 study responses from 309 participants, as well as an estimated 2,350 visits to product booths. The experience helped scale research participation and bring researchers, product teams, and attendees into conversation. It also surfaced practical challenges, including noisy or missing data, complex participant choices, potential sample bias, and the need to adjust the experience during the event.</p>
+            </div>
+
+            <div class="publication-section">
+                <h3 data-i18n="publication_label">Publication:</h3>
+                <p>Carrascal, Juan Pablo, et al. "Gamifying UX research at scale." <em>Extended Abstracts of the Annual Symposium on Computer-Human Interaction in Play Companion Extended Abstracts</em>. 2019. <a href="https://doi.org/10.1145/3341215.3354646" target="_blank">https://doi.org/10.1145/3341215.3354646</a></p>
+            </div>
+
+            <div class="publication-section">
+                <h3 data-i18n="exhibition_label">Deployment:</h3>
+                <p data-i18n="exhibition_text">Deployed at Microsoft's <a href="https://build.microsoft.com/en-US/home" target="_blank" rel="noopener">Build Conference</a> in 2019.</p>
+            </div>
+
+            <div class="back-link">
+                <a href="javascript:history.back()" data-i18n="back_button">← Back</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+// Multilingual content
+const translations = {
+    en: {
+        title: "Gamifying UX Research at Scale",
+        subtitle: "A gamified research experience at the Microsoft Build Conference",
+        description: "<p>At Microsoft Build 2019, we designed a multi-step research experience to engage developers and gather feedback amid the many competing activities at the conference. Visitors could take unmoderated studies, complete a scavenger-hunt-style Booth Quest, earn tokens, opt into a leaderboard, and exchange tokens for prizes.</p><p>I also built the software platform behind the experience: web apps for the study menu, leaderboard, and administration, supported by an API, database, and virtual machine. Since UserTesting.com did not provide an API for study data, I built a browser-extension scraper that collected session data and sent it to our system.</p><p>The activities generated nearly 600 study responses from 309 participants, as well as an estimated 2,350 visits to product booths. The experience helped scale research participation and bring researchers, product teams, and attendees into conversation. It also surfaced practical challenges, including noisy or missing data, complex participant choices, potential sample bias, and the need to adjust the experience during the event.</p>",
+        workflow_caption: "Participant journey across study and compensation activities.",
+        architecture_caption: "System architecture connecting the study menu, leaderboard, API, database, and data scraper.",
+        publication_label: "Publication:",
+        exhibition_label: "Deployment:",
+        exhibition_text: "Deployed at Microsoft's <a href=\"https://build.microsoft.com/en-US/home\" target=\"_blank\" rel=\"noopener\">Build Conference</a> in 2019.",
+        back_button: "← Back"
+    },
+    es: {
+        title: "Gamifying UX Research at Scale",
+        subtitle: "Una experiencia de investigación gamificada en la conferencia Microsoft Build",
+        description: "<p>En Microsoft Build 2019, diseñamos una experiencia de investigación en varias etapas para implicar a desarrolladores y recoger sus opiniones en medio de las numerosas actividades de la conferencia. Los asistentes podían realizar estudios no moderados, completar una búsqueda del tesoro llamada Booth Quest, ganar fichas, apuntarse a una clasificación y canjear las fichas por premios.</p><p>También desarrollé la plataforma de software que daba soporte a la experiencia: aplicaciones web para el menú de estudios, la clasificación y la administración, junto con una API, una base de datos y una máquina virtual. Como UserTesting.com no ofrecía una API para acceder a los datos de los estudios, desarrollé una extensión del navegador que recopilaba los datos de las sesiones y los enviaba a nuestro sistema.</p><p>Las actividades generaron casi 600 respuestas a estudios de 309 participantes, además de unas 2.350 visitas estimadas a los stands de producto. La experiencia permitió ampliar la participación en la investigación y fomentar el diálogo entre investigadores, equipos de producto y asistentes. También puso de manifiesto retos prácticos, como datos incompletos o ruidosos, una elección demasiado compleja para los participantes, posibles sesgos en la muestra y la necesidad de ajustar la experiencia durante el evento.</p>",
+        workflow_caption: "Recorrido de los participantes por las actividades de investigación y compensación.",
+        architecture_caption: "Arquitectura del sistema que conecta el menú de estudios, la clasificación, la API, la base de datos y el extractor de datos.",
+        publication_label: "Publicación:",
+        exhibition_label: "Implementación:",
+        exhibition_text: "Implementado en la conferencia <a href=\"https://build.microsoft.com/en-US/home\" target=\"_blank\" rel=\"noopener\">Microsoft Build</a> de 2019.",
+        back_button: "← Atrás"
+    },
+    ca: {
+        title: "Gamifying UX Research at Scale",
+        subtitle: "Una experiència de recerca gamificada a la conferència Microsoft Build",
+        description: "<p>A Microsoft Build 2019, vam dissenyar una experiència de recerca en diverses etapes per implicar desenvolupadors i recollir-ne opinions enmig de les moltes activitats de la conferència. Els assistents podien fer estudis no moderats, completar una cerca del tresor anomenada Booth Quest, guanyar fitxes, apuntar-se a una classificació i bescanviar les fitxes per premis.</p><p>També vaig desenvolupar la plataforma de programari que donava suport a l'experiència: aplicacions web per al menú d'estudis, la classificació i l'administració, juntament amb una API, una base de dades i una màquina virtual. Com que UserTesting.com no oferia una API per accedir a les dades dels estudis, vaig desenvolupar una extensió del navegador que recopilava les dades de les sessions i les enviava al nostre sistema.</p><p>Les activitats van generar gairebé 600 respostes a estudis de 309 participants, a més d'unes 2.350 visites estimades als estands de producte. L'experiència va permetre ampliar la participació en la recerca i fomentar el diàleg entre investigadors, equips de producte i assistents. També va posar de manifest reptes pràctics, com ara dades incompletes o sorolloses, una elecció massa complexa per als participants, possibles biaixos en la mostra i la necessitat d'ajustar l'experiència durant l'esdeveniment.</p>",
+        workflow_caption: "Recorregut dels participants per les activitats de recerca i compensació.",
+        architecture_caption: "Arquitectura del sistema que connecta el menú d'estudis, la classificació, l'API, la base de dades i l'extractor de dades.",
+        publication_label: "Publicació:",
+        exhibition_label: "Implementació:",
+        exhibition_text: "Implementat a la conferència <a href=\"https://build.microsoft.com/en-US/home\" target=\"_blank\" rel=\"noopener\">Microsoft Build</a> de 2019.",
+        back_button: "← Enrere"
+    }
+};
+
+// Language switching functionality
+function switchLanguage(lang) {
+    localStorage.setItem('preferredLanguage', lang);
+    document.querySelectorAll('[data-i18n]').forEach(element => {
+        const key = element.getAttribute('data-i18n');
+        if (translations[lang] && translations[lang][key]) {
+            if (key === 'description') {
+                const workflowFigure = `<div style="text-align: center; margin: 30px 0;"><table class="figure-table"><tr><td><img src="images/gamifying-workflow.jpg" alt="Participant journey through the gamified research activities" style="max-width: 100%; height: auto;" /></td></tr><tr><td class="figure-caption">${translations[lang].workflow_caption}</td></tr></table></div>`;
+                const architectureFigure = `<div style="text-align: center; margin: 30px 0;"><table class="figure-table"><tr><td><img src="images/gamifying-architecture.jpg" alt="System architecture for the research booth applications and data services" style="max-width: 100%; height: auto;" /></td></tr><tr><td class="figure-caption">${translations[lang].architecture_caption}</td></tr></table></div>`;
+                let paragraphIndex = 0;
+                element.innerHTML = translations[lang][key].replace(/<\/p>/g, closingTag => {
+                    paragraphIndex += 1;
+                    if (paragraphIndex === 1) {
+                        return `${closingTag}${workflowFigure}`;
+                    }
+                    if (paragraphIndex === 2) {
+                        return `${closingTag}${architectureFigure}`;
+                    }
+                    return closingTag;
+                });
+            } else if (key === 'exhibition_text') {
+                element.innerHTML = translations[lang][key];
+            } else {
+                element.textContent = translations[lang][key];
+            }
+        }
+    });
+}
+
+// Load preferred language on page load
+document.addEventListener('DOMContentLoaded', function() {
+    // Get language from URL parameter, localStorage, or default to English
+    const urlParams = new URLSearchParams(window.location.search);
+    const urlLang = urlParams.get('lang');
+    const validLanguages = ['en', 'es', 'ca'];
+
+    let lang = 'en'; // default
+
+    if (urlLang && validLanguages.includes(urlLang)) {
+        lang = urlLang;
+    } else if (urlLang) {
+        // Invalid URL parameter, fall back to localStorage or English
+        lang = localStorage.getItem('preferredLanguage') || 'en';
+    } else {
+        lang = localStorage.getItem('preferredLanguage') || 'en';
+    }
+
+    document.getElementById('languageSelector').value = lang;
+    switchLanguage(lang);
+});
+</script>
+
+</body>
+</html>
