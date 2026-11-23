@@ -3,9 +3,11 @@
  * Loaded before every other stylesheet.
  *
  * Two layers:
- *  1. Primitives: the raw palette. Only the themes below use these.
+ *  1. Primitives: raw values. Colors (--color-*) are used only by the
+ *     themes below. Scales (font sizes, weights, line heights) are used
+ *     directly by components: picking a step on the scale is the decision.
  *  2. Semantic tokens: named by role ("text on the page", "a border").
- *     Components use only these, so they work in either theme.
+ *     Components use these for color, so they work in either theme.
  *
  * A page picks its theme with <html data-theme="dark"> or
  * <html data-theme="light">. Without the attribute it gets the dark theme.
@@ -13,9 +15,31 @@
 
 /* 1. Primitives */
 :root {
+  /* Palette */
   --color-ink: #282828;
   --color-paper: #DEDEDE;
   --color-paper-raised: #EEEEEE;
+
+  /* Font families */
+  --font-display: 'Lato', sans-serif;   /* titles, headings, controls */
+  --font-body: 'Rubik', sans-serif;     /* running text */
+
+  /* Type scale: rem, so 1rem = the browser's base size (16px by default).
+     Ratio of about 1.2 between steps. */
+  --font-size-xs: 0.875rem;   /* 14px   controls: tag filter, language menu */
+  --font-size-sm: 1rem;       /* 16px   home text, captions, small print */
+  --font-size-md: 1.2rem;     /* 19.2px project body text */
+  --font-size-lg: 1.44rem;    /* 23px   h3, card titles, authors */
+  --font-size-xl: 1.8rem;     /* 28.8px h2 */
+  --font-size-2xl: 2.4rem;    /* 38.4px page titles (h1) */
+
+  --font-weight-regular: 400;
+  --font-weight-bold: 700;
+
+  --line-height-tight: 1.25;    /* controls, captions */
+  --line-height-relaxed: 1.5;   /* paragraphs */
+
+  --letter-spacing-display: 0.2em;  /* wide-tracked titles */
 }
 
 /* 2. Semantic tokens, per theme */
@@ -30,6 +54,7 @@
   --text-inverse: var(--color-ink);       /* text on an inverse surface */
   --border: var(--color-paper);           /* outlines of buttons, cards, boxes */
   --border-subtle: var(--color-paper);    /* faint outlines (no fainter shade on dark yet) */
+  --font-size-body: var(--font-size-sm);  /* running text size */
 }
 
 /* Light theme: portfolio and project pages */
@@ -41,4 +66,5 @@
   --text-inverse: var(--color-paper);
   --border: var(--color-ink);
   --border-subtle: var(--color-paper);
+  --font-size-body: var(--font-size-md);
 }

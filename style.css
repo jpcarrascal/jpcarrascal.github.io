@@ -2,8 +2,7 @@ html
 {
     height: 100%;
     width: 100%;
-    font-family: 'Rubik', sans-serif;
-    font-size: 1em;
+    font-family: var(--font-body);
     padding: 0;
 }
 
@@ -15,6 +14,7 @@ body
     width: 100%;
     margin:0;
     color: var(--text-primary);
+    font-size: var(--font-size-body);
     /* background-image: url(images/bg01.jpg);
     background-blend-mode: multiply;
     */
@@ -22,9 +22,19 @@ body
 
 h1
 {
-    font-family: 'lato', sans-serif;
-    font-size: 2.4em;
-    letter-spacing: 0.2em;
+    font-family: var(--font-display);
+    font-size: var(--font-size-2xl);
+    letter-spacing: var(--letter-spacing-display);
+}
+
+h2
+{
+    font-size: var(--font-size-xl);
+}
+
+h3
+{
+    font-size: var(--font-size-lg);
 }
 
 .follow
@@ -104,7 +114,7 @@ a:link, a:visited, a:hover, a:active {color: var(--text-primary);}
     padding-bottom: 6px;
     padding-left: 9px;
     padding-right: 9px;
-    line-height: 1.2em;
+    line-height: var(--line-height-tight);
     margin-bottom: 5px;
     border: 1px solid var(--border);
 }
@@ -120,12 +130,8 @@ a:link, a:visited, a:hover, a:active {color: var(--text-primary);}
 
 @media screen and (max-device-width : 1204px)
 {
-    html {
-        font-size: 1.2em;
-    }
     #container
     {
-        font-size: 0.85em;
         margin-top: 0;
     	padding-top: 0;
         width: 100%;
@@ -151,10 +157,6 @@ a:link, a:visited, a:hover, a:active {color: var(--text-primary);}
 
 @media screen and (max-width : 900px)
 {
-    html {
-        font-size: 1.2em;
-    }
-
     #container
     {
         width: 90%;
