@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-15242862-1"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+  gtag('config', 'UA-15242862-1');
+</script>
+
+<meta name="viewport" content="width=device-width,user-scalable=no" />
+<meta charset="utf-8">
+<title>Random Controller | JP Carrascal</title>
+<link href="../../style.css" type="text/css" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css?family=Lato:400,700|Rubik:400,700&display=swap" rel="stylesheet">
+<link href="../project-template.css" type="text/css" rel="stylesheet"/>
+</head>
+<body>
+
+<div id="flex-container">
+    <div id="wrap">
+        <div class="project-content">
+            <div class="language-selector">
+                <select class="language-dropdown" id="languageSelector" onchange="switchLanguage(this.value)">
+                    <option value="en">English</option>
+                    <option value="es">Español</option>
+                    <option value="ca">Català</option>
+                </select>
+            </div>
+
+            <div class="project-header">
+                <h1 class="project-title" data-i18n="title">Random Controller</h1>
+                <div class="project-authors">JP Carrascal (2010)</div>
+            </div>
+
+            <div style="text-align: center; font-style: italic; margin-bottom: 30px;" data-i18n="note">
+                (This was my final project for the Real Time Interaction course at the Universitat Pompeu Fabra, in 2010.)
+            </div>
+
+            <div style="text-align: center; margin-bottom: 30px;" data-i18n="subtitle">
+                A simple experiment on using dice-rolling as a control source
+            </div>
+
+            <div style="text-align: center; margin-bottom: 30px;">
+                <img src="images/main.jpg" alt="Random Controller" style="max-width: 100%; height: auto;" />
+            </div>
+
+            <div style="text-align: justify; margin-bottom: 30px;" data-i18n="description_intro">
+                <p>In “Interactive composing: an overview” [1], Joel Chadabe calls complexity an important quality of a random number generator, a fundamental component of the response system in his interactive performances. He explains it in terms of throwing dice: there’s no easy way to describe – or predict – the sequence of numbers obtained by that action. The concept of complexity is quite clear in that case, and as a consequence, randomness is far more complicated to generate with a machine than with an organic system. In the works “Solo” and “Rhythms”, which he explains in the article, the computers used for performance include some degree of randomness in their response algorithms, and the performer executes control actions, creating a dialog. That way, the performance develops in an interactive way.</p><p>The example of throwing dice, and the notion of a controller, somehow made a short circuit in my head. Measuring nature or organic systems, it’s not so difficult to get randomly generated values. Nature is full of them. Also, in the case of human beings, randomness is even an important component of one of our favorite leisure activities: gaming.</p><p>Throwing dice, drawing a card from a shuffled deck or spinning a roulette wheel are simple notions of randomness, at least outside the mathematical or academic world. They are also actions that can be controlled to some extent, but their results can’t. So my thinking when I was reading Chadabe’s article was: “why not control randomness in a simple, direct way?”</p>
+            </div>
+            <div style="text-align: justify; margin-bottom: 30px;" data-i18n="description_recipe">
+                <h3>Recipe for a random controller</h3><p>Chadabe’s mention of dice rolling seemed interesting as a feasible way of implementing a user-controlled random number generator. It’s of course a complicated way of looking at a very simple process, but I wanted to squeeze some juice out of it, so I took these ingredients:</p><ul><li>Some dice</li><li>An Ikea lamp</li><li>A webcam (I chose a Sony PlayStation Eye [2], which has excellent specifications for its price)</li><li>Paper printed with a scaled-down version of reacTIVision fiducials [3]</li><li>Glue</li><li>reacTIVision software [4]</li><li>Pure Data [5]</li><li>SimpleSynth synthesizer [6]</li></ul><p>The bricolage work was basically to transform ordinary dice into “Fidiceals”: dice with reacTIVision fiducials on their faces instead of dots. I printed the fiducials at the right size and glued them to the faces of the dice. The rest is mostly software.</p>
+            </div>
+            <div style="text-align: justify; margin-bottom: 30px;" data-i18n="description_how">
+                <h3>How it works</h3><p>reacTIVision generates TUIO (OSC) messages [7][8], which are received by Pure Data. Pure Data runs some patches that do these tasks:</p><ul><li>Run 3 simple sequencers at a user-defined tempo.</li><li>Generate a 4-note bass line, each note chosen from six possible notes.</li><li>Select between 6 different patterns for four instruments of a drum kit: bass drum, snare drum, closed hi-hat and open hi-hat. Each die determines the pattern of one instrument.</li><li>Select the 16 notes of a lead melodic line from the measured position of each die and combinations of those values.</li></ul><p>All those notes are sent as MIDI messages to SimpleSynth, which generates the final sound.</p><p>At the beginning of each measure, the Pure Data patch detects how many dice are present, their position and number (the visible fiducial), and selects the corresponding notes and patterns. This way, a dynamically changing composition can be made, and modified by throwing dice.</p>
+            </div>
+            <div style="text-align: justify; margin-bottom: 30px;" data-i18n="description_hardware">
+                <h3>Hardware</h3><p>To keep a limited zone for placing the dice, and to try to get good illumination, I first built the setup around the Ikea lamp. However, it was hard to get uniform illumination with that configuration, so I finally got rid of the light bulb part of the lamp and kept just the base and the lower half of its “spine” (it can be unscrewed and separated). In the end, I used ambient illumination.</p><p>And that’s all. So, let the game begin!</p>
+            </div>
+            <div style="text-align: justify; margin-bottom: 30px;" data-i18n="description_conclusions">
+                <h3>Conclusions</h3><p>The simplicity of this work illustrates the concept of interactivity in the sense that you can perform some actions without knowing exactly what the system is going to give back to you (within some logical limits, of course). However, one can directly manipulate the random number generating mechanism, which gives an interesting feeling of control. Somehow it’s like “randomness in your hands”, because a tangible interface is used to directly “handle” and “touch” the randomness generation mechanism. I believe many other similar works could be derived from this one.</p>
+            </div>
+
+            <div class="publication-section">
+                <h3 data-i18n="references_label">References:</h3>
+                <p>
+                    [1] Chadabe, J. “Interactive composing: an overview”. <em>Computer Music Journal</em>. 1983.<br>
+                    [2] <a href="https://en.wikipedia.org/wiki/PlayStation_Eye" target="_blank">https://en.wikipedia.org/wiki/PlayStation_Eye</a><br>
+                    [3] Bencina, R., Kaltenbrunner, M., Jordà, S. “Improved Topological Fiducial Tracking in the reacTIVision System”. Music Technology Group, Audiovisual Institute, Universitat Pompeu Fabra, Barcelona, Spain.<br>
+                    [4] Kaltenbrunner, M., Bencina, R. “reacTIVision: A Computer-Vision Framework for Table-Based Tangible Interaction”. <a href="https://reactivision.sourceforge.net/" target="_blank">https://reactivision.sourceforge.net/</a><br>
+                    [5] Pure Data: <a href="https://puredata.info/" target="_blank">https://puredata.info/</a><br>
+                    [6] SimpleSynth: <a href="https://notahat.com/simplesynth/" target="_blank">https://notahat.com/simplesynth/</a><br>
+                    [7] Kaltenbrunner, M., Bovermann, T., Bencina, R., Costanza, E. “TUIO – A Protocol for Table Based Tangible User Interfaces”. Proceedings of the 6th International Workshop on Gesture in Human-Computer Interaction and Simulation (GW 2005), Vannes, France.<br>
+                    [8] <a href="https://www.tuio.org/" target="_blank">https://www.tuio.org/</a>
+                </p>
+            </div>
+
+            <div class="back-link">
+                <a href="javascript:history.back()" data-i18n="back_button">← Back</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+// Multilingual content
+const translations = {
+    en: {
+        title: "Random Controller",
+        note: "(This was my final project for the Real Time Interaction course at the Universitat Pompeu Fabra, in 2010.)",
+        subtitle: "A simple experiment on using dice-rolling as a control source",
+        description_intro: "<p>In “Interactive composing: an overview” [1], Joel Chadabe calls complexity an important quality of a random number generator, a fundamental component of the response system in his interactive performances. He explains it in terms of throwing dice: there’s no easy way to describe – or predict – the sequence of numbers obtained by that action. The concept of complexity is quite clear in that case, and as a consequence, randomness is far more complicated to generate with a machine than with an organic system. In the works “Solo” and “Rhythms”, which he explains in the article, the computers used for performance include some degree of randomness in their response algorithms, and the performer executes control actions, creating a dialog. That way, the performance develops in an interactive way.</p><p>The example of throwing dice, and the notion of a controller, somehow made a short circuit in my head. Measuring nature or organic systems, it’s not so difficult to get randomly generated values. Nature is full of them. Also, in the case of human beings, randomness is even an important component of one of our favorite leisure activities: gaming.</p><p>Throwing dice, drawing a card from a shuffled deck or spinning a roulette wheel are simple notions of randomness, at least outside the mathematical or academic world. They are also actions that can be controlled to some extent, but their results can’t. So my thinking when I was reading Chadabe’s article was: “why not control randomness in a simple, direct way?”</p>",
+        description_recipe: "<h3>Recipe for a random controller</h3><p>Chadabe’s mention of dice rolling seemed interesting as a feasible way of implementing a user-controlled random number generator. It’s of course a complicated way of looking at a very simple process, but I wanted to squeeze some juice out of it, so I took these ingredients:</p><ul><li>Some dice</li><li>An Ikea lamp</li><li>A webcam (I chose a Sony PlayStation Eye [2], which has excellent specifications for its price)</li><li>Paper printed with a scaled-down version of reacTIVision fiducials [3]</li><li>Glue</li><li>reacTIVision software [4]</li><li>Pure Data [5]</li><li>SimpleSynth synthesizer [6]</li></ul><p>The bricolage work was basically to transform ordinary dice into “Fidiceals”: dice with reacTIVision fiducials on their faces instead of dots. I printed the fiducials at the right size and glued them to the faces of the dice. The rest is mostly software.</p>",
+        description_how: "<h3>How it works</h3><p>reacTIVision generates TUIO (OSC) messages [7][8], which are received by Pure Data. Pure Data runs some patches that do these tasks:</p><ul><li>Run 3 simple sequencers at a user-defined tempo.</li><li>Generate a 4-note bass line, each note chosen from six possible notes.</li><li>Select between 6 different patterns for four instruments of a drum kit: bass drum, snare drum, closed hi-hat and open hi-hat. Each die determines the pattern of one instrument.</li><li>Select the 16 notes of a lead melodic line from the measured position of each die and combinations of those values.</li></ul><p>All those notes are sent as MIDI messages to SimpleSynth, which generates the final sound.</p><p>At the beginning of each measure, the Pure Data patch detects how many dice are present, their position and number (the visible fiducial), and selects the corresponding notes and patterns. This way, a dynamically changing composition can be made, and modified by throwing dice.</p>",
+        description_hardware: "<h3>Hardware</h3><p>To keep a limited zone for placing the dice, and to try to get good illumination, I first built the setup around the Ikea lamp. However, it was hard to get uniform illumination with that configuration, so I finally got rid of the light bulb part of the lamp and kept just the base and the lower half of its “spine” (it can be unscrewed and separated). In the end, I used ambient illumination.</p><p>And that’s all. So, let the game begin!</p>",
+        description_conclusions: "<h3>Conclusions</h3><p>The simplicity of this work illustrates the concept of interactivity in the sense that you can perform some actions without knowing exactly what the system is going to give back to you (within some logical limits, of course). However, one can directly manipulate the random number generating mechanism, which gives an interesting feeling of control. Somehow it’s like “randomness in your hands”, because a tangible interface is used to directly “handle” and “touch” the randomness generation mechanism. I believe many other similar works could be derived from this one.</p>",
+        references_label: "References:",
+        back_button: "← Back"
+    },
+    es: {
+        title: "Random Controller",
+        note: "(Esta fue mi proyecto final para la asignatura de Interacción en Tiempo Real de la Universitat Pompeu Fabra, en 2010.)",
+        subtitle: "Un experimento sencillo sobre el uso del lanzamiento de dados como fuente de control",
+        description_intro: "<p>En “Interactive composing: an overview” [1], Joel Chadabe describe la complejidad como una cualidad importante de un generador de números aleatorios, un componente fundamental del sistema de respuesta en sus interpretaciones interactivas. Lo explica en términos de lanzar dados: no hay una forma sencilla de describir –ni de predecir– la secuencia de números que se obtiene con esa acción. El concepto de complejidad es bastante claro en ese caso y, como consecuencia, la aleatoriedad es mucho más difícil de generar con una máquina que con un sistema orgánico. En las obras “Solo” y “Rhythms”, que explica en el artículo, las computadoras usadas en la interpretación incluyen cierto grado de aleatoriedad en sus algoritmos de respuesta, y el intérprete ejecuta acciones de control, creando un diálogo. Así, la interpretación se desarrolla de forma interactiva.</p><p>El ejemplo de lanzar dados, junto con la noción de controlador, de alguna manera me provocó un cortocircuito en la cabeza. Midiendo la naturaleza o los sistemas orgánicos, no es tan difícil obtener valores aleatorios: la naturaleza está llena de ellos. Además, en el caso de los seres humanos, la aleatoriedad es incluso un componente importante de una de nuestras actividades de ocio favoritas: el juego.</p><p>Lanzar dados, sacar una carta de una baraja mezclada o hacer girar una ruleta son nociones simples de aleatoriedad, al menos fuera del mundo matemático o académico. También son acciones que se pueden controlar hasta cierto punto, pero sus resultados no. Así que, mientras leía el artículo de Chadabe, pensé: “¿por qué no controlar la aleatoriedad de una forma simple y directa?”.</p>",
+        description_recipe: "<h3>Receta para un controlador aleatorio</h3><p>La mención de Chadabe al lanzamiento de dados me pareció interesante como forma viable de implementar un generador de números aleatorios controlado por el usuario. Es, por supuesto, una manera complicada de ver un proceso muy simple, pero quería sacarle jugo, así que tomé estos ingredientes:</p><ul><li>Algunos dados</li><li>Una lámpara de Ikea</li><li>Una webcam (elegí una Sony PlayStation Eye [2], que tiene excelentes especificaciones para su precio)</li><li>Papel con una versión a escala reducida de los fiducials de reacTIVision [3]</li><li>Pegamento</li><li>Software reacTIVision [4]</li><li>Pure Data [5]</li><li>Sintetizador SimpleSynth [6]</li></ul><p>El trabajo de bricolaje consistió básicamente en transformar dados normales en “Fidiceals”: dados con fiducials de reacTIVision en sus caras en lugar de puntos. Imprimí los fiducials al tamaño adecuado y los pegué en las caras de los dados. El resto es sobre todo software.</p>",
+        description_how: "<h3>Cómo funciona</h3><p>reacTIVision genera mensajes TUIO (OSC) [7][8], que recibe Pure Data. Pure Data ejecuta unos patches que realizan estas tareas:</p><ul><li>Ejecutar 3 secuenciadores simples a un tempo definido por el usuario.</li><li>Generar una línea de bajo de 4 notas, cada una elegida entre seis notas posibles.</li><li>Seleccionar entre 6 patrones diferentes para cuatro instrumentos de una batería: bombo, caja, hi-hat cerrado y hi-hat abierto. Cada dado determina el patrón de un instrumento.</li><li>Seleccionar las 16 notas de una melodía principal a partir de la posición medida de cada dado y de combinaciones de esos valores.</li></ul><p>Todas esas notas se envían como mensajes MIDI a SimpleSynth, que genera el sonido final.</p><p>Al comienzo de cada compás, el patch de Pure Data detecta cuántos dados hay, su posición y su número (el fiducial visible), y selecciona las notas y patrones correspondientes. Así se puede crear una composición que cambia dinámicamente y que se modifica lanzando dados.</p>",
+        description_hardware: "<h3>Hardware</h3><p>Para delimitar una zona donde colocar los dados, y para intentar tener una buena iluminación, primero monté el sistema alrededor de la lámpara de Ikea. Sin embargo, era difícil conseguir una iluminación uniforme con esa configuración, así que finalmente quité la parte de la bombilla y conservé solo la base y la mitad inferior de su “columna” (se puede desenroscar y separar). Al final, usé la iluminación ambiente.</p><p>Y eso es todo. ¡Que empiece el juego!</p>",
+        description_conclusions: "<h3>Conclusiones</h3><p>La simplicidad de este trabajo ilustra el concepto de interactividad en el sentido de que puedes realizar acciones sin saber exactamente qué te va a devolver el sistema (dentro de ciertos límites lógicos, por supuesto). Sin embargo, se puede manipular directamente el mecanismo que genera los números aleatorios, lo que da una interesante sensación de control. Es como tener “la aleatoriedad en tus manos”, porque se usa una interfaz tangible para “manejar” y “tocar” directamente el mecanismo de generación de aleatoriedad. Creo que de este trabajo podrían derivarse muchos otros similares.</p>",
+        references_label: "Referencias:",
+        back_button: "← Atrás"
+    },
+    ca: {
+        title: "Random Controller",
+        note: "Aquesta és el del meu projecte final per a l’assignatura Interacció en Temps Real de la Universitat Pompeu Fabra, el 2010.",
+        subtitle: "Un experiment senzill sobre l’ús del llançament de daus com a font de control",
+        description_intro: "<p>A “Interactive composing: an overview” [1], Joel Chadabe descriu la complexitat com una qualitat important d’un generador de nombres aleatoris, un component fonamental del sistema de resposta de les seves interpretacions interactives. Ho explica en termes de llançar daus: no hi ha una manera senzilla de descriure –ni de predir– la seqüència de nombres que s’obté amb aquesta acció. El concepte de complexitat és força clar en aquest cas i, com a conseqüència, l’aleatorietat és molt més difícil de generar amb una màquina que amb un sistema orgànic. A les obres “Solo” i “Rhythms”, que explica a l’article, els ordinadors utilitzats en la interpretació inclouen cert grau d’aleatorietat en els seus algorismes de resposta, i l’intèrpret executa accions de control, creant un diàleg. Així, la interpretació es desenvolupa de manera interactiva.</p><p>L’exemple de llançar daus, juntament amb la noció de controlador, d’alguna manera em va provocar un curtcircuit al cap. Mesurant la natura o els sistemes orgànics, no és tan difícil obtenir valors aleatoris: la natura n’és plena. A més, en el cas dels éssers humans, l’aleatorietat és fins i tot un component important d’una de les nostres activitats de lleure preferides: el joc.</p><p>Llançar daus, treure una carta d’una baralla barrejada o fer girar una ruleta són nocions simples d’aleatorietat, almenys fora del món matemàtic o acadèmic. També són accions que es poden controlar fins a cert punt, però els seus resultats no. Així que, mentre llegia l’article de Chadabe, vaig pensar: “per què no controlar l’aleatorietat d’una manera simple i directa?”.</p>",
+        description_recipe: "<h3>Recepta per a un controlador aleatori</h3><p>La menció de Chadabe al llançament de daus em va semblar interessant com a manera viable d’implementar un generador de nombres aleatoris controlat per l’usuari. És, és clar, una manera complicada de veure un procés molt simple, però volia treure’n el suc, així que vaig agafar aquests ingredients:</p><ul><li>Uns quants daus</li><li>Un llum d’Ikea</li><li>Una webcam (vaig triar una Sony PlayStation Eye [2], que té unes especificacions excel·lents per al seu preu)</li><li>Paper amb una versió a escala reduïda dels fiducials de reacTIVision [3]</li><li>Cola</li><li>Programari reacTIVision [4]</li><li>Pure Data [5]</li><li>Sintetitzador SimpleSynth [6]</li></ul><p>La feina de bricolatge va consistir bàsicament a transformar daus normals en “Fidiceals”: daus amb fiducials de reacTIVision a les cares en lloc de punts. Vaig imprimir els fiducials a la mida adequada i els vaig enganxar a les cares dels daus. La resta és sobretot programari.</p>",
+        description_how: "<h3>Com funciona</h3><p>reacTIVision genera missatges TUIO (OSC) [7][8], que rep Pure Data. Pure Data executa uns patches que fan aquestes tasques:</p><ul><li>Executar 3 seqüenciadors simples a un tempo definit per l’usuari.</li><li>Generar una línia de baix de 4 notes, cadascuna triada entre sis notes possibles.</li><li>Seleccionar entre 6 patrons diferents per a quatre instruments d’una bateria: bombo, caixa, hi-hat tancat i hi-hat obert. Cada dau determina el patró d’un instrument.</li><li>Seleccionar les 16 notes d’una melodia principal a partir de la posició mesurada de cada dau i de combinacions d’aquests valors.</li></ul><p>Totes aquestes notes s’envien com a missatges MIDI a SimpleSynth, que genera el so final.</p><p>Al començament de cada compàs, el patch de Pure Data detecta quants daus hi ha, la seva posició i el seu número (el fiducial visible), i selecciona les notes i els patrons corresponents. Així es pot crear una composició que canvia dinàmicament i que es modifica llançant daus.</p>",
+        description_hardware: "<h3>Maquinari</h3><p>Per delimitar una zona on col·locar els daus, i per intentar tenir una bona il·luminació, primer vaig muntar el sistema al voltant del llum d’Ikea. Tanmateix, era difícil aconseguir una il·luminació uniforme amb aquella configuració, així que finalment vaig treure la part de la bombeta i només vaig conservar la base i la meitat inferior de la seva “columna” (es pot desenroscar i separar). Al final, vaig fer servir la il·luminació ambiental.</p><p>I això és tot. Que comenci el joc!</p>",
+        description_conclusions: "<h3>Conclusions</h3><p>La simplicitat d’aquest treball il·lustra el concepte d’interactivitat en el sentit que pots fer accions sense saber exactament què et retornarà el sistema (dins de certs límits lògics, és clar). Tanmateix, es pot manipular directament el mecanisme que genera els nombres aleatoris, cosa que dona una interessant sensació de control. És com tenir “l’aleatorietat a les mans”, perquè s’utilitza una interfície tangible per “manipular” i “tocar” directament el mecanisme de generació d’aleatorietat. Crec que d’aquest treball se’n podrien derivar molts altres de semblants.</p>",
+        references_label: "Referències:",
+        back_button: "← Enrere"
+    }
+};
+
+// Language switching functionality
+function switchLanguage(lang) {
+    localStorage.setItem('preferredLanguage', lang);
+    document.querySelectorAll('[data-i18n]').forEach(element => {
+        const key = element.getAttribute('data-i18n');
+        if (translations[lang] && translations[lang][key]) {
+            if (key === 'description_intro' || key === 'description_recipe' || key === 'description_how' || key === 'description_hardware' || key === 'description_conclusions') {
+                element.innerHTML = translations[lang][key];
+            } else {
+                element.textContent = translations[lang][key];
+            }
+        }
+    });
+}
+
+// Load preferred language on page load
+document.addEventListener('DOMContentLoaded', function() {
+    const urlParams = new URLSearchParams(window.location.search);
+    const urlLang = urlParams.get('lang');
+    const validLanguages = ['en', 'es', 'ca'];
+
+    let lang = 'en';
+
+    if (urlLang && validLanguages.includes(urlLang)) {
+        lang = urlLang;
+    } else if (urlLang) {
+        lang = localStorage.getItem('preferredLanguage') || 'en';
+    } else {
+        lang = localStorage.getItem('preferredLanguage') || 'en';
+    }
+
+    document.getElementById('languageSelector').value = lang;
+    switchLanguage(lang);
+});
+</script>
+
+</body>
+</html>

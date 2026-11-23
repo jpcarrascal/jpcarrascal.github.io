@@ -30,7 +30,7 @@ Each project page follows this standardized structure:
     
     <!-- Required stylesheets -->
     <link href="../../style.css" type="text/css" rel="stylesheet"/>
-    <link href="https://fonts.googleapis.com/css?family=Lato:700|Lato" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700|Rubik:400,700&display=swap" rel="stylesheet">
     <link href="../project-template.css" type="text/css" rel="stylesheet"/>
 </head>
 <body>
