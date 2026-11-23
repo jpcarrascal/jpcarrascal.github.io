@@ -65,14 +65,22 @@
 
   /* Layout */
   --width-content: 800px;   /* max width of page content */
+  --width-home-column: 28rem; /* minimum width of the home column (keeps the title on one line) */
   --width-media: 720px;     /* max width of figures */
   --width-media-narrow: 620px; /* figures shown smaller than their native size */
   --aspect-video: 560 / 400;   /* embedded videos */
   --height-media-sm: 200px; /* card images; media rows on narrow screens */
   --height-media-md: 250px; /* media rows (video + image) */
   --height-media-lg: 300px; /* image rows (galleries) */
+  --z-background: 0;        /* home canvas, behind everything */
+  --z-raised: 1;            /* page elements lifted above the canvas */
   --z-content: 20;          /* page content above the home canvas */
 }
+
+/* Breakpoints. CSS can't read variables inside @media, so these are the
+   only raw numbers allowed in media queries, and only these two:
+     narrow: max-width 900px  (wide layouts start at 901px)
+     small:  max-width 600px                                          */
 
 /* 2. Semantic tokens, per theme */
 
@@ -85,7 +93,8 @@
   --text-primary: var(--color-paper);     /* text on the page */
   --text-inverse: var(--color-ink);       /* text on an inverse surface */
   --border: var(--color-paper);           /* outlines of buttons, cards, boxes */
-  --border-subtle: var(--color-paper);    /* faint outlines (no fainter shade on dark yet) */
+  --border-hidden: var(--color-paper);    /* border that blends into the surface: keeps
+                                             resting tags the same size as the active one */
   --font-size-body: var(--font-size-sm);  /* running text size */
 }
 
@@ -97,6 +106,6 @@
   --text-primary: var(--color-ink);
   --text-inverse: var(--color-paper);
   --border: var(--color-ink);
-  --border-subtle: var(--color-paper);
+  --border-hidden: var(--color-paper);
   --font-size-body: var(--font-size-md);
 }

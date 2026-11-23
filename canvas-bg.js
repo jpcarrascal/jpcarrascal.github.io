@@ -21,9 +21,10 @@
  *   frequencyMin: 0.01, frequencyMax: 0.03, lineWidth: 60,
  *   opacityMin: 0.05, opacityMax: 0.1, startHidden: false
  *
- * Colors come from the page's design tokens (tokens.css), so the canvas
- * follows the page theme: the background is --surface-page and the lines
- * are --text-primary, faded with the gradient's alpha stops.
+ * Colors, layering and timing come from the page's design tokens (tokens.css):
+ * the background is --surface-page and the lines are --text-primary (faded
+ * with the gradient's alpha stops); the canvas sits at --z-background, page
+ * elements are lifted to --z-raised, and show/hide fades over --duration-slow.
  */
 window.CanvasBg = (function () {
   const CONFIG = Object.assign(
@@ -49,21 +50,21 @@ window.CanvasBg = (function () {
     inset: "0",
     width: "100vw",
     height: "100vh",
-    zIndex: "0",
+    zIndex: "var(--z-background)",
     pointerEvents: "none",
     opacity: CONFIG.startHidden ? "0" : "1",
-    transition: "opacity .5s ease"
+    transition: "opacity var(--duration-slow) ease"
   });
   document.body.prepend(canvas);
 
   function liftElement(el) {
     if (el === canvas) return;
     const cs = window.getComputedStyle(el);
-    if (cs.zIndex === "auto" || cs.zIndex === "" || cs.zIndex === "0") {
+    if (cs.zIndex === "auto" || cs.zIndex === "" || cs.zIndex === token("--z-background")) {
       if (cs.position === "static") {
         el.style.position = "relative";
       }
-      el.style.zIndex = "1";
+      el.style.zIndex = "var(--z-raised)";
     }
   }
 

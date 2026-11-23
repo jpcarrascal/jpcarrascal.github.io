@@ -119,7 +119,8 @@ The `project-template.css` provides these pre-styled components:
 - `.media-row` - Container for mixed media (video + image)
 - `.media-row-item` - Individual media container (50% width each)
 - `.project-media` - Centered wrapper for an image, video or figure
-- `.media-narrow` - Image shown narrower than the content column
+- `.media-standard` - Image capped at the standard figure width (`--width-media`)
+- `.media-narrow` - Image shown narrower than the content column (`--width-media-narrow`)
 - `.video` - Embedded video (full width, fixed aspect ratio)
 - `.badge-row` - Row of badges and arrows (diagram)
 - Images inside `.project-content` never overflow; no inline sizing needed

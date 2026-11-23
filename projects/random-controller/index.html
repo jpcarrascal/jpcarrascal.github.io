@@ -47,20 +47,66 @@
             </div>
 
             <div class="project-media">
-                <img src="images/main.jpg" alt="Random Controller" />
+                <img class="media-standard" src="images/main.jpg" alt="Random Controller" />
             </div>
 
             <div class="project-text" data-i18n="description_intro">
                 <p>In “Interactive composing: an overview” [1], Joel Chadabe calls complexity an important quality of a random number generator, a fundamental component of the response system in his interactive performances. He explains it in terms of throwing dice: there’s no easy way to describe – or predict – the sequence of numbers obtained by that action. The concept of complexity is quite clear in that case, and as a consequence, randomness is far more complicated to generate with a machine than with an organic system. In the works “Solo” and “Rhythms”, which he explains in the article, the computers used for performance include some degree of randomness in their response algorithms, and the performer executes control actions, creating a dialog. That way, the performance develops in an interactive way.</p><p>The example of throwing dice, and the notion of a controller, somehow made a short circuit in my head. Measuring nature or organic systems, it’s not so difficult to get randomly generated values. Nature is full of them. Also, in the case of human beings, randomness is even an important component of one of our favorite leisure activities: gaming.</p><p>Throwing dice, drawing a card from a shuffled deck or spinning a roulette wheel are simple notions of randomness, at least outside the mathematical or academic world. They are also actions that can be controlled to some extent, but their results can’t. So my thinking when I was reading Chadabe’s article was: “why not control randomness in a simple, direct way?”</p>
             </div>
+
+            <div class="project-media">
+                <table class="figure-table">
+                    <tr><td><a href="images/dice.jpg" target="_blank"><img src="images/dice.jpg" alt="Dice with reacTIVision fiducials" /></a></td></tr>
+                    <tr><td class="figure-caption" data-i18n="caption_dice">“Fidiceals”: dice with reacTIVision fiducials glued on their faces, next to an ordinary die.</td></tr>
+                </table>
+            </div>
             <div class="project-text" data-i18n="description_recipe">
                 <h3>Recipe for a random controller</h3><p>Chadabe’s mention of dice rolling seemed interesting as a feasible way of implementing a user-controlled random number generator. It’s of course a complicated way of looking at a very simple process, but I wanted to squeeze some juice out of it, so I took these ingredients:</p><ul><li>Some dice</li><li>An Ikea lamp</li><li>A webcam (I chose a Sony PlayStation Eye [2], which has excellent specifications for its price)</li><li>Paper printed with a scaled-down version of reacTIVision fiducials [3]</li><li>Glue</li><li>reacTIVision software [4]</li><li>Pure Data [5]</li><li>SimpleSynth synthesizer [6]</li></ul><p>The bricolage work was basically to transform ordinary dice into “Fidiceals”: dice with reacTIVision fiducials on their faces instead of dots. I printed the fiducials at the right size and glued them to the faces of the dice. The rest is mostly software.</p>
+            </div>
+
+            <div class="project-media">
+                <table class="figure-table">
+                    <tr><td>
+                            <div class="image-row">
+                                <div class="image-row-item">
+                                    <a href="images/bricolage-fiducials.jpg" target="_blank"><img src="images/bricolage-fiducials.jpg" alt="Printed fiducials being cut out" /></a>
+                                </div>
+                                <div class="image-row-item">
+                                    <a href="images/bricolage-dice.jpg" target="_blank"><img src="images/bricolage-dice.jpg" alt="Dice with fiducials glued on, and scissors" /></a>
+                                </div>
+                            </div>
+                    </td></tr>
+                    <tr><td class="figure-caption" data-i18n="caption_bricolage">Bricolage: cutting out the printed fiducials and gluing them onto the dice.</td></tr>
+                </table>
+            </div>
+
+            <div class="project-media">
+                <table class="figure-table">
+                    <tr><td><a href="images/diagram.png" target="_blank"><img src="images/diagram.png" alt="Diagram: dice, PlayStation Eye, reacTIVision, Pure Data, SimpleSynth" /></a></td></tr>
+                    <tr><td class="figure-caption" data-i18n="caption_diagram">A PlayStation Eye camera tracks the dice; reacTIVision sends OSC messages to Pure Data, which sends MIDI to SimpleSynth.</td></tr>
+                </table>
             </div>
             <div class="project-text" data-i18n="description_how">
                 <h3>How it works</h3><p>reacTIVision generates TUIO (OSC) messages [7][8], which are received by Pure Data. Pure Data runs some patches that do these tasks:</p><ul><li>Run 3 simple sequencers at a user-defined tempo.</li><li>Generate a 4-note bass line, each note chosen from six possible notes.</li><li>Select between 6 different patterns for four instruments of a drum kit: bass drum, snare drum, closed hi-hat and open hi-hat. Each die determines the pattern of one instrument.</li><li>Select the 16 notes of a lead melodic line from the measured position of each die and combinations of those values.</li></ul><p>All those notes are sent as MIDI messages to SimpleSynth, which generates the final sound.</p><p>At the beginning of each measure, the Pure Data patch detects how many dice are present, their position and number (the visible fiducial), and selects the corresponding notes and patterns. This way, a dynamically changing composition can be made, and modified by throwing dice.</p>
             </div>
             <div class="project-text" data-i18n="description_hardware">
                 <h3>Hardware</h3><p>To keep a limited zone for placing the dice, and to try to get good illumination, I first built the setup around the Ikea lamp. However, it was hard to get uniform illumination with that configuration, so I finally got rid of the light bulb part of the lamp and kept just the base and the lower half of its “spine” (it can be unscrewed and separated). In the end, I used ambient illumination.</p><p>And that’s all. So, let the game begin!</p>
+            </div>
+
+            <div class="project-media">
+                <table class="figure-table">
+                    <tr><td>
+                            <div class="image-row">
+                                <div class="image-row-item">
+                                    <a href="images/setup-initial.jpg" target="_blank"><img src="images/setup-initial.jpg" alt="First setup with the Ikea lamp lighting the dice" /></a>
+                                </div>
+                                <div class="image-row-item">
+                                    <a href="images/setup-final.jpg" target="_blank"><img src="images/setup-final.jpg" alt="Final setup with ambient light" /></a>
+                                </div>
+                            </div>
+                    </td></tr>
+                    <tr><td class="figure-caption" data-i18n="caption_setup">The first setup, lit by the Ikea lamp, and the final one, with the lamp head removed and ambient light.</td></tr>
+                </table>
             </div>
             <div class="project-text" data-i18n="description_conclusions">
                 <h3>Conclusions</h3><p>The simplicity of this work illustrates the concept of interactivity in the sense that you can perform some actions without knowing exactly what the system is going to give back to you (within some logical limits, of course). However, one can directly manipulate the random number generating mechanism, which gives an interesting feeling of control. Somehow it’s like “randomness in your hands”, because a tangible interface is used to directly “handle” and “touch” the randomness generation mechanism. I believe many other similar works could be derived from this one.</p>
@@ -100,6 +146,10 @@ const translations = {
         description_hardware: "<h3>Hardware</h3><p>To keep a limited zone for placing the dice, and to try to get good illumination, I first built the setup around the Ikea lamp. However, it was hard to get uniform illumination with that configuration, so I finally got rid of the light bulb part of the lamp and kept just the base and the lower half of its “spine” (it can be unscrewed and separated). In the end, I used ambient illumination.</p><p>And that’s all. So, let the game begin!</p>",
         description_conclusions: "<h3>Conclusions</h3><p>The simplicity of this work illustrates the concept of interactivity in the sense that you can perform some actions without knowing exactly what the system is going to give back to you (within some logical limits, of course). However, one can directly manipulate the random number generating mechanism, which gives an interesting feeling of control. Somehow it’s like “randomness in your hands”, because a tangible interface is used to directly “handle” and “touch” the randomness generation mechanism. I believe many other similar works could be derived from this one.</p>",
         references_label: "References:",
+        caption_dice: "“Fidiceals”: dice with reacTIVision fiducials glued on their faces, next to an ordinary die.",
+        caption_bricolage: "Bricolage: cutting out the printed fiducials and gluing them onto the dice.",
+        caption_diagram: "A PlayStation Eye camera tracks the dice; reacTIVision sends OSC messages to Pure Data, which sends MIDI to SimpleSynth.",
+        caption_setup: "The first setup, lit by the Ikea lamp, and the final one, with the lamp head removed and ambient light.",
         back_button: "← Back"
     },
     es: {
@@ -112,6 +162,10 @@ const translations = {
         description_hardware: "<h3>Hardware</h3><p>Para delimitar una zona donde colocar los dados, y para intentar tener una buena iluminación, primero monté el sistema alrededor de la lámpara de Ikea. Sin embargo, era difícil conseguir una iluminación uniforme con esa configuración, así que finalmente quité la parte de la bombilla y conservé solo la base y la mitad inferior de su “columna” (se puede desenroscar y separar). Al final, usé la iluminación ambiente.</p><p>Y eso es todo. ¡Que empiece el juego!</p>",
         description_conclusions: "<h3>Conclusiones</h3><p>La simplicidad de este trabajo ilustra el concepto de interactividad en el sentido de que puedes realizar acciones sin saber exactamente qué te va a devolver el sistema (dentro de ciertos límites lógicos, por supuesto). Sin embargo, se puede manipular directamente el mecanismo que genera los números aleatorios, lo que da una interesante sensación de control. Es como tener “la aleatoriedad en tus manos”, porque se usa una interfaz tangible para “manejar” y “tocar” directamente el mecanismo de generación de aleatoriedad. Creo que de este trabajo podrían derivarse muchos otros similares.</p>",
         references_label: "Referencias:",
+        caption_dice: "“Fidiceals”: dados con fiducials de reacTIVision pegados en sus caras, junto a un dado normal.",
+        caption_bricolage: "Bricolaje: recortando los fiducials impresos y pegándolos en los dados.",
+        caption_diagram: "Una cámara PlayStation Eye sigue los dados; reacTIVision envía mensajes OSC a Pure Data, que envía MIDI a SimpleSynth.",
+        caption_setup: "La primera versión, iluminada por la lámpara de Ikea, y la final, sin la cabeza de la lámpara y con luz ambiente.",
         back_button: "← Atrás"
     },
     ca: {
@@ -124,6 +178,10 @@ const translations = {
         description_hardware: "<h3>Maquinari</h3><p>Per delimitar una zona on col·locar els daus, i per intentar tenir una bona il·luminació, primer vaig muntar el sistema al voltant del llum d’Ikea. Tanmateix, era difícil aconseguir una il·luminació uniforme amb aquella configuració, així que finalment vaig treure la part de la bombeta i només vaig conservar la base i la meitat inferior de la seva “columna” (es pot desenroscar i separar). Al final, vaig fer servir la il·luminació ambiental.</p><p>I això és tot. Que comenci el joc!</p>",
         description_conclusions: "<h3>Conclusions</h3><p>La simplicitat d’aquest treball il·lustra el concepte d’interactivitat en el sentit que pots fer accions sense saber exactament què et retornarà el sistema (dins de certs límits lògics, és clar). Tanmateix, es pot manipular directament el mecanisme que genera els nombres aleatoris, cosa que dona una interessant sensació de control. És com tenir “l’aleatorietat a les mans”, perquè s’utilitza una interfície tangible per “manipular” i “tocar” directament el mecanisme de generació d’aleatorietat. Crec que d’aquest treball se’n podrien derivar molts altres de semblants.</p>",
         references_label: "Referències:",
+        caption_dice: "“Fidiceals”: daus amb fiducials de reacTIVision enganxats a les cares, al costat d’un dau normal.",
+        caption_bricolage: "Bricolatge: retallant els fiducials impresos i enganxant-los als daus.",
+        caption_diagram: "Una càmera PlayStation Eye segueix els daus; reacTIVision envia missatges OSC a Pure Data, que envia MIDI a SimpleSynth.",
+        caption_setup: "La primera versió, il·luminada pel llum d’Ikea, i la final, sense el cap del llum i amb llum ambiental.",
         back_button: "← Enrere"
     }
 };

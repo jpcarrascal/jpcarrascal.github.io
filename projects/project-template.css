@@ -55,6 +55,7 @@ a:hover {
 
 .project-text {
     text-align: justify;
+    line-height: var(--line-height-relaxed);
     margin-bottom: var(--space-xl);
 }
 
@@ -69,7 +70,12 @@ a:hover {
     margin: var(--space-xl) 0;
 }
 
-/* Two classes, so it beats ".project-content img" and ".figure-table img" */
+/* Image width caps. Two classes, so they beat ".project-content img"
+   and ".figure-table img". */
+.project-content .media-standard {
+    max-width: min(100%, var(--width-media));
+}
+
 .project-content .media-narrow {
     max-width: min(100%, var(--width-media-narrow));
 }
@@ -204,7 +210,7 @@ a:hover {
     display: none;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 900px) {
     .tag-filter-bar {
         display: none;
     }

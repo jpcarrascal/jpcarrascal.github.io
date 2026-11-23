@@ -91,3 +91,17 @@
   - Spacing rounded to the 8px grid: 20px → 32px around the Redmond photo on `ux-approach`; 15px → 16px between citations; 10px → 8px in the badge row; 40px → 48px around `ux-approach` dividers.
 - **Docs updated so new pages don't reintroduce inline styles:** `projects/README.md` (class list, example, "no inline styles" rule) and the `project` skill. The README also listed a `.full-width-image` class that never existed; it was removed.
 - **Untouched:** `print/`, `print-es/` and `apps/`, which are standalone pages outside the design system.
+- **Added later:** `.media-standard`, which caps an image at `--width-media` (720px) so a standalone image lines up with the figures. It was first used for the Random Controller cover.
+
+## Follow-up: consistency fixes (after step 6)
+
+- **Canvas script tokenized:** `canvas-bg.js` no longer sets raw layering or timing values. The canvas uses `--z-background` (0) and lifted page elements use `--z-raised` (1), both new tokens. The show/hide fade uses `--duration-slow`. **Visible change:** the home background fades in over 0.3s instead of 0.5s.
+- **Body text line height:** `.project-text` now uses `--line-height-relaxed` (1.5). Before, project paragraphs had no line height set, which rendered at about 1.2. **Visible change:** long paragraphs on every project page are more spaced out and easier to read.
+- **Breakpoints consolidated to 900px and 600px**, documented in `tokens.css`. They can't be variables, because CSS doesn't allow `var()` in media queries.
+  - **Tag filter:** it switches from chips to the dropdown at 900px instead of 768px. **Visible change:** between 769 and 900px you now see the dropdown.
+  - **`max-device-width: 1204px` removed:** it was nearly dead code. Its width rule was always overridden, and it reset margins that were never set. Its one live rule, a 4px space under the home links, now applies at all sizes. **Visible change:** 4px more space above the home footer on desktop.
+- **`--border-subtle` renamed to `--border-hidden`:** the border is the same color as the page, so resting tags read by their fill alone (1.16:1). That look is deliberate; the new name says what the token does, which is to keep resting tags the same size as the active one.
+- **Home title on one line:**
+  - Above 900px, the home column is `max(40%, --width-home-column)`, where `--width-home-column` is a new 28rem token. This fixes the wrap between 901 and 1030px.
+  - Below 600px, the home title uses `--font-size-xl` (28.8px). It fits on one line on most phones but is tight at 360px.
+- **Still open, no change:** the dark theme has no distinct values for `--surface-raised` and `--border-hidden`. That's fine until a dark page needs them.
