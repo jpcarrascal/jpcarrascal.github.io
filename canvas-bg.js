@@ -19,8 +19,11 @@
  * Config options (with defaults):
  *   lineCount: 15, baseXSpread: 600, amplitudeMin: 200, amplitudeMax: 500,
  *   frequencyMin: 0.01, frequencyMax: 0.03, lineWidth: 60,
- *   opacityMin: 0.05, opacityMax: 0.1, backgroundColor: "black",
- *   startHidden: false
+ *   opacityMin: 0.05, opacityMax: 0.1, startHidden: false
+ *
+ * Colors come from the page's design tokens (tokens.css), so the canvas
+ * follows the page theme: the background is --surface-page and the lines
+ * are --text-primary, faded with the gradient's alpha stops.
  */
 window.CanvasBg = (function () {
   const CONFIG = Object.assign(
@@ -34,7 +37,6 @@ window.CanvasBg = (function () {
       lineWidth: 60,
       opacityMin: 0.05,
       opacityMax: 0.1,
-      backgroundColor: "black",
       startHidden: false
     },
     window.CanvasBgConfig || {}
@@ -79,6 +81,33 @@ window.CanvasBg = (function () {
   observer.observe(document.body, { childList: true });
 
   const ctx = canvas.getContext("2d");
+
+  // Read a design token from the page (e.g. "--surface-page").
+  function token(name) {
+    return getComputedStyle(document.documentElement).getPropertyValue(name).trim();
+  }
+
+  // Return the given CSS color with an alpha channel, as rgba().
+  // The canvas normalises any color it is given to "#rrggbb" or "rgba(...)",
+  // so we let it do the parsing.
+  function withAlpha(color, alpha) {
+    ctx.fillStyle = color;
+    const c = ctx.fillStyle;
+    if (c.startsWith("#")) {
+      const r = parseInt(c.slice(1, 3), 16);
+      const g = parseInt(c.slice(3, 5), 16);
+      const b = parseInt(c.slice(5, 7), 16);
+      return `rgba(${r}, ${g}, ${b}, ${alpha})`;
+    }
+    const [r, g, b] = c.match(/[\d.]+/g);
+    return `rgba(${r}, ${g}, ${b}, ${alpha})`;
+  }
+
+  const colors = {
+    background: token("--surface-page"),
+    line: token("--text-primary")
+  };
+
   let gradient;
   let lines = [];
   let startTime = null;
@@ -86,9 +115,9 @@ window.CanvasBg = (function () {
   function createGradient() {
     gradient = ctx.createLinearGradient(0, 0, 0, canvas.height);
     gradient.addColorStop(0, "transparent");
-    gradient.addColorStop(0.05, "rgba(255, 255, 255, 0.02)");
-    gradient.addColorStop(0.5, "rgba(255, 255, 255, 0.15)");
-    gradient.addColorStop(0.9, "rgba(255, 255, 255, 0.02)");
+    gradient.addColorStop(0.05, withAlpha(colors.line, 0.02));
+    gradient.addColorStop(0.5, withAlpha(colors.line, 0.15));
+    gradient.addColorStop(0.9, withAlpha(colors.line, 0.02));
     gradient.addColorStop(1, "transparent");
   }
 
@@ -144,7 +173,7 @@ window.CanvasBg = (function () {
     if (startTime === null) startTime = timestamp;
 
     ctx.globalAlpha = 1;
-    ctx.fillStyle = CONFIG.backgroundColor;
+    ctx.fillStyle = colors.background;
     ctx.fillRect(0, 0, canvas.width, canvas.height);
 
     const elapsed = (timestamp - startTime) / 1000;

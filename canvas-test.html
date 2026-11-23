@@ -1,9 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Canvas Animation Test</title>
+    <link href="tokens.css" type="text/css" rel="stylesheet"/>
     <link href="style.css" type="text/css" rel="stylesheet"/>
     <style>
         * {
@@ -59,8 +60,8 @@ document.addEventListener('mousemove', (event) => {
     };
 
     const computedStyle = getComputedStyle(document.documentElement);
-    const colorDark = computedStyle.getPropertyValue('--color-dark').trim();
-    const colorLight = computedStyle.getPropertyValue('--color-light').trim();
+    const colorDark = computedStyle.getPropertyValue('--surface-page').trim();
+    const colorLight = computedStyle.getPropertyValue('--text-primary').trim();
 
     class Line {
         constructor(canvas, config) {

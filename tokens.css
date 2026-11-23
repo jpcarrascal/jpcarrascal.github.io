@@ -1,19 +1,44 @@
 /*
  * Design tokens: the single source of truth for raw design values.
- * Loaded before every other stylesheet. Other CSS refers to these
- * variables instead of writing values directly.
+ * Loaded before every other stylesheet.
+ *
+ * Two layers:
+ *  1. Primitives: the raw palette. Only the themes below use these.
+ *  2. Semantic tokens: named by role ("text on the page", "a border").
+ *     Components use only these, so they work in either theme.
+ *
+ * A page picks its theme with <html data-theme="dark"> or
+ * <html data-theme="light">. Without the attribute it gets the dark theme.
  */
 
+/* 1. Primitives */
 :root {
-  /* Primitive colors: the whole palette. */
   --color-ink: #282828;
   --color-paper: #DEDEDE;
   --color-paper-raised: #EEEEEE;
-  --color-white: #FFFFFF;
+}
 
-  /* Legacy names, kept as aliases so existing rules keep working.
-     To be replaced by semantic tokens (step 3) and then removed. */
-  --color-dark: var(--color-ink);
-  --color-light: var(--color-paper);
-  --color-lighter: var(--color-paper-raised);
+/* 2. Semantic tokens, per theme */
+
+/* Dark theme: home page */
+:root,
+[data-theme="dark"] {
+  --surface-page: var(--color-ink);       /* page background */
+  --surface-raised: var(--color-ink);     /* cards, boxes (none on dark pages yet) */
+  --surface-inverse: var(--color-paper);  /* flipped panels, hover fills */
+  --text-primary: var(--color-paper);     /* text on the page */
+  --text-inverse: var(--color-ink);       /* text on an inverse surface */
+  --border: var(--color-paper);           /* outlines of buttons, cards, boxes */
+  --border-subtle: var(--color-paper);    /* faint outlines (no fainter shade on dark yet) */
+}
+
+/* Light theme: portfolio and project pages */
+[data-theme="light"] {
+  --surface-page: var(--color-paper);
+  --surface-raised: var(--color-paper-raised);
+  --surface-inverse: var(--color-ink);
+  --text-primary: var(--color-ink);
+  --text-inverse: var(--color-paper);
+  --border: var(--color-ink);
+  --border-subtle: var(--color-paper);
 }

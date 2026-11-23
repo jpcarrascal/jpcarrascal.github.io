@@ -9,12 +9,12 @@ html
 
 body
 {
-    background-color: var(--color-dark);
+    background-color: var(--surface-page);
     background-size: cover;
     padding: 0;
     width: 100%;
     margin:0;
-    color: var(--color-light);
+    color: var(--text-primary);
     /* background-image: url(images/bg01.jpg);
     background-blend-mode: multiply;
     */
@@ -34,10 +34,7 @@ h1
 }
 
 
-a:link {color:var(--color-dark);}      /* unvisited link */
-a:visited {color:var(--color-dark);}  /* visited link */
-a:hover {color:var(--color-dark);}  /* mouse over link */
-a:active {color:var(--color-dark);}
+a:link, a:visited, a:hover, a:active {color: var(--text-primary);}
 
 #flex-container
 {
@@ -70,8 +67,8 @@ a:active {color:var(--color-dark);}
     margin-bottom: 5px;
     padding-left: 20px;
     padding-right: 20px;
-    background-color: var(--color-light);
-    color: var(--color-dark);
+    background-color: var(--surface-inverse);
+    color: var(--text-inverse);
 }
 
 #footer
@@ -102,21 +99,21 @@ a:active {color:var(--color-dark);}
 {
     border-radius: 0px;
 	background-color: transparent;
-    color: var(--color-light);
+    color: var(--text-primary);
     padding: 5px;
     padding-bottom: 6px;
     padding-left: 9px;
     padding-right: 9px;
     line-height: 1.2em;
     margin-bottom: 5px;
-    border: 1px solid var(--color-light);
+    border: 1px solid var(--border);
 }
 
 .link:hover, .link_hover
 {
-    background-color: var(--color-light);
-    color: var(--color-dark);
-    border: 1px solid var(--color-light);
+    background-color: var(--surface-inverse);
+    color: var(--text-inverse);
+    border: 1px solid var(--border);
     /* transition: background-color 500ms ease-out;*/
 }
 

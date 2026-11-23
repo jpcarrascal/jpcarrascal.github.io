@@ -14,7 +14,7 @@ Each project page follows this standardized structure:
 ### HTML Template
 ```html
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" data-theme="light">
 <head>
     <!-- Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-15242862-1"></script>
