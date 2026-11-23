@@ -53,3 +53,28 @@
   - home text on phones: 16.3px → 16px; home in a narrow desktop window: 19.2px → 16px
 - **Dropped:** the tag button's 0.01em letter-spacing, which was invisible.
 - **Not in the plan:** the `max-device-width: 1204px` media query no longer sets font sizes, but it still holds layout rules. It belongs to the breakpoint clean-up, which has no step yet.
+
+## Step 5: spacing and components
+
+- **Spacing on a strict 8px grid instead of the plan's scale:** 4 / 8 / 16 / 24 / 32 / 48px (`--space-xs` to `--space-2xl`, in rem). The plan proposed 4 / 8 / 12 / 16 / 20 / 32 / 40.
+- **All spacing tokenized in this step, not just buttons:** every margin, padding and gap in both stylesheets now uses the scale. Old values rounded to the nearest step, and ties rounded up:
+  - 5 → 4; 6, 9, 10 → 8; 12, 15 → 16; 20 → 24; 30 → 32; 40 → 48
+  - **Visible change:** the widespread 20px gaps and paddings (content padding, card padding, grid gaps) become 24px.
+  - Exception, chosen by JP: the gap between project cards uses `--space-md` (16px) instead of rounding 20 up to 24.
+- **Four components, not one Button.** The plan's "7 versions of one pattern" were four different things:
+  - **Button** (`.button`, `.button--solid`): home links, the back button (37 pages) and the feb2026 CTA. One size: 8/16px padding.
+  - **Tag** (`.tag`, `.is-active`): tag filter chips. The JS was updated for the new class names.
+  - **Select** (`.select`): the language menu and the mobile tag filter, now with the same look (transparent, ink border).
+  - **Badge** (`.badge`, was `.boxed`): static labels on `ux-approach`.
+- **Components live in `style.css`**, since every page loads it. `project-template.css` keeps only layout wrappers (`.back-link`, `.cta-container`, `.language-selector`, tag filter layout).
+- **Markup changes:** the back button and CTA styling moved from the wrapper `div` to the `<a>`. The whole button is now clickable; before, only the text was. Home links went from `<a><div class="link">` to `<a class="button">`.
+- **Global link color is now `a { }` instead of `a:link, a:visited…`** (lower specificity), so component classes can override it.
+- **Removed:** dead `.project-link` rules (unused since step 1), `.nounderline`, and `.link_hover`.
+- **Visible changes:**
+  - Home links: padding 5/9px → 8/16px (taller), and 4px gaps between them.
+  - Back button and CTA: text goes from bold to regular weight, because the Button sets a regular weight. The CTA's padding goes from 10/20 to 8/16px.
+  - Mobile tag select: transparent with an ink border, like the language menu.
+  - Language menu: padding 5/10 → 4/8px.
+  - Badges: square corners (were 4px radius), per the plan's radius 0.
+- **Beyond the plan:** tokens were also added for border width, radius, motion (durations, hover opacity, card filters), layout widths, media heights and `z-index`, so that no raw design values remain. Only the media query breakpoints are still raw numbers, because CSS can't use variables in media queries.
+- **Keyboard focus ring (not in the plan):** the old language menu removed the focus outline (`outline: none`), which hid keyboard focus. Buttons, tags, selects and project cards now share one focus ring, 2px in the border color with a 4px offset (`--focus-ring-width`, `--focus-ring-offset`). It appears only for keyboard focus (`:focus-visible`), not on mouse clicks.

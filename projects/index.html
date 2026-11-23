@@ -33,7 +33,7 @@
             <div class="tag-filter-bar" id="tagFilterBar" aria-label="Project tags filter"></div>
             <div class="tag-filter-dropdown-wrap" id="tagFilterDropdownWrap">
                 <label class="tag-filter-label" for="tagFilterSelect">Filter by:</label>
-                <select class="tag-filter-select" id="tagFilterSelect" aria-label="Filter by tag"></select>
+                <select class="select tag-filter-select" id="tagFilterSelect" aria-label="Filter by tag"></select>
             </div>
             
             <div class="projects-grid">
@@ -381,10 +381,10 @@ function getProjectIdFromHref(href) {
 }
 
 function setActiveButton(button) {
-    document.querySelectorAll(".tag-filter-button").forEach(btn => {
-        btn.classList.remove("active");
+    document.querySelectorAll(".tag").forEach(btn => {
+        btn.classList.remove("is-active");
     });
-    button.classList.add("active");
+    button.classList.add("is-active");
 }
 
 function applyFilter(tag) {
@@ -424,7 +424,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
     const allButton = document.createElement("button");
     allButton.type = "button";
-    allButton.className = "tag-filter-button active";
+    allButton.className = "tag is-active";
     allButton.textContent = "everything";
     allButton.addEventListener("click", function() {
         setActiveButton(allButton);
@@ -441,7 +441,7 @@ document.addEventListener("DOMContentLoaded", function() {
     sortedTags.forEach(tag => {
         const button = document.createElement("button");
         button.type = "button";
-        button.className = "tag-filter-button";
+        button.className = "tag";
         button.textContent = tag;
         button.addEventListener("click", function() {
             setActiveButton(button);
@@ -461,7 +461,7 @@ document.addEventListener("DOMContentLoaded", function() {
         if (selectedTag === "all") {
             setActiveButton(allButton);
         } else {
-            const matchingButton = Array.from(document.querySelectorAll(".tag-filter-button"))
+            const matchingButton = Array.from(document.querySelectorAll(".tag"))
                 .find(button => button.textContent === selectedTag);
             if (matchingButton) {
                 setActiveButton(matchingButton);

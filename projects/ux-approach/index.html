@@ -26,7 +26,7 @@
     <div id="wrap">
         <div class="project-content">
             <div class="language-selector">
-                <select class="language-dropdown" id="languageSelector" onchange="switchLanguage(this.value)">
+                <select class="select" id="languageSelector" onchange="switchLanguage(this.value)">
                     <option value="en">English</option>
                     <option value="es">Español</option>
                     <option value="ca">Català</option>
@@ -50,7 +50,7 @@
                 <p>Below is an outline of how I typically work:</p>
 
                 <div id="workflow-graphic" style="display: flex; justify-content: center; align-items: center; margin: 30px 0; gap: 10px;">
-                    <span class="boxed">Understand<br/>problems</span> <span class="bigger-text">→</span> <span class="boxed">Turn insight into <br/>product direction</span> <span class="bigger-text">→</span> <span class="boxed">Design &<br/>prototype</span> <span class="bigger-text">→</span> <span class="boxed">Validate &<br/>iterate</span>
+                    <span class="badge">Understand<br/>problems</span> <span class="bigger-text">→</span> <span class="badge">Turn insight into <br/>product direction</span> <span class="bigger-text">→</span> <span class="badge">Design &<br/>prototype</span> <span class="bigger-text">→</span> <span class="badge">Validate &<br/>iterate</span>
                 </div>
 
                 <h3>Understanding customers and their problems</h3>
@@ -66,7 +66,7 @@
             </div>
 
             <div class="back-link">
-                <a href="javascript:history.back()" data-i18n="back_button">← Back</a>
+                <a class="button button--solid" href="javascript:history.back()" data-i18n="back_button">← Back</a>
             </div>
         </div>
     </div>
@@ -85,7 +85,7 @@ const enDescription = `
 <p>Below is an outline of how I typically work:</p>
 
 <div id="workflow-graphic" style="display: flex; justify-content: center; align-items: center; margin: 30px 0; gap: 10px;">
-    <span class="boxed">Understand<br/>problems</span> <span class="bigger-text">&rarr;</span> <span class="boxed">Turn insight into <br/>product direction</span> <span class="bigger-text">&rarr;</span> <span class="boxed">Design &amp;<br/>prototype</span> <span class="bigger-text">&rarr;</span> <span class="boxed">Validate &amp;<br/>iterate</span>
+    <span class="badge">Understand<br/>problems</span> <span class="bigger-text">&rarr;</span> <span class="badge">Turn insight into <br/>product direction</span> <span class="bigger-text">&rarr;</span> <span class="badge">Design &amp;<br/>prototype</span> <span class="bigger-text">&rarr;</span> <span class="badge">Validate &amp;<br/>iterate</span>
 </div>
 
 <h3>Understanding customers and their problems</h3>
@@ -110,7 +110,7 @@ const esDescription = `
 <p>A continuaci\u00f3n, un resumen de c\u00f3mo suelo trabajar:</p>
 
 <div id="workflow-graphic" style="display: flex; justify-content: center; align-items: center; margin: 30px 0; gap: 10px;">
-    <span class="boxed">Entender<br/>problemas</span> <span class="bigger-text">&rarr;</span> <span class="boxed">Convertir insights en<br/>direcci\u00f3n de producto</span> <span class="bigger-text">&rarr;</span> <span class="boxed">Dise\u00f1o y<br/>prototipado</span> <span class="bigger-text">&rarr;</span> <span class="boxed">Validaci\u00f3n<br/>e iteraci\u00f3n</span>
+    <span class="badge">Entender<br/>problemas</span> <span class="bigger-text">&rarr;</span> <span class="badge">Convertir insights en<br/>direcci\u00f3n de producto</span> <span class="bigger-text">&rarr;</span> <span class="badge">Dise\u00f1o y<br/>prototipado</span> <span class="bigger-text">&rarr;</span> <span class="badge">Validaci\u00f3n<br/>e iteraci\u00f3n</span>
 </div>
 
 <h3>Entender a los usuarios y sus problemas</h3>
@@ -135,7 +135,7 @@ const caDescription = `
 <p>A continuaci\u00f3, un resum de com acostumo a treballar:</p>
 
 <div id="workflow-graphic" style="display: flex; justify-content: center; align-items: center; margin: 30px 0; gap: 10px;">
-    <span class="boxed">Entendre<br/>problemes</span> <span class="bigger-text">&rarr;</span> <span class="boxed">Convertir insights en<br/>direcci\u00f3 de producte</span> <span class="bigger-text">&rarr;</span> <span class="boxed">Disseny i<br/>prototipat</span> <span class="bigger-text">&rarr;</span> <span class="boxed">Validaci\u00f3<br/>i iteraci\u00f3</span>
+    <span class="badge">Entendre<br/>problemes</span> <span class="bigger-text">&rarr;</span> <span class="badge">Convertir insights en<br/>direcci\u00f3 de producte</span> <span class="bigger-text">&rarr;</span> <span class="badge">Disseny i<br/>prototipat</span> <span class="bigger-text">&rarr;</span> <span class="badge">Validaci\u00f3<br/>i iteraci\u00f3</span>
 </div>
 
 <h3>Entendre els usuaris i els seus problemes</h3>

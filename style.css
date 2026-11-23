@@ -40,11 +40,12 @@ h3
 .follow
 {
     float: left;
-    margin-right: 10px;
+    margin-right: var(--space-sm);
 }
 
 
-a:link, a:visited, a:hover, a:active {color: var(--text-primary);}
+/* Plain element selector, so component classes (e.g. .button) can override it */
+a {color: var(--text-primary);}
 
 #flex-container
 {
@@ -54,7 +55,7 @@ a:link, a:visited, a:hover, a:active {color: var(--text-primary);}
     position: absolute;
     height: 100%;
     width: 100%;
-    z-index: 20;
+    z-index: var(--z-content);
 }
 
 #wrap
@@ -74,57 +75,150 @@ a:link, a:visited, a:hover, a:active {color: var(--text-primary);}
 
 #header, #footer
 {
-    margin-bottom: 5px;
-    padding-left: 20px;
-    padding-right: 20px;
+    margin-bottom: var(--space-xs);
+    padding-left: var(--space-lg);
+    padding-right: var(--space-lg);
     background-color: var(--surface-inverse);
     color: var(--text-inverse);
 }
 
 #footer
 {
-    padding-top: 10px;
-    padding-bottom: 10px;
+    padding-top: var(--space-sm);
+    padding-bottom: var(--space-sm);
 }
 
-
-.nounderline
-{
-    text-decoration: none;
-}
 
 #links
 {
     display: flex;
     flex-direction: column;
+    gap: var(--space-xs);
 }
 
 #ext_links
 {
     display: block;
-    margin-bottom: 10px;
+    margin-bottom: var(--space-sm);
 }
 
-.link
+
+/* ============================================================
+   Components
+   ============================================================ */
+
+/* Button: outline by default; .button--solid is filled.
+   Hover/focus inverts the colors. */
+.button
 {
-    border-radius: 0px;
-	background-color: transparent;
+    display: inline-block;
+    padding: var(--space-sm) var(--space-md);
+    border: var(--border-width) solid var(--border);
+    border-radius: var(--radius);
+    background-color: transparent;
     color: var(--text-primary);
-    padding: 5px;
-    padding-bottom: 6px;
-    padding-left: 9px;
-    padding-right: 9px;
+    font-family: var(--font-body);
+    font-size: var(--font-size-body);
+    font-weight: var(--font-weight-regular);
     line-height: var(--line-height-tight);
-    margin-bottom: 5px;
-    border: 1px solid var(--border);
+    text-decoration: none;
+    cursor: pointer;
 }
 
-.link:hover, .link_hover
+.button:hover,
+.button:focus-visible
 {
     background-color: var(--surface-inverse);
     color: var(--text-inverse);
-    border: 1px solid var(--border);
-    /* transition: background-color 500ms ease-out;*/
+    text-decoration: none;
+}
+
+.button--solid
+{
+    background-color: var(--surface-inverse);
+    color: var(--text-inverse);
+}
+
+.button--solid:hover,
+.button--solid:focus-visible
+{
+    background-color: var(--surface-page);
+    color: var(--text-primary);
+}
+
+/* Tag: a filter chip. .is-active marks the selected one. */
+.tag
+{
+    padding: var(--space-sm) var(--space-md);
+    border: var(--border-width) solid var(--border-subtle);
+    border-radius: var(--radius);
+    background-color: var(--surface-raised);
+    color: var(--text-primary);
+    font-family: var(--font-display);
+    font-size: var(--font-size-xs);
+    line-height: var(--line-height-tight);
+    cursor: pointer;
+    transition: all var(--duration-fast) ease;
+}
+
+.tag:hover
+{
+    border-color: var(--border);
+}
+
+.tag.is-active
+{
+    background-color: var(--surface-inverse);
+    color: var(--text-inverse);
+    border-color: var(--border);
+}
+
+/* Select: a dropdown menu, styled like an outline button. */
+.select
+{
+    padding: var(--space-xs) var(--space-sm);
+    border: var(--border-width) solid var(--border);
+    border-radius: var(--radius);
+    background-color: transparent;
+    color: var(--text-primary);
+    font-family: var(--font-display);
+    font-size: var(--font-size-xs);
+    line-height: var(--line-height-tight);
+    cursor: pointer;
+}
+
+.select:hover
+{
+    background-color: var(--surface-page);
+}
+
+.select option
+{
+    background-color: var(--surface-inverse);
+    color: var(--text-inverse);
+    padding: var(--space-xs);
+}
+
+/* Focus ring: shown when an element is focused with the keyboard
+   (:focus-visible), not on mouse clicks. Shared by everything clickable. */
+.button:focus-visible,
+.tag:focus-visible,
+.select:focus-visible,
+.project-card:focus-visible
+{
+    outline: var(--focus-ring-width) solid var(--border);
+    outline-offset: var(--focus-ring-offset);
+}
+
+/* Badge: a static boxed label (not clickable). */
+.badge
+{
+    display: inline-block;
+    padding: var(--space-xs) var(--space-sm);
+    border: var(--border-width) solid var(--border);
+    border-radius: var(--radius);
+    background-color: var(--surface-page);
+    font-weight: var(--font-weight-bold);
 }
 
 
@@ -136,14 +230,9 @@ a:link, a:visited, a:hover, a:active {color: var(--text-primary);}
     	padding-top: 0;
         width: 100%;
     }
-    .link
-    {
-        padding: 10px;
-        display: block;
-    }
     #links
     {
-        margin-bottom: 5px;
+        margin-bottom: var(--space-xs);
     }
 }
 

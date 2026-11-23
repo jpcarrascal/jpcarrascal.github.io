@@ -40,7 +40,7 @@ Each project page follows this standardized structure:
             <div class="project-content">
                 <!-- Language selector -->
                 <div class="language-selector">
-                    <select class="language-dropdown" id="languageSelector" onchange="switchLanguage(this.value)">
+                    <select class="select" id="languageSelector" onchange="switchLanguage(this.value)">
                         <option value="en">English</option>
                         <option value="es">Español</option>
                         <option value="ca">Català</option>
@@ -118,7 +118,7 @@ The `project-template.css` provides these pre-styled components:
 
 ### Interactive Elements
 - `.language-selector` - Language dropdown container
-- `.language-dropdown` - Styled dropdown for language selection
+- `.select` - Dropdown component (language menu), defined in style.css
 
 ## Creating a New Project Page
 
