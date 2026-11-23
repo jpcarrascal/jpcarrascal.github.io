@@ -69,6 +69,7 @@ In `projects/index.html`:
       </div>
   </a>
   ```
+- If the card links to an external URL instead of `{slug}/`, add `data-project-id="{slug}"` to the `<a>`: the tag filter reads the project ID from the href's last path segment otherwise, and the card would never match its tags.
 - Placement: cards are roughly newest-first. Insert the new card next to others from the same/adjacent year rather than at a fixed position — check the surrounding years and use judgment.
 - Add an entry to `const projectTagsById = {...}` keyed by slug, e.g. `"{slug}": ["tag1", "tag2"],`. For tags: show the user the existing tag vocabulary already in that dict and ask them to pick from it, but allow introducing a genuinely new tag if none fit — don't silently invent tags without asking.
 

@@ -254,7 +254,7 @@
                     </div>
                 </a>
                 
-                <a class="project-card" href="https://vimeo.com/20903440" target="_blank">
+                <a class="project-card" data-project-id="bicing-spider" href="https://vimeo.com/20903440" target="_blank">
                     <img src="bicing-spider/images/main.jpg" alt="Bicing Spider">
                     <div class="project-info">
                         <h3>Bicing Spider (2011)</h3>
@@ -262,7 +262,7 @@
                     </div>
                 </a>
                 
-                <a class="project-card" href="https://cdm.link/max-for-live-solutions-full-control-surface-support-mac-trackpad-as-controller/" target="_blank">
+                <a class="project-card" data-project-id="trackpad-controller" href="https://cdm.link/max-for-live-solutions-full-control-surface-support-mac-trackpad-as-controller/" target="_blank">
                     <img src="trackpad-controller/images/main.jpg" alt="Macbook trackpad as controller for Ableton Live">
                     <div class="project-info">
                         <h3>Macbook Trackpad Controller (2010)</h3>
@@ -340,7 +340,7 @@ const projectTagsById = {
     "syntheo": ["web", "sonification"],
     "exposition-aperture": ["video"],
     "sonar-ai-playground": ["audience participation", "installation", "ai"],
-    "opportunity-mapper": ["web", "ux/hci research"],
+    "opportunity-mapper": ["web", "ux/hci research", "data visualization"],
     "intangible": ["installation", "hardware"],
     "hootbeat": ["wearables", "audience participation", "music"],
     "count-me-in": ["web", "mobile", "audience participation", "music"],
@@ -357,7 +357,7 @@ const projectTagsById = {
     "shape-emotions": ["interface design", "ux/hci research"],
     "bluemo": ["music", "hardware"],
     "bicing-spider": ["data visualization"],
-    "trackpad-controller": ["music"],
+    "trackpad-controller": ["music", "interface design"],
     "random-controller": ["music", "hardware", "interface design"],
     "multitouchmixer": ["music", "ux/hci research"],
     "augmented-guitar": ["music", "hardware"],
@@ -411,7 +411,8 @@ document.addEventListener("DOMContentLoaded", function() {
     const filterSelect = document.getElementById("tagFilterSelect");
 
     cards.forEach(card => {
-        const projectId = getProjectIdFromHref(card.getAttribute("href"));
+        // External cards carry data-project-id; local ones use their folder name
+        const projectId = card.dataset.projectId || getProjectIdFromHref(card.getAttribute("href"));
         const tags = projectTagsById[projectId] || [];
         card.dataset.projectId = projectId;
         card.dataset.tags = tags.join("|");
