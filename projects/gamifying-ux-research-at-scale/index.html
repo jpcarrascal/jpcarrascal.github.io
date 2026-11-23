@@ -38,26 +38,26 @@
                 <div class="project-authors">JP Carrascal, Jacob Freiberg, Kelly Krout, Irina Smoke (2019)</div>
             </div>
 
-            <div style="text-align: center; margin-bottom: 30px;" data-i18n="subtitle">
+            <div class="project-subtitle" data-i18n="subtitle">
                 A gamified research experience at the Microsoft Build Conference
             </div>
 
-            <div style="text-align: center; margin-bottom: 30px;">
-                <img src="images/gamifying-booth.jpg" alt="UX research booth at Microsoft Build 2019" style="max-width: 100%; height: auto;" />
+            <div class="project-media">
+                <img src="images/gamifying-booth.jpg" alt="UX research booth at Microsoft Build 2019" />
             </div>
 
-            <div style="text-align: justify; margin-bottom: 30px;" data-i18n="description">
+            <div class="project-text" data-i18n="description">
                 <p>At Microsoft Build 2019, we designed a multi-step research experience to engage developers and gather feedback amid the many competing activities at the conference. Visitors could take unmoderated studies, complete a scavenger-hunt-style Booth Quest, earn tokens, opt into a leaderboard, and exchange tokens for prizes.</p>
-                <div style="text-align: center; margin: 30px 0;">
+                <div class="project-media">
                     <table class="figure-table">
-                        <tr><td><img src="images/gamifying-workflow.jpg" alt="Participant journey through the gamified research activities" style="max-width: 100%; height: auto;" /></td></tr>
+                        <tr><td><img src="images/gamifying-workflow.jpg" alt="Participant journey through the gamified research activities" /></td></tr>
                         <tr><td class="figure-caption">Participant journey across study and compensation activities.</td></tr>
                     </table>
                 </div>
                 <p>I built the software platform behind the experience: web apps for the study menu, leaderboard, and administration, supported by an API, database, and virtual machine. Since UserTesting.com did not provide an API for study data, I built a browser-extension scraper that collected session data and sent it to our system.</p>
-                <div style="text-align: center; margin: 30px 0;">
+                <div class="project-media">
                     <table class="figure-table">
-                        <tr><td><img src="images/gamifying-architecture.jpg" alt="System architecture for the research booth applications and data services" style="max-width: 100%; height: auto;" /></td></tr>
+                        <tr><td><img src="images/gamifying-architecture.jpg" alt="System architecture for the research booth applications and data services" /></td></tr>
                         <tr><td class="figure-caption">System architecture connecting the study menu, leaderboard, API, database, and data scraper.</td></tr>
                     </table>
                 </div>
@@ -126,8 +126,8 @@ function switchLanguage(lang) {
         const key = element.getAttribute('data-i18n');
         if (translations[lang] && translations[lang][key]) {
             if (key === 'description') {
-                const workflowFigure = `<div style="text-align: center; margin: 30px 0;"><table class="figure-table"><tr><td><img src="images/gamifying-workflow.jpg" alt="Participant journey through the gamified research activities" style="max-width: 100%; height: auto;" /></td></tr><tr><td class="figure-caption">${translations[lang].workflow_caption}</td></tr></table></div>`;
-                const architectureFigure = `<div style="text-align: center; margin: 30px 0;"><table class="figure-table"><tr><td><img src="images/gamifying-architecture.jpg" alt="System architecture for the research booth applications and data services" style="max-width: 100%; height: auto;" /></td></tr><tr><td class="figure-caption">${translations[lang].architecture_caption}</td></tr></table></div>`;
+                const workflowFigure = `<div class="project-media"><table class="figure-table"><tr><td><img src="images/gamifying-workflow.jpg" alt="Participant journey through the gamified research activities" /></td></tr><tr><td class="figure-caption">${translations[lang].workflow_caption}</td></tr></table></div>`;
+                const architectureFigure = `<div class="project-media"><table class="figure-table"><tr><td><img src="images/gamifying-architecture.jpg" alt="System architecture for the research booth applications and data services" /></td></tr><tr><td class="figure-caption">${translations[lang].architecture_caption}</td></tr></table></div>`;
                 let paragraphIndex = 0;
                 element.innerHTML = translations[lang][key].replace(/<\/p>/g, closingTag => {
                     paragraphIndex += 1;

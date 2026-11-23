@@ -37,6 +37,13 @@ h3
     font-size: var(--font-size-lg);
 }
 
+hr
+{
+    border: none;
+    border-top: var(--border-width) solid var(--border);
+    margin: var(--space-2xl) 0;
+}
+
 .follow
 {
     float: left;

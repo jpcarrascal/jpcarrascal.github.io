@@ -108,13 +108,21 @@ The `project-template.css` provides these pre-styled components:
 - `.project-header` - Header section with title and authors
 - `.project-title` - Main project title styling
 - `.project-authors` - Author names styling
+- `.project-subtitle` - Centered one-line subtitle under the header
+- `.project-note` - Centered italic note
+- `.project-text` - Justified body text block
+- `.project-section` - Generic block (e.g. a links list) with space below
 
 ### Media Classes
 - `.image-row` - Container for image galleries
 - `.image-row-item` - Individual image container (50% width each)
 - `.media-row` - Container for mixed media (video + image)
 - `.media-row-item` - Individual media container (50% width each)
-- `.full-width-image` - Full-width standalone images
+- `.project-media` - Centered wrapper for an image, video or figure
+- `.media-narrow` - Image shown narrower than the content column
+- `.video` - Embedded video (full width, fixed aspect ratio)
+- `.badge-row` - Row of badges and arrows (diagram)
+- Images inside `.project-content` never overflow; no inline sizing needed
 
 ### Interactive Elements
 - `.language-selector` - Language dropdown container
@@ -188,7 +196,7 @@ The `project-template.css` provides these pre-styled components:
 
 ### Text Content
 ```html
-<div style="text-align: center; margin-bottom: 30px;" data-i18n="description">
+<div class="project-text" data-i18n="description">
     Your project description here.
 </div>
 ```
@@ -231,6 +239,7 @@ See existing projects for reference:
 
 ## Maintenance
 
+- **Design tokens** (colors, type, spacing, sizes) are in `/tokens.css`; components (button, tag, select, badge) are in `/style.css`
 - **Shared styles** are in `project-template.css` - modify once, affects all projects
-- **Project-specific styles** can be added inline or in separate CSS files
+- **No inline styles and no raw values**: use the classes above; if something new is needed, add a class that uses tokens
 - **Keep consistency** by using the provided CSS classes rather than custom styling

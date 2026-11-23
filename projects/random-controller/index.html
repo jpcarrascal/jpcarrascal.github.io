@@ -38,31 +38,31 @@
                 <div class="project-authors">JP Carrascal (2010)</div>
             </div>
 
-            <div style="text-align: center; font-style: italic; margin-bottom: 30px;" data-i18n="note">
+            <div class="project-note" data-i18n="note">
                 (This was my final project for the Real Time Interaction course at the Universitat Pompeu Fabra, in 2010.)
             </div>
 
-            <div style="text-align: center; margin-bottom: 30px;" data-i18n="subtitle">
+            <div class="project-subtitle" data-i18n="subtitle">
                 A simple experiment on using dice-rolling as a control source
             </div>
 
-            <div style="text-align: center; margin-bottom: 30px;">
-                <img src="images/main.jpg" alt="Random Controller" style="max-width: 100%; height: auto;" />
+            <div class="project-media">
+                <img src="images/main.jpg" alt="Random Controller" />
             </div>
 
-            <div style="text-align: justify; margin-bottom: 30px;" data-i18n="description_intro">
+            <div class="project-text" data-i18n="description_intro">
                 <p>In “Interactive composing: an overview” [1], Joel Chadabe calls complexity an important quality of a random number generator, a fundamental component of the response system in his interactive performances. He explains it in terms of throwing dice: there’s no easy way to describe – or predict – the sequence of numbers obtained by that action. The concept of complexity is quite clear in that case, and as a consequence, randomness is far more complicated to generate with a machine than with an organic system. In the works “Solo” and “Rhythms”, which he explains in the article, the computers used for performance include some degree of randomness in their response algorithms, and the performer executes control actions, creating a dialog. That way, the performance develops in an interactive way.</p><p>The example of throwing dice, and the notion of a controller, somehow made a short circuit in my head. Measuring nature or organic systems, it’s not so difficult to get randomly generated values. Nature is full of them. Also, in the case of human beings, randomness is even an important component of one of our favorite leisure activities: gaming.</p><p>Throwing dice, drawing a card from a shuffled deck or spinning a roulette wheel are simple notions of randomness, at least outside the mathematical or academic world. They are also actions that can be controlled to some extent, but their results can’t. So my thinking when I was reading Chadabe’s article was: “why not control randomness in a simple, direct way?”</p>
             </div>
-            <div style="text-align: justify; margin-bottom: 30px;" data-i18n="description_recipe">
+            <div class="project-text" data-i18n="description_recipe">
                 <h3>Recipe for a random controller</h3><p>Chadabe’s mention of dice rolling seemed interesting as a feasible way of implementing a user-controlled random number generator. It’s of course a complicated way of looking at a very simple process, but I wanted to squeeze some juice out of it, so I took these ingredients:</p><ul><li>Some dice</li><li>An Ikea lamp</li><li>A webcam (I chose a Sony PlayStation Eye [2], which has excellent specifications for its price)</li><li>Paper printed with a scaled-down version of reacTIVision fiducials [3]</li><li>Glue</li><li>reacTIVision software [4]</li><li>Pure Data [5]</li><li>SimpleSynth synthesizer [6]</li></ul><p>The bricolage work was basically to transform ordinary dice into “Fidiceals”: dice with reacTIVision fiducials on their faces instead of dots. I printed the fiducials at the right size and glued them to the faces of the dice. The rest is mostly software.</p>
             </div>
-            <div style="text-align: justify; margin-bottom: 30px;" data-i18n="description_how">
+            <div class="project-text" data-i18n="description_how">
                 <h3>How it works</h3><p>reacTIVision generates TUIO (OSC) messages [7][8], which are received by Pure Data. Pure Data runs some patches that do these tasks:</p><ul><li>Run 3 simple sequencers at a user-defined tempo.</li><li>Generate a 4-note bass line, each note chosen from six possible notes.</li><li>Select between 6 different patterns for four instruments of a drum kit: bass drum, snare drum, closed hi-hat and open hi-hat. Each die determines the pattern of one instrument.</li><li>Select the 16 notes of a lead melodic line from the measured position of each die and combinations of those values.</li></ul><p>All those notes are sent as MIDI messages to SimpleSynth, which generates the final sound.</p><p>At the beginning of each measure, the Pure Data patch detects how many dice are present, their position and number (the visible fiducial), and selects the corresponding notes and patterns. This way, a dynamically changing composition can be made, and modified by throwing dice.</p>
             </div>
-            <div style="text-align: justify; margin-bottom: 30px;" data-i18n="description_hardware">
+            <div class="project-text" data-i18n="description_hardware">
                 <h3>Hardware</h3><p>To keep a limited zone for placing the dice, and to try to get good illumination, I first built the setup around the Ikea lamp. However, it was hard to get uniform illumination with that configuration, so I finally got rid of the light bulb part of the lamp and kept just the base and the lower half of its “spine” (it can be unscrewed and separated). In the end, I used ambient illumination.</p><p>And that’s all. So, let the game begin!</p>
             </div>
-            <div style="text-align: justify; margin-bottom: 30px;" data-i18n="description_conclusions">
+            <div class="project-text" data-i18n="description_conclusions">
                 <h3>Conclusions</h3><p>The simplicity of this work illustrates the concept of interactivity in the sense that you can perform some actions without knowing exactly what the system is going to give back to you (within some logical limits, of course). However, one can directly manipulate the random number generating mechanism, which gives an interesting feeling of control. Somehow it’s like “randomness in your hands”, because a tangible interface is used to directly “handle” and “touch” the randomness generation mechanism. I believe many other similar works could be derived from this one.</p>
             </div>
 

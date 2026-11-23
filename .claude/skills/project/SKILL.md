@@ -45,9 +45,10 @@ Build `projects/<slug>/index.html` (slug = kebab-case of the title unless the us
 - Identical `<head>` boilerplate (GA snippet, viewport/charset meta, `<title>{Title} | JP Carrascal</title>`, `../../style.css`, Lato font, `../project-template.css`).
 - Identical language-selector `<select>` block.
 - `.project-header` with `h1.project-title[data-i18n=title]` and `.project-authors`.
-- Subtitle div (`data-i18n=subtitle`), centered.
-- Cover image, centered, `style="max-width: 100%; height: auto;"`.
-- Description div (`data-i18n=description`), `text-align: justify`.
+- Subtitle: `<div class="project-subtitle" data-i18n="subtitle">`.
+- Cover image inside `<div class="project-media">` (no inline sizing: images in `.project-content` are already fluid).
+- Description: `<div class="project-text" data-i18n="description">`.
+- **Never use inline `style=""` attributes or raw design values.** Use the classes listed in `projects/README.md` (`.project-section`, `.project-media`, `.video`, etc.); if a new style is needed, add a class in `project-template.css` that uses tokens from `tokens.css`.
 - Any optional blocks requested (gallery row, links, publication, exhibition), in that rough order — but match whatever order makes sense for the actual content.
 - `.back-link` with `data-i18n=back_button` (`← Back` / `← Atrás` / `← Enrere`).
 - The `<script>` block: a `translations` object keyed `en`/`es`/`ca`, each containing every `data-i18n` key used on the page. `switchLanguage()` must `innerHTML` any key whose content includes HTML markup (e.g. `<em>`, `<br>`, links) and `textContent` everything else — check the `if (key === '...')` condition in the copied script and extend it to cover every HTML-bearing key you added. The `DOMContentLoaded` handler and the rest of `switchLanguage` are boilerplate — copy verbatim.

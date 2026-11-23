@@ -78,3 +78,16 @@
   - Badges: square corners (were 4px radius), per the plan's radius 0.
 - **Beyond the plan:** tokens were also added for border width, radius, motion (durations, hover opacity, card filters), layout widths, media heights and `z-index`, so that no raw design values remain. Only the media query breakpoints are still raw numbers, because CSS can't use variables in media queries.
 - **Keyboard focus ring (not in the plan):** the old language menu removed the focus outline (`outline: none`), which hid keyboard focus. Buttons, tags, selects and project cards now share one focus ring, 2px in the border color with a 4px offset (`--focus-ring-width`, `--focus-ring-offset`). It appears only for keyboard focus (`:focus-visible`), not on mouse clicks.
+
+## Step 6: inline styles
+
+- **All 199 inline styles removed** from site pages, 6 of them inside JavaScript translation strings. The plan said "a few shared classes"; the replacements are:
+  - Block classes: `.project-subtitle`, `.project-note`, `.project-text`, `.project-section`, `.project-media`, `.video`, `.badge-row`, `.media-narrow`.
+  - Base rules, which need no class: images in `.project-content` are fluid, `hr` is styled globally, and consecutive citations in a publication box get `--space-md` between them.
+- **Two media wrapper styles merged into `.project-media`** (`margin: 32px 0`): one had only a bottom margin, the other had top and bottom. The difference is mostly invisible, because vertical margins between stacked blocks collapse.
+- **New tokens:** `--width-media-narrow` (620px, the two Count-Me-In figures that were deliberately shown smaller) and `--aspect-video` (560 / 400).
+- **Small visible changes:**
+  - Images inside figure tables are now capped at `--width-media` (720px), since the inline `max-width: 100%` no longer overrides `.figure-table img`. This affects at most ~30px, on wide images only.
+  - Spacing rounded to the 8px grid: 20px → 32px around the Redmond photo on `ux-approach`; 15px → 16px between citations; 10px → 8px in the badge row; 40px → 48px around `ux-approach` dividers.
+- **Docs updated so new pages don't reintroduce inline styles:** `projects/README.md` (class list, example, "no inline styles" rule) and the `project` skill. The README also listed a `.full-width-image` class that never existed; it was removed.
+- **Untouched:** `print/`, `print-es/` and `apps/`, which are standalone pages outside the design system.

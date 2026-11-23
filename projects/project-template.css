@@ -34,6 +34,60 @@ a:hover {
     box-sizing: border-box;
 }
 
+/* Images never overflow the content column. More specific rules below
+   (cards, galleries, figures) override this. */
+.project-content img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Page building blocks (replace repeated inline styles) */
+.project-subtitle {
+    text-align: center;
+    margin-bottom: var(--space-xl);
+}
+
+.project-note {
+    text-align: center;
+    font-style: italic;
+    margin-bottom: var(--space-xl);
+}
+
+.project-text {
+    text-align: justify;
+    margin-bottom: var(--space-xl);
+}
+
+.project-section {
+    margin-bottom: var(--space-xl);
+}
+
+/* A centered image, video or figure, with space above and below */
+.project-media {
+    display: block;
+    text-align: center;
+    margin: var(--space-xl) 0;
+}
+
+/* Two classes, so it beats ".project-content img" and ".figure-table img" */
+.project-content .media-narrow {
+    max-width: min(100%, var(--width-media-narrow));
+}
+
+.video {
+    width: 100%;
+    aspect-ratio: var(--aspect-video);
+}
+
+/* A row of badges and arrows (e.g. a workflow diagram) */
+.badge-row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: var(--space-sm);
+    margin: var(--space-xl) 0;
+}
+
 /* Shared projects listing styles */
 .projects-grid {
     display: grid;
@@ -406,6 +460,11 @@ a:hover {
     line-height: var(--line-height-relaxed);
     margin-bottom: 0;
     text-align: justify;
+}
+
+/* Several citations in one box */
+.publication-section p + p {
+    margin-top: var(--space-md);
 }
 
 .publication-section a {

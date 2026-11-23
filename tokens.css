@@ -66,6 +66,8 @@
   /* Layout */
   --width-content: 800px;   /* max width of page content */
   --width-media: 720px;     /* max width of figures */
+  --width-media-narrow: 620px; /* figures shown smaller than their native size */
+  --aspect-video: 560 / 400;   /* embedded videos */
   --height-media-sm: 200px; /* card images; media rows on narrow screens */
   --height-media-md: 250px; /* media rows (video + image) */
   --height-media-lg: 300px; /* image rows (galleries) */
