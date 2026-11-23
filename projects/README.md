@@ -112,7 +112,7 @@ The `project-template.css` provides these pre-styled components:
 - `.project-note` - Centered italic note
 - `.project-text` - Justified body text block
 - `.project-section` - Generic block with space below
-- `.publication-section` - The single details box at the end of a page: Links, Publication(s), then Exhibitions/Releases/etc., each under an `h3` title ending in a colon, with every item as an `<li>` in a `<ul>` (even a single one)
+- `.publication-section` - The single details box at the end of a page: Links, Publication(s), then Exhibitions/Releases/etc., each under an `h3` title ending in a colon, with every item as an `<li>` in a `<ul>` (even a single one). The name is historical: the box first held only publications, and the name was kept on purpose
 
 ### Media Classes
 - `.image-row` - Container for image galleries

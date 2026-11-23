@@ -444,7 +444,9 @@ a:hover {
     font-size: var(--font-size-sm);
 }
 
-/* Publication section styling */
+/* Details box: the single box at the end of a project page holding its
+   Links, Publication(s), Exhibitions, etc. The name is historical (it first
+   held only publications) and was kept on purpose; see projects/README.md. */
 .publication-section {
     margin-top: var(--space-xl);
     padding: var(--space-lg);
@@ -452,9 +454,6 @@ a:hover {
     border-radius: var(--radius);
     border: var(--border-width) solid var(--border);
 }
-
-/* Make entire project cards clickable without showing a button */
-/* Cards are anchors; overlay styles removed */
 
 .publication-section h3 {
     margin: 0 0 var(--space-sm);

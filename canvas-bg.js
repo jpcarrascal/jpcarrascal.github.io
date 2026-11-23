@@ -58,7 +58,7 @@ window.CanvasBg = (function () {
   document.body.prepend(canvas);
 
   function liftElement(el) {
-    if (el === canvas) return;
+    if (el === canvas || el.tagName === "SCRIPT") return;
     const cs = window.getComputedStyle(el);
     if (cs.zIndex === "auto" || cs.zIndex === "" || cs.zIndex === token("--z-background")) {
       if (cs.position === "static") {
