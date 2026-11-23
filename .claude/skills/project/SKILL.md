@@ -28,9 +28,11 @@ Before doing anything, read at least one existing project as a live reference �
 ### 2. Ask for optional fields — don't assume absence, ask explicitly
 
 - **Additional gallery images** — a 3-photo (or fewer) row like `accidental`'s Sant Agustí figure, using `.image-row` / `.image-row-item` inside a `.figure-table` with a `.figure-caption` (`data-i18n`'d if it's a short original sentence; leave untranslated if it's just a venue name/date).
-- **Links** — either the simple one-liner style (`accidental`: `<h3 data-i18n="links_label">Links:</h3><p><a href="...">...</a></p>`) or the list style (`augmented-guitar`/`shape-emotions`: `<h2 data-i18n="links-title">Links</h2><ul><li><a ...>Label</a></li></ul>`). Pick whichever fits the number of links; use the list style for 2+.
-- **Publication(s)** — academic citation block: `<div class="publication-section"><h3 data-i18n="publication_label">Publication:</h3><p>Full citation text with a DOI/link</p></div>`. The citation text itself is **never translated** — only the label (`Publication:`/`Publicación:`/`Publicació:`) changes across languages, matching every existing project with a publication.
-- **Exhibition(s)** — `<h3 data-i18n="exhibition_label">Exhibition(s):</h3>` followed by either a single `<p data-i18n="exhibition_text">` (translate it if it's an original short sentence) or a `<ul><li>` list of venue/date entries (leave list items untranslated — they're proper nouns and dates, matching `intangible`).
+- **Links, Publication(s), Exhibition(s)** all go in **one** box at the end of the page, `<div class="publication-section">`, never several boxes and never outside the box. Inside it, each section has an `<h3 data-i18n="...">` title ending in a colon (in all three languages), in this order:
+  1. **Links:** `<h3 data-i18n="links_label">Links:</h3>` then `<ul><li><a ...>Label</a></li></ul>`.
+  2. **Publication(s):** `<h3 data-i18n="publication_label">Publication:</h3><ul><li>Full citation with a DOI/link</li></ul>` (one `<li>` per citation). The citation text itself is **never translated**; only the label (`Publication:`/`Publicación:`/`Publicació:`) changes.
+  3. **Anything else** (Exhibition(s), Releases, Performances, Deployment): `<h3 data-i18n="exhibition_label">Exhibition(s):</h3>` followed by a `<ul>`: either one `<li data-i18n="exhibition_text">` (translate it if it's an original short sentence) or several `<li>` venue/date entries (leave list items untranslated, as in `intangible`).
+  **Every item under a title is an `<li>` in one `<ul>`, even if there is only one item** (no `<p>`, no `<br>`-separated lines). Omit sections the project doesn't have; omit the whole box if it has none. `spacebarman` and `count-me-in` are good multi-section references.
 
 ### 3. Translate to Spanish and Catalan
 

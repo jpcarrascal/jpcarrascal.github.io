@@ -105,3 +105,26 @@
   - Above 900px, the home column is `max(40%, --width-home-column)`, where `--width-home-column` is a new 28rem token. This fixes the wrap between 901 and 1030px.
   - Below 600px, the home title uses `--font-size-xl` (28.8px). It fits on one line on most phones but is tight at 360px.
 - **Still open, no change:** the dark theme has no distinct values for `--surface-raised` and `--border-hidden`. That's fine until a dark page needs them.
+
+## Follow-up: one details box per page
+
+- **End-of-page sections consolidated:** 19 project pages now have exactly one `.publication-section` box holding all their links, publications and exhibitions. Before, there were up to 3 boxes, or links sat outside any box.
+  - Pages that had more than one box: a-sense-of-surrounding, accidental, blesync, count-me-in, gamifying, intangible, reflex, spacebarman.
+  - Pages with links outside the box, now moved in: ble-midi-glove, haptics-cylindrical, lockdown, magicscroll, momc-controller, opportunity-mapper, shape-emotions, whammyphone.
+  - Pages whose box only needed its titles fixed: augmented-guitar, bluemo, syntheo.
+- **Consistent titles:** every section title is an `h3` ending in a colon, in all three languages. The large `h2` "Links" titles are gone.
+- **Standard order:** Links → Publication(s) → everything else (Exhibitions, Releases, Performances, Deployment). Some pages had this reversed.
+- **Spacing inside the box:** titles after the first get `--space-lg` above them, and the last item has no bottom margin.
+- **Class name kept:** `.publication-section`, by JP's choice, even though the box now holds more than publications.
+- **Fixed on the way:**
+  - opportunity-mapper had a stray `</div>` that closed the page container early.
+  - a-sense-of-surrounding and intangible had no translations for their "Exhibition(s)" titles, so they stayed in English.
+- **Not included:** hootbeat's "Demos" section is embedded videos, which is page content rather than links, so it stays where it is.
+- **Docs:** the `project` skill and `projects/README.md` now describe the single-box structure.
+- **Every item in the box is a bullet (later request):** under each title, all items (links, citations, exhibitions) are now `<li>` items in a single `<ul>`, even when there is only one. 20 sections on 16 pages changed:
+  - Single `<p>` items each became a one-item list.
+  - count-me-in's two citation paragraphs became one list.
+  - random-controller's `<br>`-separated references became 8 list items.
+  - Items with their own translation (`exhibition_text` on accidental and gamifying) kept their key, now on the `<li>`.
+- **Box list styling uses tokens:** title bottom margin `--space-sm` (was the browser default), list indent `--space-lg` (was the browser's 40px), `--space-sm` between items, and items keep `--font-size-md` and `--line-height-relaxed`. **Visible change:** citations are no longer justified, since left-aligned reads better in a list.
+- **Noted, not changed:** yo-soy-otro marks its "YouTube" and "IMDB" links for translation but has no translations for them. This is harmless: brand names stay as they are.
