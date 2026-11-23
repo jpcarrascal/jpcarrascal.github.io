@@ -178,15 +178,15 @@ a:hover {
 
 .tag-filter-label {
     font-size: 14px;
-    color: #222;
+    color: var(--color-ink);
     font-family: 'Lato', sans-serif;
     font-weight: 700;
 }
 
 .tag-filter-select {
-    border: 1px solid #c9c9c9;
-    background: #fff;
-    color: #222;
+    border: 1px solid var(--color-paper);
+    background: var(--color-white);
+    color: var(--color-ink);
     border-radius: 0;
     padding: 6px 10px;
     font-size: 14px;
@@ -195,9 +195,9 @@ a:hover {
 }
 
 .tag-filter-button {
-    border: 1px solid #c9c9c9;
-    background: #fff;
-    color: #222;
+    border: 1px solid var(--color-paper);
+    background: var(--color-white);
+    color: var(--color-ink);
     border-radius: 0;
     padding: 6px 16px;
     font-size: 14px;
@@ -209,13 +209,13 @@ a:hover {
 }
 
 .tag-filter-button:hover {
-    border-color: #8c8c8c;
+    border-color: var(--color-ink);
 }
 
 .tag-filter-button.active {
-    background: #222;
-    color: #fff;
-    border-color: #222;
+    background: var(--color-ink);
+    color: var(--color-white);
+    border-color: var(--color-ink);
 }
 
 .project-card.is-hidden {

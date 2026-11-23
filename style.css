@@ -1,44 +1,3 @@
-/*
-@font-face {
-  font-family: "GIll";
-  src: url("fonts/Gill Sans MT.ttf") format("truetype");
-}
-
-@font-face {
-  font-family: "Montserrat";
-  src: url("fonts/Montserrat-Bold.ttf") format("truetype");
-}
-*/
-
-
-:root {
-  --color-dark: #282828;
-  --color-light: #DEDEDE;
-  --color-lighter: #EEEEEE;
-}
-
-
-/*
-:root {
-  --color-dark: color(display-p3 0.158 0.294 0.509);
-  --color-light: color(display-p3 0.999 0.992 0.949);
-}
-*/
-
-/*
-:root {
-    --color-light: lab(98.647% -5.2601 21.875);
-    --color-dark: lab(25.285% -98.947 -44.961);
-}
-*/
-
-/*
-:root {
-  --color-dark: color(display-p3 0.322 0.111 0.822);
-  --color-light: hsl(170 0% 100%);
-}
-*/
-
 html
 {
     height: 100%;
@@ -50,7 +9,7 @@ html
 
 body
 {
-    background-color: var(--color-dark); /* #BBB; */
+    background-color: var(--color-dark);
     background-size: cover;
     padding: 0;
     width: 100%;

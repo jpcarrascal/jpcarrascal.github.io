@@ -1,0 +1,19 @@
+/*
+ * Design tokens: the single source of truth for raw design values.
+ * Loaded before every other stylesheet. Other CSS refers to these
+ * variables instead of writing values directly.
+ */
+
+:root {
+  /* Primitive colors: the whole palette. */
+  --color-ink: #282828;
+  --color-paper: #DEDEDE;
+  --color-paper-raised: #EEEEEE;
+  --color-white: #FFFFFF;
+
+  /* Legacy names, kept as aliases so existing rules keep working.
+     To be replaced by semantic tokens (step 3) and then removed. */
+  --color-dark: var(--color-ink);
+  --color-light: var(--color-paper);
+  --color-lighter: var(--color-paper-raised);
+}
