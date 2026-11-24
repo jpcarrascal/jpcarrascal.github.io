@@ -333,17 +333,17 @@
 <script>
 // English tags sourced from the canonical print/projects-config.json
 const projectTagsById = {
-    "accidental": ["music", "web"],
+    "accidental": ["music", "web", "interface design"],
     "chaotic-pedalboard": ["installation", "audience participation", "music"],
     "spacebarman": ["music"],
     "a-sense-of-surrounding": ["installation", "audience participation", "sonification"],
     "syntheo": ["web", "sonification"],
     "exposition-aperture": ["video"],
     "sonar-ai-playground": ["audience participation", "installation", "ai"],
-    "opportunity-mapper": ["web", "ux/hci research", "data visualization"],
+    "opportunity-mapper": ["web", "ux/hci research", "data visualization", "interface design"],
     "intangible": ["installation", "hardware"],
     "hootbeat": ["wearables", "audience participation", "music"],
-    "count-me-in": ["web", "mobile", "audience participation", "music"],
+    "count-me-in": ["web", "mobile", "audience participation", "music", "interface design"],
     "ble-midi-glove": ["wearables", "music"],
     "momc-controller": ["music", "hardware"],
     "lockdown": ["web", "ar/vr", "video"],
@@ -359,7 +359,7 @@ const projectTagsById = {
     "bicing-spider": ["data visualization"],
     "trackpad-controller": ["music", "interface design"],
     "random-controller": ["music", "hardware", "interface design"],
-    "multitouchmixer": ["music", "ux/hci research"],
+    "multitouchmixer": ["music", "ux/hci research", "interface design"],
     "augmented-guitar": ["music", "hardware"],
     "yo-soy-otro": ["music", "soundtrack"],
     "el-fin-de-una-dictadura": ["music", "soundtrack"],
@@ -395,6 +395,30 @@ function applyFilter(tag) {
     });
 }
 
+// URL-friendly version of a tag: "ux/hci research" -> "ux-hci-research"
+function tagToSlug(tag) {
+    return tag.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "");
+}
+
+// Reads ?tag=... from the URL. Missing or unknown tags mean "all".
+function getTagFromUrl(tags) {
+    const slug = tagToSlug(new URLSearchParams(window.location.search).get("tag") || "");
+    return tags.find(tag => tagToSlug(tag) === slug) || "all";
+}
+
+// Writes the tag to the URL as a new history step, keeping other parameters
+function pushTagToUrl(tag) {
+    const url = new URL(window.location.href);
+    if (tag === "all") {
+        url.searchParams.delete("tag");
+    } else {
+        url.searchParams.set("tag", tagToSlug(tag));
+    }
+    if (url.href !== window.location.href) {
+        window.history.pushState(null, "", url);
+    }
+}
+
 // Sorts tags by the number of projects they are associated with, in descending order
 
 function sortTagsByProjectCount(tags) {
@@ -423,15 +447,29 @@ document.addEventListener("DOMContentLoaded", function() {
     ));
     const sortedTags = sortTagsByProjectCount(uniqueTags);
 
+    const buttonsByTag = new Map();
+
+    // Shows a tag everywhere: active button, dropdown and cards
+    function showTag(tag) {
+        setActiveButton(buttonsByTag.get(tag));
+        filterSelect.value = tag;
+        applyFilter(tag);
+    }
+
+    // A visitor's choice: show it and record it in the URL
+    function selectTag(tag) {
+        showTag(tag);
+        pushTagToUrl(tag);
+    }
+
     const allButton = document.createElement("button");
     allButton.type = "button";
     allButton.className = "tag is-active";
     allButton.textContent = "everything";
     allButton.addEventListener("click", function() {
-        setActiveButton(allButton);
-        filterSelect.value = "all";
-        applyFilter("all");
+        selectTag("all");
     });
+    buttonsByTag.set("all", allButton);
     filterBar.appendChild(allButton);
 
     const allOption = document.createElement("option");
@@ -445,10 +483,9 @@ document.addEventListener("DOMContentLoaded", function() {
         button.className = "tag";
         button.textContent = tag;
         button.addEventListener("click", function() {
-            setActiveButton(button);
-            filterSelect.value = tag;
-            applyFilter(tag);
+            selectTag(tag);
         });
+        buttonsByTag.set(tag, button);
         filterBar.appendChild(button);
 
         const option = document.createElement("option");
@@ -458,22 +495,20 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 
     filterSelect.addEventListener("change", function() {
-        const selectedTag = filterSelect.value;
-        if (selectedTag === "all") {
-            setActiveButton(allButton);
-        } else {
-            const matchingButton = Array.from(document.querySelectorAll(".tag"))
-                .find(button => button.textContent === selectedTag);
-            if (matchingButton) {
-                setActiveButton(matchingButton);
-            }
-        }
-        applyFilter(selectedTag);
+        selectTag(filterSelect.value);
     });
 
-    filterSelect.value = "all";
+    // Back/Forward: follow the URL
+    window.addEventListener("popstate", function() {
+        showTag(getTagFromUrl(sortedTags));
+    });
 
-    applyFilter("all");
+    // Back/forward cache and form restoration can change the dropdown after load
+    window.addEventListener("pageshow", function() {
+        showTag(getTagFromUrl(sortedTags));
+    });
+
+    showTag(getTagFromUrl(sortedTags));
 });
 </script>
 

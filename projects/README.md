@@ -123,6 +123,7 @@ The `project-template.css` provides these pre-styled components:
 - `.media-standard` - Image capped at the standard figure width (`--width-media`)
 - `.media-narrow` - Image shown narrower than the content column (`--width-media-narrow`)
 - `.video` - Embedded video (full width, fixed aspect ratio)
+- `.video--vertical` - Add to `.video` for vertical videos such as YouTube Shorts (9:16, capped width)
 - `.badge-row` - Row of badges and arrows (diagram)
 - Images inside `.project-content` never overflow; no inline sizing needed
 
@@ -226,6 +227,18 @@ The `project-template.css` provides these pre-styled components:
    ```
 
 3. **The language switching is automatic** - users' preferences are saved in localStorage
+
+## Links to Filtered Projects
+
+Add `?tag=` to the portfolio URL to open it already filtered:
+
+- `/projects/?tag=music`
+- `/projects/?tag=interface-design`
+- `/projects/?tag=ux-hci-research`
+
+The value is the tag in lowercase, with spaces and slashes replaced by hyphens. Picking a tag on the page updates the URL, so it can be copied from the address bar. Unknown tags show everything.
+
+Renaming a tag in `projectTagsById` breaks links already shared with its old name. Two tags must not produce the same URL value (e.g. "ar/vr" and "ar vr").
 
 ## Responsive Design
 

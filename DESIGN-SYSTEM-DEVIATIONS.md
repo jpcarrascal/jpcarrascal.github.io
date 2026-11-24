@@ -128,3 +128,8 @@
   - Items with their own translation (`exhibition_text` on accidental and gamifying) kept their key, now on the `<li>`.
 - **Box list styling uses tokens:** title bottom margin `--space-sm` (was the browser default), list indent `--space-lg` (was the browser's 40px), `--space-sm` between items, and items keep `--font-size-md` and `--line-height-relaxed`. **Visible change:** citations are no longer justified, since left-aligned reads better in a list.
 - **Noted, not changed:** yo-soy-otro marks its "YouTube" and "IMDB" links for translation but has no translations for them. This is harmless: brand names stay as they are.
+
+## Follow-up: vertical videos
+
+- **New modifier:** `.video--vertical`, used with `.video`, for YouTube Shorts on hootbeat and chaotic-pedalboard. The plan's video format is landscape only.
+- **New tokens:** `--aspect-video-vertical` (9 / 16) and `--width-video-vertical` (360px).

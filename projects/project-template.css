@@ -85,6 +85,12 @@ a:hover {
     aspect-ratio: var(--aspect-video);
 }
 
+/* Vertical video (e.g. YouTube Shorts): use with .video */
+.video.video--vertical {
+    max-width: var(--width-video-vertical);
+    aspect-ratio: var(--aspect-video-vertical);
+}
+
 /* A row of badges and arrows (e.g. a workflow diagram) */
 .badge-row {
     display: flex;
